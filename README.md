@@ -1,0 +1,2 @@
+# openbsd-edu.net
+MediaWiki
