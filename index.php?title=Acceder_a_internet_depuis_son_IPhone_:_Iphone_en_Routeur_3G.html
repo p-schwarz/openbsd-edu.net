@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Acceder a internet depuis son IPhone : Iphone en Routeur 3G — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G","wgTitle":"Acceder a internet depuis son IPhone : Iphone en Routeur 3G","wgCurRevisionId":2331,"wgRevisionId":2331,"wgArticleId":160,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G","wgRelevantArticleId":160,"wgRequestId":"2d0cad6188655539c2e49713","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Acceder_a_internet_depuis_son_IPhone_Iphone_en_Routeur_3G rootpage-Acceder_a_internet_depuis_son_IPhone_Iphone_en_Routeur_3G skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Acceder a internet depuis son IPhone : Iphone en Routeur 3G</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#mw-head">navigation</a>, 					<a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><ul><li> Vous trouvez que la solution du proxy (<a href="http://www.openbsd-edu.net/index.php?title=Acc%C3%A9der_au_web_depuis_son_IPhone_:_Iphone_en_Proxy&amp;action=edit&amp;redlink=1" class="new" title="Accéder au web depuis son IPhone : Iphone en Proxy (page inexistante)"> présentée ici</a>) est trop limitée au web&#160;? </li></ul>
+<ul><li> Vous souhaiteriez accéder à <b>tous les ports,</b> <b>tous les protocoles</b> , lire votre courrier avec un client (pop3,imap..) et même à votre <a href="index.php%3Ftitle=VPN.html" title="VPN">VPN</a> en UDP/1194 (<i>for instance</i>) préféré depuis partout&#160;? Bref, avoir un vrai routeur filtrant et ne pas avoir un usage limité de l'internet&#160;?</li></ul>
+<ul><li> Vous êtes coincés loin d'un point d'accès Wifi/ADSL et vous voulez VRAIMENT lire vos mails depuis votre portable et non depuis le minuscule écran de votre téléphone&#160;?</li></ul>
+<ul><li> etc..</li></ul>
+<p><br />
+Sans souci&#160;!
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Solution_Geek-compliant"><span class="tocnumber">1</span> <span class="toctext">Solution Geek-compliant</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Pr.C3.A9requis"><span class="tocnumber">1.1</span> <span class="toctext">Prérequis</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Sur_l.27Iphone"><span class="tocnumber">1.2</span> <span class="toctext">Sur l'Iphone</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Sur_le_portable"><span class="tocnumber">1.3</span> <span class="toctext">Sur le portable</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Scripts"><span class="tocnumber">1.4</span> <span class="toctext">Scripts</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Au_final"><span class="tocnumber">1.5</span> <span class="toctext">Au final</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Solution_JCD-compliant"><span class="tocnumber">2</span> <span class="toctext">Solution JCD-compliant</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Pr.C3.A9requis_2"><span class="tocnumber">2.1</span> <span class="toctext">Prérequis</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Solution_Free_Mobile_compliant"><span class="tocnumber">3</span> <span class="toctext">Solution Free Mobile compliant</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Soucis"><span class="tocnumber">4</span> <span class="toctext">Soucis</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#D.C3.A9bit"><span class="tocnumber">4.1</span> <span class="toctext">Débit</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Pertes_de_connexion"><span class="tocnumber">4.2</span> <span class="toctext">Pertes de connexion</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#La_batterie...."><span class="tocnumber">4.3</span> <span class="toctext">La batterie....</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Forfait"><span class="tocnumber">4.4</span> <span class="toctext">Forfait</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Solution_Geek-compliant">Solution Geek-compliant</span></h2>
+<h3><span class="mw-headline" id="Pr.C3.A9requis">Prérequis</span></h3>
+<ul><li> Un Iphone Jailbreaké, c'est <a href="http://www.openbsd-edu.net/index.php?title=Sortir_de_la_prison_propri%C3%A9taire_(ou_tout_au_moins,_casser_quelques_barreaux..):_Iphone_%26_JailBreak&amp;action=edit&amp;redlink=1" class="new" title="Sortir de la prison propriétaire (ou tout au moins, casser quelques barreaux..): Iphone &amp; JailBreak (page inexistante)">là</a></li>
+<li> Les paquets <i>VI Improved, OpenSSH, Bigboss recommended tools</i></li>
+<li> Un forfait 3G (il)limité. <i>Pourquoi (il)limité&#160;? En fait, au delà d'un certain volume mensuel de données, le débit d'effondre...encore plus)</i></li>
+<li> Éventuellement un AP Wifi.</li></ul>
+<p>Pour la suite, soit vous suivez les explications et effectuez les manips à la main, soit vous lancez <a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Scripts"> ces scripts</a>.
+</p>
+<h3><span class="mw-headline" id="Sur_l.27Iphone">Sur l'Iphone</span></h3>
+<p>Rappelez-vous que cet OS tourne avec une base FreeBSD, et que le parefeu qui va avec est l'excellentissime <b>pf</b>&#160;! Besoin de rien de plus pour transformer votre GeekPhone en parfait routeur NAT...
+</p>
+<ul><li> Menu Réglages</li></ul>
+<p>Si il y a un AP Wifi entre PC et l'Iphone, alors configurez le avec le bon SSID, le bon mot de passe WPA2, mais utilisez un réseau en @IP statique.
+Autrement, la config DHCP écrase la route par défaut ,celle de la 3G et...plus d'accès Internet!
+</p>
+<ul><li> En SSH</li></ul>
+<p>Activez le routage des paquets IPv4 entre les interfaces&#160;: 
+</p>
+<pre>sysctl -w net.inet.ip.forwarding=1
+</pre>
+<pre>vim /etc/pf.conf
+</pre>
+<p>Oui, c'est <i>vim</i> et non <i>vi</i> qui doit être installé.
+</p>
+<pre>
+3G_IF=pdp_ip0
+WI_IF=en0
+WI_LAN="192.168.1.0/24"
+
+#On traduit (RFC 1918) les paquets IPv4
+nat on $3G_IF from $WI_LAN -&gt; $3G_IF
+
+#On n'effectue aucun filtrage IP
+pass out quick
+pass in quick on $WI_IF from $WI_LAN to any keep state
+</pre>
+<p>Je vous conseille de coller tout ça dans un script à lancer après chaque reboot du téléphone. (Le sysctl repasse à 0 au reboot du téléphone).
+</p>
+<h3><span class="mw-headline" id="Sur_le_portable">Sur le portable</span></h3>
+<pre>sudo route del default 
+sudo route add default gw  @IP_WIFI_Iphone
+sudo sed -i "1inameserver 194.51.3.56" /etc/resolv.conf
+</pre>
+<p><br />
+Manifestement, c'est le serveur DNS dédié de chez Orange pour être récursif prou les clients mobile&#160;:
+ftm-dns1.rain.fr (194.51.3.56)
+</p><p>Sinon, le workaround a donc été d'utiliser son DNS perso par le VPN, et ainsi, d'avoir une résolution DNS sans ouvrir son serveur à tout l'internet en mode récursif..
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Scripts">Scripts</span></h3>
+<ul><li> <b>Sur l'IPhone</b>, <b>une fois pour toutes</b>&#160;:
+<ul><li> Si vous avez un <a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Forfait"> forfait</a> <i>illimité</i> = Tous les protocoles:</li></ul></li></ul>
+<pre>
+vim /etc/pf.conf
+
+
+3G_IF=pdp_ip0
+WI_IF=en0
+WI_LAN="192.168.1.0/24"
+
+#On traduit les paquets
+nat on $3G_IF from $WI_LAN -&gt; $3G_IF
+
+#On n'effectue aucun filtrage IP
+pass out quick 
+pass in quick on $WI_IF from $WI_LAN to any keep state
+
+touch /etc/pf.os
+</pre>
+<ul><li><ul><li> Si vous avez un <a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#Forfait"> forfait</a> <i>Internet</i> = Seulement le web</li></ul></li></ul>
+<p><br />
+</p>
+<pre>
+touch /etc/pf.os
+
+
+vim /etc/pf.conf
+
+3G_IF=pdp_ip0
+WI_IF=en0
+WI_LAN="192.168.1.0/24"
+TCP_OK="{53,80,443}"
+UDP_OK="{53}"
+
+#On traduit les paquets
+nat on $3G_IF from $WI_LAN -&gt; $3G_IF
+
+#On filtre en sortie
+pass out quick on $3G_IF proto tcp from any to any port $TCP_OK
+pass out quick on $3G_IF proto udp from any to any port $UDP_OK
+pass out quick on $3G_IF proto icmp
+pass out quick on $WI_IF keep state
+pass in quick on $WI_IF from $WI_LAN to any keep state
+
+</pre>
+<p><br />
+</p>
+<ul><li> <b>Sur le portable</b>, <b>une fois pour toutes</b>&#160;:</li></ul>
+<p>si l'IPhone a pour @IP 192.168.1.100
+</p>
+<pre>mkdir -p /usr/script
+</pre>
+<pre>vim /usr/script/3G.sh
+</pre>
+<pre>
+
+#!/bin/bash
+# Turn Iphone into a Wifi-3G router
+# Philippe Schwarz
+# 2010 October
+# GPL v3
+
+DNS_ORANGE=194.51.3.56
+DNS_SFR=
+DNS_BOUYGUES=
+DNS_FREE=
+
+#Modifier seulement ces deux paramètres en fonction de votre environnement
+WIFI_IPHON_IP=192.168.1.100
+FAI=$DNS_ORANGE
+WAN_IPHON_IP=`ssh root@$WIFI_IPHON_IP ifconfig pdp_ip0 |grep -v mtu| awk '{print $2}'`
+echo "@IP 3G de l'IPhone&#160;: $WAN_IPHON_IP"
+echo "@IP Wifi de l'IPhone&#160;: $WIFI_IPHON_IP"
+
+sudo route del default 
+sudo route add default gw $WIFI_IPHON_IP
+sudo sed -i "1inameserver $FAI" /etc/resolv.conf
+ssh root@$WIFI_IPHON_IP sysctl -w net.inet.ip.forwarding=1
+ssh root@$WIFI_IPHON_IP route delete default
+ssh root@$WIFI_IPHON_IP route delete default
+ssh root@$WIFI_IPHON_IP route add default $WAN_IPHON_IP
+ssh root@$WIFI_IPHON_IP pfctl -d
+ssh root@$WIFI_IPHON_IP pfctl -e -f /etc/pf.conf
+PING=`ping -c 1 www.free.fr |grep loss |awk '{print $6}'`
+if [ "$PING" == "0%" ]
+then
+echo "Connexion 3G opérationnelle"
+else
+echo "Souci avec la Connexion 3G "
+fi
+</pre>
+<pre>chmod +x /usr/scrip/3G.sh
+</pre>
+<p><br />
+</p>
+<ul><li> <b>Sur le portable</b>, <b>au début de la session</b>, après l'authentification wifi&#160;:</li></ul>
+<pre>/usr/script/3G.sh
+</pre>
+<p>C'est tout.
+</p>
+<h3><span class="mw-headline" id="Au_final">Au final</span></h3>
+<pre>
+traceroute www.openbsd-edu.net
+traceroute to www.openbsd-edu.net (82.237.239.48), 30 hops max, 60 byte packets
+ 1  iPhone-de-polyp.local (192.168.1.102)  13.845 ms  14.366 ms  14.814 ms
+ 2  10.164.1.1 (10.164.1.1)  123.673 ms  141.720 ms  143.454 ms
+ 3  10.164.1.2 (10.164.1.2)  163.248 ms  164.806 ms  165.809 ms
+ 4  www.openbsd-edu.net (82.237.239.48)  189.405 ms  191.194 ms  203.029 ms
+</pre>
+<h2><span class="mw-headline" id="Solution_JCD-compliant">Solution JCD-compliant</span></h2>
+<p><i>J</i>eune <i>C</i>adre <i>D</i>ynamique dans le TGV avec son Laptop et juste un câble USB-IPhone&#160;:-)
+</p><p>Merci à mes geek-étudiants de BTS de m'avoir informé de l'existence de cette appli.
+</p><p>Merci Clément G. &amp; Thomas D.
+</p>
+<h3><span class="mw-headline" id="Pr.C3.A9requis_2">Prérequis</span></h3>
+<ul><li> Câble USB de l'iphone</li>
+<li> Iphone jailbreaké (est-ce certain&#160;??)</li>
+<li> Une linuxette</li></ul>
+<pre>sudo apt-get install libimobiledevice-utils ipheth-utils  ipheth-dkms
+</pre>
+<ul><li> Aller sur <a rel="nofollow" class="external autonumber" href="http://help.benm.at/">[1]</a> avec votre laptop <i>{Oui, inutile de le faire avec le telephone, l'opération suivante ne marche plus }</i> et récupérer sur <a rel="nofollow" class="external text" href="http://help.benm.at/mi.carrier.php?country=9">cette page</a> le fichier de config correspondant à votre ISP mobile.</li>
+<li> S'envoyer le fichier par mail vers le téléphone et l'installer; vous vous retrouvez avec un nouveau profil <i>{Réglages/Général/Profils/}</i></li>
+<li> Ensuite, j'ai essayé de suivre simplement<i>{Réglages/Général/Réseau/Partage de connexion}</i>, mais ça n'a jamais voulu marcher.</li>
+<li> Puis, j'ai tenté de modifier à la mano, comme indiqué <a rel="nofollow" class="external text" href="http://www.daryo.com/seb/element/1415,tutoriel-reactiver-le-partage-de-connection-tethering-orange-sous-iphone-ios4">ici</a>.</li></ul>
+<p>Résultat&#160;: Un redémarrage plus tard, j'ai ...perdu le menu&#160;!
+</p>
+<ul><li> Au final, j'ai installé par Cydia: <a rel="nofollow" class="external text" href="http://intelliborn.com/mywi.html">MyWi</a>, qui:
+<ul><li> Marche au quart de tour sans rien faire</li>
+<li> Permet de router en USB, en Wifi, en Bluetooth</li>
+<li> a une période d'essai de 7j. Oui, après c'est payant.</li>
+<li> Marche en USB donc ne suce pas trop la batterie du tel..</li>
+<li> Possède un compteur d'octets montants et descendants&#160;!</li></ul></li></ul>
+<ul><li> J'écris ces lignes depuis MyWi!</li></ul>
+<p><br />
+Rem: N'oubliez pas d'activer l'user agent de votre browser à Iphone 3.0, ça pourrait vous éviter des ennuis avec votre gentil fournisseur.
+</p>
+<h2><span class="mw-headline" id="Solution_Free_Mobile_compliant">Solution Free Mobile compliant</span></h2>
+<p>Encore plus simple:
+</p>
+<ul><li> on active le mode partage de connexion sur l'Itruc</li>
+<li> On allume 3G et Bluetooth, donc on vide la batterie..</li>
+<li> Sur l'ordi&#160;:</li></ul>
+<pre>sudo apt-get install bluetooth   bluez-utils   gnome-bluetooth  bluez-compat
+sudo pand --connect `sudo hcitool scan |grep "Iphone"| awk '{print  $1 }'` -n
+sudo ifup bnep0
+</pre>
+<p><br />
+</p>
+<ul><li> Mieux pour gagner un peu de temps en évitant la recherche des voisins BT&#160;:</li></ul>
+<pre>#!/bin/bash
+modprobe bnep
+modpobe ipheth
+pand --connect @MAC_BT_Tel -n
+sleep 2
+echo"Cx BT / IPhone"
+echo  "nameserver 212.27.40.240" |sudo tee -a  /etc/resolv.conf
+ifup bnep0
+</pre>
+<p>Pour la déconnexion&#160;:
+</p>
+<pre>#!/bin/bash
+ifdown bnep0
+pand -K
+</pre>
+<h2><span class="mw-headline" id="Soucis">Soucis</span></h2>
+<h4><span class="mw-headline" id="D.C3.A9bit">Débit</span></h4>
+<p>Sans être catastrophique, le débit n'est pas fabuleux, mais ce n'est pas l'objectif.
+</p><p><a href="./index.php%3Ftitle=Fichier:Debit3G.png.html" class="image" title="En_Images"><img alt="En_Images" src="images/7/70/Debit3G.png" width="200" height="60" /></a>
+</p>
+<h4><span class="mw-headline" id="Pertes_de_connexion">Pertes de connexion</span></h4>
+<p>Dès que l'écran se verrouille, je perds la cx wifi..donc plus d'accès Internet. Placer le verrouillage d'écran sur le max.
+</p><p>Dès qu'un appel GSM a lieu, coupure du lien.(Mais un tcpdump sur le téléphone montre que le vpn reste en place..)
+</p>
+<h4><span class="mw-headline" id="La_batterie....">La batterie....</span></h4>
+<p>Déjà que l'IPhone est anémique de ce côté, mais là, ça en devient terrible&#160;!
+</p><p>Pas plus de 5h-6h à ce rythme...
+</p><p>Ne comptez pas partir sans ressources longtemps..
+</p>
+<h4><span class="mw-headline" id="Forfait">Forfait</span></h4>
+<p><b>Attention&#160;!</b> selon votre forfait, le coût peut révéler quelques ..menues variations&#160;:
+</p><p>Exemple chez Orange&#160;:
+</p>
+<ul><li> <i>Forfait Internet</i>&#160;: N'inclue que les connexions aux ports TCP/80 et TCP/443. Le nom du forfait devrait donc être <i>forfait web</i> à mon sens.</li></ul>
+<p>Si vous vous connectez à autre chose ou si vous avez activé le push des mails de l'Iphone, ça risque de vous coûter vite assez cher, car hors-forfait.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020132836
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.340 seconds
+Real time usage: 0.346 seconds
+Preprocessor visited node count: 100/1000000
+Preprocessor generated node count: 160/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:160-0!*!0!!fr!5!* and timestamp 20171020132835 and revision id 2331
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G&amp;oldid=2331">http://www.openbsd-edu.net/index.php?title=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G&amp;oldid=2331</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Acceder+a+internet+depuis+son+IPhone+%253A+Iphone+en+Routeur+3G.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="./index.php%3Ftitle=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FAcceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G&amp;oldid=2331" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 23 mai 2013 à 12:10.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.340","walltime":"0.346","ppvisitednodes":{"value":100,"limit":1000000},"ppgeneratednodes":{"value":160,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132836","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1815});});</script>
+	</body>
+</html>
