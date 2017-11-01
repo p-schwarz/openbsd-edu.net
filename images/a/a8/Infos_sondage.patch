@@ -1,0 +1,55 @@
+--- infos_sondage.php	Sun Mar 31 16:56:17 2013
++++ infos_sondage.php.orig	Sun Mar 31 16:44:09 2013
+@@ -67,7 +67,7 @@
+ #tests
+ if (($_POST["creation_sondage_date"]||$_POST["creation_sondage_autre"]||$_POST["creation_sondage_date_x"]||$_POST["creation_sondage_autre_x"])){
+ 	$_SESSION["titre"]=$_POST["titre"];
+-	$_SERVER['REMOTE_USER']=$_POST["nom"];
++	$_SESSION["nom"]=$_POST["nom"];
+ 	$_SESSION["adresse"]=$_POST["adresse"];
+ 	$_SESSION["commentaires"]=$_POST["commentaires"];
+ 	if ($_POST["studsplus"]){$_SESSION["studsplus"]="+";}
+@@ -93,7 +93,7 @@
+ if (($_POST["creation_sondage_date"]||$_POST["creation_sondage_autre"]||$_POST["creation_sondage_date_x"]||$_POST["creation_sondage_autre_x"])&&$_POST["titre"]&&$_POST["nom"]&&$_POST["adresse"]&&!$erreur_adresse&&!$erreur_injection_titre&&!$erreur_injection_commentaires&&!$erreur_injection_nom){
+ 	
+ 	$_SESSION["titre"]=$_POST["titre"];
+-	$_SERVER['REMOTE_USER']=$_POST["nom"];
++	$_SESSION["nom"]=$_POST["nom"];
+ 	$_SESSION["adresse"]=$_POST["adresse"];
+ 	$_SESSION["commentaires"]=$_POST["commentaires"];
+ 
+@@ -168,7 +168,7 @@
+ //En cas d'erreur, recuperation des variables deja entrées
+ if (($_POST["titre"]==""||$_POST["adresse"]==""||$_POST["nom"]=="")&&($_POST["creation_sondage_date"]||$_POST["creation_sondage_autre"]||$_POST["creation_sondage_date_x"]||$_POST["creation_sondage_autre_x"])){
+ 		$_SESSION["titre"]=$_POST["titre"];
+-		$_SERVER['REMOTE_USER']=$_POST["nom"];
++		$_SESSION["nom"]=$_POST["nom"];
+ 		$_SESSION["adresse"]=$_POST["adresse"];
+ 		$_SESSION["commentaires"]=$_POST["commentaires"];
+ 		if ($_POST["studsplus"]){$_SESSION["studsplus"]="+";}
+@@ -204,10 +204,10 @@
+ echo '</tr>'."\n";
+ echo '<tr><td>'.$tt_infos_champ_nom.'</td><td>';
+ if (isset($_SERVER['REMOTE_USER']))
+-	echo '<input type="hidden" name="nom" size="40" maxlength="40" value="'.$_SERVER['REMOTE_USER'].'">'.$_SERVER['REMOTE_USER'].'</td>'."\n";
++	echo '<input type="hidden" name="nom" size="40" maxlength="40" value="'.$_SESSION["nom"].'">'.$_SESSION["nom"].'</td>'."\n";
+ else
+-	echo '<input type="text" name="nom" size="40" maxlength="40" value="'.$_SERVER['REMOTE_USER'].'"></td>'."\n";
+-if (!$_SERVER['REMOTE_USER']&&($_POST["creation_sondage_date"]||$_POST["creation_sondage_autre"]||$_POST["creation_sondage_date_x"]||$_POST["creation_sondage_autre_x"])){
++	echo '<input type="text" name="nom" size="40" maxlength="40" value="'.$_SESSION["nom"].'"></td>'."\n";
++if (!$_SESSION["nom"]&&($_POST["creation_sondage_date"]||$_POST["creation_sondage_autre"]||$_POST["creation_sondage_date_x"]||$_POST["creation_sondage_autre_x"])){
+ 	print "<td><font color=\"#FF0000\">$tt_infos_erreur_nom</font></td>"."\n";
+ }
+ elseif ($erreur_injection_nom){
+@@ -216,9 +216,9 @@
+ echo '</tr>'."\n";
+ echo '<tr><td>'.$tt_infos_champ_adressemail.'</td><td>';
+ if (isset($_SERVER['REMOTE_USER']))
+-	echo '<input type="hidden" name="adresse" size="40" maxlength="64" value="'.$_SERVER['REMOTE_USER'].'@mail.maxp.fr'.'">'.$_SERVER['REMOTE_USER'].'@mail.maxp.fr'.'</td>'."\n";
++	echo '<input type="hidden" name="adresse" size="40" maxlength="64" value="'.$_SESSION["adresse"].'">'.$_SESSION["adresse"].'</td>'."\n";
+ else
+-	echo '<input type="text" name="adresse" size="40" maxlength="64" value="'.$_SERVER['REMOTE_USER'].'@mail.maxp.fr'.'"></td>'."\n";
++	echo '<input type="text" name="adresse" size="40" maxlength="64" value="'.$_SESSION["adresse"].'"></td>'."\n";
+ if (!$_SESSION["adresse"]&&($_POST["creation_sondage_date"]||$_POST["creation_sondage_autre"]||$_POST["creation_sondage_date_x"]||$_POST["creation_sondage_autre_x"])){
+ 	print "<td><font color=\"#FF0000\">$tt_infos_erreur_adressemail </font></td>"."\n";
+ }

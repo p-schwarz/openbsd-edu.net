@@ -1,0 +1,38 @@
+--- studs.php	Mon May  3 12:16:03 2010
++++ studs.php.ORI	Mon May  3 12:10:19 2010
+@@ -188,7 +188,7 @@
+ 	// Action quand on clique le bouton participer
+ 	if ($_POST["boutonp"]||$_POST["boutonp_x"]){
+ 	//Si le nom est bien entré
+-		if ($_POST["nom"] && (!isset($_SERVER['REMOTE_USER']) ||($_POST["nom"] == $_SERVER['REMOTE_USER']))) {
++		if ($_POST["nom"] && (!isset($_SERVER['REMOTE_USER']) ||($_POST["nom"] == $_SESSION["nom"]))) {
+ 			for ($i=0;$i<$nbcolonnes;$i++){
+ 				
+ 				// Si la checkbox est enclenchée alors la valeur est 1
+@@ -430,7 +430,7 @@
+ // Les réponses qu'il a choisit
+ 		$ensemblereponses=$data->reponses;
+ // ligne d'un usager pré-authentifié
+-		$mod_ok = !isset($_SERVER['REMOTE_USER']) || ($nombase == $_SERVER['REMOTE_USER']);
++		$mod_ok = !isset($_SERVER['REMOTE_USER']) || ($nombase == $_SESSION['nom']);
+ 		$user_mod |= $mod_ok;
+ 			//si la ligne n'est pas a changer, on affiche les données
+ 			if (!$testligneamodifier){
+@@ -499,7 +499,7 @@
+ 		echo '<td class=nom>'."\n";
+ 		if (isset($_SERVER['REMOTE_USER']))
+ 			echo '<input type=hidden name="nom" value="'.
+-			      $_SERVER['REMOTE_USER'].'">'.$_SERVER['REMOTE_USER']."\n";
++			      $_SESSION['nom'].'">'.$_SESSION['nom']."\n";
+ 		else
+ 			echo '<input type=text name="nom">'."\n";
+ 		echo '</td>'."\n";
+@@ -639,7 +639,7 @@
+ 	print "<br>$tt_studs_ajoutcommentaires :<br>\n";
+ 	echo $tt_studs_ajoutcommentaires_nom.' : ';
+ 	if (isset($_SERVER['REMOTE_USER']))
+-		echo '<input type="hidden" name="commentuser" value="'.$_SERVER['REMOTE_USER'].'">'.$_SESSION['nom'].'<br>'."\n";
++		echo '<input type="hidden" name="commentuser" value="'.$_SESSION['nom'].'">'.$_SESSION['nom'].'<br>'."\n";
+ 	else
+ 		echo '<input type="text" name="commentuser"><br>'."\n";
+ 	echo '<textarea name="comment" rows="2" cols="40"></textarea>'."\n";
