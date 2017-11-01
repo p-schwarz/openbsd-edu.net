@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>ProxMox — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"ProxMox","wgTitle":"ProxMox","wgCurRevisionId":3446,"wgRevisionId":3446,"wgArticleId":266,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"ProxMox","wgRelevantArticleId":266,"wgRequestId":"3c6df1b3761074e8b1543a3d","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ProxMox rootpage-ProxMox skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">ProxMox</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=ProxMox.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=ProxMox.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=ProxMox.html#Nouveaut.C3.A9s_de_la_version_5.0_B.C3.A9ta"><span class="tocnumber">1</span> <span class="toctext">Nouveautés de la version 5.0 Béta</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=ProxMox.html#Migrer_un_conteneur_OpenVZ_en_LXC"><span class="tocnumber">2</span> <span class="toctext">Migrer un conteneur OpenVZ en LXC</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=ProxMox.html#Installation"><span class="tocnumber">3</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=ProxMox.html#Configuration"><span class="tocnumber">4</span> <span class="toctext">Configuration</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=ProxMox.html#Support"><span class="tocnumber">5</span> <span class="toctext">Support</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=ProxMox.html#Sources.list"><span class="tocnumber">6</span> <span class="toctext">Sources.list</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=ProxMox.html#Mise_en_cluster"><span class="tocnumber">7</span> <span class="toctext">Mise en cluster</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=ProxMox.html#Stockage_r.C3.A9parti"><span class="tocnumber">8</span> <span class="toctext">Stockage réparti</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=ProxMox.html#Mise_en_miroir_r.C3.A9seau_des_disques_:_drbd.2FLVM"><span class="tocnumber">9</span> <span class="toctext">Mise en miroir réseau des disques&#160;: drbd/LVM</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=ProxMox.html#Mise_en_miroir_drbd"><span class="tocnumber">9.1</span> <span class="toctext">Mise en miroir drbd</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=ProxMox.html#Montage_du_gestionnaire_de_volume_LVM"><span class="tocnumber">9.2</span> <span class="toctext">Montage du gestionnaire de volume LVM</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=ProxMox.html#R.C3.A9seau"><span class="tocnumber">10</span> <span class="toctext">Réseau</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=ProxMox.html#Seconde_carte_r.C3.A9seau_physique"><span class="tocnumber">10.1</span> <span class="toctext">Seconde carte réseau physique</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=ProxMox.html#Agr.C3.A9gation_de_liens_r.C3.A9seaux"><span class="tocnumber">10.2</span> <span class="toctext">Agrégation de liens réseaux</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=ProxMox.html#ProxMox_en_Raid_Soft"><span class="tocnumber">11</span> <span class="toctext">ProxMox en Raid Soft</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="index.php%3Ftitle=ProxMox.html#Gestion_des_VM.2FCT"><span class="tocnumber">12</span> <span class="toctext">Gestion des VM/CT</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=ProxMox.html#Machine_KVM"><span class="tocnumber">12.1</span> <span class="toctext">Machine KVM</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="index.php%3Ftitle=ProxMox.html#Perfs"><span class="tocnumber">12.1.1</span> <span class="toctext">Perfs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=ProxMox.html#Container_LXC"><span class="tocnumber">12.2</span> <span class="toctext">Container LXC</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=ProxMox.html#Allocation_des_espaces_disques"><span class="tocnumber">12.3</span> <span class="toctext">Allocation des espaces disques</span></a>
+<ul>
+<li class="toclevel-3 tocsection-21"><a href="index.php%3Ftitle=ProxMox.html#Et_en_cas_d.27espace_disque_trop_petit_.3F.3F"><span class="tocnumber">12.3.1</span> <span class="toctext">Et en cas d'espace disque trop petit&#160;??</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="index.php%3Ftitle=ProxMox.html#Sp.C3.A9cificit.C3.A9s_OS"><span class="tocnumber">13</span> <span class="toctext">Spécificités OS</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=ProxMox.html#OpenBSD.2FKVM"><span class="tocnumber">13.1</span> <span class="toctext">OpenBSD/KVM</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=ProxMox.html#Container_OpenVZ"><span class="tocnumber">13.2</span> <span class="toctext">Container OpenVZ</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="index.php%3Ftitle=ProxMox.html#Migration_de_machine"><span class="tocnumber">14</span> <span class="toctext">Migration de machine</span></a>
+<ul>
+<li class="toclevel-2 tocsection-26"><a href="index.php%3Ftitle=ProxMox.html#Migration_manuelle_d.27une_machine_dans_ProxMox"><span class="tocnumber">14.1</span> <span class="toctext">Migration manuelle d'une machine dans ProxMox</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="index.php%3Ftitle=ProxMox.html#Migration_manuelle_d.27un_container_OpenVZ"><span class="tocnumber">14.2</span> <span class="toctext">Migration manuelle d'un container OpenVZ</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="index.php%3Ftitle=ProxMox.html#Haute_disponibilit.C3.A9_.3D_HA"><span class="tocnumber">15</span> <span class="toctext">Haute disponibilité = HA</span></a>
+<ul>
+<li class="toclevel-2 tocsection-29"><a href="index.php%3Ftitle=ProxMox.html#Fencing"><span class="tocnumber">15.1</span> <span class="toctext">Fencing</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="index.php%3Ftitle=ProxMox.html#Interface"><span class="tocnumber">15.2</span> <span class="toctext">Interface</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-31"><a href="index.php%3Ftitle=ProxMox.html#Authentification_sur_l.27interface_de_management"><span class="tocnumber">16</span> <span class="toctext">Authentification sur l'interface de management</span></a>
+<ul>
+<li class="toclevel-2 tocsection-32"><a href="index.php%3Ftitle=ProxMox.html#Authentification_LDAP.2FAD"><span class="tocnumber">16.1</span> <span class="toctext">Authentification LDAP/AD</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="index.php%3Ftitle=ProxMox.html#Authentification_forte"><span class="tocnumber">16.2</span> <span class="toctext">Authentification forte</span></a>
+<ul>
+<li class="toclevel-3 tocsection-34"><a href="index.php%3Ftitle=ProxMox.html#Depuis_un_smartphone_NFC"><span class="tocnumber">16.2.1</span> <span class="toctext">Depuis un smartphone NFC</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-35"><a href="index.php%3Ftitle=ProxMox.html#R.C3.B4les_et_permissions"><span class="tocnumber">16.3</span> <span class="toctext">Rôles et permissions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-36"><a href="index.php%3Ftitle=ProxMox.html#Firewall_du_cluster"><span class="tocnumber">17</span> <span class="toctext">Firewall du cluster</span></a></li>
+<li class="toclevel-1 tocsection-37"><a href="index.php%3Ftitle=ProxMox.html#Interface_2"><span class="tocnumber">18</span> <span class="toctext">Interface</span></a>
+<ul>
+<li class="toclevel-2 tocsection-38"><a href="index.php%3Ftitle=ProxMox.html#CLI"><span class="tocnumber">18.1</span> <span class="toctext">CLI</span></a>
+<ul>
+<li class="toclevel-3 tocsection-39"><a href="index.php%3Ftitle=ProxMox.html#OpenVZ"><span class="tocnumber">18.1.1</span> <span class="toctext">OpenVZ</span></a>
+<ul>
+<li class="toclevel-4 tocsection-40"><a href="index.php%3Ftitle=ProxMox.html#Acc.C3.A9der_.C3.A0_la_console_du_container_:"><span class="tocnumber">18.1.1.1</span> <span class="toctext">Accéder à la console du container&#160;:</span></a></li>
+<li class="toclevel-4 tocsection-41"><a href="index.php%3Ftitle=ProxMox.html#Lister_les_CT_actifs"><span class="tocnumber">18.1.1.2</span> <span class="toctext">Lister les CT actifs</span></a></li>
+<li class="toclevel-4 tocsection-42"><a href="index.php%3Ftitle=ProxMox.html#Lister_tous_les_CT"><span class="tocnumber">18.1.1.3</span> <span class="toctext">Lister tous les CT</span></a></li>
+<li class="toclevel-4 tocsection-43"><a href="index.php%3Ftitle=ProxMox.html#D.C3.A9marrer_un_CT"><span class="tocnumber">18.1.1.4</span> <span class="toctext">Démarrer un CT</span></a></li>
+<li class="toclevel-4 tocsection-44"><a href="index.php%3Ftitle=ProxMox.html#Reset_Password"><span class="tocnumber">18.1.1.5</span> <span class="toctext">Reset Password</span></a></li>
+<li class="toclevel-4 tocsection-45"><a href="index.php%3Ftitle=ProxMox.html#Mettre_en_place_la_config_IP_du_CT"><span class="tocnumber">18.1.1.6</span> <span class="toctext">Mettre en place la config IP du CT</span></a></li>
+<li class="toclevel-4 tocsection-46"><a href="index.php%3Ftitle=ProxMox.html#Monter_dans_le_CT_un_disque_de_l.27h.C3.B4te"><span class="tocnumber">18.1.1.7</span> <span class="toctext">Monter dans le CT un disque de l'hôte</span></a></li>
+<li class="toclevel-4 tocsection-47"><a href="index.php%3Ftitle=ProxMox.html#Gestion_du_volume_disque_du_container_.3D"><span class="tocnumber">18.1.1.8</span> <span class="toctext">Gestion du volume disque du container =</span></a></li>
+<li class="toclevel-4 tocsection-48"><a href="index.php%3Ftitle=ProxMox.html#Ajouter_un_disque_en_LVM_sur_l.27h.C3.B4te"><span class="tocnumber">18.1.1.9</span> <span class="toctext">Ajouter un disque en LVM sur l'hôte</span></a></li>
+<li class="toclevel-4 tocsection-49"><a href="index.php%3Ftitle=ProxMox.html#Gestion_de_la_p.C3.A9nurie_d.27IPv4"><span class="tocnumber">18.1.1.10</span> <span class="toctext">Gestion de la pénurie d'IPv4</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-50"><a href="index.php%3Ftitle=ProxMox.html#KVM"><span class="tocnumber">18.1.2</span> <span class="toctext">KVM</span></a>
+<ul>
+<li class="toclevel-4 tocsection-51"><a href="index.php%3Ftitle=ProxMox.html#Acc.C3.A8s"><span class="tocnumber">18.1.2.1</span> <span class="toctext">Accès</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-52"><a href="index.php%3Ftitle=ProxMox.html#Debug"><span class="tocnumber">18.2</span> <span class="toctext">Debug</span></a>
+<ul>
+<li class="toclevel-3 tocsection-53"><a href="index.php%3Ftitle=ProxMox.html#Impossible_d.27ajouter_un_h.C3.B4te_au_cluster"><span class="tocnumber">18.2.1</span> <span class="toctext">Impossible d'ajouter un hôte au cluster</span></a></li>
+<li class="toclevel-3 tocsection-54"><a href="index.php%3Ftitle=ProxMox.html#L.27install_depuis_une_debian_Wheezy_ne_fonctionne_pas"><span class="tocnumber">18.2.2</span> <span class="toctext">L'install depuis une debian Wheezy ne fonctionne pas</span></a></li>
+<li class="toclevel-3 tocsection-55"><a href="index.php%3Ftitle=ProxMox.html#Les_containers_restaur.C3.A9s_ne_d.C3.A9marrent_pas"><span class="tocnumber">18.2.3</span> <span class="toctext">Les containers restaurés ne démarrent pas</span></a></li>
+<li class="toclevel-3 tocsection-56"><a href="index.php%3Ftitle=ProxMox.html#Ecran_blanc"><span class="tocnumber">18.2.4</span> <span class="toctext">Ecran blanc</span></a></li>
+<li class="toclevel-3 tocsection-57"><a href="index.php%3Ftitle=ProxMox.html#La_connexion_avec_le_serveur_a_.C3.A9t.C3.A9_r.C3.A9initialis.C3.A9e_pendant_le_chargement_de_la_page."><span class="tocnumber">18.2.5</span> <span class="toctext">La connexion avec le serveur a été réinitialisée pendant le chargement de la page.</span></a></li>
+<li class="toclevel-3 tocsection-58"><a href="index.php%3Ftitle=ProxMox.html#La_console_ne_fonctionne_pas"><span class="tocnumber">18.2.6</span> <span class="toctext">La console ne fonctionne pas</span></a></li>
+<li class="toclevel-3 tocsection-59"><a href="index.php%3Ftitle=ProxMox.html#Les_machines_KVM_ne_d.C3.A9marrent_pas"><span class="tocnumber">18.2.7</span> <span class="toctext">Les machines KVM ne démarrent pas</span></a></li>
+<li class="toclevel-3 tocsection-60"><a href="index.php%3Ftitle=ProxMox.html#Par_OS"><span class="tocnumber">18.2.8</span> <span class="toctext">Par OS</span></a>
+<ul>
+<li class="toclevel-4 tocsection-61"><a href="index.php%3Ftitle=ProxMox.html#OpenBSD"><span class="tocnumber">18.2.8.1</span> <span class="toctext">OpenBSD</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-62"><a href="index.php%3Ftitle=ProxMox.html#T.C3.A9l.C3.A9chargement_d.27une_image_ISO_de_boot_CD"><span class="tocnumber">18.3</span> <span class="toctext">Téléchargement d'une image ISO de boot CD</span></a>
+<ul>
+<li class="toclevel-3 tocsection-63"><a href="index.php%3Ftitle=ProxMox.html#Pour_avoir_des_CT_en_adm64_et_pas_uniquement_en_i386"><span class="tocnumber">18.3.1</span> <span class="toctext">Pour avoir des CT en adm64 et pas uniquement en i386</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-64"><a href="index.php%3Ftitle=ProxMox.html#Passer_du_test_.C3.A0_la_prod"><span class="tocnumber">19</span> <span class="toctext">Passer du test à la prod</span></a>
+<ul>
+<li class="toclevel-2 tocsection-65"><a href="index.php%3Ftitle=ProxMox.html#Prot.C3.A9ger_l.27h.C3.B4te_:_Firewall"><span class="tocnumber">19.1</span> <span class="toctext">Protéger l'hôte&#160;: Firewall</span></a></li>
+<li class="toclevel-2 tocsection-66"><a href="index.php%3Ftitle=ProxMox.html#Prot.C3.A9ger_l.27h.C3.B4te_:_IP_publique"><span class="tocnumber">19.2</span> <span class="toctext">Protéger l'hôte&#160;: IP_publique</span></a></li>
+<li class="toclevel-2 tocsection-67"><a href="index.php%3Ftitle=ProxMox.html#Monitorer_l.27h.C3.B4te"><span class="tocnumber">19.3</span> <span class="toctext">Monitorer l'hôte</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-68"><a href="index.php%3Ftitle=ProxMox.html#Virtualisation_d.27une_machine_physique"><span class="tocnumber">20</span> <span class="toctext">Virtualisation d'une machine physique</span></a>
+<ul>
+<li class="toclevel-2 tocsection-69"><a href="index.php%3Ftitle=ProxMox.html#Novell_Netware"><span class="tocnumber">20.1</span> <span class="toctext">Novell Netware</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-70"><a href="index.php%3Ftitle=ProxMox.html#Sauvegarde.2FRestauration_.26_Migration"><span class="tocnumber">21</span> <span class="toctext">Sauvegarde/Restauration &amp; Migration</span></a>
+<ul>
+<li class="toclevel-2 tocsection-71"><a href="index.php%3Ftitle=ProxMox.html#Des_VM"><span class="tocnumber">21.1</span> <span class="toctext">Des VM</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Nouveaut.C3.A9s_de_la_version_5.0_B.C3.A9ta">Nouveautés de la version 5.0 Béta</span></h2>
+<ul><li> <i>ifconfig</i> a disparu, remplacée par <i>ip</i>. Pour la retrouver&#160;:</li></ul>
+<pre>apt-get install net-tools
+</pre>
+<h2><span class="mw-headline" id="Migrer_un_conteneur_OpenVZ_en_LXC">Migrer un conteneur OpenVZ en LXC</span></h2>
+<p>Toutes les <a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/Convert_OpenVZ_to_LXC">infos</a>
+</p>
+<ul><li> Sur le noeud 3.X&#160;:</li></ul>
+<pre>pvesm status
+vzctl stop CTID &amp;&amp; vzdump CTID -storage local
+</pre>
+<p>Si vous récupérez une erreur&#160;:
+</p>
+<pre>can't use storage for backups - wrong content type
+</pre>
+<p>Vous devez, activer les backups locaux. Depuis la GUI&#160;: Datacenter/Storage/local/Edit/Content/OpenVZ Backup Files/OK
+</p>
+<ul><li> Transférez le backup du noeud 3.X au noeud 5.0&#160;:</li></ul>
+<pre>scp root@Noeud3:/var/lib/vz/dump/vzdump-openvz-CTID-DATE.tar root@Noeud5:
+pct restore  CTID /var/lib/vz/dump/vzdump-openvz-CTID-DATE.tar -storage local-zfs
+pct set CTID -net0 name=eth0,bridge=vmbr0,ip=IP/MASK,gw=IP
+pct start CTID
+pct enter CTID
+</pre>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>Bare metal depuis un CD bootable
+Rien à dire dessus, next, next, next..
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<ul><li>  <a rel="nofollow" class="external free" href="https://@IP_srv:8006">https://@IP_srv:8006</a></li>
+<li> Modifier une interface réseau:</li></ul>
+<p>/Datacenter/Node/Network
+Inutile de mettre une passerelle.
+</p>
+<h2><span class="mw-headline" id="Support">Support</span></h2>
+<p>En dehors du support commercial payant&#160;: , vous avez les listes de diffusion&#160;: 
+Attention à bien fournir la sortie des ces deux commandes &#160;:
+</p>
+<pre>pveperf /var/lib/vz
+pveversion -v
+</pre>
+<h2><span class="mw-headline" id="Sources.list">Sources.list</span></h2>
+<p>Si vous êtes en test ou en recette&#160;:
+</p>
+<ul><li> /etc/apt/sources.list</li></ul>
+<pre>deb <a rel="nofollow" class="external free" href="http://ftp.fr.debian.org/debian">http://ftp.fr.debian.org/debian</a> wheezy main contrib
+# security updates
+deb <a rel="nofollow" class="external free" href="http://security.debian.org/">http://security.debian.org/</a> wheezy/updates main contrib
+</pre>
+<ul><li>  /etc/apt/sources.list.d/pve-enterprise.list .</li></ul>
+<pre>deb <a rel="nofollow" class="external free" href="http://download.proxmox.com/debian">http://download.proxmox.com/debian</a> wheezy pve-no-subscription
+</pre>
+<p>Et afin de vérifier la signature des paquets&#160;:
+</p>
+<pre> wget <a rel="nofollow" class="external free" href="http://download.proxmox.com/debian/key.asc">http://download.proxmox.com/debian/key.asc</a>
+ gpg --with-fingerprint key.asc
+</pre>
+<pre>pub  1024D/9887F95A 2008-10-28 Proxmox Release Key &lt;proxmox-release@proxmox.com&gt;
+     Key fingerprint = BE25 7BAA 5D40 6D01 157D  323E C23A C7F4 9887 F95A
+sub  2048g/A87A1B00 2008-10-28
+</pre>
+<pre>apt-key add key.asc
+</pre>
+<h2><span class="mw-headline" id="Mise_en_cluster">Mise en cluster</span></h2>
+<p>La <a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/Proxmox_VE_2.0_Cluster">doc</a>
+</p>
+<ul><li> pvecm permet la mise en cluster.</li></ul>
+<pre>pvecm create moncluster-de-test
+</pre>
+<p>et aussitôt dans l'interface web onglet HA, des infos apparaissent.
+</p>
+<ul><li> Commandes </li></ul>
+<pre>pvecm status
+pvecm nodes
+</pre>
+<p>sur un autre noeud qu'on veut intégrer 
+</p>
+<pre>pvecm add IP_cluster
+</pre>
+<pre>copy corosync auth key
+stopping pve-cluster service
+backup old database
+waiting for quorum...OK
+generating node certificates
+merge known_hosts file
+restart services
+successfully added node 'arya' to cluster.
+
+* pvecm status
+* pvecm nodes
+</pre>
+<h2><span class="mw-headline" id="Stockage_r.C3.A9parti">Stockage réparti</span></h2>
+<p><a href="index.php%3Ftitle=Ceph.html" title="Ceph">Ceph</a>
+</p>
+<h2><span class="mw-headline" id="Mise_en_miroir_r.C3.A9seau_des_disques_:_drbd.2FLVM">Mise en miroir réseau des disques&#160;: drbd/LVM</span></h2>
+<p>La <a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/DRBD#Introduction">Doc</a>
+</p>
+<h3><span class="mw-headline" id="Mise_en_miroir_drbd">Mise en miroir drbd</span></h3>
+<pre>cfdisk /dev/sdb (crer une partition de type 8e = LVM)
+apt-get update
+apt-get install drbd8-utils
+vi /etc/drbd.d/r0.res
+</pre>
+<p><br />
+</p>
+<pre>resource r0 {
+ protocol C;
+ startup {
+   wfc-timeout  15;     # non-zero wfc-timeout can be dangerous (<a rel="nofollow" class="external free" href="http://forum.proxmox.com/threads/3465-Is-it-safe-to-use-wfc-timeout-in-DRBD-configuration">http://forum.proxmox.com/threads/3465-Is-it-safe-to-use-wfc-timeout-in-DRBD-configuration</a>)
+   degr-wfc-timeout 60;
+   become-primary-on both;
+ }
+ net {
+   cram-hmac-alg sha1;
+   shared-secret "M0NSECRET";
+   allow-two-primaries;
+   after-sb-0pri discard-zero-changes;
+   after-sb-1pri discard-secondary;
+   after-sb-2pri disconnect;
+ }
+ syncer { rate 50M; }
+ on prox-t1 {
+   device /dev/drbd0;
+   disk /dev/sdb1;
+   address 1.0.0.1:7788;
+   meta-disk internal;
+ }
+ on prox-t2 {
+   device /dev/drbd0;
+   disk /dev/sdb1;
+   address 1.0.0.2:7788;
+   meta-disk internal;
+ }
+</pre>
+<p><br />
+A recopier sur les réplicats
+</p>
+<pre>drbdadm create-md r0
+drbdadm up r0
+</pre>
+<pre>/etc/init.d/drbd start
+</pre>
+<ul><li>Sur le premier noeud</li></ul>
+<pre>drbdadm -- --overwrite-data-of-peer primary r0
+</pre>
+<ul><li> surveillez la première synchro&#160;:</li></ul>
+<pre>watch cat /pro/drbd
+</pre>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.drbd.org/users-guide/s-configure-sync-rate.html">Infos </a> sur la régulation de la bande passante pour la synchronisation.</li>
+<li> Dans le cadre de la haute dispo, il est <a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/DRBD#Recovery_from_communication_failure">conseillé</a> de faire deux volumes drbd; un pour la prod, un pour les tests.</li></ul>
+<h3><span class="mw-headline" id="Montage_du_gestionnaire_de_volume_LVM">Montage du gestionnaire de volume LVM</span></h3>
+<p>La <a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/DRBD#LVM_configuration">doc</a>.
+</p>
+<ul><li> Fichier <i>/etc/lvm/lvm.conf'</i>, ligne 68&#160;:</li></ul>
+<p>Remplacer
+</p>
+<pre>filter = [ "a/.*/" ]
+</pre>
+<p>par
+</p>
+<pre>filter = [ "r|/dev/sdb1|", "r|/dev/disk/|", "r|/dev/block/|", "a/.*/" ]
+</pre>
+<ul><li> Sur <b>un</b> noeud&#160;:</li></ul>
+<pre>pvcreate /dev/drbd0
+</pre>
+<p>En cas de souci, un redémmarage du serveur capricieux suffit.
+</p>
+<pre>vgcreate drbdvg /dev/drbd0
+</pre>
+<ul><li> Sur l'interface Web&#160;:</li></ul>
+<p>Datacenter/Storage/Add/LVMGroup
+</p><p><a href="./index.php%3Ftitle=Fichier:Lvm.png.html" class="image"><img alt="Lvm.png" src="images/e/e4/Lvm.png" width="607" height="173" /></a>
+</p><p>Vous voyez apparaître simultanément sur les noeuds un nouvel espace de stockage
+</p><p>Maintenant vous pouvez créer une VM sur un espace partagé et tester une migration en ligne&#160;:
+</p>
+<pre>starting migration of VM 102 to node 'prox-t1' 
+copying disk images
+migration finished successfuly (duration 00:00:01)
+TASK OK
+</pre>
+<p>Fun!
+</p>
+<h2><span class="mw-headline" id="R.C3.A9seau">Réseau</span></h2>
+<h3><span class="mw-headline" id="Seconde_carte_r.C3.A9seau_physique">Seconde carte réseau physique</span></h3>
+<ul><li>Ajoutez un pont LInux (vmbr1), configurez-le comme il faut.</li></ul>
+<p>Inutile d'ajouter de seconde passerelle, d'ailleurs.
+</p>
+<pre>cp /etc/network/interfaces.new /etc/network/interfaces
+ifdown vmbr1 &amp;&amp; ifup vmbr1
+</pre>
+<h3><span class="mw-headline" id="Agr.C3.A9gation_de_liens_r.C3.A9seaux">Agrégation de liens réseaux</span></h3>
+<p>La <a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/Network_Model">doc</a>
+</p>
+<ul><li> Sur l'interface&#160;: <i>Create/Bond</i></li>
+<li> Slaves&#160;: Collez, avec un espace les cartes réseau</li>
+<li> Mode&#160;: <i>802.3ad</i> pour coller aux switches</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Bond.png.html" class="image"><img alt="Bond.png" src="images/d/df/Bond.png" width="602" height="192" /></a>
+</p>
+<ul><li> N'oubliez pas de modifier la <a href="index.php%3Ftitle=ProxMox.html#Mise_en_miroir_drbd" title="ProxMox"> config drbd</a>.</li></ul>
+<h2><span class="mw-headline" id="ProxMox_en_Raid_Soft">ProxMox en Raid Soft</span></h2>
+<p>Par défaut, ProxMox ne permet pas de monter en Raid1 Soft . Il faut le faire à la main&#160;:
+- <a rel="nofollow" class="external text" href="http://www.mbardot.com/installation-de-proxmox-ve-en-raid1-logiciel/">l'idée de base</a>
+</p><p>Un peu veillot, et plus à jour, mais l'idée est bien là.
+</p><p>Attention, j'ai flingué une install fonctionnelle de ProxMoX avec ça!!!
+</p><p><br />
+Le plus simple, en fait est de faire un install debian Wheezy 64 en raid1, puis de suivre la <a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_Wheezy">doc</a>&#160;:
+</p>
+<pre>cfdisk /dev/sda ou b
+                    
+         Nom                             Ind.                          Partition                   S. Fic.                                    [Étiq.]                             Taille (Mo)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                        Pri/Log                    Espace libre                                                                          1,05                    *
+         sda1                            Amorce                         Primaire                   linux_raid_m                               [ProxHome:0]                           39998,99                    *
+         sda2                                                           Primaire                   swap                                                                              19999,50                    *
+         sda3                                                           Primaire                   linux_raid_m                               [ProxHome:1]                         1440300,93                    *
+</pre>
+<p><s>J'ai tout monté en ext3, rien en LVM</s>
+C'est une idiotie; il faut partir soit en LVM, soit en ext4 pour bénéficier des quotas user sur la partition
+</p>
+<ul><li> Les repositories:</li></ul>
+<pre> vi /etc/apt/sources.list
+
+deb <a rel="nofollow" class="external free" href="http://debian.proxad.net/debian/">http://debian.proxad.net/debian/</a> wheezy main contrib
+deb-src <a rel="nofollow" class="external free" href="http://debian.proxad.net/debian/">http://debian.proxad.net/debian/</a> wheezy main
+deb <a rel="nofollow" class="external free" href="http://security.debian.org/">http://security.debian.org/</a> wheezy/updates main contrib 
+deb-src <a rel="nofollow" class="external free" href="http://security.debian.org/">http://security.debian.org/</a> wheezy/updates main
+deb <a rel="nofollow" class="external free" href="http://debian.proxad.net/debian/">http://debian.proxad.net/debian/</a> wheezy-updates main
+deb-src <a rel="nofollow" class="external free" href="http://debian.proxad.net/debian/">http://debian.proxad.net/debian/</a> wheezy-updates main
+# PVE repository provided by proxmox.com, only for installation (this repo will stay on 3.1)
+deb <a rel="nofollow" class="external free" href="http://download.proxmox.com/debian">http://download.proxmox.com/debian</a> wheezy pve
+</pre>
+<ul><li> MaJ</li></ul>
+<pre>wget -O- "<a rel="nofollow" class="external free" href="http://download.proxmox.com/debian/key.asc">http://download.proxmox.com/debian/key.asc</a>" | apt-key add -
+apt-get update &amp;&amp; apt-get dist-upgrade
+apt-get install pve-firmware pve-kernel-2.6.32-26-pve
+</pre>
+<ul><li> Le Noyo</li></ul>
+<pre>grep menuentry /boot/grub/grub.cfg
+</pre>
+<p>On compte le bon noyau en partant de 0; on devrait trouver 2
+</p><p>Remplacer la valeur de DEFAULT:
+</p>
+<pre> vi /etc/default/grub 
+ update-grub2
+ uname -a
+ reboot
+</pre>
+<pre> uname -a
+ apt-get remove linux-image-amd64 linux-image-3.2.0-4-amd64 linux-base
+ update-grub
+ reboot
+</pre>
+<pre> apt-get install proxmox-ve-2.6.32 ntp ssh lvm2 postfix ksm-control-daemon vzprocps open-iscsi bootlogd
+</pre>
+<ul><li> Système satellite pour postfix</li></ul>
+<p><br />
+Vérifiez que l'interface <a rel="nofollow" class="external free" href="https://IP:8006">https://IP:8006</a> répond bien puis modifiez /etc/network/interfaces
+</p>
+<pre>auto lo
+iface lo inet loopback
+iface eth0 inet manual
+auto vmbr0
+iface vmbr0 inet static
+       address  10.0.0.20
+       netmask  255.255.255.0
+       gateway  10.0.0.5
+       bridge_ports eth0
+       bridge_stp off
+       bridge_fd 0
+</pre>
+<pre>reboot
+</pre>
+<ul><li> Modifiez le sources.list pour les paquets de prod: Remplacez la dernière ligne proxmox par&#160;:</li></ul>
+<pre>deb <a rel="nofollow" class="external free" href="https://enterprise.proxmox.com/debian">https://enterprise.proxmox.com/debian</a> wheezy pve-enterprise
+</pre>
+<p>si vous avez payé (BIEN)
+</p>
+<pre>deb <a rel="nofollow" class="external free" href="http://download.proxmox.com/debian">http://download.proxmox.com/debian</a> wheezy pve-no-subscription
+perl -pi -e 's/pve-enterprise/pve-no-subscription/' /etc/apt/sources.list.d/pve-enterprise.list
+</pre>
+<p>si vous n'avez pas payé (MAL)
+</p>
+<pre> apt-get update &amp;&amp; apt-get dist-upgrade
+</pre>
+<p>Done&#160;!
+</p>
+<h2><span class="mw-headline" id="Gestion_des_VM.2FCT">Gestion des VM/CT</span></h2>
+<ul><li> VM = Machine virtuelle&#160;: KVM= tout type d'OS</li>
+<li> CT= Container&#160;: OpenVZ = Linux Only</li></ul>
+<h3><span class="mw-headline" id="Machine_KVM">Machine KVM</span></h3>
+<h4><span class="mw-headline" id="Perfs">Perfs</span></h4>
+<ul><li> Pour garder la compatibilité maxi&#160;:
+<ul><li> Disque IDE</li>
+<li> Carte Intel E1000</li>
+<li> partition qcow2</li></ul></li></ul>
+<p>Attention, il y a une limite autour de 2 To pour les disques.
+</p>
+<ul><li> Pour avoir les meilleures perfs&#160;: 
+<ul><li> Disque Virtio</li>
+<li> Carte Virtio</li>
+<li> Partition raw</li>
+<li> No cache</li>
+<li> CPU HOst</li></ul></li></ul>
+<p>Attention, en mode raw, les disques sont en thick provisionning, vous utilisez tout de suite la place décrite. Sinon, choisissez le format qcow2, thin provisionning, qui augmente en live la taille du disque image et permet les snapshots!
+</p><p><br />
+<a rel="nofollow" class="external text" href="https://forum.proxmox.com/threads/2916-Tuning-KVM">Source</a>
+</p><p><a rel="nofollow" class="external autonumber" href="http://blog.jdpfu.com/2012/07/30/improving-kvm-performance">[1]</a>
+</p>
+<h3><span class="mw-headline" id="Container_LXC">Container LXC</span></h3>
+<p>C'est la virtualisation sans perte de perf; le noyau invité utilise le noyau hôte. Des templates ont été créés par la société et sont librement téléchargeables et ( Si le fait de télécharger et d'installer un binaire inconnu comme VM ne vous effraie pas..)
+</p><p>La <a rel="nofollow" class="external text" href="https://pve.proxmox.com/wiki/Linux_Container#pct_container_images">doc complète</a>.
+</p><p>En résumé&#160;:
+</p>
+<pre>pveam update
+pveam available --section system
+pveam download local  debian-9.0-standard_9.0-2_amd64.tar.gz
+</pre>
+<p>Si c'est sur un stockage partagé, tous les noeuds de virtualisation auront accès au template.
+</p>
+<h3><span class="mw-headline" id="Allocation_des_espaces_disques">Allocation des espaces disques</span></h3>
+<p>Chez les autres, on appelle ça le <i>thin provisionning</i>&#160;!
+</p><p>On peut créer des VM dont l'espace n'est pas immédiatement alloué, mais l'est au fur et ) mesure, dans la limite de l'espace annoncé au départ.
+</p><p>Un bon <a rel="nofollow" class="external text" href="http://c-nergy.be/blog/?p=1004">résumé</a>.
+</p><p>Bref&#160;:
+</p>
+<ul><li> Mode raw&#160;:plus rapide, allocation immédiate de l'espace disque</li>
+<li> Mode qcow2&#160;: Permet les snapshot, allocation selon les besoins.</li></ul>
+<h4><span class="mw-headline" id="Et_en_cas_d.27espace_disque_trop_petit_.3F.3F">Et en cas d'espace disque trop petit&#160;??</span></h4>
+<p>Avec un container, c'est désarmant de simplicité&#160;: Sur l'interface web de ProxmoX, choisir la VM, resources,disk,edit,OK et instantanément, vous avez gagné de l'espace disque..
+</p><p>Pas de reboot, pas de resize du fs, le tout à chaud....
+</p>
+<h2><span class="mw-headline" id="Sp.C3.A9cificit.C3.A9s_OS">Spécificités OS</span></h2>
+<h3><span class="mw-headline" id="OpenBSD.2FKVM">OpenBSD/KVM</span></h3>
+<p>Les drivers virtio pour disques et nic existent et sont préférables.
+</p><p>En revanche si vous ajoutez une seconde carte virtio, alors vous devrez éteindre puis rallumer la VM, pas de reboot sinon la vio1 n'apparait pas.
+</p>
+<h3><span class="mw-headline" id="Container_OpenVZ">Container OpenVZ</span></h3>
+<p>VOus ne pouvez pas charger de modules dans un container&#160;!
+Donc pas d'OpeVPN etc..
+</p><p>Solution&#160;:
+<a rel="nofollow" class="external autonumber" href="http://openvpn.net/index.php/access-server/docs/admin-guides/186-how-to-run-access-server-on-a-vps-container.html">[2]</a>
+</p>
+<h2><span class="mw-headline" id="Migration_de_machine">Migration de machine</span></h2>
+<h3><span class="mw-headline" id="Migration_manuelle_d.27une_machine_dans_ProxMox">Migration manuelle d'une machine dans ProxMox</span></h3>
+<p>Il faut que le CD virtuel soit démonté.
+Tout se fait à base d'outils éprouvés SSH,Rsync,..
+</p>
+<ul><li> Si la machine est sur un stockage local, il faut la recopier entièrement... Ici 7 minutes</li></ul>
+<pre>starting migration of VM 100 to node 'prox-t1' (IP)
+copying disk images
+vm-100-disk-1.raw
+rsync status: 32768 0% 0.00kB/s 0:00:00
+rsync status: 60784640 1% 11.18MB/s 0:07:43
+...
+rsync status: 5368709120 100% 11.14MB/s 0:07:39 (xfer#1, to-check=0/1)
+sent 5369364559 bytes received 31 bytes 11659857.96 bytes/sec
+total size is 5368709120 speedup is 1.00
+migration finished successfuly (duration 00:07:41)
+TASK OK
+</pre>
+<ul><li> Si la machine est sur un volume drbd partagé, c'est plus..rapide</li></ul>
+<pre>starting migration of VM 103 to node 'prox-t2' (IP)
+copying disk images
+migration finished successfuly (duration 00:00:01)
+TASK OK
+</pre>
+<p>Moins de 1 seconde&#160;!
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Migration_manuelle_d.27un_container_OpenVZ">Migration manuelle d'un container OpenVZ</span></h3>
+<p><a rel="nofollow" class="external autonumber" href="https://openvz.org/Migration_from_one_HN_to_another">[3]</a>
+</p><p>Après avoir mis en place l'authentification par clés SSH,
+</p>
+<pre>Old_SRV:#&gt; vzmigrate New_SRV Container_Id
+</pre>
+<h2><span class="mw-headline" id="Haute_disponibilit.C3.A9_.3D_HA">Haute disponibilité = HA</span></h2>
+<p>Prérequis&#160;:
+</p>
+<ul><li> 3 noeuds (Avec 2, on ça marche <a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/Two-Node_High_Availability_Cluster">avec quelques bricolages</a>)</li>
+<li> 1 stockage partagé (drbd,SAN)</li>
+<li> Une carte IPMI/ILO/IDRAC dans chaque serveur</li></ul>
+<h3><span class="mw-headline" id="Fencing">Fencing</span></h3>
+<p>Appelé STONITH (Shoot the other node in the head&#160;: Tire lui une balle en pleine tête), ça permet de de ne démarrer électriquement l'autre noeud qu'au bon moment afin d'avoir des données synchronisées sur le stockage. Il faut pour cela que chaque noeud tienne l'autre par la barbichette de la carte ILO/IDRAC/IPMI..
+La <a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/Fencing">doc</a>
+</p>
+<h3><span class="mw-headline" id="Interface">Interface</span></h3>
+<p>Datacenter/HA/HA Managed VM/CT
+</p>
+<ul><li> On ajoute la machine à la haute dispo et on active les changements.</li></ul>
+<h2><span class="mw-headline" id="Authentification_sur_l.27interface_de_management">Authentification sur l'interface de management</span></h2>
+<p>Nouveautés de la 3.3&#160;:
+</p>
+<ul><li> Authentification LDAP/AD </li>
+<li> Authentification forte</li></ul>
+<h3><span class="mw-headline" id="Authentification_LDAP.2FAD">Authentification LDAP/AD</span></h3>
+<h3><span class="mw-headline" id="Authentification_forte">Authentification forte</span></h3>
+<p>Avec les <a href="index.php%3Ftitle=Authentification_Forte.html" title="Authentification Forte">Authentification_Forte</a> Yubikey, on va pouvoir jouer&#160;: <a rel="nofollow" class="external autonumber" href="http://pve.proxmox.com/wiki/Two-Factor_Authentication#YubiKey">[4]</a>
+Au préalable, récupérez l'API Yubico&#160;: <a rel="nofollow" class="external autonumber" href="https://upgrade.yubico.com/getapikey/">[5]</a> qui vous donne:
+</p>
+<ul><li>  Votre ID client (5 chiffres) </li>
+<li>  Votre API key (appelée Secret Key)</li></ul>
+<p><br />
+Commencez par créer un user dédié (Realm&#160;: Proxmox VE Authentication) , et restez connecté en root sur un autre navigateur pendant ces tests.
+</p><p>Permettre l'auth forte sur le serveur ProxMox&#160;:
+</p>
+<ul><li> Datacenter</li>
+<li> Onglet Authentication</li>
+<li> PVE / Edit</li>
+<li> Cliquer sur TFA (Two Factor Authentication)
+<ul><li> Yubico API Id: Copiez la Client ID</li>
+<li> Yubico API Key&#160;: Copiez la API (Secret donc) Key</li>
+<li> Yubico API URL&#160;: Vide</li></ul></li></ul>
+<p>Ensuite pour chaque user&#160;:
+</p><p>La clé utilisateur, à copier/coller dans le champ Keys Id pour chaque user.
+Pour cela, sélectionnez le champ Key Id et caressez la yubikey. Gardez les 12 premiers caractères.
+</p><p><br />
+Désormais (enfin dans 5 minutes, le temps de mettre à jour la base des serveurs Yubico) pour se connecter, votre utilisateur  doit fournir login + Password + OTP de la clé Yubikey enregistrée&#160;!
+</p>
+<h5><span class="mw-headline" id="Depuis_un_smartphone_NFC">Depuis un smartphone NFC</span></h5>
+<p>Sous Android, installez Yubiclip.
+Lors de l'authentification sur l'interface web de Proxmox, rentrez vos logins, mot de passe, puis passez le Yubikey Neo (avec Tag NFC) derrière le smartphone. Yubiclip vous propose de copier/coller l'OTP dans le presse-papier. Il ne reste plsu qu'à coller le tout dans le champ correspondant.
+</p>
+<h3><span class="mw-headline" id="R.C3.B4les_et_permissions">Rôles et permissions</span></h3>
+<p>Classiquement, on crée un groupe auquel on adjoint une permission (path = /) et on colle les utilisateurs dedans.
+Les <a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/User_Management#Roles">| rôles</a> Proxmox.
+</p>
+<h2><span class="mw-headline" id="Firewall_du_cluster">Firewall du cluster</span></h2>
+<h2><span class="mw-headline" id="Interface_2">Interface</span></h2>
+<h3><span class="mw-headline" id="CLI">CLI</span></h3>
+<h4><span class="mw-headline" id="OpenVZ">OpenVZ</span></h4>
+<ul><li> Plutôt que de passer par la lourde interface web, utilisez l'outil adapté&#160;:<a rel="nofollow" class="external autonumber" href="http://openvz.livejournal.com/40599.html">[6]</a> et <a rel="nofollow" class="external autonumber" href="http://openvz.org/User_Guide/Operations_on_Containers">[7]</a></li></ul>
+<p>Depuis la console serveur de ProxMoX
+</p>
+<h5><span class="mw-headline" id="Acc.C3.A9der_.C3.A0_la_console_du_container_:">Accéder à la console du container&#160;:</span></h5>
+<pre> vzctl console ID_VM
+</pre>
+<p>Pour sortir de la console&#160;: <b>ESC .</b>
+</p>
+<h5><span class="mw-headline" id="Lister_les_CT_actifs">Lister les CT actifs</span></h5>
+<pre>vzlist
+</pre>
+<h5><span class="mw-headline" id="Lister_tous_les_CT">Lister tous les CT</span></h5>
+<pre>vzlist -a
+</pre>
+<h5><span class="mw-headline" id="D.C3.A9marrer_un_CT">Démarrer un CT</span></h5>
+<pre>vzctl start VM_ID
+</pre>
+<h5><span class="mw-headline" id="Reset_Password">Reset Password</span></h5>
+<pre>vzctl set VE_ID --userpasswd root:newpasswd --save
+</pre>
+<p>Evidemment, ça marche moins bien avec des caractères interprétés par le shell&#160;:_)
+</p>
+<h5><span class="mw-headline" id="Mettre_en_place_la_config_IP_du_CT">Mettre en place la config IP du CT</span></h5>
+<pre>vzctl set VM_ID --ipadd IP --save
+</pre>
+<p>Pour la route par déaut, ce sera celle de l'hôte ProxMox
+</p><p><br />
+</p>
+<h5><span class="mw-headline" id="Monter_dans_le_CT_un_disque_de_l.27h.C3.B4te">Monter dans le CT un disque de l'hôte</span></h5>
+<ul><li> Hôte&#160;:</li></ul>
+<pre>mount /dev/sdc1 /mnt/
+mount -n  --bind  /mnt/ /var/lib/vz/root/100/mnt/
+</pre>
+<p>Done&#160;!
+</p><p>Et dans le cas d'un montage permanent&#160;:
+</p>
+<ul><li> Hôte&#160;:</li></ul>
+<pre>mkdir -p /mnt/backup
+</pre>
+<p>/etc/fstab:
+</p>
+<pre>/dev/sdc1       /mnt/backup     auto    rw,user,noauto  0       0
+/mnt/backup	/var/lib/vz/root/100/backup/	none	bind	0	0
+</pre>
+<ul><li> Invité</li></ul>
+<pre>mkdir -p /backup
+</pre>
+<h5><span class="mw-headline" id="Gestion_du_volume_disque_du_container_.3D">Gestion du volume disque du container =</span></h5>
+<ul><li> Je suis dans le bon container</li></ul>
+<pre>cat /var/lib/vz/root/CTID/etc/hostname 
+</pre>
+<ul><li>Quelle place occupée</li></ul>
+<pre>vzctl exec CTID df -h
+</pre>
+<ul><li> On augmente <b>a chaud et instantanément</b></li></ul>
+<pre> vzctl set CTID --diskspace 300G:320G --save
+</pre>
+<h5><span class="mw-headline" id="Ajouter_un_disque_en_LVM_sur_l.27h.C3.B4te">Ajouter un disque en LVM sur l'hôte</span></h5>
+<p><a rel="nofollow" class="external autonumber" href="http://pve.proxmox.com/wiki/Storage_Model#LVM_Groups_with_Local_Backing">[8]</a>
+</p>
+<pre>fdisk /dev/sdXX
+</pre>
+<p>Ajouter partition type 8E
+</p>
+<pre>pvcreate /dev/sdb1
+vgcreate MON-vol /dev/sdb1
+</pre>
+<p>Puis dans l'interface proxmox , Datacenter/Storage/Add
+</p>
+<h5><span class="mw-headline" id="Gestion_de_la_p.C3.A9nurie_d.27IPv4">Gestion de la pénurie d'IPv4</span></h5>
+<p>Vous avez loué un dédié et n'avez qu'une IP et plusieurs VMs dessus.
+Suivez <a rel="nofollow" class="external text" href="http://guides.ovh.com/Proxmox#link9">ça</a>
+</p>
+<ul><li> Créez des VM en mode NAT (Choix de vnenet) avec une @IP en RFC 1918 (genre 10.0.0.101)</li>
+<li> Sur l'hôte, nattez les ports&#160;:</li></ul>
+<pre>iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o vmbr0 -j SNAT --to IP_Hote_Proxmox
+iptables -t NAT -L -n
+</pre>
+<p>Puis redirigez les ports utiles, ici SSH
+</p>
+<pre>iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 1022 -j DNAT --to 10.0.0.101:22
+iptables -t nat -n -L
+</pre>
+<p>Puis ensuite, mettez un <a href="index.php%3Ftitle=NginX.html#Reverse_Proxy" title="NginX"> proxy reverse</a>
+</p>
+<h4><span class="mw-headline" id="KVM">KVM</span></h4>
+<h5><span class="mw-headline" id="Acc.C3.A8s">Accès</span></h5>
+<p>Pour activer Spice, vous devez éditer (VM/onglet Harware/Diplay) display et mettre SPICE, puis console&#160;: SPice
+Une fois une fenêtre sélectionnée, faites un CTRL+ALT+R pour en sortir.
+</p>
+<h3><span class="mw-headline" id="Debug">Debug</span></h3>
+<h4><span class="mw-headline" id="Impossible_d.27ajouter_un_h.C3.B4te_au_cluster">Impossible d'ajouter un hôte au cluster</span></h4>
+<pre>pvecm add CLUSTER
+unable to copy ssh ID: ERROR no-identities found
+</pre>
+<p>Essayez une connexion ssh vers le cluster. Si ça ne fonctionne pas, régénérez une nouvelle clé (ssh-keygen)
+</p>
+<h4><span class="mw-headline" id="L.27install_depuis_une_debian_Wheezy_ne_fonctionne_pas">L'install depuis une debian Wheezy ne fonctionne pas</span></h4>
+<pre>Starting pve cluster filesystem&#160;: pve-cluster[main] crit: Unable to get local IP address
+</pre>
+<p>Vérifiez le /etc/hosts qui ne doit pas contenir d'horreur, genre&#160;:
+</p>
+<pre>127.0.1.1 Prox
+</pre>
+<p>voire 
+</p>
+<pre>127.0.0.1 Prox
+</pre>
+<h4><span class="mw-headline" id="Les_containers_restaur.C3.A9s_ne_d.C3.A9marrent_pas">Les containers restaurés ne démarrent pas</span></h4>
+<pre>Unable to start init, probably incorrect template
+</pre>
+<p>Vous avez restauré un CT et oublié le template associé.
+Genre 64bits au lieu de 32..
+</p>
+<h4><span class="mw-headline" id="Ecran_blanc">Ecran blanc</span></h4>
+<p>..Vous n'auriez pas désactivé Javascript ,??
+</p>
+<h4><span class="mw-headline" id="La_connexion_avec_le_serveur_a_.C3.A9t.C3.A9_r.C3.A9initialis.C3.A9e_pendant_le_chargement_de_la_page.">La connexion avec le serveur a été réinitialisée pendant le chargement de la page.</span></h4>
+<p>et dans les logs (/var/log/daemon.log)&#160;:
+</p>
+<pre>pveproxy[PID]: problem with client .... rsa_padding_check_pkcs1_type_1: block type is not 01
+pveproxy[PID]: WARNING: Can't call method "timeout_reset" on an undefined value at /usr/share/perl5/PVE/HTTPServer.pm line 172.
+</pre>
+<p>Videz le cache du browser;
+Ca m'est arrivé lors d'une réinstall d'un serveur proxmox sur la même IP avec le même FQDN et ddonc des certificats différents. Videz le cache, voire le magasin de certificats
+</p>
+<h4><span class="mw-headline" id="La_console_ne_fonctionne_pas">La console ne fonctionne pas</span></h4>
+<p>Pour avoir la console des VM, vous devez utiliser la machine java de Sun, pas une autre..Non, non même libre, c'est Sun, point barre!
+</p><p>Sur une Debian <a href="index.php%3Ftitle=Wheezy.html" title="Wheezy">Wheezy</a>, utilser chrome avec le plugin java from sun et la manip spéciale chrome indiquée.
+</p><p>Sur une Ubuntu <a rel="nofollow" class="external text" href="http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html">12.04</a>
+</p>
+<h4><span class="mw-headline" id="Les_machines_KVM_ne_d.C3.A9marrent_pas">Les machines KVM ne démarrent pas</span></h4>
+<ul><li> avec un message "No accelerator found"</li></ul>
+<p>Tester juste pour voir 
+</p>
+<pre>egrep '^flags.*(vmx|svm)' /proc/cpuinfo
+</pre>
+<p>et vérifiez que vous avez une réponse non-nulle...
+</p><p>Si ce n'est pas le cas, votre CPU (Celeron, Atom,..) ne supporte pas les instructions de virtualisation; pas de KVM, donc pas de VM windows,etc...&#160;! Dommage
+</p>
+<ul><li> Avec un message&#160;: <i>Could not access KVM kernel module: No such file or directory</i></li></ul>
+<p>failed to initialize KVM: No such file or directory
+</p><p>Vous avez un CPU avec les instructions VT, mais ces dernières ne osnt pas activées; allez faire un tour dans le bios
+</p>
+<h4><span class="mw-headline" id="Par_OS">Par OS</span></h4>
+<h5><span class="mw-headline" id="OpenBSD">OpenBSD</span></h5>
+<p>Au boot de la VM,;
+</p>
+<pre>Fatal protection fault in supervisor mode
+panic&#160;: trap type 4
+</pre>
+<p><a rel="nofollow" class="external autonumber" href="https://www.virtualbox.org/ticket/3947">[9]</a>
+</p><p>Choisissez le type de CPU par défaut, amd64 (et pas host)
+</p>
+<h3><span class="mw-headline" id="T.C3.A9l.C3.A9chargement_d.27une_image_ISO_de_boot_CD">Téléchargement d'une image ISO de boot CD</span></h3>
+<ul><li>VM&#160;: KVM</li></ul>
+<p>Sur l'interface datacenter/Server/local, vous avez un onglet <b>Content</b>, puis un bouton <b>Upload</b>.
+</p>
+<ul><li>Container&#160;:OpenVZ</li></ul>
+<p>Sur l'interface datacenter/Server/local, vous avez un onglet <b>Content</b>, puis un bouton <b>Templates</b>.
+</p><p><br />
+Tout est collé dans <i>/var/lib/vz/template/iso/</i> par défaut que ce soit pour un CT ou une VM
+</p>
+<h4><span class="mw-headline" id="Pour_avoir_des_CT_en_adm64_et_pas_uniquement_en_i386">Pour avoir des CT en adm64 et pas uniquement en i386</span></h4>
+<p>Il faut aller les chercher à la main&#160;:
+<a rel="nofollow" class="external free" href="http://download.proxmox.com/appliances/system/">http://download.proxmox.com/appliances/system/</a>
+</p>
+<h2><span class="mw-headline" id="Passer_du_test_.C3.A0_la_prod">Passer du test à la prod</span></h2>
+<h3><span class="mw-headline" id="Prot.C3.A9ger_l.27h.C3.B4te_:_Firewall">Protéger l'hôte&#160;: Firewall</span></h3>
+<p>sur l'hôte&#160;:
+</p>
+<pre>apt-get install ufw
+ufw deny in on eth_WAN to any from  any port 8006 proto tcp
+ufw default allow outgoing
+ufw allow ssh
+ufw deny 3306/tcp (Sans Cluster proxmox, pas de souci)
+ufw enable
+ufw status
+</pre>
+<h3><span class="mw-headline" id="Prot.C3.A9ger_l.27h.C3.B4te_:_IP_publique">Protéger l'hôte&#160;: IP_publique</span></h3>
+<p>Pourquoi mettre une @IP sur l'interface publique de votre serveur&#160;?
+</p><p>Supprimez la&#160;:
+</p>
+<pre>iface eth0 inet manual
+</pre>
+<pre>auto vmbr_WAN
+iface vmbr_WAN inet manual
+       bridge_ports eth0
+       bridge_stp off
+       bridge_fd 0
+</pre>
+<h3><span class="mw-headline" id="Monitorer_l.27h.C3.B4te">Monitorer l'hôte</span></h3>
+<p>Pour les guests&#160;: <a href="index.php%3Ftitle=Munin.html" title="Munin">Munin</a>
+</p>
+<h2><span class="mw-headline" id="Virtualisation_d.27une_machine_physique">Virtualisation d'une machine physique</span></h2>
+<p>La <a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/Migration_of_servers_to_Proxmox_V">doc</a>.
+</p>
+<h3><span class="mw-headline" id="Novell_Netware">Novell Netware</span></h3>
+<p>Un (très) vieux serveur sous Netware 5.X avec sa NDS,....Snif, ça me rappelle ma jeunesse...
+</p><p>Ce serait dommage de le laisser disparaître.
+Et puis surtout, il y a dessus une appli indispensable dont plus personne n'a le source, ni le mode d'emploi et qui est une appli critique pour le service... 
+</p><p>Bref, va falloir la garder sur le nouveau serveur hexacore. ==&gt; On migre, Du Pii-too-vii (Physical to Virtual):
+</p>
+<ul><li> Une <a rel="nofollow" class="external text" href="http://blog.sandbarsolutions.com/2009/07/netware-p2v-migration-to-vmware-esxi.html">doc</a> pour ESX</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Sauvegarde.2FRestauration_.26_Migration">Sauvegarde/Restauration &amp; Migration</span></h2>
+<h3><span class="mw-headline" id="Des_VM">Des VM</span></h3>
+<p>Une <a rel="nofollow" class="external text" href="http://wiki.openvz.org/Backup_of_a_running_container_with_vzdump">doc</a>
+</p>
+<pre>vzdump Numéro_de_la_VM --dumpdir /var/lib/vz/dump --mailto root --mode snapshot
+</pre>
+<p>Permet de ne pas interrompre la VM durant son fonctionnement.
+et vous recevez un mail en prime
+</p><p>vzrestore FIchier ID
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020090708
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 1.040 seconds
+Real time usage: 1.502 seconds
+Preprocessor visited node count: 282/1000000
+Preprocessor generated node count: 288/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:266-0!*!0!!fr!5!* and timestamp 20171020090707 and revision id 3446
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=ProxMox&amp;oldid=3446">http://www.openbsd-edu.net/index.php?title=ProxMox&amp;oldid=3446</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=ProxMox.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=ProxMox.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:ProxMox&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=ProxMox.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=ProxMox.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=ProxMox&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=ProxMox&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=ProxMox.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FProxMox.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Suivi_des_liens%252FProxMox.html" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=ProxMox&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=ProxMox&amp;oldid=3446" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=ProxMox&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 12 septembre 2017 à 19:56.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"1.040","walltime":"1.502","ppvisitednodes":{"value":282,"limit":1000000},"ppgeneratednodes":{"value":288,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020090708","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1349});});</script>
+	</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Authentification Forte — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Authentification_Forte","wgTitle":"Authentification Forte","wgCurRevisionId":3359,"wgRevisionId":3359,"wgArticleId":339,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Authentification_Forte","wgRelevantArticleId":339,"wgRequestId":"01296a9b136b0c291546dd1b","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Authentification_Forte rootpage-Authentification_Forte skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Authentification Forte</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Authentification_Forte.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Authentification_Forte.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>Parce que les mots de passe collés sous le clavier ont fait la joie des amuseurs de tout poil, on va passer au siècle suivant et profiter de quelques progrès technologiques. L'authentification deux facteurs pour pas cher.
+</p>
+<ul><li> Un certificat dans la clé USB&#160;? Trop facile à copier</li>
+<li> Le SMS reçu sur le smartphone&#160;? Il faut un émetteur de SMS.</li></ul>
+<p>J'ai longtemps utilisé les mots de passe jetables, OTP&#160;: <a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html" title="S/Key, les mots de passe jetables">S/Key,_les_mots_de_passe_jetables</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Authentification_Forte.html#Yubico"><span class="tocnumber">1</span> <span class="toctext">Yubico</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Authentification_Forte.html#YubiX.2C_le_framework_d.27authentification"><span class="tocnumber">1.1</span> <span class="toctext">YubiX, le framework d'authentification</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Authentification_Forte.html#Yubikey_Standard"><span class="tocnumber">1.2</span> <span class="toctext">Yubikey Standard</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Authentification_Forte.html#Yubikey_Neo"><span class="tocnumber">1.3</span> <span class="toctext">Yubikey Neo</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Authentification_Forte.html#YubiHSM"><span class="tocnumber">1.4</span> <span class="toctext">YubiHSM</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Authentification_Forte.html#Personnalisation_de_la_Yubikey"><span class="tocnumber">1.5</span> <span class="toctext">Personnalisation de la Yubikey</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=Authentification_Forte.html#Configuration_d.27un_slot_en_mode_OTP"><span class="tocnumber">1.5.1</span> <span class="toctext">Configuration d'un slot en mode OTP</span></a>
+<ul>
+<li class="toclevel-4 tocsection-8"><a href="index.php%3Ftitle=Authentification_Forte.html#Pour_vous_connecter"><span class="tocnumber">1.5.1.1</span> <span class="toctext">Pour vous connecter</span></a></li>
+<li class="toclevel-4 tocsection-9"><a href="index.php%3Ftitle=Authentification_Forte.html#Dans_les_logs_:"><span class="tocnumber">1.5.1.2</span> <span class="toctext">Dans les logs&#160;:</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Authentification_Forte.html#Vocabulaire"><span class="tocnumber">2</span> <span class="toctext">Vocabulaire</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Authentification_Forte.html#Liens"><span class="tocnumber">3</span> <span class="toctext">Liens</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Yubico">Yubico</span></h2>
+<p>Ils font des clés OTP matérielles au format USB + NFC. Pas chères, solides, avec beaucoup de softs et api fournis!
+</p>
+<h3><span class="mw-headline" id="YubiX.2C_le_framework_d.27authentification">YubiX, le framework d'authentification</span></h3>
+<p>Existe en <a rel="nofollow" class="external text" href="http://developers.yubico.com/yubix-vm/">| VM</a> 
+</p><p>Sur une Debian Jessie/64&#160;: On va activer les dépôts Ubuntu....Ben oui&#160;;-(
+</p>
+<pre>apt-get install software-properties-common python-software-properties
+add-apt-repository ppa:yubico/stable
+add-apt-repository ppa:yubico/yubix
+perl -pi -e 's/jessie/trusty/g' /etc/apt/sources.list.d/*
+apt-get update
+apt-get dist-upgrade
+</pre>
+<pre>apt-get install yubix
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Yubikey_Standard">Yubikey Standard</span></h3>
+<p>Au format USB, celle permet l'authentification à mot de passe unique,..
+Au niveau matériel&#160;:
+</p>
+<ul><li> Format USB</li>
+<li> Reconnue comme un clavier (attention aux formats exotiques, type BEPO)</li>
+<li> Dispose d'un compteur interne anti-rejeu</li>
+<li> Ne dispose pas de batterie pour maintenir une horloge.</li></ul>
+<p>La clé dispose de deux slots permettant de configurer de manières distinctes deux méthodes d'authentification:
+</p>
+<ul><li> Le slot 1 est accessible si on effleure la clé sur une durée comprise entre 0,3s et 1,5s;</li>
+<li> Le slot 2 est accessible si on effleure la clé sur une durée comprise entre 2 s et 5s.</li></ul>
+<p>La configuration d'usine de la clé est&#160;:
+</p>
+<ul><li> Slot 1&#160;: Mode OTP avec validation chez les serveurs Yubico (mode nommé <i>Yubico OTP</i>)</li>
+<li> Slot 2&#160;: Vide</li></ul>
+<h3><span class="mw-headline" id="Yubikey_Neo">Yubikey Neo</span></h3>
+<p>Ajoute au modèle précédent la partie NFC, donc authentification forte par smartphone.
+</p>
+<h3><span class="mw-headline" id="YubiHSM">YubiHSM</span></h3>
+<p>Un HSM à 500€ quant ses collègues sont à 20k€.... C'est par <a href="index.php%3Ftitle=HSM_-_Hardware_Security_Module.html" title="HSM - Hardware Security Module"> ici</a>
+</p>
+<h3><span class="mw-headline" id="Personnalisation_de_la_Yubikey">Personnalisation de la Yubikey</span></h3>
+<pre>apt-get install yubikey-personalization-gui
+yubikey-personalization-gui
+</pre>
+<p><a href="./index.php%3Ftitle=Fichier:YUbiGUI.png.html" class="image"><img alt="YUbiGUI.png" src="images/d/dc/YUbiGUI.png" width="600" height="486" /></a>
+</p><p>On voit (<i>Features supported</i>) que plusieurs modes d'authentification sont proposés par la clé&#160;:
+</p>
+<ul><li> OTP</li>
+<li> OATH-HOTP</li>
+<li> Mot de passe statique</li>
+<li> Mode scan Code</li>
+<li> Mode challenge-Réponse</li></ul>
+<p>Chacun de ces modes peut être mis en place sur un des deux slots disponibles (dont le premier est préconfiguré).
+</p>
+<h4><span class="mw-headline" id="Configuration_d.27un_slot_en_mode_OTP">Configuration d'un slot en mode OTP</span></h4>
+<ul><li> Choisissez <i>Yubico OTP</i>, puis <i>Advanced</i></li>
+<li> Choisissez le second slot</li>
+<li> Vous pouvez changer l'identité publique de la Yubikey (Bouton <i>Generate</i> ), en restant sous la barre des 6 caractères (sinon, vous perdez la compatibilité avec les outils builtin de chez Yubico)</li>
+<li> Vous pouvez changer l'identité privée de la Yubikey (Bouton <i>Generate</i> )</li>
+<li> Vous pouvez changer la clé secrète de la Yubikey (Bouton <i>Generate</i> )</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:YUbiGenerate.png.html" class="image"><img alt="YUbiGenerate.png" src="images/6/66/YUbiGenerate.png" width="600" height="121" /></a>
+</p><p>Ensuite, ne vous reste plus qu'à écrire la config dans le Yubikey.(Bouton <i>Write configuration</i>)
+</p><p>Le logiciel vous propose d'enregistrer un fichier .csv de log, au format&#160;:
+</p>
+<pre>Yubico OTP,DATE  HEURE, SLOT,ID PUB,ID PRIV ,  CLE SECRETE ,000000000000,000000000000,0,0,0,0,0,0,0,0,0,0
+</pre>
+<p>Si d'aventure vous vouliez réécrire la configuration de la clé, c'est impossible par défaut&#160;:
+</p><p><i>Yubikey could not be configured. Perhaps protected with configuration protection access code&#160;?</i>
+</p><p>Pour cela, il faut, <i>avant d'écrire la configuration</i>, enlever la protection de la Yubikey (en supposant que vous n'ayez pas mis de code de verrouillage)
+</p><p><a href="./index.php%3Ftitle=Fichier:YUbiProtect.png.html" class="image"><img alt="YUbiProtect.png" src="images/0/0c/YUbiProtect.png" width="300" height="114" /></a>
+</p><p>Ensuite, vous devez, sur votre serveur copier les données suivantes&#160;:
+</p>
+<ul><li>OpenBSD&#160;:
+<ul><li>Copier la ID PUB dans /var/db/yubikey/user.uid</li>
+<li>Copier la CLE SECRETE dans /var/db/yubikey/user.key</li>
+<li> Modifiez  <i>/etc/login.conf</i>, la ligne&#160;:</li></ul></li></ul>
+<pre>auth-defaults:auth=passwd,skey:
+</pre>
+<p>en
+</p>
+<pre>auth-defaults:auth=yubikey,passwd,skey:
+</pre>
+<p>Inutile de redémarrer quoique ce soit.
+</p>
+<h5><span class="mw-headline" id="Pour_vous_connecter">Pour vous connecter</span></h5>
+<pre>ssh user@IP
+
+Authenticated with partial success.
+user@IP's password:
+</pre>
+<p>Vous appuyez <b>PLUS DE 2 SECONDES</b> sur la Yubikey (Et oui, vous utilisez le slot 2&#160;!!!)
+Et là&#160;:
+</p>
+<pre>Last login: patati from patata
+OpenBSD 5.6 (GENERIC) #274: Fri Aug  8 00:05:13 MDT 2014
+Welcome to OpenBSD: The proactively secure Unix-like operating system.
+etc....
+</pre>
+<p>Dans la place avec une authentification 2 facteurs (ou 3)&#160;:
+</p>
+<ul><li> Le trousseau de clé de votre ordi</li>
+<li> La Yubikey préalablement enregistrée</li>
+<li> Voire la phrase de passe du trousseau de clé précédent.</li></ul>
+<h5><span class="mw-headline" id="Dans_les_logs_:">Dans les logs&#160;:</span></h5>
+<pre>yubikey: user USER uid UID PUB: 1 matching keymaps (2 checked), 1 crc ok
+</pre>
+<p>Parmi les 2 utilisateurs autorisés à se connecter avec une yubikey, l'utilisateur USER a validé son identité.
+</p>
+<pre>yubikey: user USER: counter 5.2 &gt; 0.0
+</pre>
+<p>Oh, le compteur anti-rejeu n'était pas initialisé, on crée un USER.crt dans le répertoire /var/db/yubikey et on vérifie qu'il n'y a pas de replay attack en cours.
+</p>
+<pre>yubikey: user USER: authorize
+</pre>
+<p>Vazy mon grand, on ouvre les portes.
+</p>
+<h2><span class="mw-headline" id="Vocabulaire">Vocabulaire</span></h2>
+<ul><li> OTP&#160;: One Time Password&#160;: Mot de passe à usage unique</li></ul>
+<h2><span class="mw-headline" id="Liens">Liens</span></h2>
+<ul><li> <a rel="nofollow" class="external autonumber" href="http://undeadly.org/cgi?action=article&amp;sid=20130616112437">[1]</a> Usage avec OpenSSH/OpenBSD.</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20171020135343
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.310 seconds
+Real time usage: 0.358 seconds
+Preprocessor visited node count: 43/1000000
+Preprocessor generated node count: 48/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:339-0!*!0!!fr!5!* and timestamp 20171020135343 and revision id 3359
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Authentification_Forte&amp;oldid=3359">http://www.openbsd-edu.net/index.php?title=Authentification_Forte&amp;oldid=3359</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Authentification+Forte.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Authentification_Forte.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Authentification_Forte&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Authentification_Forte.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Authentification_Forte.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Authentification_Forte&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Authentification_Forte&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Authentification_Forte.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FAuthentification_Forte.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Authentification_Forte" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Authentification_Forte&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Authentification_Forte&amp;oldid=3359" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Authentification_Forte&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 22 avril 2017 à 08:23.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.310","walltime":"0.358","ppvisitednodes":{"value":43,"limit":1000000},"ppgeneratednodes":{"value":48,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020135343","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1818});});</script>
+	</body>
+</html>

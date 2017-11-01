@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>S/Key, les mots de passe jetables — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"S/Key,_les_mots_de_passe_jetables","wgTitle":"S/Key, les mots de passe jetables","wgCurRevisionId":526,"wgRevisionId":526,"wgArticleId":90,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"S/Key,_les_mots_de_passe_jetables","wgRelevantArticleId":90,"wgRequestId":"b8872a8a57297df04d43f58f","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-S_Key_les_mots_de_passe_jetables rootpage-S_Key_les_mots_de_passe_jetables skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">S/Key, les mots de passe jetables</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>OTP, S/Key, les mots de passe jetables...ou OTP: One Time Password, mot de passe à usage unique.
+</p><p>L'idée est de pouvoir se connecter depuis un poste non-sûr (= contenant virus, keyloggers, etc..) sur une ressource avec des identifiants qui ne seront pas réutilisables.
+</p><p>J'ai essayé <a rel="nofollow" class="external text" href="http://motp.sourceforge.net/">Mobile OTP</a>, mais il fallait un serveur Radius et pas n'importe lequel, XTRadius et pas le <i>standard de fait</i> Freeradius..
+</p><p>Donc, j'ai cherché un outil d'OTP avec token compatible avec le système OpenBSD nommé  <a rel="nofollow" class="external text" href="http://www.openbsd.org/faq/faq8.html#SKey">S/Key</a>.
+Trouvé&#160;: <a rel="nofollow" class="external text" href="http://www.fatsquirrel.org/veghead/wot/skey.php">VejOTP</a> téléchargeable <a rel="nofollow" class="external text" href="http://fatsquirrel.org/veghead/software/vejotp/">ici</a>
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html#Installation_sur_le_serveur_OpenBSD"><span class="tocnumber">1</span> <span class="toctext">Installation sur le serveur OpenBSD</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html#Configuration_pour_le_compte_utilisateur"><span class="tocnumber">2</span> <span class="toctext">Configuration pour le compte utilisateur</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html#Test"><span class="tocnumber">3</span> <span class="toctext">Test</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html#Super.2C_et_comment_je_fais_pour_connaitre_mon_prochain_mot_de_passe_kleenex_.3F"><span class="tocnumber">4</span> <span class="toctext">Super, et comment je fais pour connaitre mon prochain mot de passe kleenex&#160;?</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html#Et_mon_mobile.2Fsmartphone.2FBibop.2FIPhone4G.2C_il_me_sert_.C3.A0_quoi"><span class="tocnumber">5</span> <span class="toctext">Et mon mobile/smartphone/Bibop/IPhone4G, il me sert à quoi</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html#V.C3.A9rrouiller_la_machine_pur_imposer_l.27usage_de_S.2FKey....et_s.27enfermer_dehors_.3B-.29"><span class="tocnumber">6</span> <span class="toctext">Vérrouiller la machine pur imposer l'usage de S/Key....et s'enfermer dehors&#160;;-)</span></a></li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Installation_sur_le_serveur_OpenBSD">Installation sur le serveur OpenBSD</span></h3>
+<pre>
+phil@zopen:/:$&gt;  su
+Password:
+root@zopen:/:#&gt; skeyinit -E
+root@zopen:/:#&gt; exit
+exit
+</pre>
+<p>Rapide, non&#160;? 
+</p>
+<h3><span class="mw-headline" id="Configuration_pour_le_compte_utilisateur">Configuration pour le compte utilisateur</span></h3>
+<pre>
+phil@zopen:/:$&gt; skeyinit 
+Reminder - Only use this method if you are directly connected
+           or have an encrypted channel.  If you are using telnet,
+           hit return now and use skeyinit -s.
+Password:
+[Adding phil with md5]
+Enter new secret passphrase: 
+Again secret passphrase: 
+
+ID phil skey is otp-md5 100 planck94327
+Next login password: DAYS HEAL LOAM NECK LED LANE
+</pre>
+<p>Ce qui signifie, que je peux désormais me connecter avec un mot de passe jetable au serveur&#160;:
+</p>
+<h3><span class="mw-headline" id="Test">Test</span></h3>
+<pre>
+phil@linuxette:/:$&gt;ssh phil:skey@zopen
+otp-md5 99 planck94327
+S/Key Password:
+.
+phil@zopen:~:$&gt; 
+</pre>
+<p>Ca marche&#160;!
+Remarquez l'ajout de <i>:skey</i> au nom de connexion
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Super.2C_et_comment_je_fais_pour_connaitre_mon_prochain_mot_de_passe_kleenex_.3F">Super, et comment je fais pour connaitre mon prochain mot de passe kleenex&#160;?</span></h3>
+<pre>
+phil@zopen:~:$&gt; skeyinfo -v
+otp-md5 99 planck94327
+</pre>
+<ul><li><ul><li> La méthode est md5 (oui, c'est mal md5, même qu'il y a eu des collisions et que C pu sécure, mais bons, sha-1, allez-y, c'est mieux)</li>
+<li> Le compteur est à 99</li>
+<li> Le challenge reste planck94327</li></ul></li></ul>
+<p>Reste à demander au diodon la prochaine liste des 5 otp en partant de 99. Exemple du site open:
+</p>
+<pre>
+phil@zopen:~:$&gt; otp-md5 -n 5 99 planck94327
+Reminder - Do not use this program while logged in via telnet.
+Enter secret passphrase:
+95: SHIM SET LEST HANS SMUG BOOT
+96: SUE ARTY YAW SEED KURD BAND
+97: JOEY SOOT PHI KYLE CURT REEK
+98: WIRE BOGY MESS JUDE RUNT ADD
+99: NOOK CHUB HOYT SAC DOLE FUME
+</pre>
+<p><b>Attention</b>&#160;: A ne pas taper depuis une ligne en clair, bref si vous utilisez (encore) telnet, ben....je ne peux plus faire grand chose pour vous&#160;!
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Et_mon_mobile.2Fsmartphone.2FBibop.2FIPhone4G.2C_il_me_sert_.C3.A0_quoi">Et mon mobile/smartphone/Bibop/IPhone4G, il me sert à quoi</span></h3>
+<p>Téléchargez le vejotp, entrez les compteurs/challenge/Passphrase/algorithme et la liste précédente devient caduque.
+</p><p><b>Attention</b>! Comme je vous connais et que vous allez enregistrer la passphrase, un vol du smartphone= vol direct de la connexion SSH&#160;!
+</p>
+<h3><span class="mw-headline" id="V.C3.A9rrouiller_la_machine_pur_imposer_l.27usage_de_S.2FKey....et_s.27enfermer_dehors_.3B-.29">Vérrouiller la machine pur imposer l'usage de S/Key....et s'enfermer dehors&#160;;-)</span></h3>
+<p>Dans /etc/ssh/sshd_config&#160;:
+</p>
+<ul><li> #RSAAuthentication yes -&gt; <b>RSAAuthentication no</b></li></ul>
+<p>Mais comme vous n'avez pas de SSHv1, ca ne sert à rien.
+</p>
+<ul><li> #PubkeyAuthentication yes -&gt; <b>PubkeyAuthentication no</b></li></ul>
+<p>Plus de connexion avec clé...Z'êtes vraiment sûr&#160;? C'est facile, sécurisé..OK,OK j'ai rien dit!
+</p>
+<ul><li> #PasswordAuthentication yes -&gt; <b>PasswordAuthentication no</b> </li></ul>
+<p>Ca, en revanche, c'est TRES bien&#160;!
+</p>
+<ul><li> #ChallengeResponseAuthentication yes A vérifier</li></ul>
+<p>Autorise l'usage de OTP
+</p><p>On redémarre SSH:
+&lt;/pre&gt;
+</p>
+<pre>kill -HUP  `cat /var/run/sshd.pid`
+</pre>
+<p>&lt;/pre&gt;
+</p><p>Et seuel la connexion OTP fonctionnera.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020133021
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.080 seconds
+Real time usage: 0.090 seconds
+Preprocessor visited node count: 68/1000000
+Preprocessor generated node count: 128/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:90-0!*!*!!fr!*!* and timestamp 20171020133020 and revision id 526
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=S/Key,_les_mots_de_passe_jetables&amp;oldid=526">http://www.openbsd-edu.net/index.php?title=S/Key,_les_mots_de_passe_jetables&amp;oldid=526</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=S%252FKey%252C+les+mots+de+passe+jetables.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:S/Key,_les_mots_de_passe_jetables&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=S/Key,_les_mots_de_passe_jetables&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=S/Key,_les_mots_de_passe_jetables&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=S%252FKey,_les_mots_de_passe_jetables.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FS%252FKey,_les_mots_de_passe_jetables.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/S/Key,_les_mots_de_passe_jetables" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=S/Key,_les_mots_de_passe_jetables&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=S/Key,_les_mots_de_passe_jetables&amp;oldid=526" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=S/Key,_les_mots_de_passe_jetables&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 2 septembre 2009 à 21:31.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.080","walltime":"0.090","ppvisitednodes":{"value":68,"limit":1000000},"ppgeneratednodes":{"value":128,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020133021","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1566});});</script>
+	</body>
+</html>

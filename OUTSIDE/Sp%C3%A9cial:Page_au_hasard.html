@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Service de messagerie sortante SMTP — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Service_de_messagerie_sortante_SMTP","wgTitle":"Service de messagerie sortante SMTP","wgCurRevisionId":3432,"wgRevisionId":3432,"wgArticleId":356,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Service_de_messagerie_sortante_SMTP","wgRelevantArticleId":356,"wgRequestId":"76dc92f6ade29d98d9b24faa","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Service_de_messagerie_sortante_SMTP rootpage-Service_de_messagerie_sortante_SMTP skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Service de messagerie sortante SMTP</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#mw-head">navigation</a>, 					<a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>Cette page résulte du split de la doc <a href="index.php%3Ftitle=Le_mail_sous_OpenBSD.html" title="Le mail sous OpenBSD"> messagerie</a>.
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#MTA"><span class="tocnumber">1</span> <span class="toctext">MTA</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#OpenSMTPd"><span class="tocnumber">2</span> <span class="toctext">OpenSMTPd</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Installation"><span class="tocnumber">2.1</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Configuration"><span class="tocnumber">2.2</span> <span class="toctext">Configuration</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Relais_SMTP_authentifi.C3.A9"><span class="tocnumber">2.3</span> <span class="toctext">Relais SMTP authentifié</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Et_si_on_veut_de_l.27IMAP_plut.C3.B4t_que_du_POP_.3F"><span class="tocnumber">2.4</span> <span class="toctext">Et si on veut de l'IMAP plutôt que du POP&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Debug"><span class="tocnumber">2.5</span> <span class="toctext">Debug</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Imap_et_d.C3.A9p.C3.B4t_dans_les_bal"><span class="tocnumber">2.6</span> <span class="toctext">Imap et dépôt dans les bal</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Cr.C3.A9er_un_MX_secondaire_le_temps_d.27un_caf.C3.A9"><span class="tocnumber">2.7</span> <span class="toctext">Créer un MX secondaire  le temps d'un café</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Blacklister_un_utilisateur"><span class="tocnumber">2.8</span> <span class="toctext">Blacklister un utilisateur</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Debug_2"><span class="tocnumber">2.9</span> <span class="toctext">Debug</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Postfix"><span class="tocnumber">3</span> <span class="toctext">Postfix</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Installation_2"><span class="tocnumber">3.1</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Gestion_des_domaines_virtuels"><span class="tocnumber">3.2</span> <span class="toctext">Gestion des domaines virtuels</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#SMTP_Authentifi.C3.A9"><span class="tocnumber">3.3</span> <span class="toctext">SMTP Authentifié</span></a>
+<ul>
+<li class="toclevel-3 tocsection-16"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Config"><span class="tocnumber">3.3.1</span> <span class="toctext">Config</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Debug_3"><span class="tocnumber">3.3.2</span> <span class="toctext">Debug</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Configuration_du_MUA_ThunderBird_pour_le_SMTP_auth"><span class="tocnumber">3.3.3</span> <span class="toctext">Configuration du MUA ThunderBird pour le SMTP auth</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-19"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#LDAP"><span class="tocnumber">3.4</span> <span class="toctext">LDAP</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Commandes"><span class="tocnumber">3.5</span> <span class="toctext">Commandes</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Blacklister_un_utilisateur_2"><span class="tocnumber">3.6</span> <span class="toctext">Blacklister un utilisateur</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#D.C3.A9sinstall"><span class="tocnumber">3.7</span> <span class="toctext">Désinstall</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Debug_4"><span class="tocnumber">3.8</span> <span class="toctext">Debug</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Antispam_:_Tellement_facile_.C3.A0_installer"><span class="tocnumber">4</span> <span class="toctext">Antispam&#160;: Tellement facile à installer</span></a>
+<ul>
+<li class="toclevel-2 tocsection-25"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Whitelister_quelqu.27un"><span class="tocnumber">4.1</span> <span class="toctext">Whitelister quelqu'un</span></a>
+<ul>
+<li class="toclevel-3 tocsection-26"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Mauvaises_m.C3.A9thodes"><span class="tocnumber">4.1.1</span> <span class="toctext">Mauvaises méthodes</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#Bonne_m.C3.A9thode"><span class="tocnumber">4.1.2</span> <span class="toctext">Bonne méthode</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="MTA">MTA</span></h3>
+<p>Ca y est je franchis le pas. <i>Exit Sendmail, Welcome OpenSMTPd</i> ...
+</p><p>Si vous cherchez sendmail, c'est encore <a rel="nofollow" class="external text" href="http://www.openbsd-edu.net/old/Messagerie.html#Sendmail">là.</a>
+</p>
+<h3><span class="mw-headline" id="OpenSMTPd">OpenSMTPd</span></h3>
+<p><a rel="nofollow" class="external text" href="http://wiki.defcon.no/guides/opensmtpd">une doc</a>
+</p>
+<h4><span class="mw-headline" id="Installation">Installation</span></h4>
+<p>J'ai suivi <a rel="nofollow" class="external text" href="https://calomel.org/opensmtpd.html">cette doc</a> en simplifiant beaucoup, car OpenSMTPd est intégré désormais. Et Calomel a mauvaise réputation chez OpenBSD, de par leur lenteur à faire évoluer les docs....(Qui a dit "y'en a d'autres"?)
+</p><p>On active smtpd et on désactive sendmail&#160;:
+</p>
+<pre>perl -pi -e 's/smtpd_flags=NO/smtpd_flags=""/' /etc/rc.conf
+kill `cat /var/run/sendmail.pid  |grep -v "sendmail"`
+perl -pi -e 's/sendmail_flags=/sendmail_flags=NO#/' /etc/rc.conf
+</pre>
+<pre>echo "    sendmail        /usr/sbin/smtpctl
+          send-mail       /usr/sbin/smtpctl
+          mailq           /usr/sbin/smtpctl
+          makemap         /usr/libexec/smtpd/makemap
+          newaliases      /usr/libexec/smtpd/makemap " &gt; /etc/mailer.conf
+</pre>
+<p>Le fichier de config est <b>/etc/mail/smtpd.conf</b> et si vous avez suivi pf, et subi sendmail.cf, alors la syntaxe de smtpd va vous enchanter...
+</p><p>le fichier de config par défaut, avec mails locaux acceptés et déposés dans les mbox locales
+</p>
+<pre>listen on lo0
+map "aliases" { source db "/etc/mail/aliases.db" }
+accept for local alias aliases deliver to mbox
+accept for all relay
+</pre>
+<p><br />
+Puis 
+</p>
+<pre>newaliases
+</pre>
+<p>pour refaire les aliases de messagerie
+</p>
+<pre>smtpd
+</pre>
+<p><i>limpide,non&#160;?</i>
+</p>
+<h4><span class="mw-headline" id="Configuration">Configuration</span></h4>
+<p>On n'oubliera pas sa page de man.. Tout à fait indispensable ici:
+</p>
+<pre>man 5 smtpd.conf
+</pre>
+<pre>listen on $IF
+</pre>
+<p>On écoute sur l'interface $IF
+</p>
+<pre>map "aliases" { source db "/etc/mail/aliases.db" }
+</pre>
+<p>Le fichier d'aliases de messagerie 
+</p><p>Il faut modifier <i>/etc/mail/aliases</i> puis lancer la commande <i>newaliases</i> pour régénérer le fichier d'alias binaires.
+</p>
+<pre>accept for LOCAL/DOMAIN/ALL   deliver to/relay via ..
+</pre>
+<ul><li><i> accept for local </i>: N'autorise que les mails vers une boite locale sur la machine</li>
+<li><i> accept for domain "Nom.de.domaine" </i>: N'autorise que les mails vers une boite en<i>@nom.de.domaine" </i></li></ul>
+<h4><span class="mw-headline" id="Relais_SMTP_authentifi.C3.A9">Relais SMTP authentifié</span></h4>
+<p>Lire le man, comme toujours sous OpenBSD&#160;:[<a rel="nofollow" class="external autonumber" href="https://www.opensmtpd.org/smtpd.conf.5.html">[1]</a>]
+</p>
+<pre>openssl genrsa -out /etc/ssl/private/mail.openbsd-edu.net.key 4096
+openssl req -new -x509 -key /etc/ssl/private/mail.openbsd-edu.net.key -out /etc/ssl/mail.openbsd-edu.net.crt -days 3650
+chmod 600 /etc/ssl/mail.openbsd-edu.net.crt 
+chmod 600 /etc/ssl/private/mail.openbsd-edu.net.key 
+</pre>
+<p>smtpd.conf devient&#160;:
+</p>
+<pre>pki mail.openbsd-edu.net  certificate "/etc/ssl/mail.openbsd-edu.net.crt"
+pki mail.openbsd-edu.net  key          "/etc/ssl/private/mail.openbsd-edu.net.key" 
+listen on lo0
+listen on re0 port 25  tls pki mail.openbsd-edu.net 
+listen on re0 port 587  tls-require pki mail.openbsd-edu.net  auth mask-source
+table aliases db:/etc/mail/aliases.db
+table secrets db:/etc/mail/secrets.db 
+accept from any for domain "openbsd-edu.net" alias &lt;aliases&gt; deliver to mbox
+accept for local alias &lt;aliases&gt; deliver to mbox
+accept for any relay
+</pre>
+<h4><span class="mw-headline" id="Et_si_on_veut_de_l.27IMAP_plut.C3.B4t_que_du_POP_.3F">Et si on veut de l'IMAP plutôt que du POP&#160;?</span></h4>
+<p>Alors les mots-clés <i>mbox</i> deviennent maildir&#160;:
+</p>
+<pre>accept from any for domain "openbsd-edu.net" alias &lt;aliases&gt; deliver to maildir "/var/mail/%{user.username}/Maildir"
+</pre>
+<h4><span class="mw-headline" id="Debug">Debug</span></h4>
+<ul><li> lancer smtp en mode debug</li></ul>
+<pre>smtpd -dv
+</pre>
+<ul><li> NB: Le mot clé <i>all</i> a disparu.</li>
+<li> mot clé <i>hostname</i> qui permet de spécifier le nom affiché //OBSOLETE//</li>
+<li> <i>mask-source</i> permet de ne pas montrer le plan d'adressage interne</li>
+<li> Alors que <i>tls</i> permet l'usage du chiffrement, <i>tls-require</i> le rend obligatoire; utile pour la soumission de mail depuis un client authentifié.</li></ul>
+<p><br />
+</p><p>Envoi:
+Sur le MUA (Thunderbird) utiliser STARTTLS , TCP/587 , avec un compte Unix préexistant (sans shell, tant qu'à faire!)
+</p><p>Réception:
+SSL/TLS TCP/993
+</p>
+<h4><span class="mw-headline" id="Imap_et_d.C3.A9p.C3.B4t_dans_les_bal">Imap et dépôt dans les bal</span></h4>
+<p>Attention aux multiples docs pas à jour qui vous font perdre un temps précieux: RTFM les OpenBSDs docs&#160;:
+</p>
+<ul><li> Variables&#160;:<a rel="nofollow" class="external autonumber" href="https://www.opensmtpd.org/smtpd.conf.5.html">[2]</a></li>
+<li> Expansion des variable&#160;: <a rel="nofollow" class="external autonumber" href="http://undeadly.org/cgi?action=article&amp;sid=20130130081741">[3]</a></li></ul>
+<h4><span class="mw-headline" id="Cr.C3.A9er_un_MX_secondaire_le_temps_d.27un_caf.C3.A9">Créer un MX secondaire  le temps d'un café</span></h4>
+<p>Un ventilo qui s'arrête plein de poussières et c'est votre unique serveur de messagerie qui s'arrête...alors que vous êtes à 
+l'autre bout de la France (oui, c'est du vécu..). Créons un tout petit serveur de messagerie de secours prêt à prendre la relève&#160;:
+</p>
+<pre>
+listen on lo0
+listen on $INTERFACE_WAN
+
+map "aliases" { source db "/etc/mail/aliases.db" }
+
+accept for local alias aliases deliver to mbox
+accept for all relay
+
+accept from all for domain "openbsd-edu.net"  relay
+accept from all for domain "openbsd-edu.42"  relay
+accept from all for domain "schwarz-fr.net"  relay
+accept from all for domain "schwarz.42"  relay
+</pre>
+<p>Et on déclare dans le DNS un enregistrement&#160;:
+</p>
+<pre>    IN      MX      20 lepton.openbsd-edu.net.
+</pre>
+<p>Pour mémoire, le poids du MX est inversement proportionnel à son attractivité pour les autres SMTP; un MX de poids 10 recevra les mails en priorité devant un MX de poids 20&#160;!
+</p><p>Quand le MX principal est en ligne, il prend tous les mails.
+</p><p>Quand il tombe, les serveurs SMTP se tournent vers le MX de secours qui spoole les messages dans <i>/var/spool/smtpd/queue/ </i>
+</p><p>Quand le MX principal est de nouveau en ligne, le serveur de secours lui renvoie les mails en attente.
+</p><p><b>Attention</b>&#160;:
+</p>
+<ul><li> Le délai avant retour des mails dépend de paramètres DNS&amp; SMTP <i>(à préciser un poil)</i></li>
+<li> Aucun filtrage n'est fait sur l'existence de l'utilisateur ou autre. C'est une pratique hélas commune que de diminuer la qualité de service des sites de secours. Résultat les spammeurs se lâchent sur les MX de poids élevé</li></ul>
+<h4><span class="mw-headline" id="Blacklister_un_utilisateur">Blacklister un utilisateur</span></h4>
+<p>Attention, il faut un OpenSMTPD postérieur à 5.5..
+</p><p><a rel="nofollow" class="external autonumber" href="http://puffysecurity.com/wiki/opensmtpd.html">[4]</a>
+</p>
+<pre>touch /etc/mail/blacklist-recipients
+echo "patricklecassepied@gmail.com patricklecassepied@gmail.com" &gt;&gt; /etc/mail/blacklist-recipients
+</pre>
+<p>Deux fois sinon, on a <i>makemap: virtual:1: invalid entry</i>
+</p>
+<pre>echo "    table blacklist-recipients file:/etc/mail/blacklist-recipients" &gt;&gt; /etc/mail/smtpd.conf
+/usr/libexec/smtpd/makemap -t aliases /etc/mail/blacklist-recipients
+</pre>
+<p>Puis ajouter la directive <i>recipient&#160;!&lt;blacklist-recipients&gt; </i> aux lignes accept from&#160;:
+</p>
+<pre>accept from any recipient&#160;!&lt;blacklist-recipients&gt; for domain "openbsd-edu.net" alias &lt;aliases&gt; deliver to maildir "/var/mail/%{user.username}/Maildir"
+/etc/rc.d/smtpd restart
+</pre>
+<h4><span class="mw-headline" id="Debug_2">Debug</span></h4>
+<pre>smtpd&#160;: delivery: TempFail for&#160;: from=&lt;&gt;, to=&lt;&gt;, user=XXX, method=maildir, delay=1h54m5s, stat=Error ("cannot cd to maildir: No such file or directory")
+</pre>
+<pre>mkdir /var/mail/XXX
+chown -R XXX.XXX /var/mail/XXX
+</pre>
+<h3><span class="mw-headline" id="Postfix">Postfix</span></h3>
+<p>Bon, plus classique que l'autre, mais les users dans l'annuaire LDAP, j'y tiens et <s>OpenSMTPd ne le permet pas pour le moment... </s>
+</p><p><br />
+</p>
+<center>
+<p>Tiré du <a rel="nofollow" class="external text" href="http://postfix.traduc.org/index.php/DATABASE_README.html">manuel Postfix</a>
+<i>SQL et LDAP sont des systèmes complexes. Essayer de mettre en œuvre simultanément Postfix et LDAP ou SQL n'est pas une bonne idée. Vous pouvez vous éviter de nombreux problèmes en implémentant d'abord Postfix avec des fichiers locaux type Berkeley DB. Ces fichiers cachent peu de surprises et sont faciles à déboguer avec la commande postmap(1)&#160;: </i>
+</p>
+</center>
+<p>C'est vraiment une bonne idée...
+</p>
+<h4><span class="mw-headline" id="Installation_2">Installation</span></h4>
+<pre>pkg_add postfix-2.8.20110113-ldap
+/usr/local/sbin/postfix-enable
+echo "smtpd_flags=NO"&gt;&gt; /etc/rc.conf.local
+</pre>
+<p><s> echo 'sendmail_flags="-bd"' &gt;&gt; /etc/rc.conf.local </s>
+</p>
+<pre>echo 'syslogd_flags="-a /var/spool/postfix/dev/log"' &gt;&gt; /etc/rc.conf.local 
+pkill syslogd
+syslogd
+/etc/rc.d/smtpd stop
+<s>/usr/local/sbin/sendmail -bd </s>
+</pre>
+<p><s>Création d'un user dédié pour les mails
+</p>
+<pre>useradd -d /var/vmail -g =uid -u 2000 -s /sbin/nologin -c "Virtual Mailboxes Owner" -m vmail
+</pre>
+<p></s>
+</p><p>Gestion du LDA (Local Delivery Agent). Gestion de Postfix vers Dovecot
+</p><p><s>
+</p>
+<pre>
+echo " # Dovecot LDA
+ dovecot   unix  -       n       n       -       -       pipe
+  flags=DRhu user=vmail:vmail argv=/usr/lib/dovecot/deliver -d ${recipient}
+" &gt;&gt; /etc/postfix/master.cf
+
+
+echo " #PS
+ dovecot_destination_recipient_limit = 1
+ mailbox_transport = dovecot
+" &gt;&gt; /etc/postfix/main.cf
+
+</pre>
+<p></s>
+</p><p>Modifier <i>/etc/postfix/main.cf</i>&#160;:
+</p>
+<pre>
+home_mailbox = Maildir/
+mail_spool_directory = /var/mail
+mailbox_command = /usr/local/libexec/dovecot/deliver
+</pre>
+<p>Commenter la ligne de crontab du client mqueue. Ligne 9
+</p>
+<pre>crontab -e
+</pre>
+<h4><span class="mw-headline" id="Gestion_des_domaines_virtuels">Gestion des domaines virtuels</span></h4>
+<p>Afin que votre serveur SMTP sache gérer que
+</p><p>phil@domaine1    soit l'user phil
+</p><p>et
+</p><p>phil@domaine2    soit l'user philippe
+</p><p>au hasard&#160;:-)
+</p>
+<ul><li> Ajouter à <i>/etc/postfix/main.cf</i>&#160;:</li></ul>
+<pre> virtual_alias_maps = hash:/etc/postfix/virtual
+</pre>
+<ul><li> Ajouter dans <i>/etc/postfix/virtual</i></li></ul>
+<pre>phil@domaine1  phil
+phil@domaine2  philippe
+</pre>
+<pre>postmap /etc/postfix/virtual
+postfix reload
+</pre>
+<p>Plus d'info  <a rel="nofollow" class="external text" href="http://postfix.traduc.org/index.php/VIRTUAL_README.html">à la source</a>
+</p>
+<ul><li> Gestion d'un smarthost (un relais de messagerie )</li></ul>
+<pre>    relayhost = [mail.isp.tld]    (deliver via provider mailhub)
+</pre>
+<h4><span class="mw-headline" id="SMTP_Authentifi.C3.A9">SMTP Authentifié</span></h4>
+<h5><span class="mw-headline" id="Config">Config</span></h5>
+<p>Utiliser votre serveur SMTP depuis votre laptop/Smartphone/whatever quelle que soit votre IP itinérante; le tout sans vous transformer en relais ouvert!
+</p>
+<ul><li> Installer la bonne version de postfix depuis les ports</li></ul>
+<pre>tar zcvf /var/sauve/postfixConf.tar.gz /etc/postfix
+pkg_delete  -v postfix-2.8.20110113-ldap
+pkg_add -v postfix-2.8.20110113-sasl2
+</pre>
+<p><br />
+</p>
+<ul><li> Reprendre votre certificat client (Par ex. celui incorporé dans Ffox) et l'exporter au format .p12</li>
+<li> <a href="index.php%3Ftitle=OpenSSL.html#Exporter_un_.p12" title="OpenSSL"> Exporter le p12 en .pem</a></li>
+<li> <a href="index.php%3Ftitle=OpenSSL.html#R.C3.A9aliser_une_empreinte_d.27un_certificat" title="OpenSSL"> Prendre l'empreinte du certificat</a></li>
+<li> Ajouter l'empreinte dans un fichier des clients à relayer&#160;:</li></ul>
+<pre>echo "`openssl x509 -fingerprint -in monCert.pem -noout |cut -d"=" -f2` polyp" &gt;&gt; /etc/postfix/cert_relay_clients
+postmap /etc/postfix/cert_relay_clients
+echo "relay_clientcerts =  hash:/etc/postfix/cert_relay_clients"  &gt;&gt; /etc/postfix/main.cf
+echo "smtpd_recipient_restrictions = permit_tls_clientcerts "  &gt;&gt; /etc/postfix/main.cf
+</pre>
+<ul><li> Configurer sasl2 comme indiqué <a rel="nofollow" class="external text" href="http://uhrig.eu.org/openbsd/sasl/">ici</a></li></ul>
+<pre>echo "
+# SASL2 Authentication Daemon
+# This configuration sets saslauthd to use the system password file.
+if [ -x /usr/local/sbin/saslauthd ]; then
+  echo -n ' sasl2';/usr/local/sbin/saslauthd -a getpwent -m /var/spool/postfix/var/run/sasl2/
+fi
+</pre>
+<p>" &gt;&gt; /etc/rc.local
+</p>
+<pre>echo "
+ pwcheck_method:saslauthd
+ mech_list: PLAIN LOGIN
+ log_level: 3
+ saslauthd_path: /var/run/sasl2/mux
+ " &gt;&gt; /etc/postfix/smtpdsasl2.conf
+ln -s /usr/local/lib/sasl2/smtpd.conf  /etc/postfix/smtpdsasl2.conf
+</pre>
+<pre>mkdir -p /var/spool/postfix/var/run/sasl2
+</pre>
+<ul><li> Décommentez les lignes de <i>master.cf</i> relatives à smtps</li></ul>
+<pre>smtps     inet  n       -       -       -       -       smtpd
+ -o smtpd_tls_wrappermode=yes
+ -o smtpd_sasl_auth_enable=yes
+ -o smtpd_client_restrictions=permit_sasl_authenticated,reject
+ -o milter_macro_daemon_name=ORIGINATING
+</pre>
+<pre>postfix reload
+
+/usr/local/sbin/saslauthd -a getpwent -m /var/spool/postfix/var/run/sasl2/
+</pre>
+<p><br />
+</p>
+<ul><li> Tester la conf de postfix</li></ul>
+<pre>postconf -n
+openssl rsa -in key.pem  -check
+openssl x509 -in cert.pem  -text
+</pre>
+<p>ne doivent renvoyer aucune erreur
+</p>
+<h5><span class="mw-headline" id="Debug_3">Debug</span></h5>
+<pre>postfix/smtpd[]: warning: cannot get RSA private key from file /etc/postfix/key.pem: disabling TLS support
+</pre>
+<p>Souci de clé, vérifiez avec OpenSSL
+</p>
+<pre>Warning: SASL authentication failure: Could not open db
+</pre>
+<p>Le fichier /etc/postfix/smtpdsasl2.conf est absent ou manque d'infos.
+</p>
+<pre>Warning: TLS library problem: error:&#160;:SSL routines:SSL3_READ_BYTES:sslv3 alert bad certificate alert number 42
+</pre>
+<p>Votre serveur n'a pas le nom contenu dans votre certificat
+</p><p><br />
+</p>
+<pre>
+telnet localhost 25
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+220 FQDN ESMTP Postfix
+ehlo domain
+250-FQDN
+250-PIPELINING
+250-SIZE 10240000
+250-VRFY
+250-ETRN
+250-STARTTLS
+250-AUTH PLAIN OTP NTLM LOGIN GSSAPI DIGEST-MD5 CRAM-MD5
+250-AUTH=PLAIN OTP NTLM LOGIN GSSAPI DIGEST-MD5 CRAM-MD5
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250 DSN
+starttls
+220 2.0.0 Ready to start TLS
+</pre>
+<p>C'est tout bon.
+</p>
+<h5><span class="mw-headline" id="Configuration_du_MUA_ThunderBird_pour_le_SMTP_auth">Configuration du MUA ThunderBird pour le SMTP auth</span></h5>
+<ul><li> Edition/Avancé/Certificats/Voir les certificats/Importer</li>
+<li> Choisissez le p12  préalablement construit.</li>
+<li> Donnez la passphrase du p12.</li>
+<li> <i>Récupération des certificats et clés privées réussie</i></li></ul>
+<h4><span class="mw-headline" id="LDAP">LDAP</span></h4>
+<pre>perl -pi -e 's/#alias_maps = hash:\/etc\/aliases/alias_maps = hash:\/etc\/mail\/aliases,ldap:\/etc\/postfix\/ldap-aliases.cf/' /etc/postfix/main.cf
+alias_maps = ldap:/etc/postfix/ldap-aliases.cf, hash:/etc/mail/aliases
+</pre>
+<pre>echo "server_host = 127.0.0.1 
+version = 3 
+search_base = dc=openbsd,dc=edu 
+query_filter = (&amp;(objectClass=mailAccount)(mailalias=%s)(mailenable=OK)) 
+result_attribute = mail" &gt; /etc/postfix/ldap-aliases.cf
+</pre>
+<ul><li> A noter</li></ul>
+<p>Vous aviez l'habitude dans <i>/etc/mail/aliases</i> de&#160;:
+</p>
+<pre>alias: Nom/Adresse de redirection
+</pre>
+<p>maintenant, dans LDAP, vous aurez&#160;:
+mailacceptinggeneralid: maildrop
+</p>
+<h4><span class="mw-headline" id="Commandes">Commandes</span></h4>
+<ul><li> Liste les paramètres</li></ul>
+<pre>postconf -n
+</pre>
+<ul><li> Modifie un paramètre</li></ul>
+<pre>postconf -e "myorigin = openbsd-edu.net"
+</pre>
+<ul><li> Supprimer un mail de la file d'attente</li></ul>
+<pre>postsuper -d ID_DU_MESSAGE
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="Blacklister_un_utilisateur_2">Blacklister un utilisateur</span></h4>
+<p><a rel="nofollow" class="external text" href="http://www.cyberciti.biz/faq/howto-blacklist-reject-sender-email-address/">Source</a>
+</p>
+<pre>touch /etc/postfix/sender_access 
+echo "cassepied@mondomaine.fr REJECT" &gt;&gt; /etc/postfix/sender_access 
+postmap hash:sender_access 
+echo "smtpd_sender_restrictions = check_sender_access hash:/etc/postfix/sender_access"  &gt;&gt; /etc/postfix/main.cf
+postfix stop
+postfix start
+</pre>
+<p>Ce qui dans, les logs donne&#160;:
+</p>
+<pre>postfix/smtpd  NOQUEUE: reject: RCPT from IP 554 5.7.1 &lt;cassepied@mondomaine.fr&gt;: Sender address rejected: Access denied; from=&lt;cassepied@mondomaine.fr&gt; to=&lt;&gt; proto=ESMTP helo=&lt;&gt;
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="D.C3.A9sinstall">Désinstall</span></h4>
+<pre>
+postfix-disable 
+pkg_delete postfix
+/usr/sbin/userdel _postfix
+/usr/sbin/groupdel _postdrop
+/usr/sbin/groupdel _postfix
+</pre>
+<h4><span class="mw-headline" id="Debug_4">Debug</span></h4>
+<ul><li> <i>warning: dict_ldap_lookup</i></li></ul>
+<pre>warning: dict_ldap_lookup: /etc/postfix/ldap-aliases.cf: Search base 'ou=people,dc=openbcd,dc=edu' not found: 32: No such object
+</pre>
+<p>Pourtant la coquille était facile à voir..
+Vous avez une erreur dans le baseDN.
+</p>
+<ul><li> <i>NOQUEUE: reject: Recipient address rejected: User unknown in local recipient table</i></li></ul>
+<p>Votre utilisateur n'a pas d'entrées 
+</p>
+<pre>mailacceptinggeneralid: MAIL@schwarz-fr.net
+maildrop: compteLDAP
+</pre>
+<h3><span class="mw-headline" id="Antispam_:_Tellement_facile_.C3.A0_installer">Antispam&#160;: Tellement facile à installer</span></h3>
+<p><a href="index.php%3Ftitle=AntiSpam.html" title="AntiSpam"> Un ensemble de techniques, ici</a> et <a rel="nofollow" class="external autonumber" href="https://calomel.org/spamd_config.html">[5]</a>
+</p><p>Très simplement, on va utiliser les ressources développées par l'équipe OpenBSD&#160;: spamd
+</p>
+<ul><li> Aucun changement dans la config d'OpenSMTPD, <i>/etc/mail/smtpd.conf</i></li>
+<li> pf va faire le boulot de redirection; on va se contenter de décommenter les lignes relatives à spamd sans rien y changer&#160;:</li></ul>
+<pre># rules for spamd(8)
+table &lt;spamd-white&gt; persist
+table &lt;nospamd&gt; persist file "/etc/mail/nospamd"
+pass in on egress proto tcp from any to any port smtp rdr-to 127.0.0.1 port spamd
+pass in on egress proto tcp from &lt;nospamd&gt; to any port smtp
+pass in log on egress proto tcp from &lt;spamd-white&gt; to any port smtp
+pass out log on egress proto tcp to any port smtp
+</pre>
+<ul><li> Dans <i>/etc/rc.conf</i>, on active spamd&#160;:</li></ul>
+<pre>spamd_flags="-v -G 3:4:864" # NO              # for normal use: "" and see spamd(8
+</pre>
+<p>Et on redémarre tout ça&#160;:
+</p>
+<pre>/etc/rc.d/smtpd restart
+/etc/rc.d/spamd restart
+pfctl -d &amp;&amp; pfctl -e -f /etc/pf.conf
+</pre>
+<p>Et on attend de voir le travail&#160;:
+</p>
+<pre>spamdb | sort
+GREY|190.21.126.171|190-21-121-28.baf.movistar.cl|&lt;classifiedshkbg@aktuellezeit.com&gt;|&lt;phil@openbsd-edu.net&gt;|1412172661|1412187061|1412187061|1|0
+</pre>
+<p>Lui, il vient de vouloir me spammer, il est greylisté; pas certain qu'il passe
+</p>
+<pre>GREY|193.54.149.10|pluton.ac-grenoble.fr|&lt;l.crdp-...fr&gt;|&lt;philippe@openbsd-edu.net&gt;|1412171728|1412172411|1412186128|3|0
+</pre>
+<p>Lui, il veut juste m'écrire, il est greylisté; comme il est poli, il va revenir et on le "whitelistera"
+</p>
+<pre>WHITE|212.27.42.9|||1412169899|1412170454|1415280884|2|0
+</pre>
+<p>Lui, c'est le SMTP de free; il a subi les tests, il passe
+</p>
+<h4><span class="mw-headline" id="Whitelister_quelqu.27un">Whitelister quelqu'un</span></h4>
+<pre>spamdb -a @IP
+</pre>
+<p><br />
+</p>
+<ul><li> Souci avec les gros domaines avec plusieurs SMTP. On va supposer que les MX du domaine sont également les serveurs SMTP sortants...</li></ul>
+<h5><span class="mw-headline" id="Mauvaises_m.C3.A9thodes">Mauvaises méthodes</span></h5>
+<pre># Usage script google.com ou ovh.fr 
+WHITEIN=$(spamdb |grep WHITE |wc|awk '{print $1}')
+MX=$(dig -t mx $1 |grep "A" |grep -v ";" |awk '{print $5}')
+for DOMAIN in $MX
+       do
+       /usr/sbin/spamdb -a $DOMAIN
+done
+WHITEOUT=$(spamdb |grep WHITE |wc|awk '{print $1}')
+DIFF=$(bc -e "$WHITEOUT - $WHITEIN" -e quit)
+echo "$DIFF serveurs SMTP whitelistes"
+</pre>
+<p>A lancer sur les domaines de google, free, hotmail,...
+</p><p><br />
+Idem mais  partir des logs de spamdb
+</p>
+<pre>GREY=$( spamdb |grep GREY |grep $1|cut -d"|" -f2)
+WHITEIN=$(spamdb |grep WHITE |wc|awk '{print $1}')
+for SMTP in $GREY
+       do
+       /usr/sbin/spamdb -a $SMTP
+done
+WHITEOUT=$(spamdb |grep WHITE |wc|awk '{print $1}')
+DIFF=$(bc -e "$WHITEOUT - $WHITEIN" -e quit)
+echo "$DIFF serveurs SMTP whitelistes"
+</pre>
+<h5><span class="mw-headline" id="Bonne_m.C3.A9thode">Bonne méthode</span></h5>
+<p>Il faut juste demander poliment aux domaines de nous donner la liste des SMTP sortant autorisés. SPF
+</p>
+<pre># Usage script google.com ou ovh.fr 
+WHITEIN=$(spamdb |grep WHITE |wc|awk '{print $1}')
+SPF=$(dig $1 txt |grep $1 |grep "ip4"|grep -v ";"|cut -d'"' -f2|awk '{print $3,$4,$5,$6,$7,$8,$9}'|cut -d"~" -f1)
+echo "SPF $SPF"
+for IP in $SPF
+       do
+       NET=$(echo $IP| cut -d":" -f2)
+       NETTRUNC=$(echo $NET| cut -d"." -f1-3)
+       HOSTMIN=$(ipcalc $NET|grep "host min" |cut -d"." -f4)
+       HOSTMAX=$(ipcalc $NET|grep "host max" |cut -d"." -f4)
+       #echo "NET $NET - TRUNC $NETTRUNC - MIN $HOSTMIN - AX $HOSTMAX"
+       CPT=$HOSTMIN
+       while  [ $CPT -le $HOSTMAX ]
+               do      #echo "$NETTRUNC.$CPT"
+                       CPT=$(( CPT+1 ))
+                       /usr/sbin/spamdb -a $NETTRUNC.$CPT
+       done
+done
+WHITEOUT=$(spamdb |grep WHITE |wc|awk '{print $1}')
+DIFF=$(bc -e "$WHITEOUT - $WHITEIN" -e quit)
+echo "$DIFF serveurs SMTP whitelistes"
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20171020120617
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.280 seconds
+Real time usage: 0.294 seconds
+Preprocessor visited node count: 152/1000000
+Preprocessor generated node count: 212/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:356-0!*!0!!fr!*!* and timestamp 20171020120617 and revision id 3432
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_sortante_SMTP&amp;oldid=3432">http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_sortante_SMTP&amp;oldid=3432</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Service+de+messagerie+sortante+SMTP.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Service_de_messagerie_sortante_SMTP&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_sortante_SMTP&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_sortante_SMTP&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FService_de_messagerie_sortante_SMTP.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Service_de_messagerie_sortante_SMTP" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_sortante_SMTP&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_sortante_SMTP&amp;oldid=3432" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_sortante_SMTP&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 10 août 2017 à 15:31.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.280","walltime":"0.294","ppvisitednodes":{"value":152,"limit":1000000},"ppgeneratednodes":{"value":212,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020120618","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1331});});</script>
+	</body>
+</html>

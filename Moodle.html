@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Moodle — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Moodle","wgTitle":"Moodle","wgCurRevisionId":3135,"wgRevisionId":3135,"wgArticleId":111,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Moodle","wgRelevantArticleId":111,"wgRequestId":"fd246e4cd252417724131226","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Moodle rootpage-Moodle skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Moodle</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Moodle.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Moodle.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Moodle.html#sous_OpenBSD_4.5"><span class="tocnumber">1</span> <span class="toctext">sous OpenBSD 4.5</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Moodle.html#Paquets"><span class="tocnumber">1.1</span> <span class="toctext">Paquets</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Moodle.html#Applis_et_TLS"><span class="tocnumber">1.2</span> <span class="toctext">Applis et TLS</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Moodle.html#MySQL"><span class="tocnumber">1.3</span> <span class="toctext">MySQL</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Moodle.html#Install"><span class="tocnumber">1.4</span> <span class="toctext">Install</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Moodle.html#Config"><span class="tocnumber">1.5</span> <span class="toctext">Config</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Moodle.html#Sous_OpenBSD_4.8"><span class="tocnumber">2</span> <span class="toctext">Sous OpenBSD 4.8</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Moodle.html#Debian_7.0_Wheezy"><span class="tocnumber">3</span> <span class="toctext">Debian 7.0 Wheezy</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Moodle.html#Configuration"><span class="tocnumber">4</span> <span class="toctext">Configuration</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Moodle.html#Langue"><span class="tocnumber">4.1</span> <span class="toctext">Langue</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Moodle.html#Authentification"><span class="tocnumber">4.2</span> <span class="toctext">Authentification</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Moodle.html#Usage_Web"><span class="tocnumber">4.3</span> <span class="toctext">Usage Web</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Moodle.html#R.C3.A9glages_des_cours"><span class="tocnumber">4.4</span> <span class="toctext">Réglages des cours</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Moodle.html#Photos_des_utilisateurs"><span class="tocnumber">4.5</span> <span class="toctext">Photos des utilisateurs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=Moodle.html#Installation_de_plugins"><span class="tocnumber">5</span> <span class="toctext">Installation de plugins</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Moodle.html#Plugins_int.C3.A9ressants"><span class="tocnumber">5.1</span> <span class="toctext">Plugins intéressants</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="index.php%3Ftitle=Moodle.html#Sondage_en_ligne.2C_en_direct"><span class="tocnumber">5.1.1</span> <span class="toctext">Sondage en ligne, en direct</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="index.php%3Ftitle=Moodle.html#Etherpad_dans_Moodle"><span class="tocnumber">5.1.2</span> <span class="toctext">Etherpad dans Moodle</span></a>
+<ul>
+<li class="toclevel-4 tocsection-19"><a href="index.php%3Ftitle=Moodle.html#node.js"><span class="tocnumber">5.1.2.1</span> <span class="toctext">node.js</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-20"><a href="index.php%3Ftitle=Moodle.html#Config_2"><span class="tocnumber">5.1.3</span> <span class="toctext">Config</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="index.php%3Ftitle=Moodle.html#Labos_de_langues"><span class="tocnumber">5.1.4</span> <span class="toctext">Labos de langues</span></a>
+<ul>
+<li class="toclevel-4 tocsection-22"><a href="index.php%3Ftitle=Moodle.html#OWLL_:_Obsol.C3.A8te"><span class="tocnumber">5.1.4.1</span> <span class="toctext">OWLL&#160;: Obsolète</span></a></li>
+<li class="toclevel-4 tocsection-23"><a href="index.php%3Ftitle=Moodle.html#PoodLL"><span class="tocnumber">5.1.4.2</span> <span class="toctext">PoodLL</span></a></li>
+<li class="toclevel-4 tocsection-24"><a href="index.php%3Ftitle=Moodle.html#Nanogong"><span class="tocnumber">5.1.4.3</span> <span class="toctext">Nanogong</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=Moodle.html#Rsyslogger"><span class="tocnumber">5.2</span> <span class="toctext">Rsyslogger</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="index.php%3Ftitle=Moodle.html#D.C3.A9sinstallation_de_plugins"><span class="tocnumber">6</span> <span class="toctext">Désinstallation de plugins</span></a>
+<ul>
+<li class="toclevel-2 tocsection-27"><a href="index.php%3Ftitle=Moodle.html#En_cas_de_mont.C3.A9e_ce_version_qui_se_passe_mal"><span class="tocnumber">6.1</span> <span class="toctext">En cas de montée ce version qui se passe mal</span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="index.php%3Ftitle=Moodle.html#Une_suppression_qui_se_d.C3.A9roule_mal"><span class="tocnumber">6.2</span> <span class="toctext">Une suppression qui se déroule mal</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-29"><a href="index.php%3Ftitle=Moodle.html#Et_le_smartphone_.3F.3F"><span class="tocnumber">7</span> <span class="toctext">Et le smartphone &#160;??</span></a></li>
+<li class="toclevel-1 tocsection-30"><a href="index.php%3Ftitle=Moodle.html#Mont.C3.A9e_de_version"><span class="tocnumber">8</span> <span class="toctext">Montée de version</span></a></li>
+<li class="toclevel-1 tocsection-31"><a href="index.php%3Ftitle=Moodle.html#Questionnaire"><span class="tocnumber">9</span> <span class="toctext">Questionnaire</span></a></li>
+<li class="toclevel-1 tocsection-32"><a href="index.php%3Ftitle=Moodle.html#Qapi:_Int.C3.A9gration_de_Moodle_dans_Drupal"><span class="tocnumber">10</span> <span class="toctext">Qapi: Intégration de Moodle dans Drupal</span></a></li>
+<li class="toclevel-1 tocsection-33"><a href="index.php%3Ftitle=Moodle.html#Requ.C3.AAtes_SQL_utiles"><span class="tocnumber">11</span> <span class="toctext">Requêtes SQL utiles</span></a></li>
+<li class="toclevel-1 tocsection-34"><a href="index.php%3Ftitle=Moodle.html#Trucs"><span class="tocnumber">12</span> <span class="toctext">Trucs</span></a></li>
+<li class="toclevel-1 tocsection-35"><a href="index.php%3Ftitle=Moodle.html#Carnet_de_notes"><span class="tocnumber">13</span> <span class="toctext">Carnet de notes</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="sous_OpenBSD_4.5">sous OpenBSD 4.5</span></h2>
+<h3><span class="mw-headline" id="Paquets">Paquets</span></h3>
+<pre>lynx <a rel="nofollow" class="external free" href="http://download.moodle.org/stable19/">http://download.moodle.org/stable19/</a>
+pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/php5-core
+ln -s /var/www/conf/modules.sample/php5.conf /var/www/conf/modules
+pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/php5-mbstring
+ln -fs /var/www/conf/php5.sample/mbstring.ini /var/www/conf/php5/mbstring.ini
+pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/php5-iconv
+pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/php5-gd-5.2.8-no_x11.tgz
+ln -fs /var/www/conf/php5.sample/gd.ini  /var/www/conf/php5/gd.ini
+pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/freetype-1.3.1p3
+pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/mysql-server
+pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/php5-ldap
+ln -fs /var/www/conf/php5.sample/ldap.ini  /var/www/conf/php5/ldap.ini
+pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/php5-mysql
+ln -fs /var/www/conf/php5.sample/mysql.ini /var/www/conf/php5/mysql.ini
+pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/php5-curl
+ln -fs /var/www/conf/php5.sample/curl.ini  /var/www/conf/php5/curl.ini
+pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/unzip
+pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/php5-xmlrpc
+ln -fs /var/www/conf/php5.sample/xmlrpc.ini  /var/www/conf/php5/xmlrpc.ini
+pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/wget
+</pre>
+<h3><span class="mw-headline" id="Applis_et_TLS">Applis et TLS</span></h3>
+<ul><li> Installer <a href="index.php%3Ftitle=Applications.html#MySQL" title="Applications">  MySQL</a></li>
+<li> Configurer <a href="index.php%3Ftitle=TinyCA.html#Cr.C3.A9ation_d.27un_certificat_de_serveur_web" title="TinyCA">  Apache SSL</a></li></ul>
+<h3><span class="mw-headline" id="MySQL">MySQL</span></h3>
+<pre>mysql
+CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci; 
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER ON moodle.* TO moodleuser@localhost IDENTIFIED BY 'motdepasse'; 
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES, DROP,INDEX,ALTER ON moodle.* TO moodleuser@localhost IDENTIFIED BY 'motdepasse'; 
+exit
+mysqladmin -u root -p reload
+</pre>
+<h3><span class="mw-headline" id="Install">Install</span></h3>
+<pre>* Activer PHP
+* Détarrer
+cd /var/www/htdocs
+tar zxvf moodle.1.9.7.tar.gz
+* Créer le rep
+mkdir /var/moodledata
+chown -R www.www moodledata
+*  Télécharger le fichier de langues
+wget <a rel="nofollow" class="external free" href="http://download.moodle.org/lang16/fr_utf8.zip">http://download.moodle.org/lang16/fr_utf8.zip</a>
+cd /var/www/htdocs/lang
+cp /tmp/fr_utf8.zip .
+unzip fr_utf8.zip
+* Avant de lancer l'install, donner les droits <b>temporairement</b>&#160;:
+chown www.www /var/www/htdocs
+* lancer <a rel="nofollow" class="external free" href="http://localhostOUpas/install.php">http://localhostOUpas/install.php</a>
+* Quand l'install est finie (le config.php copié)
+chown root.daemon /var/www/htdocs
+* Lancer l'install unattended
+</pre>
+<h3><span class="mw-headline" id="Config">Config</span></h3>
+<p>Un tout petit peu galère à trouver..
+</p><p>Suivre la <a rel="nofollow" class="external text" href="http://docs.moodle.org/20/en/Debian_GNU/Linux_installation#Create_a_data_directory_and_set_Moodle_directory_permissions">doc</a>, plutôt..
+</p>
+<ul><li>OpenBSD</li></ul>
+<pre> mkdir /var/moodledata
+ chown -R root.wheel /var/www/moodle
+ chown -R root.wheel /var/moodledata
+</pre>
+<ul><li>Debian</li></ul>
+<pre> mkdir /var/moodledata
+ chown -R www-data:www-data /var/www/moodle
+ chown -R www-data:www-data /var/moodledata
+</pre>
+<pre>perl -pi -e 's/upload_max_filesize = 2M/upload_max_filesize = 12M/' /etc/php5/apache2/php.ini 
+apache2ctl restart
+</pre>
+<p><br />
+et /var/www/htdocs/config.php
+ressemble à&#160;:
+</p>
+<pre>
+&lt;?php  /// Moodle Configuration File 
+unset($CFG);
+$CFG-&gt;dbtype    = 'mysql';
+$CFG-&gt;dbhost    = 'localhost';
+$CFG-&gt;dbname    = 'moodle';
+$CFG-&gt;dbuser    = 'moodleuser';
+$CFG-&gt;dbpass    = 'MdpMySQL';
+$CFG-&gt;dbpersist =  false;
+$CFG-&gt;prefix    = '';
+$CFG-&gt;wwwroot   = 'https://URL';
+$CFG-&gt;dirroot   = '/htdocs';
+$CFG-&gt;dataroot  = '/moodledata';
+$CFG-&gt;admin     = 'admin';
+$CFG-&gt;sessioncookie='something';
+$CFG-&gt;directorypermissions = 00777;  // try 02777 on a server in Safe Mode
+$CFG-&gt;passwordsaltmain = 'XXXXXXXXXXXXX';
+require_once("$CFG-&gt;dirroot/lib/setup.php");
+// MAKE SURE WHEN YOU EDIT THIS FILE THAT THERE ARE NO SPACES, BLANK LINES,^M
+// RETURNS, OR ANYTHING ELSE AFTER THE TWO CHARACTERS ON THE NEXT LINE.^M
+?&gt;
+
+</pre>
+<p>Si vous ne voulez pas vous retrouver avec des cx impossibles.
+</p>
+<h2><span class="mw-headline" id="Sous_OpenBSD_4.8">Sous OpenBSD 4.8</span></h2>
+<p>Dans les ports&#160;:
+</p>
+<pre>pkg_add moodle
+cd /var/www/
+ln -s ../moodle /var/www/htdocs/moodle
+ln -fs /var/www/conf/php5.sample/xmlrpc.ini         /var/www/conf/php5/xmlrpc.ini
+cd moodle
+cp config.php config.php.ori
+vi config.php
+</pre>
+<pre>mysql
+</pre>
+<pre>CREATE DATABASE moodle DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci; 
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER ON moodle.* TO moodleuser@localhost IDENTIFIED BY 'motdepasse'; 
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES, DROP,INDEX,ALTER ON moodle.* TO moodleuser@localhost IDENTIFIED BY 'motdepasse'; 
+</pre>
+<pre>exit
+mysqladmin -u root -p reload
+apachectl stop
+apachectl startssl
+mkdir {temp,cache,sessions,upgradelogs}
+chown -R www.www {lang,temp,cache,sessions,upgradelogs,user}
+</pre>
+<p>Afin de faire fonctionner les modules sauvegarde/import, il faut activer zip dans le chroot&#160;:
+</p>
+<pre>pkg_add zip
+ldd /usr/local/bin/zip
+mkdir -p /var/www/usr/local/bin
+mkdir -p /var/www/usr/libexec
+cp /usr/local/bin/zip /var/www/usr/local/bin/
+cp /usr/lib/libc.so.56.0 /var/www/usr/lib/
+cp /usr/libexec/ld.so /var/www/usr/libexec/
+apachectl stop
+apachectl startssl
+</pre>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Debian_7.0_Wheezy">Debian 7.0 Wheezy</span></h2>
+<ul><li> Télécharger moodle <a rel="nofollow" class="external autonumber" href="http://download.moodle.org/download.php/stable25/moodle-2.5.1.tgz">[1]</a></li>
+<li> Installer les paquets nécessaires&#160;:</li></ul>
+<pre>apt-get install php5 mysql-server apache2 php5-mysql libapache2-mod-php5 php5-gd php5-curl php5-xmlrpc php5-intl php5-ldap zip unzip
+
+</pre>
+<pre>echo " extension=mysql.so 
+  extension=gd.so
+ " &gt;&gt; /etc/php5/apache2/php.ini
+</pre>
+<pre>/etc/init.d/apache2 restart
+/etc/init.d/mysql restart
+</pre>
+<ul><li> Installer le paquet Moodle</li></ul>
+<pre>tar -xvf moodle-latest-25.tgz
+mv moodle /var/www/
+mkdir /var/moodledata
+mkdir -p /var/www/lib/editor/tinymce/plugins
+mkdir -p  /var/www/mod/assignment/type
+chown -R www-data.www-data /var/moodledata/
+chown -R www-data /var/www/mod/
+chown -R www-data  /var/www/filter/
+chown -R www-data  /var/www/repository/
+chown  -R www-data /var/www/question
+chown  -R www-data /var/www/blocks
+chown -R www-data /var/www/lib/editor/tinymce/plugins
+chown -R www-data.www-data  /var/www/mod/assignment/type
+</pre>
+<p><br />
+</p><p><a href="index.php%3Ftitle=Moodle.html#Debian_Lenny"> Pour passer en TLS </a>
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<h3><span class="mw-headline" id="Langue">Langue</span></h3>
+<ul><li> Site administration / Language / Language packs</li></ul>
+<p>Puis 
+</p>
+<ul><li> Site administration / Language / Language settings</li></ul>
+<h3><span class="mw-headline" id="Authentification">Authentification</span></h3>
+<ul><li> Utilisateurs / Authentification / Gestion de l'authentification</li></ul>
+<h3><span class="mw-headline" id="Usage_Web">Usage Web</span></h3>
+<p>Premier login admin/adminldap
+</p>
+<h3><span class="mw-headline" id="R.C3.A9glages_des_cours">Réglages des cours</span></h3>
+<p>Attention à bien valider l'auto-inscription si c'est ce que vous souhaitez&#160;:
+/Administration du site / Plugins  / Inscription / Auto-inscription
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Photos_des_utilisateurs">Photos des utilisateurs</span></h3>
+<p><a rel="nofollow" class="external autonumber" href="http://docs.moodle.org/21/en/User_pictures">[2]</a>
+</p>
+<h2><span class="mw-headline" id="Installation_de_plugins">Installation de plugins</span></h2>
+<ul><li>Allez chercher le plugiciel choisi (attentionà la version)</li>
+<li> copiez l'ensemble de l'arborescence dézippée dans .moodle/blocks ou .moodle/mod selon le type de plugin</li>
+<li> vérifiez les droits Unix</li>
+<li> Interface web admin/notifications devrait vous donner accès aux réglages.</li></ul>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Plugins_int.C3.A9ressants">Plugins intéressants</span></h3>
+<ul><li> <a rel="nofollow" class="external text" href="http://docs.moodle.org/23/en/Questionnaire_module">Questionnaire</a></li>
+<li> <a rel="nofollow" class="external text" href="http://moodle.org/plugins/browse.php?list=category&amp;id=29">drag&amp;drop/image</a></li>
+<li> <a rel="nofollow" class="external autonumber" href="https://moodle.org/plugins/view.php?plugin=mod_advmindmap">[3]</a> MindMap en 2.6</li>
+<li> <a rel="nofollow" class="external autonumber" href="https://moodle.org/plugins/view.php?plugin=mod_techproject">[4]</a> Gestion de projet</li></ul>
+<h4><span class="mw-headline" id="Sondage_en_ligne.2C_en_direct">Sondage en ligne, en direct</span></h4>
+<p>Avec smartphone si vous voulez, dans la classe&#160;;-)
+</p><p><a rel="nofollow" class="external autonumber" href="http://www.compadre.org/ipal/webdocs/Plugin.cfm">[5]</a>
+</p>
+<h4><span class="mw-headline" id="Etherpad_dans_Moodle">Etherpad dans Moodle</span></h4>
+<p><a rel="nofollow" class="external autonumber" href="https://moodle.org/plugins/view.php?plugin=mod_etherpad">[6]</a>
+</p>
+<ul><li> Téléchargez Etherpad&#160;: <a rel="nofollow" class="external autonumber" href="http://etherpad.org/#download">[7]</a></li></ul>
+<pre>apt-get install gzip git-core curl python libssl-dev pkg-config build-essential python-software-properties python g++ make
+</pre>
+<h5><span class="mw-headline" id="node.js">node.js</span></h5>
+<ul><li> Téléchargez node.js&#160;: <a rel="nofollow" class="external autonumber" href="http://nodejs.org/dist/v0.10.18/node-v0.10.18.tar.gz">[8]</a></li></ul>
+<pre>tar zxvf node
+cd node
+./configure --openssl-libpath=/usr/lib/ssl --prefix=/opt/node
+make
+make install
+echo "PATH=$PATH:/opt/node/bin
+NODE_PATH=/opt/node:/opt/node/lib/node_modules
+" &gt;&gt; /etc/bash.bashrc
+source /etc/bash.bashrc
+adduser etehrpad-lite
+cd /home/etherpad-lite
+./bin/run.sh --root
+CTRL+C
+</pre>
+<pre>cat APIKEY.txt
+</pre>
+<p>qui donne la clé (aléatoire&#160;?) de reconnexin au pad. A coller dans APIKey sur les réglages du plugin dans Moodle
+</p><p>puis testez <a rel="nofollow" class="external free" href="http://@IP:9001">http://@IP:9001</a>
+</p>
+<h4><span class="mw-headline" id="Config_2">Config</span></h4>
+<p><i>settings.json</i> vous permet de configurer le service et en particulier l'usage de mysql au lieu de dirty.db (si si&#160;;-) )
+</p><p>Il suffit de décommenter la partie mysql et de commenter la partie dirty.db, puis suivre <a rel="nofollow" class="external text" href="https://github.com/ether/etherpad-lite/wiki/How-to-use-Etherpad-Lite-with-MySQL">| cette</a> page
+</p><p><br />
+<a rel="nofollow" class="external text" href="http://postblue.info/node-js-et-haste-installation-sur-un-serveur-debian-squeeze/">Source</a>
+</p><p><br />
+<b>INfo</b>&#160;: 
+NE COPIEZ PAS les pads dans Moodle pour vos groupes. Ca ne marche pas, une histoire de clé de session identique.
+</p>
+<h4><span class="mw-headline" id="Labos_de_langues">Labos de langues</span></h4>
+<p>La salle Edu4 étant obsolète et la tarifs remplacement sur fonds propres prohibitifs, je regarde des solutions alternatives.
+</p>
+<h5><span class="mw-headline" id="OWLL_:_Obsol.C3.A8te">OWLL&#160;: Obsolète</span></h5>
+<p>OWLL (type de plugin&#160;: Activité)&#160;: <a rel="nofollow" class="external autonumber" href="https://moodle.org/plugins/view.php?plugin=mod_languagelab">[9]</a>
+</p><p><br />
+Il faut installer le serveur flash (<a rel="nofollow" class="external autonumber" href="https://support.mayfirst.org/wiki/install-red5">[10]</a>)
+Quelques docs <a rel="nofollow" class="external autonumber" href="http://www.webhostrepo.com/blog/installing-red5-media-server-on-centos-server">[11]</a>, 
+</p>
+<pre>echo "
+  deb-src <a rel="nofollow" class="external free" href="http://ftp.debian.org/debian">http://ftp.debian.org/debian</a> wheezy main contrib
+  deb-src <a rel="nofollow" class="external free" href="http://security.debian.org">http://security.debian.org</a> wheezy/updates main contrib
+  " &gt;&gt; /etc/apt/sources.list
+apt-get update
+apt-get install   ant dpkg-dev subversion  debhelper dh-make devscripts fakeroot
+apt-get remove --purge openjdk*
+</pre>
+<p>Installez <a href="index.php%3Ftitle=Wheezy.html#Java_from_Sun" title="Wheezy"> java jdk&amp;jre de Sun; pas ceux libres, dommage!</a>
+</p><p>L'installation de Red5 depuis les paquets Debian ne fait pas le boulot intégral; on va compiler à l'ancienne&#160;:
+</p>
+<pre>cd /root
+svn co <a rel="nofollow" class="external free" href="http://red5.googlecode.com/svn/java/server/tags/1_0/">http://red5.googlecode.com/svn/java/server/tags/1_0/</a> red5
+cd red5 
+make
+make install
+mkdir -p /usr/lib/red5
+install dist/boot.jar /usr/lib/red5
+install dist/red5.jar /usr/lib/red5
+install -m 755 dist/red5.sh /usr/lib/red5
+cp -r dist/conf /usr/lib/red5
+cp -r dist/lib /usr/lib/red5
+cp -r dist/webapps /usr/lib/red5
+</pre>
+<pre>apt-get install red5-server
+ export CLASSPATH=/root/red5/dist/boot.jar 
+cd /ur/lib/red5
+./red5.sh 
+cp -r webapps/* /usr/share/red5/webapps/  
+/etc/init.d/red5-server restart
+</pre>
+<p><br />
+</p>
+<ul><li>Testez votre installation du serveur Red5&#160;:  <a rel="nofollow" class="external free" href="http://@IP:5080">http://@IP:5080</a></li>
+<li> Cliquez sur Install demos</li>
+<li> Choisissez olafDemo</li></ul>
+<p>Si vous rencontrez des soucis (l'installation par <a rel="nofollow" class="external free" href="http://@ip:5080/installer">http://@ip:5080/installer</a> ou bien la case owll grisée), jetez un oeil aux logs.
+</p>
+<ul><li> Closing RTMPMinaConnection due to long handshake </li></ul>
+<p>Vérifiez la mise à l'heure du serveur/client .
+</p>
+<ul><li> set rtmp.throttle_enable=false in configure file red5.properties</li></ul>
+<p><br />
+<i>Bon, Red5, c'est mieux avec un X-Wing qu'avec un clavier....</i>
+</p>
+<h5><span class="mw-headline" id="PoodLL">PoodLL</span></h5>
+<ul><li> Utilisez le nouveau système d'installation de la version 2.5., mais d'abord il faut installer poodll_filter qui ne passe pas la validation&#160;:</li></ul>
+<pre>cd /var/www/filter/
+wget <a rel="nofollow" class="external free" href="https://moodle.org/plugins/download.php/3745/filter_poodll_moodle25_2013082600.zip">https://moodle.org/plugins/download.php/3745/filter_poodll_moodle25_2013082600.zip</a>
+unzip filter_poodll_moodle25_2013082600.zip 
+
+</pre>
+<ul><li> Il faut installer au total les  modules suivants&#160;:
+<ul><li> PoodLL filter&#160;: Obligatoire pour les autres</li>
+<li> PoodLL Submission&#160;: Permet aux étudiants de s'enregistrer</li></ul></li></ul>
+<p><br />
+</p>
+<ul><li> La configuration se fait&#160;: <i>  /admin/filters.php </i></li></ul>
+<p>Il faut activer le filtre PoodLL puis le déplacer au dessus du filtre Multimédias
+</p>
+<ul><li> Puis allez sur les repositories&#160;: <i>/admin/repository.php</i> et activez le repo poodll (activé et visible)</li></ul>
+<p><br />
+</p>
+<ul><li> PLus d'infos:  <a rel="nofollow" class="external text" href="http://poodll.com/documentation/moodle-2-1/installing-poodll-2/">ici</a></li></ul>
+<h5><span class="mw-headline" id="Nanogong">Nanogong</span></h5>
+<h3><span class="mw-headline" id="Rsyslogger">Rsyslogger</span></h3>
+<p>Copie les données de la table moodle log dans le syslog
+Utile pour Splunk&#160;!
+</p>
+<h2><span class="mw-headline" id="D.C3.A9sinstallation_de_plugins">Désinstallation de plugins</span></h2>
+<h3><span class="mw-headline" id="En_cas_de_mont.C3.A9e_ce_version_qui_se_passe_mal">En cas de montée ce version qui se passe mal</span></h3>
+<p>En cas de montée de version qui se passe mal, vous allez vous retrouver pour une palanquée de plugins avec&#160;:
+</p>
+<pre>Impossible de faire revenir PLUGIN de VERSION2  vers VERSION1.
+</pre>
+<p>Par exemple&#160;: 
+<a href="./index.php%3Ftitle=Fichier:Moodle-plugin-Check.jpg.html" class="image"><img alt="Moodle-plugin-Check.jpg" src="images/4/43/Moodle-plugin-Check.jpg" width="1000" height="217" /></a>
+</p><p>Alors, il faut mettre les mains dans le cambouis:
+</p>
+<pre>mysql
+use moodleBDD;
+select plugin,value from config_plugins where name="version" and plugin like "PLUGIN%";
+update config_plugins set value="VERSION1" where plugin="PLUGIN";
+</pre>
+<p>puis vous faites une maj du plugin.
+</p>
+<h3><span class="mw-headline" id="Une_suppression_qui_se_d.C3.A9roule_mal">Une suppression qui se déroule mal</span></h3>
+<p>Exemple Avec Wiris, 
+</p>
+<pre>select * from config_plugins where plugin like '%wiris'; 
+</pre>
+<pre>+------+------------------------+---------+------------+
+| id   | plugin                 | name    | value      |
++------+------------------------+---------+------------+
+| 1077 | filter_wiris           | version | 2014010101 |
+| 1312 | tinymce_tiny_mce_wiris | version | 2014102100 |
+| 1478 | atto_wiris             | version | 2014010101 |
++------+------------------------+---------+------------+
+</pre>
+<pre>delete from config_plugins where plugin='filter_wiris';
+delete from config_plugins where plugin='tinymce_tiny_mce_wiris';
+delete from config_plugins where plugin='atto_wiris';
+</pre>
+<h2><span class="mw-headline" id="Et_le_smartphone_.3F.3F">Et le smartphone &#160;??</span></h2>
+<ul><li> Mettre en place les services pour mobile&#160;:</li></ul>
+<pre>  Home
+   / ⟩ Site administration
+   / ⟩ Plugins
+   / ⟩ Web services
+   / ⟩ Mobile
+</pre>
+<h2><span class="mw-headline" id="Mont.C3.A9e_de_version">Montée de version</span></h2>
+<ul><li>Faites une copie de backup</li></ul>
+<pre>tar zcvf /root/moodle-backup.tar.gz /var/www/
+</pre>
+<ul><li> Télécharger la dernière version&#160;: <a rel="nofollow" class="external autonumber" href="https://download.moodle.org/releases/latest/">[12]</a></li>
+<li> Vérifier le hash SHA256</li>
+<li> Faites une sauvegarde de la BDD</li>
+<li> Mettre en mode maintenance&#160;: <a rel="nofollow" class="external free" href="https://MOODLE/admin/settings.php?section=maintenancemode">https://MOODLE/admin/settings.php?section=maintenancemode</a></li></ul>
+<pre>tar zxvf moodle-2.X.tgz
+cp -pr moodle moodle.backup
+cp -pr /newVersion/moodle/* /var/www
+cp moodle.backup/config.php /var/www
+</pre>
+<p><br />
+Puis recopier les modules
+</p>
+<h2><span class="mw-headline" id="Questionnaire">Questionnaire</span></h2>
+<ul><li> <a rel="nofollow" class="external autonumber" href="http://moodle.org/plugins/view.php?plugin=mod_questionnaire">[13]</a> est un module permettant de générer des questionnaires afin de récupérer des informations; pas pour évaluer.</li></ul>
+<h2><span class="mw-headline" id="Qapi:_Int.C3.A9gration_de_Moodle_dans_Drupal">Qapi: Intégration de Moodle dans Drupal</span></h2>
+<ul><li> Dl le paquet <a rel="nofollow" class="external autonumber" href="http://code.google.com/p/qapi/">[14]</a></li></ul>
+<pre>mv qapi-1.0.tgz moodle/admin/report/
+tar zxvf  moodle/admin/report/qapi-1.0.tgz
+mv moodle/admin/report/qapi-1.0/ moodle/admin/report/qapi
+rm moodle/admin/report/qapi-1.0.tgz
+</pre>
+<ul><li> Menu administration/Notifications vérifiez que les bonnes tables ont été crées.</li>
+<li> URL/moodle/admin/report/qapi/index.php ajoutez les @IP autorisées à se connecter au service.</li></ul>
+<ul><li> Drupal a besoin des modules <a rel="nofollow" class="external text" href="http://drupal.org/project/date">date</a> et <a rel="nofollow" class="external text" href="http://drupal.org/project/link">link</a></li>
+<li> N'oubliez pas d'autoriser vos utilisateurs à accéder au module et de construire les blocs.</li></ul>
+<p>On arrive, après authentification sur Drupal à&#160;:
+</p><p><a href="./index.php%3Ftitle=Fichier:Moodle.png.html" class="image"><img alt="Moodle.png" src="images/e/e0/Moodle.png" width="200" height="227" /></a>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Requ.C3.AAtes_SQL_utiles">Requêtes SQL utiles</span></h2>
+<ul><li> Obtenir la liste des emails des élèves d'un cours</li></ul>
+<pre>SELECT c.id AS id,u.firstname, u.lastname, u.email FROM role_assignments ra, user u, course c, context cxt WHERE ra.userid = u.id AND ra.contextid = cxt.id AND cxt.contextlevel =50 AND cxt.instanceid = c.id AND c.shortname ='XXXXX' AND (roleid=5);
+</pre>
+<p>Avec XXXX, le nom court du cours
+</p>
+<ul><li> Obtenir les cours (intitulé long) avec le nomre de participants</li></ul>
+<pre>SELECT cr.shortname, cr.fullname, count( ra.id ) AS enrolled FROM `course` cr JOIN `context` ct ON ( ct.instanceid = cr.id ) LEFT JOIN `role_assignments` ra ON ( ra.contextid = ct.id ) WHERE ct.contextlevel =50 GROUP BY cr.shortname, cr.fullname ORDER BY `enrolled` ASC;
+</pre>
+<h2><span class="mw-headline" id="Trucs">Trucs</span></h2>
+<ul><li> <a rel="nofollow" class="external free" href="http://moodleserver/userpix">http://moodleserver/userpix</a>&#160;: Donne la liste des photos des avatars</li></ul>
+<ul><li> <a rel="nofollow" class="external autonumber" href="http://docs.moodle.org/2x/fr/Atelier">[15]</a> L'outil Atelier</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Carnet_de_notes">Carnet de notes</span></h2>
+<p>Comment ajouter des notes manuelles pour utiliser Moodle comme carnet de notes...
+</p>
+<pre>   ⟩ Administration des notes
+   / ⟩ Catégories et éléments
+   / ⟩ Affichage complet
+</pre>
+<p>-&gt; En bas&#160;: Ajouter une élément d'évaluation.
+</p><p>Puis
+Rapport de l'évaluateur,
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020132800
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.480 seconds
+Real time usage: 0.504 seconds
+Preprocessor visited node count: 147/1000000
+Preprocessor generated node count: 164/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:111-0!*!0!!fr!5!* and timestamp 20171020132800 and revision id 3135
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Moodle&amp;oldid=3135">http://www.openbsd-edu.net/index.php?title=Moodle&amp;oldid=3135</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Moodle.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Moodle.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Moodle&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Moodle.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Moodle.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Moodle&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Moodle&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Moodle.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FMoodle.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Moodle" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Moodle&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Moodle&amp;oldid=3135" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Moodle&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 18 mai 2015 à 09:16.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.480","walltime":"0.504","ppvisitednodes":{"value":147,"limit":1000000},"ppgeneratednodes":{"value":164,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132801","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1966});});</script>
+	</body>
+</html>

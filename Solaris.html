@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Solaris — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Solaris","wgTitle":"Solaris","wgCurRevisionId":1896,"wgRevisionId":1896,"wgArticleId":75,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Solaris","wgRelevantArticleId":75,"wgRequestId":"ae4564e9e3ccd450d3b58459","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Solaris rootpage-Solaris skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Solaris</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Solaris.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Solaris.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Solaris.html#Hardware"><span class="tocnumber">1</span> <span class="toctext">Hardware</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Solaris.html#Equivalence_COmmandes_LInux.2FBSD_en_Solaris"><span class="tocnumber">2</span> <span class="toctext">Equivalence COmmandes LInux/BSD en Solaris</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Solaris.html#P.C3.A9riph.C3.A9riques"><span class="tocnumber">3</span> <span class="toctext">Périphériques</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Solaris.html#Mais_o.C3.B9_est_fstab_.3F.3F"><span class="tocnumber">3.1</span> <span class="toctext">Mais où est fstab&#160;??</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Solaris.html#Monter_un_CDrom"><span class="tocnumber">3.2</span> <span class="toctext">Monter un CDrom</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Solaris.html#Montage_NFS"><span class="tocnumber">3.3</span> <span class="toctext">Montage NFS</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Solaris.html#R.C3.A9seau_.28Solaris_11.29"><span class="tocnumber">4</span> <span class="toctext">Réseau (Solaris 11)</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Solaris.html#Applis"><span class="tocnumber">5</span> <span class="toctext">Applis</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Solaris.html#Installation_de_paquets_logiciels"><span class="tocnumber">5.1</span> <span class="toctext">Installation de paquets logiciels</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Solaris.html#M.C3.A9thode_traditionnelle_:Obsol.C3.A8te"><span class="tocnumber">5.1.1</span> <span class="toctext">Méthode traditionnelle&#160;:Obsolète</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="index.php%3Ftitle=Solaris.html#M.C3.A9thode_simple:_Obsol.C3.A8te"><span class="tocnumber">5.1.2</span> <span class="toctext">Méthode simple: Obsolète</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=Solaris.html#Paquets_sous_Solaris_11_.21.21.21NEW.21.21.21"><span class="tocnumber">5.1.3</span> <span class="toctext">Paquets sous Solaris 11&#160;!!!NEW!!!</span></a>
+<ul>
+<li class="toclevel-4 tocsection-13"><a href="index.php%3Ftitle=Solaris.html#ligne_de_commande"><span class="tocnumber">5.1.3.1</span> <span class="toctext">ligne de commande</span></a></li>
+<li class="toclevel-4 tocsection-14"><a href="index.php%3Ftitle=Solaris.html#Interface_graphique"><span class="tocnumber">5.1.3.2</span> <span class="toctext">Interface graphique</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=Solaris.html#Exemples"><span class="tocnumber">5.1.4</span> <span class="toctext">Exemples</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="index.php%3Ftitle=Solaris.html#Suppression_de_paquets"><span class="tocnumber">5.1.5</span> <span class="toctext">Suppression de paquets</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="index.php%3Ftitle=Solaris.html#Wine_Emulation_Windows"><span class="tocnumber">6</span> <span class="toctext">Wine Emulation Windows</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="index.php%3Ftitle=Solaris.html#Imprimantes"><span class="tocnumber">7</span> <span class="toctext">Imprimantes</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="index.php%3Ftitle=Solaris.html#Solaris_Client_LDAP"><span class="tocnumber">8</span> <span class="toctext">Solaris Client LDAP</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=Solaris.html#Installation"><span class="tocnumber">8.1</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=Solaris.html#Debugging"><span class="tocnumber">8.2</span> <span class="toctext">Debugging</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Hardware">Hardware</span></h2>
+<ul><li> prtdiag</li>
+<li> smbios</li></ul>
+<h2><span class="mw-headline" id="Equivalence_COmmandes_LInux.2FBSD_en_Solaris">Equivalence COmmandes LInux/BSD en Solaris</span></h2>
+<ul><li> top -&gt; prstat</li></ul>
+<h2><span class="mw-headline" id="P.C3.A9riph.C3.A9riques">Périphériques</span></h2>
+<h3><span class="mw-headline" id="Mais_o.C3.B9_est_fstab_.3F.3F">Mais où est fstab&#160;??</span></h3>
+<p>Ici &#160;: <i>/etc/vfstab</i>, simple,non&#160;?
+</p>
+<h3><span class="mw-headline" id="Monter_un_CDrom">Monter un CDrom</span></h3>
+<pre>/etc/init.d/volmgt start
+</pre>
+<p>Puis insérer le CDROM&#160;:
+</p>
+<pre>mount |grep cdrom
+/cdrom/s10_509_software_companion on /vol/dev/dsk/c0t0d0/s10_509_software_companion read only/nosetuid/nodevices/noglobal/maplcase/rr/traildot  /dev=1740001 on lun. oct  12 13:59:05 2009
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Montage_NFS">Montage NFS</span></h3>
+<p>Sous linux, un montage NFS c'est ça&#160;:
+</p>
+<pre>Serveur:/Chemin     /home/USER/nfs/CheminLocal        nfs     user,noauto     0 0
+</pre>
+<p>Sous Solaris&#160;:
+</p>
+<pre>Serveur:/Chemin  -   /export/home/USER/nfs/cheminLocal        nfs     -  yes  rw,soft
+</pre>
+<h2><span class="mw-headline" id="R.C3.A9seau_.28Solaris_11.29">Réseau (Solaris 11)</span></h2>
+<p>Par défaut, Sol11 utilise un NetworkManager like appelé <b>nwam</b> (pour Network AutoMagic). Ce truc doit très bien marcher pour un client, mais pour un serveur, c'est une vraie plaie...
+</p><p>Si vous voulez modifier la config à la main&#160;:
+</p><p>Attention, vous allez perdre le réseau. Si vous êtes connectés en SSH, ça risque de mal se terminer...
+</p>
+<pre>
+svcadm disable svc:/network/physical:nwam
+svcadm enable network/physical:default
+ipadm delete-if bge1
+ipadm create-if bge1
+ipadm create-addr -T static -a @IP/24 @Interface/v4
+perl -pi -e 's/hosts:      files/hosts:      files dns/' /etc/nsswitch.conf
+perl -pi -e 's/ipnodes:      files/ipnodes:      files dns/' /etc/nsswitch.conf
+echo "@IP Nom_Serverur" &gt;&gt; /etc/hosts
+route -p add default @IPGW
+</pre>
+<p>Configurez le résolveur, et c'est OK.
+</p><p><a rel="nofollow" class="external text" href="http://blog.allanglesit.com/2011/03/solaris-11-network-configuration-basics/">Plus d'infos</a>
+</p><p>Bug rencontré&#160;:  nwamd_door_switch: need solaris.network.autoconf.read for request type 1
+</p>
+<h2><span class="mw-headline" id="Applis">Applis</span></h2>
+<h3><span class="mw-headline" id="Installation_de_paquets_logiciels">Installation de paquets logiciels</span></h3>
+<h4><span class="mw-headline" id="M.C3.A9thode_traditionnelle_:Obsol.C3.A8te">Méthode traditionnelle&#160;:Obsolète</span></h4>
+<p><a rel="nofollow" class="external text" href="http://www.cyberciti.biz/tips/solaris-add-install-new-software-packages.html">Solutions</a>
+</p><p>Le plus simple&#160;:
+</p>
+<ul><li>Télécharger le paquet sur <a rel="nofollow" class="external free" href="http://www.sunfreeware.com">http://www.sunfreeware.com</a></li>
+<li> Détarrer le soft&#160;: <pre> gunzip paquet.gz </pre></li>
+<li> Installer le soft&#160;: <pre> pkgadd -d  paquet </pre></li>
+<li> Ils finissent dans <i>/usr/local/bin</i></li></ul>
+<h4><span class="mw-headline" id="M.C3.A9thode_simple:_Obsol.C3.A8te">Méthode simple: Obsolète</span></h4>
+<p><s><a rel="nofollow" class="external text" href="http://www.blastwave.org/jir/blastwave.fam">Tout est là!</a>
+</p>
+<pre>/opt/sfw/bin/lynx <a rel="nofollow" class="external free" href="http://blastwave.network.com/csw/pkgutil_`/sbin/uname">http://blastwave.network.com/csw/pkgutil_`/sbin/uname</a> -p`.pkg
+digest -a md5 pkgutil_i386.pkg
+pkgadd -d ./pkgutil_i386.pkg
+/opt/csw/bin/pkgutil --catalog
+/opt/csw/bin/pkgutil --install gnupg textutils
+/opt/csw/bin/gpg --keyserver pgp.mit.edu --recv-keys A1999E90
+/csw/bin/pkgutil -a
+/opt/csw/bin/pkgutil -a | grep cups
+
+</pre>
+<p></s>
+</p><p><b>Méthode conseillée</b>
+</p><p><a rel="nofollow" class="external text" href="http://opencsw.solaris-fr.org/README">Ici</a>
+</p>
+<pre>/opt/csw/bin/wget <a rel="nofollow" class="external free" href="http://opencsw.solaris-fr.org/pkg_get.pkg">http://opencsw.solaris-fr.org/pkg_get.pkg</a>
+pkgadd -d pkg_get.pkg
+vi /opt/csw/etc/pkg-get.conf
+</pre>
+<p>J'ai ajouté
+</p>
+<pre>url=<a rel="nofollow" class="external free" href="http://mir1.ovh.net/mirrors/opencsw.org/stable">http://mir1.ovh.net/mirrors/opencsw.org/stable</a>
+</pre>
+<p>et 
+</p>
+<pre>PKGGET_DOWNLOAD_DIR=/export/home/pkg-get
+</pre>
+<p>A cause d'une mauvaise estimation initiale de la taille des partitions...
+</p><p>Puis il faut récupérer <a rel="nofollow" class="external text" href="http://www.opencsw.org/mirrors#key">la clé du dépôt</a>
+</p>
+<pre>/opt/csw/bin/wget --output-document=/tmp/gpg.key <a rel="nofollow" class="external free" href="http://www.opencsw.org/mirrors#key">http://www.opencsw.org/mirrors#key</a>
+/opt/csw/bin/gpg --import /tmp/gpg.key
+</pre>
+<p>Terminé,  vous pouvez installer les softs à la manière...Debian&#160;?
+</p>
+<h4><span class="mw-headline" id="Paquets_sous_Solaris_11_.21.21.21NEW.21.21.21">Paquets sous Solaris 11&#160;!!!NEW!!!</span></h4>
+<p><a rel="nofollow" class="external text" href="http://wikis.sun.com/display/solaris/Introduction+to+IPS+for+Developers">Howto</a>
+</p><p>Oracle a profondément modifié la gestion des paquets. L'outil et le principe sont quasi-semblables à ce que fournit le duo apt-get &amp; synaptic sous Debian! Autant le dire, c'est un sacré progrès pour les nouveaux arrivants sous Solaris!!
+</p>
+<h5><span class="mw-headline" id="ligne_de_commande">ligne de commande</span></h5>
+<pre>pkg install PAQUET
+pkg search PAQUET
+</pre>
+<h5><span class="mw-headline" id="Interface_graphique">Interface graphique</span></h5>
+<p>Juste le Package manager!
+</p>
+<h4><span class="mw-headline" id="Exemples">Exemples</span></h4>
+<pre>/opt/csw/bin/pkg-get install rsync
+</pre>
+<h4><span class="mw-headline" id="Suppression_de_paquets">Suppression de paquets</span></h4>
+<pre>/opt/csw/bin/pkg-get -l |grep XXX
+/opt/csw/bin/pkg-get -r paquet1 paquet2
+</pre>
+<h2><span class="mw-headline" id="Wine_Emulation_Windows">Wine Emulation Windows</span></h2>
+<p><a rel="nofollow" class="external text" href="http://opensolarisaujourlejour.wordpress.com/2008/08/29/installer-wine/">Info</a>
+</p>
+<ul><li> Marche pas celui-là&#160;:</li></ul>
+<pre>
+/usr/sfw/bin/wget http://mpkgopensolaris.sourceforge.net/wine/Wine-1.1.2-solaris-5.11-i86pc.pkg.bz2
+bunzip2 Wine-1.1.2-solaris-5.11-i86pc.pkg.bz2 
+pkgadd -d ./Wine-1.1.2-solaris-5.11-i86pc.pkg
+rm Wine-1.1.2-solaris-5.11-i86pc.pkg.*
+</pre>
+<ul><li> Mui se colle dans <i>/usr/local/wine/bin/wine</i></li></ul>
+<p><br />
+</p>
+<ul><li> On tente notre chance avec celui là&#160;:</li></ul>
+<pre>
+http://www.sunfreepacks.com/listing/?limit=10&amp;offset=20
+</pre>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Imprimantes">Imprimantes</span></h2>
+<pre>/opt/csw/bin/pkgutil --install cups cupsd cupsclient libgnomecups
+chmod u+x /etc/init.d/cswcups
+cd /opt/csw/etc/cups
+cp cupsd.conf.CSW cupsd.conf
+mkdir -p /opt/csw/var/run/cups
+chown -R lp:lp /opt/csw/var/run/
+/etc/init.d/cswcups start
+</pre>
+<h2><span class="mw-headline" id="Solaris_Client_LDAP">Solaris Client LDAP</span></h2>
+<h3><span class="mw-headline" id="Installation">Installation</span></h3>
+<p><a rel="nofollow" class="external text" href="http://web.singnet.com.sg/~garyttt/">Doc0</a><a rel="nofollow" class="external text" href="http://docs.lucidinteractive.ca/index.php/Solaris_LDAP_client_with_OpenLDAP_server">Doc1</a>
+<a rel="nofollow" class="external text" href="http://blog.maniac.nl/setting-up-ldap-with-openldap-server-solaris-10-aix-61-and-linux-clients/">Doc2</a> avec les schémas LDAP qui vont bien
+</p><p><br />
+</p>
+<ul><li> Télécharger le schéma <a href="./index.php%3Ftitle=Fichier:Solaris.schema.txt.html" title="Fichier:Solaris.schema.txt">Fichier:Solaris.schema.txt</a> et le coller dans le répertoire /etc/ldap/schema/solaris.schema</li>
+<li> Ajouter la ligne qui va bien</li></ul>
+<pre>
+echo "include         /etc/ldap/schema/solaris.schema" &gt;&gt; /etc/ldap/slapd.conf
+</pre>
+<p><br />
+</p>
+<ul><li> Redémarrer le ldap du se3</li></ul>
+<pre>
+/etc/init.d/slapd restart
+</pre>
+<ul><li> Sur le Solaris:</li></ul>
+<pre>
+cp /etc/nsswitch.ldap  /etc/nsswitch.ldap.bak
+cp /etc/nsswitch.conf  /etc/nsswitch.conf.bak
+&lt;pre&gt;
+perl -pi -e 's/ipnodes:/ipnodes: files dns ##/' /etc/nsswitch.ldap
+perl -pi -e 's/hosts:/hosts: files dns ##/' /etc/nsswitch.ldap
+perl -pi -e 's/networks:/networks: files ##/' /etc/nsswitch.conf
+
+</pre>
+<p>La dernière ligne évite de remplir les logs de Slapd côté serveur avec des requêtes qui n'aboutiront pas. Genre&#160;:
+</p>
+<pre>LDAP searchRequest(1) "ou=networks,BASEDN" singleLevel 
+LDAP searchResDone(1) noSuchObject  [0 results]
+</pre>
+<ul><li><ul><li> On configure le client ldap
+<ul><li> On vérifie la présence des paquets logiciels (<i>pkginfo|grep XXX</i> ) . Normalement sur une solaris 10u7 from scratch, tout y est</li></ul></li></ul></li></ul>
+<ul><li><ul><li><ul><li>SUNWnisu  # provides ldapclient</li>
+<li>SUNWnisr</li>
+<li>SUNWspnego # gss-api related libs</li>
+<li>SUNWsndmr # see note below</li>
+<li>SUNWatfsr # see note below</li>
+<li>SUNWlldap</li></ul></li></ul></li></ul>
+<pre>
+domainname lyceenobel.org     # on pose le domainname à une valeur non nulle (mandatory&#160;!)
+
+# LA ligne importante, qui fait tout&#160;:
+
+ldapclient -v manual -a defaultServerList=IPSE3 -a defaultSearchBase=BASEDN -a authenticationMethod=tls:simple -a 
+
+serviceAuthenticationMethod=pam_ldap:tls:simple  -a serviceAuthenticationMethod=passwd-cmd:tls:simple -a proxyDN=cn=adminBASEDN -a 
+
+proxyPassword=PASSADMINLDAP
+</pre>
+<pre>
+Analyse de defaultServerList=IPSE3
+Analyse de defaultSearchBase=BASEDN
+Analyse de authenticationMethod=tls:simple
+Analyse de serviceAuthenticationMethod=pam_ldap:tls:simple
+Analyse de serviceAuthenticationMethod=passwd-cmd:tls:simple
+Analyse de proxyDN=cn=admin,BASEDN
+Analyse de proxyPassword=PASSADMINLDAP
+Arguments analys�s&#160;:
+        authenticationMethod: tls:simple
+        serviceAuthenticationMethod: 
+                arg[0]: pam_ldap:tls:simple
+                arg[1]: passwd-cmd:tls:simple
+        defaultSearchBase: BASEDN
+        proxyDN: cn=admin,BASEDN
+        proxyPassword: PASSADMINLDAP
+        defaultServerList: IPSE3
+Traitement de l'option manual
+Nom de domaine du proxy&#160;: cn=admin,BASEDN
+Mot de passe du proxy&#160;: {NS1}jhioniuho
+M�thode d'authentification&#160;: 3
+proxyDN/proxyPassword non n�cessaires
+Sur le point de modifier la configuration de ces machines en �crivant les fichiers
+Arr�t des services r�seau
+sendmail n'est pas en cours d'ex�cution
+nscd n'est pas en cours d'ex�cution
+autofs n'est pas en cours d'ex�cution
+ldap n'est pas en cours d'ex�cution
+nisd n'est pas en cours d'ex�cution
+nis(yp) n'est pas en cours d'ex�cution
+file_backup&#160;: stat(/etc/nsswitch.conf)=0
+file_backup&#160;: (/etc/nsswitch.conf -&gt; /var/ldap/restore/nsswitch.conf)
+file_backup&#160;: stat(/etc/defaultdomain)=-1
+file_backup&#160;: Pas de fichier /etc/defaultdomain.
+file_backup&#160;: stat(/var/nis/NIS_COLD_START)=-1
+file_backup&#160;: Pas de fichier /var/nis/NIS_COLD_START.
+file_backup&#160;: Le domaine nis est "lyceenobel.org"
+file_backup&#160;: stat(/var/yp/binding/lyceenobel.org)=-1
+file_backup&#160;: Pas de r�pertoire /var/yp/binding/lyceenobel.org .
+file_backup&#160;: stat(/var/ldap/ldap_client_file)=-1
+file_backup&#160;: Pas de fichier /var/ldap/ldap_client_file.
+Lancement des services r�seau
+start: /usr/bin/domainname lyceenobel.org... succ�s
+d�but: sommeil 100000 microsecondes
+d�but: sommeil 200000 microsecondes
+d�but: sommeil 400000 microsecondes
+d�but: network/ldap/client:default... succ�s
+red�marrer: sommeil 100000 microsecondes
+red�marrer: milestone/name-services:default... succ�s
+Syst�me correctement configuré
+
+</pre>
+<p>Apparemment ca marche&#160;!
+On teste&#160;:
+</p>
+<pre>
+ldapsearch -v -b "ou=People,BASEDN" -h IPSE3 -D cn=admin,BASEDN -w ADMINLDAPPASS -s sub "objectclass=*"
+</pre>
+<p>Si ça ne répond pas, il faut vérifier que le service client ldapclient est lancé:
+</p>
+<pre>
+svcadm -v restart svc:/network/ldap/client:default
+</pre>
+<p>On vérifie que c'est le cas:
+</p>
+<pre>
+svcprop -v svc:/network/ldap/client:default |grep enable
+general/enabled boolean true
+</pre>
+<p>C'est bon.
+</p>
+<h3><span class="mw-headline" id="Debugging">Debugging</span></h3>
+<p><a rel="nofollow" class="external text" href="http://tools.iso.port.ac.uk/twiki/bin/view/Docs/LDAPSolaris?skin=plain">ldapclient file</a>
+</p>
+<pre>
+getent passwd
+</pre>
+<p>Si vous récupérez les utilisateurs de l'annuaire, c'est un bon début..
+Sinon&#160;:
+</p>
+<pre>/etc/init.d/ldapclient start
+</pre>
+<p>et recommencez
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171019144758
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.440 seconds
+Real time usage: 0.454 seconds
+Preprocessor visited node count: 202/1000000
+Preprocessor generated node count: 368/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:75-0!*!*!!fr!5!* and timestamp 20171019144757 and revision id 1896
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Solaris&amp;oldid=1896">http://www.openbsd-edu.net/index.php?title=Solaris&amp;oldid=1896</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Solaris.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Solaris.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Solaris&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Solaris.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Solaris.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Solaris&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Solaris&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Solaris.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FSolaris.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Solaris" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Solaris&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Solaris&amp;oldid=1896" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Solaris&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 14 décembre 2011 à 18:10.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.440","walltime":"0.454","ppvisitednodes":{"value":202,"limit":1000000},"ppgeneratednodes":{"value":368,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171019144758","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1337});});</script>
+	</body>
+</html>

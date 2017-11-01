@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Cisco — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Cisco","wgTitle":"Cisco","wgCurRevisionId":2888,"wgRevisionId":2888,"wgArticleId":23,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Cisco","wgRelevantArticleId":23,"wgRequestId":"4572854d1f917da116ee90cc","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Cisco rootpage-Cisco skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Cisco</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Cisco.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Cisco.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Cisco.html#Commandes_courantes"><span class="tocnumber">1</span> <span class="toctext">Commandes courantes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Cisco.html#SNMP"><span class="tocnumber">1.1</span> <span class="toctext">SNMP</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Cisco.html#Agr.C3.A9gation_de_ports"><span class="tocnumber">2</span> <span class="toctext">Agrégation de ports</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Cisco.html#Debug"><span class="tocnumber">2.1</span> <span class="toctext">Debug</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Cisco.html#Remise_.C3.A0_z.C3.A9ro_de_la_configuration_.28test_sur_un_Catalyst_3500XL.29"><span class="tocnumber">3</span> <span class="toctext">Remise à zéro de la configuration (test sur un Catalyst 3500XL)</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Cisco.html#Upgrade_Image_IOS_.28test.C3.A9_sur_un_catalyst_3500XL.29"><span class="tocnumber">4</span> <span class="toctext">Upgrade Image IOS (testé sur un catalyst 3500XL)</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Cisco.html#Activer_le_portfast"><span class="tocnumber">5</span> <span class="toctext">Activer le portfast</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Cisco.html#Activer_le_Relais_dhcp"><span class="tocnumber">6</span> <span class="toctext">Activer le Relais dhcp</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Cisco.html#Quelle_est_mon_adresse_IP_.3F"><span class="tocnumber">7</span> <span class="toctext">Quelle est mon adresse IP&#160;?</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Cisco.html#Jouer_avec_SNMP_et_linux_pour_trouver_une_machine"><span class="tocnumber">8</span> <span class="toctext">Jouer avec SNMP et linux pour trouver une machine</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Cisco.html#Remise_.C3.A0_z.C3.A9ro_d.27un_routeur_ADSL_837"><span class="tocnumber">9</span> <span class="toctext">Remise à zéro d'un routeur ADSL 837</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Cisco.html#Augmenter_les_perfs"><span class="tocnumber">10</span> <span class="toctext">Augmenter les perfs</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Cisco.html#CMS_Cluster_Management_System"><span class="tocnumber">11</span> <span class="toctext">CMS Cluster Management System</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=Cisco.html#VTP:_VLan_Trunking_Protocol"><span class="tocnumber">12</span> <span class="toctext">VTP: VLan Trunking Protocol</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=Cisco.html#Acc.C3.A9l.C3.A9rer_l.27activation_des_ports_d.27un_switch_Cisco_.3D"><span class="tocnumber">13</span> <span class="toctext">Accélérer l'activation des ports d'un switch Cisco =</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="index.php%3Ftitle=Cisco.html#Notes_IOS"><span class="tocnumber">14</span> <span class="toctext">Notes IOS</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Cisco.html#Reset_d.27un_Switch_.28test.C3.A9_sur_un_2950.29"><span class="tocnumber">14.1</span> <span class="toctext">Reset d'un Switch (testé sur un 2950)</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=Cisco.html#Divers"><span class="tocnumber">14.2</span> <span class="toctext">Divers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="index.php%3Ftitle=Cisco.html#Mode_COnf_term"><span class="tocnumber">15</span> <span class="toctext">Mode COnf term</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="index.php%3Ftitle=Cisco.html#Mode_Config-if"><span class="tocnumber">16</span> <span class="toctext">Mode Config-if</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="index.php%3Ftitle=Cisco.html#ConfiGs"><span class="tocnumber">17</span> <span class="toctext">ConfiGs</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Commandes_courantes">Commandes courantes</span></h2>
+<h3><span class="mw-headline" id="SNMP">SNMP</span></h3>
+<p>On va configurer le switch pour avoir&#160;:
+</p>
+<ul><li> Une lecture possible avec le mot de passe <i>passread</i></li>
+<li> Une écriture possible avec le mot de passe <i>passwrite</i></li></ul>
+<p>En fait la communauté est une sorte de mot de passe
+</p>
+<pre>
+en
+conf t
+no snmp-server community public
+snmp-server community passread RO
+snmp-server community passwrite RW
+</pre>
+<h2><span class="mw-headline" id="Agr.C3.A9gation_de_ports">Agrégation de ports</span></h2>
+<ul><li> On crée un groupe de ports agrégés&#160;:</li></ul>
+<pre>
+en
+conf t
+
+Switch(config)#           interface range fastEthernet 0/23 - 24
+Switch(config-if-range)#  switchport mode access                
+Switch(config-if-range)#  switchport access vlan 1              
+Switch(config-if-range)#  channel-protocol lacp                 
+Switch(config-if-range)#  channel-group 1 mode active           
+Switch(config-if-range)#   exit
+
+exit
+wr mem
+</pre>
+<ul><li> Maintenant, faites de même sur le serveur <a href="index.php%3Ftitle=Reseau_sous_FreeBSD.html" title="Reseau sous FreeBSD"> FreeBSD</a>  en face&#160;:</li></ul>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Debug">Debug</span></h3>
+<ul><li> LACP n'est pas dispo sur les 3500XL, il faut passer aux 2950 minimum.</li></ul>
+<ul><li> On détruit les éventuelles traces précédentes de port-channel:</li></ul>
+<pre>
+en
+conf t
+
+Switch(config)#  no interface port-channel 1 
+</pre>
+<ul><li> Ne pas oublier de mettre le port-channel dans le vlan 1, sinon, plus de communication, hors routage!</li></ul>
+<h2><span class="mw-headline" id="Remise_.C3.A0_z.C3.A9ro_de_la_configuration_.28test_sur_un_Catalyst_3500XL.29">Remise à zéro de la configuration (test sur un Catalyst 3500XL)</span></h2>
+<p><a rel="nofollow" class="external text" href="http://www.cisco.com/en/US/products/hw/switches/ps628/products_password_recovery09186a0080094184.shtml%7C">Le lien chez cisco US</a>
+</p><p><br />
+</p>
+<ul><li> Utiliser Minicom (9600-8N1)</li>
+<li> Démarrer le switch en gardant le bouton mode appuyé jusqu'à ce que la LED 1X s'éteigne.</li>
+<li> <i>flash_init</i></li>
+<li> <i>load_helper</i></li>
+<li> <i>delete flash:config.old</i></li>
+<li> <i>y</i></li>
+<li> <i>rename flash:config.text flash:config.old</i></li>
+<li> <i>boot</i></li>
+<li> <i>en</i></li>
+<li> <i>conf t</i></li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Upgrade_Image_IOS_.28test.C3.A9_sur_un_catalyst_3500XL.29">Upgrade Image IOS (testé sur un catalyst 3500XL)</span></h2>
+<p><i>Attention, tout ceci n'a été ni revalidé ni retesté par quelqu'un d'autre. en d'autres termes:</i> <b>Soyez prudents</b>
+</p>
+<ul><li> Installez un serveur tftp sur un pingouin quelconque ( Utilisez atftpd et non pas tftpd )!</li></ul>
+<pre>
+apt-get install atftpd
+sed -i 's/USE_INETD=true/USE_INETD=false/' /etc/default/atftpd
+atftpd --daemon
+</pre>
+<p>Les fichiers vont arriver dans /var/lib/tftpboot
+</p>
+<ul><li> bootez</li>
+<li> <i>en</i></li>
+<li> <i>conf t</i></li>
+<li> <i>inter vlan 1</i></li>
+<li> <i>ip address 10.0.0.10 255.255.255.0</i></li>
+<li> <i>no shut</i></li>
+<li> <i>exit</i></li>
+<li> <i>ip default-gateway 10.0.0.1</i></li>
+<li> <i>hostname Monswitcheamoi</i></li>
+<li> <i>^Z</i></li>
+<li>' <i>wr mem</i></li>
+<li> On teste la connectivité IP&#160;: </li></ul>
+<p><i>ping 10.0.0.17</i>
+</p><p>Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.0.0.17, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/201/1001 ms
+</p>
+<ul><li> <i> en</i></li>
+<li> <i> copy flash tftp</i> (copie de sauvegarde)</li>
+<li> <i> copy tftp flash</i> (on copie dans la flash la nouvelle image IOS)</li></ul>
+<p>( si ça ne marche pas, vérifiez les permissions&#160;:
+</p>
+<ul><li> <i>chmod -R 777 /tftpboot</i></li>
+<li> <i>chown -R nobody /tftpboot</i>)</li>
+<li> si La flash est pleine, faites de la place&#160;: <i>delete flash:Lenomdelimage</i></li>
+<li> <i> delete flash:/rep/* </i></li>
+<li> <i> rmdir flash:/rep</i></li></ul>
+<p>! il peut ne pas y avoir du tout assez de place&#160;!
+</p><p>C3548-2#dir flash:
+Directory of flash:/
+</p><p>2 -rwx 1645807 Mar 01 1993 03:29:13 c3500XL-c3h2s-mz-120.5.2-XU.bin
+111 -rwx 272 Jan 01 1970 00:00:20 env_vars
+112 -rwx 1844 Mar 01 1993 00:13:20 config.text
+</p><p>3612672 bytes total (1963008 bytes free)
+</p><p><br />
+<b>Attention!! le C3548-2 n'a plus de flash:/html, donc plus de ip http server utilisable, a remettre depuis un autre!</b>
+<a rel="nofollow" class="external text" href="http://www.cisco.com/warp/public/473/190.html#cgrp1%7CLe">lien pour le faire</a>
+</p><p><a rel="nofollow" class="external text" href="http://www.cisco.com/univercd/cc/td/doc/product/lan/c2900xl/29_35sa6/maupgrd.htm#xtocid123743%7C">un autre</a>
+</p><p>ici ce sont des&#160;: 3500 XL et non des 3550(16Mo de flash&#160;!)
+Enterprise Edition Command (ENC) Switch Software:
+</p><p>For a 3500XL there is only one memory configuration: 8 MB DRAM switches with 4 MB of Flash.
+depuis&#160;:<a rel="nofollow" class="external autonumber" href="http://www.cisco.com/warp/public/473/36.shtml%7Cici">[1]</a>
+</p><p><br />
+</p>
+<pre> 00:51:30:&#160;%SYS-5-RELOAD: Reload requested
+
+C3500XL Boot Loader (C3500-HBOOT-M) Version 12.0(5.2)XU, MAINTENANCE INTERIM SOFTWARE
+
+Compiled Mon 17-Jul-00 18:42 by ayounes
+
+starting...
+
+Base ethernet MAC Address: 00:04:27:ee:2f:40
+
+Xmodem file system is available.
+
+Initializing Flash...
+
+flashfs[0]: 110 files, 3 directories
+
+flashfs[0]: 0 orphaned files, 0 orphaned directories
+
+flashfs[0]: Total bytes: 3612672
+
+flashfs[0]: Bytes used: 2770432
+
+flashfs[0]: Bytes available: 842240
+
+flashfs[0]: flashfs fsck took 3 seconds.
+
+...done Initializing Flash.
+
+Boot Sector Filesystem (bs:) installed, fsid: 3
+
+Parameter Block Filesystem (pb:) installed, fsid: 4
+
+Loading "flash:c3500XL-c3h2s-mz-120.5.2-XU.bin"...
+
+
+
+File "flash:c3500XL-c3h2s-mz-120.5.2-XU.bin" uncompressed and installed, entry point: 0x3000
+
+executing...
+
+
+
+Restricted Rights Legend
+
+
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+
+
+cisco Systems, Inc.
+
+170 West Tasman Drive
+
+San Jose, California 95134-1706
+
+
+
+Cisco Internetwork Operating System Software
+
+IOS (tm) C3500XL Software (C3500XL-C3H2S-M), Version 12.0(5.2)XU, MAINTENANCE INTERIM SOFTWARE
+
+Copyright (c) 1986-2000 by cisco Systems, Inc.
+
+Compiled Mon 17-Jul-00 18:29 by ayounes
+
+Image text-base: 0x00003000, data-base: 0x00301F3C
+
+
+
+
+Initializing C3500XL flash...
+
+flashfs[1]: 110 files, 3 directories
+
+flashfs[1]: 0 orphaned files, 0 orphaned directories
+
+flashfs[1]: Total bytes: 3612672
+
+flashfs[1]: Bytes used: 2770432
+
+flashfs[1]: Bytes available: 842240
+
+flashfs[1]: flashfs fsck took 4 seconds.
+
+flashfs[1]: Initialization complete.
+
+...done Initializing C3500XL flash.
+
+C3500XL POST: System Board Test: Passed
+
+C3500XL POST: Daughter Card Test: Passed
+
+C3500XL POST: CPU Buffer Test: Passed
+
+C3500XL POST: CPU Notify RAM Test: Passed
+
+C3500XL POST: CPU Interface Test: Passed
+
+C3500XL POST: Testing Switch Core: Passed
+
+C3500XL POST: Testing Buffer Table: Passed
+
+C3500XL POST: Data Buffer Test: Passed
+
+C3500XL POST: Configuring Switch Parameters: Passed
+
+C3500XL POST: Ethernet Controller Test: Passed
+
+C3500XL POST: MII Test: Passed
+
+cisco WS-C3548-XL (PowerPC403?) processor (revision 0x01) with 16384K/1024K bytes of memory.
+
+Processor board ID FAA0445G012, with hardware revision 0x00
+
+Last reset from warm-reset
+
+
+
+Processor is running Enterprise Edition Software
+
+Cluster command switch capable
+
+Cluster member switch capable
+
+48 FastEthernet?/IEEE 802.3 interface(s)
+
+2 Gigabit Ethernet/IEEE 802.3 interface(s)
+
+
+
+
+32K bytes of flash-simulated non-volatile configuration memory.
+
+Base ethernet MAC Address: 00:04:27:EE:2F (interwiki):40
+
+Motherboard assembly number: 73-3903-07
+
+Power supply part number: 34-0971-01
+
+Motherboard serial number: FAA04453837
+
+Power supply serial number: PAC042905ZF
+
+Model revision number: A0
+
+
+Motherboard revision number: B0
+
+Model number: WS-C3548-XL-EN
+
+</pre>
+<h2><span class="mw-headline" id="Activer_le_portfast">Activer le portfast</span></h2>
+<p><a rel="nofollow" class="external free" href="http://www.cisco.com/en/US/products/hw/switches/ps700/products_tech_note09186a00800b1500.shtml">http://www.cisco.com/en/US/products/hw/switches/ps700/products_tech_note09186a00800b1500.shtml</a>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Activer_le_Relais_dhcp">Activer le Relais dhcp</span></h2>
+<p><a rel="nofollow" class="external free" href="http://www.cisco.com/en/US/products/ps6350/products_configuration_guide_chapter09186a00804412bf.html">http://www.cisco.com/en/US/products/ps6350/products_configuration_guide_chapter09186a00804412bf.html</a>
+</p>
+<h2><span class="mw-headline" id="Quelle_est_mon_adresse_IP_.3F">Quelle est mon adresse IP&#160;?</span></h2>
+<pre>en
+show ip interface
+</pre>
+<h2><span class="mw-headline" id="Jouer_avec_SNMP_et_linux_pour_trouver_une_machine">Jouer avec SNMP et linux pour trouver une machine</span></h2>
+<p><a rel="nofollow" class="external text" href="http://www.cisco.com/en/US/tech/tk648/tk362/technologies_tech_note09186a0080094a9b.shtml%7C">tiré d'ici</a>
+</p>
+<ol><li>  <b>On découvre la liste des VLANS</b></li></ol>
+<p><i>snmpwalk @IP -c Communauté@N°VLAN  -v 1 .1.3.6.1.4.1.9.9.46.1.3.1.1.2</i>
+</p><p>SNMPv2-SMI::enterprises.9.9.46.1.3.1.1.2.1.1 = INTEGER: 1
+SNMPv2-SMI::enterprises.9.9.46.1.3.1.1.2.1.1002 = INTEGER: 1
+SNMPv2-SMI::enterprises.9.9.46.1.3.1.1.2.1.1003 = INTEGER: 1
+SNMPv2-SMI::enterprises.9.9.46.1.3.1.1.2.1.1004 = INTEGER: 1
+SNMPv2-SMI::enterprises.9.9.46.1.3.1.1.2.1.1005 = INTEGER: 1
+</p>
+<ol><li> <b>Pour chaque VLAN</b></li></ol>
+<p><i>snmpwalk @IP -c Communauté@N°VLAN  -v 1   .1.3.6.1.2.1.17.4.3.1.1   |grep B6</i>
+</p><p>SNMPv2-SMI::mib-2.17.4.3.1.1.0.17.67.66.182.195 = Hex-STRING: 00 11 43 42 B6 C3
+</p>
+<ol><li> <b>Pour chaque VLAN, trouvez le Bridge number</b></li></ol>
+<p>.1.3.6.1.2.1.17.4.3.1.2
+</p><p>Si Integer =0&#160;: ya rien
+</p><p>SNMPv2-SMI::mib-2.17.4.3.1.2.0.17.67.66.182.195 = INTEGER: 50
+SNMPv2-SMI::mib-2.17.4.3.1.2.1.0.12.0.0.0 = INTEGER: 0
+</p><p><br />
+</p>
+<ol><li><b>Get the bridge port to ifIndex  (1.3.6.1.2.1.2.2.1.1) mapping, dot1dBasePortIfIndex  (.1.3.6.1.2.1.17.1.4.1.2):</b></li></ol>
+<ol><li><b>Retrouver le IfName</b></li></ol>
+<p><i>snmpwalk ip -c comm@1 -v 1 .1.3.6.1.2.1.31.1.1.1.1</i>
+</p><p>IF-MIB::ifName.1 = STRING: VL1
+IF-MIB::ifName.2 = STRING: Fa0/1
+IF-MIB::ifName.3 = STRING: Fa0/2
+IF-MIB::ifName.4 = STRING: Fa0/3
+</p><p><br />
+<a rel="nofollow" class="external text" href="http://search.cpan.org/~karlward/Net-MAC-1.1/lib/Net/MAC.pm%7CFaudra">voir ça sur le CPAN</a>
+</p><p><b>Au final , pour trouver port du switche de @MAC donnée&#160;:</b>
+</p><p>exemple&#160;: Où est branchée la machine d'@MAC&#160;: 00:04:76:A3:8A:BE
+</p><p><i>snmpwalk Catalyst  -c community  -v 1 .1.3.6.1.4.1.9.9.46.1.3.1.1.2</i>
+SNMPv2-SMI::enterprises.9.9.46.1.3.1.1.2.1.1 = INTEGER: 1
+SNMPv2-SMI::enterprises.9.9.46.1.3.1.1.2.1.1002 = INTEGER: 1
+SNMPv2-SMI::enterprises.9.9.46.1.3.1.1.2.1.1003 = INTEGER: 1
+SNMPv2-SMI::enterprises.9.9.46.1.3.1.1.2.1.1004 = INTEGER: 1
+SNMPv2-SMI::enterprises.9.9.46.1.3.1.1.2.1.1005 = INTEGER: 1
+</p><p>-&gt;Donne la liste des VLAN
+</p><p><i>snmpwalk Catalyst -c community@1 -v 1 .1.3.6.1.2.1.17.4.3.1.1  |grep "00 04 76 A3 8A BE" </i>
+SNMPv2-SMI::mib-2.17.4.3.1.1.0.4.118.163.138.190 = Hex-STRING: 00 04 76 A3 8A BE
+</p><p><i>snmpwalk Catalyst -c community@1002 -v 1 .1.3.6.1.2.1.17.4.3.1.1  |grep "00 04 76 A3 8A BE"</i>
+<i>snmpwalk Catalyst -c community@1003 -v 1 .1.3.6.1.2.1.17.4.3.1.1  |grep "00 04 76 A3 8A BE"</i>
+<i>snmpwalk Catalyst -c community@1004 -v 1 .1.3.6.1.2.1.17.4.3.1.1  |grep "00 04 76 A3 8A BE"</i>
+<i>snmpwalk Catalyst -c community@1005 -v 1 .1.3.6.1.2.1.17.4.3.1.1  |grep "00 04 76 A3 8A BE"</i>
+</p><p>-&gt; Trouve la MAC parmi les VLAN
+MAC-&gt;0.4.118.163.138.190  en décimal
+</p><p><i>snmpwalk Catalyst -c community@1 -v 1 .1.3.6.1.2.1.17.4.3.1.2.0.4.118.163.138.190</i>
+SNMPv2-SMI::mib-2.17.4.3.1.2.0.4.118.163.138.190 = INTEGER: 13
+</p><p>-&gt; Trouve le Numéro de bridge
+</p><p><i>snmpwalk Catalyst -c community@1 -v 1 .1.3.6.1.2.1.17.1.4.1.2.13</i>
+SNMPv2-SMI::mib-2.17.1.4.1.2.13 = INTEGER: 2
+</p><p>-&gt; Donne l'ifIndex
+</p><p><i>snmpwalk Catalyst -c community@1 -v 1 .1.3.6.1.2.1.31.1.1.1.1.2</i>
+IF-MIB::ifName.2 = STRING: Fa0/1
+</p><p>-&gt;<b> La machine d'@MAC donnée est branchée sur leport Fa0/1 du switch</b>.
+</p>
+<ul><li><ul><li>//A tester sur un pile de switchess..//**</li></ul></li></ul>
+<p><br />
+<b>Script shell qui fait tout ça tout seul</b>
+</p>
+<pre>
+#!/bin/bash
+
+
+# On ne recherche que sur le VLAN 1
+
+COM="LaCave"
+SW="Catalyst"
+echo "Donner adresse MAC à moi, steuplé"
+read MACDQ
+MACHX=`echo $MACDQ | sed "s/:/ /g" `
+
+MACDC=`snmpwalk $SW -c $COM@1 -v 1 .1.3.6.1.2.1.17.4.3.1.1 |grep "$MACHX" |sed "s/SNMPv2-SMI::mib-2.17.4.3.1.1.//" | sed "s/ = Hex-STRING: $MACHX//"`
+
+BRDGNUM=`snmpwalk $SW -c $COM@1 -v 1  .1.3.6.1.2.1.17.4.3.1.2.$MACDC |sed "s/.* = INTEGER: //"`
+
+IFINDEX=`snmpwalk $SW -c $COM@1 -v 1  .1.3.6.1.2.1.17.1.4.1.2.$BRDGNUM |sed "s/.* = INTEGER: //"`
+
+INTF=`snmpwalk $SW -c $COM@1 -v 1  .1.3.6.1.2.1.31.1.1.1.1.$IFINDEX |sed "s/.* = STRING: //"`
+
+echo $INTF
+
+</pre>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Remise_.C3.A0_z.C3.A9ro_d.27un_routeur_ADSL_837">Remise à zéro d'un routeur ADSL 837</span></h2>
+<ul><li> Connecter le port série du routeur (9600/8/N/1)</li>
+<li> Le démarrer:</li></ul>
+<pre>
+Boot&#160;: 
+
+System Bootstrap, Version 12.2(8r)YN, RELEASE SOFTWARE (fc1)
+TAC Support: http://www.cisco.com/tac
+Copyright (c) 2002 by cisco Systems, Inc.
+C800/SOHO series (Board ID: 23-127) platform with 49152 Kbytes of main memory
+
+</pre>
+<ul><li> Ici faire un <i>CTRL+Pause</i> sur l'ordinateur.</li></ul>
+<pre>
+monitor: command "boot" aborted due to user interrupt
+</pre>
+<p>rommon 1 &gt; <i>confreg 0x2142</i> On change de registre
+rommon 2 &gt; <i>reset</i>
+</p><p>......(long)....
+</p>
+<hr />Enter initial configuration dialog (yes/no)
+<p><i>yes</i> 
+</p>
+<hr />reset a cisco router to factory default settings&#160;:---------------
+<p><i>no.</i>
+</p><p><i>enable</i>
+</p><p>(config)# <i>banner motd&#160;!</i>
+Enter TEXT Message. End witxh character '!'.
+Coller ici son texte formaté dans un éditeur de texte
+Après une nouvelle ligne taper&#160;!
+C'est tout
+</p>
+<ul><li> On enregistre le tout&#160;: </li></ul>
+<p><i>end</i>
+<i>enable</i>
+<i>wr mem</i>
+</p>
+<ul><li> Maintenant on repasse en mode confreg 0x2102, sinon les changements seront perdus au reboot:</li></ul>
+<p><i>confreg 0x2102</i>
+</p><p><b>Attention, je n'ai plus de routeur pour valider le mode dans lequel il faut taper ceci (mode enable, mode config..) </b>
+</p><p><br />
+</p><p><br />
+mode config&#160;:
+ip http secure-ser
+ip http secure-server
+</p><p>Passer en mode config interface&#160;:
+(config)#interface ethernet 0
+(config-if )# ip address  10.0.0.50 255.255.255.0
+</p><p>(config)#ip default-gateway 10.0.0.1
+</p><p><br />
+</p><p><br />
+navigateur&#160;: JVM de MS!!!!!!
+</p><p><br />
+</p><p>line vty 0 4
+privilege level 15
+login local
+password T1V1rt
+</p>
+<pre>transport input ssh
+</pre>
+<p><br />
+!!Si on définit un mdp enable et un mdp secret, lorsque l'on tape la commande enable, il faut donner le pass secret!!!
+</p><p><br />
+(config)#username USER privilege 15 password PASS
+end
+wr mem
+</p><p>no ip bootp server 
+no cdp run
+no ip source-route 
+</p><p>(config)#interface ethernet 0
+Ganesh(config-if)#no????? ip redirects
+config-if)#no ip red
+Ganesh(config-if)#no ip redirects Ca c'est sur
+(config)#interface  atM 0
+Ganesh(config-if)#no ip proxy-arp
+</p><p><br />
+</p><p>patatras......tout cela est perdu (console/SSH/http.s) si le mode est 0x2142 (sh ver)...il FAUT le rebasculer en 0x2102 ( en mode config)et /ou copier la config (cop run star)....
+</p><p><br />
+reboot HARD
+30'&#160;:CTRL+Arret Defil
+rommon 1 &gt; confreg 0x2102
+You must reset or power cycle for new config to take effect
+rommon 2 &gt; resetú
+System Bootstrap, Version 12.2(8r)YN, RELEASE SOFTWARE (fc1)
+TAC Support: <a rel="nofollow" class="external free" href="http://www.cisco.com/tac">http://www.cisco.com/tac</a>
+Copyright (c) 2002 by cisco Systems, Inc.
+C800/SOHO series (Board ID: 23-127) platform with 49152 Kbytes of main memory
+</p><p>et ben,non.
+CT pas perdu
+juste pas relu au reboot
+toutsemble marcher
+non, ssh et http perdus
+</p><p>ip http secure-server
+ip http authentication enable
+exit
+Ganesh#wr me
+</p><p>Building configuration...
+[OK]
+Ganesh#
+</p><p><a rel="nofollow" class="external free" href="http://ip">http://ip</a>
+auth avec les credetials de enable
+</p><p>clic https
+C parti
+fo la jvm MS
+</p><p>reste en SDM
+</p><p><br />
+show processes
+</p><p>no shutdown (sur conf-if)
+</p><p>pass enable = pass interface web&#160;!!!!!
+</p>
+<h2><span class="mw-headline" id="Augmenter_les_perfs">Augmenter les perfs</span></h2>
+<p><i>undebug all</i> (A tester selon la version d'IOS)
+</p>
+<h2><span class="mw-headline" id="CMS_Cluster_Management_System">CMS Cluster Management System</span></h2>
+<ul><li> Nom de switche&#160;: max 31 caractères. Les  2 derniers caractères <b>NE PEUVENT PAS</b> être de la forme **-n**  où n est un nombre&#160;!!!!</li>
+<li> pb de config&#160;!= sur deux switches linkés&#160;: sur FE&#160;: pb de perf. sur Gb&#160;: pas de message, et le lien est down!!!</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="VTP:_VLan_Trunking_Protocol">VTP: VLan Trunking Protocol</span></h2>
+<p>permet de faire la conf de vlan sur une machine et de laisser vtp propager les infos au groupe vtp.
+</p><p>[<a rel="nofollow" class="external text" href="http://www.labo-cisco.com/ArticleComp.asp?ARID=49%7C">Doc Labo-Cisco</a>]
+</p><p>mode server sur un et mode client sur les autres
+rien en mode transparent (po compris)
+</p>
+<h2><span class="mw-headline" id="Acc.C3.A9l.C3.A9rer_l.27activation_des_ports_d.27un_switch_Cisco_.3D">Accélérer l'activation des ports d'un switch Cisco =</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://blog.lumo.fr/accelerer-linitialisation-dun-port-sur-un-switch-cisco-2950.html">[2]</a>
+</p>
+<pre>minicom
+Mon2950&gt;
+Mon2950&gt;en
+Password: 
+Mon2950#
+Mon2950#conf t
+ Enter configuration commands, one per line.  End with CNTL/Z.
+Mon2950(config)#in rang fas 0/1 - 24
+Mon2950(config)#interface range fastEthernet 0/1 - 24
+Mon2950(config-if-range)#switchport mode access
+Mon2950(config-if-range)#spanning-tree portfast
+ &#160;%Warning: portfast should only be enabled on ports connected to a single
+  host. Connecting hubs, concentrators, switches, bridges, etc... to this
+  interface  when portfast is enabled, can cause temporary bridging loops.
+  Use with CAUTION
+ &#160;%Portfast will be configured in 24 interfaces due to the range command 
+  but will only have effect when the interfaces are in a non-trunking mode.
+Mon2950(config-if-range)#exit
+Mon2950(config)#exit
+Mon2950#
+Mon2950#copy running-config startup-config
+</pre>
+<p>Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Mon2950#
+</p>
+<h2><span class="mw-headline" id="Notes_IOS">Notes IOS</span></h2>
+<h3><span class="mw-headline" id="Reset_d.27un_Switch_.28test.C3.A9_sur_un_2950.29">Reset d'un Switch (testé sur un 2950)</span></h3>
+<ul><li> Débrancher le switch</li>
+<li> Appuyer sur le bouton mode et garder appuyé</li>
+<li> Brancher le switch</li>
+<li> Attendre environ 5 secondes. La diode SYST doit clignoter orange/vert</li></ul>
+<ul><li> Lancer un minicom bien configuré ( /dev/ttyUSB0 et 9600 bps)</li></ul>
+<pre>flash_init
+load_helper
+rename flash:config.text flash:config.old
+boot
+
+</pre>
+<p>Puis suivre la reconfig
+</p>
+<h3><span class="mw-headline" id="Divers">Divers</span></h3>
+<ul><li><ul><li>//! //** au début d'une ligne la commente</li></ul></li></ul>
+<p>Mode Enable
+</p><p>sh interfaces status
+</p><p><br />
+</p><p><br />  	
+	Cat2950# write erase
+Erasing the nvram filesystem will remove all files! Continue? [confirm]y[OK]
+Erase of nvram: complete
+Cat2950#
+Cat2950# reload
+</p><p>System configuration has been modified. Save? [yes/no]: n    
+</p><p>!--- Do not save the configuration at this prompt. Otherwise, the switch
+!--- reloads with the current running configuration and does not reset to default.
+</p><p>Proceed with reload? [confirm]y                       
+</p>
+<h2><span class="mw-headline" id="Mode_COnf_term">Mode COnf term</span></h2>
+<p>interface vlan 1
+</p>
+<h2><span class="mw-headline" id="Mode_Config-if">Mode Config-if</span></h2>
+<p>ip adrress IP mask
+end =&gt; config
+wr mem
+</p><p><br />
+</p>
+<pre>cluster commander-address MAC1 member 1 name ClusterSR4 vlan 1
+</pre>
+<p>cluster commander-address MAC1 member 2 name ClusterSR4 vlan 1
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="ConfiGs">ConfiGs</span></h2>
+<hr />Config vlan IOS----
+<p>en
+vlan database&#160;: deprecated
+(fait comme ca qd mem)
+SR5-2950-48(vlan)#vlan 93 name&#160;?
+</p>
+<pre> WORD  The ascii name for the VLAN
+</pre>
+<p>SR5-2950-48(vlan)#vlan 93 name administratif
+VLAN 93 added:
+</p>
+<pre>   Name: administratif
+</pre>
+<p>SR5-2950-48(vlan)#exit
+APPLY completed.
+Exiting....
+</p><p>conf t
+inter fa0/1
+(config-if)
+</p>
+<ul><li><ul><li></li></ul></li></ul>
+<p>switchport mode access
+switchport access NOMVLAN 93
+exit
+</p>
+<ul><li><ul><li></li></ul></li></ul>
+<p><br />
+</p><p><br />
+</p><p><br />
+</p><p>Un trunk est est "uplink" spécifique entre 2 switchs.
+Pour que les switchs communiquent entre eux, il faut qu'ils soient inter-reliés par des liens trunk. 
+</p><p>Alors il faut utiliser les commandes suivantes sur chaque switch&#160;:
+(config)# interface f0/1                        le lien trunk va être sur le port 1 du switch
+(config-if)# switchport mode trunk      indique que le port 1 servira de lien vers un autre switch et non de port pour un PC
+</p><p><a rel="nofollow" class="external free" href="http://cisco.goffinet.org/">http://cisco.goffinet.org/</a>
+</p><p><br />
+Configurer plusieurs interfaces en même temps sur un 2950
+Document Actions
+</p>
+<pre>   * Send this page to somebody
+</pre>
+<p>Description de la fonctionnalité Interface-range macros.
+Description de la fonctionnalité Interface-Range Macros des 2950
+</p><p>On aura vite remarqué que les switches tournant sous un Cisco IOS disposent de la même interface de configuration et de la même syntaxe de base que les routeurs.
+</p><p>Toutefois, les switches disposent quelques fois de plusieurs dizaines d'interfaces. Il peut s'avérer fastidieux de les configurer une à une avec des paramètres identiques. L'utilisation de la fonctionnalité Interface-Range Macros sur des 2950 peut faciliter le travail&#160;!
+</p><p>Tout simplement on définira un nom de macro qui reprendra un ensemble d'interfaces. On utilisera ce nom comme le nom d'une interface physique précédé des paramètres range macro.
+</p><p>(config)#define interface-range macro-name interface-range
+</p><p>où
+</p><p>-  macro-name est un mot quelconque de 32 caractères maximum
+-  interface-range comportera la plage d'interfaces respectant la syntaxe&#160;:
+</p>
+<pre>   * vlan vlan-id
+   * fastethernet slot/{premier_port} - {dernier_port} [1]
+</pre>
+<p>Concrètement imaginons que nous devions configurer les ports 2 à 12 d'un 2950-12 de manière identique en prenant le nom de macro macro1&#160;:
+</p><p>(config)#define interface-range macro1 fastethernet 0/2 - 12
+(config)#interface range macro macro1
+(config-if-range)#commandes ...
+</p><p><br />
+</p><p><br />
+</p><p><a rel="nofollow" class="external free" href="http://www.labo-cisco.com/ArticleComp.asp?ARID=65">http://www.labo-cisco.com/ArticleComp.asp?ARID=65</a>
+</p><p><br />
+<a rel="nofollow" class="external free" href="http://forum.labo-cisco.com/viewtopic.php?t=3623">http://forum.labo-cisco.com/viewtopic.php?t=3623</a>
+interface range fastethernet 0/1 - 24
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020132930
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.260 seconds
+Real time usage: 0.258 seconds
+Preprocessor visited node count: 154/1000000
+Preprocessor generated node count: 248/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:23-0!*!0!!fr!*!* and timestamp 20171020132929 and revision id 2888
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Cisco&amp;oldid=2888">http://www.openbsd-edu.net/index.php?title=Cisco&amp;oldid=2888</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Cisco.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Cisco.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Cisco&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Cisco.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Cisco.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Cisco&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Cisco&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Cisco.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FCisco.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Cisco" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Cisco&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Cisco&amp;oldid=2888" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Cisco&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 26 novembre 2014 à 18:06.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.260","walltime":"0.258","ppvisitednodes":{"value":154,"limit":1000000},"ppgeneratednodes":{"value":248,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132930","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1722});});</script>
+	</body>
+</html>

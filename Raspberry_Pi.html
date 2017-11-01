@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Raspberry Pi — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Raspberry_Pi","wgTitle":"Raspberry Pi","wgCurRevisionId":3288,"wgRevisionId":3288,"wgArticleId":301,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Raspberry_Pi","wgRelevantArticleId":301,"wgRequestId":"481659f351d56de10346e156","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Raspberry_Pi rootpage-Raspberry_Pi skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Raspberry Pi</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Raspberry_Pi.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Raspberry_Pi.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Raspberry_Pi.html#Installation"><span class="tocnumber">1</span> <span class="toctext">Installation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Raspberry_Pi.html#Flash_Carte_SD"><span class="tocnumber">1.1</span> <span class="toctext">Flash Carte SD</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Raspberry_Pi.html#A_noter"><span class="tocnumber">2</span> <span class="toctext">A noter</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Raspberry_Pi.html#R.C3.A9seau"><span class="tocnumber">3</span> <span class="toctext">Réseau</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Raspberry_Pi.html#Usages"><span class="tocnumber">4</span> <span class="toctext">Usages</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Raspberry_Pi.html#Prise_en_main_distante"><span class="tocnumber">5</span> <span class="toctext">Prise en main distante</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Raspberry_Pi.html#ssh"><span class="tocnumber">5.1</span> <span class="toctext">ssh</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Raspberry_Pi.html#D.C3.A9port_X11_complet"><span class="tocnumber">5.2</span> <span class="toctext">Déport X11 complet</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Raspberry_Pi.html#VNC"><span class="tocnumber">5.3</span> <span class="toctext">VNC</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Raspberry_Pi.html#VNC_Over_SSH"><span class="tocnumber">5.4</span> <span class="toctext">VNC Over SSH</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Raspberry_Pi.html#Supprimer_l.27extinction_de_l.27.C3.A9cran"><span class="tocnumber">6</span> <span class="toctext">Supprimer l'extinction de l'écran</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Raspberry_Pi.html#Debug"><span class="tocnumber">7</span> <span class="toctext">Debug</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Raspberry_Pi.html#Camera"><span class="tocnumber">8</span> <span class="toctext">Camera</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Raspberry_Pi.html#Debug_2"><span class="tocnumber">8.1</span> <span class="toctext">Debug</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<h3><span class="mw-headline" id="Flash_Carte_SD">Flash Carte SD</span></h3>
+<ul><li> Récupérer l'image en ligne&#160;:</li></ul>
+<h2><span class="mw-headline" id="A_noter">A noter</span></h2>
+<p>COmpte&#160;: pi
+Pass&#160;: raspberry
+</p>
+<h2><span class="mw-headline" id="R.C3.A9seau">Réseau</span></h2>
+<p>Le pi (version Raspbian ) utilise par défaut dhcpcd.conf.
+Pour le passer en IP fixe&#160;:
+Editer /etc/dhcpcd.conf
+</p>
+<pre># Custom static IP address for eth0.
+interface eth0
+static ip_address=192.168.0.200/24
+static routers=192.168.0.1
+static domain_name_servers=192.168.0.1
+</pre>
+<h2><span class="mw-headline" id="Usages">Usages</span></h2>
+<h2><span class="mw-headline" id="Prise_en_main_distante">Prise en main distante</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://xmodulo.com/2013/12/remote-control-raspberry-pi.html">[1]</a>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="ssh">ssh</span></h3>
+<p>Rien à faire
+</p>
+<h3><span class="mw-headline" id="D.C3.A9port_X11_complet">Déport X11 complet</span></h3>
+<p>Sur votre laptop&#160;:
+</p>
+<pre>su
+xinit --&#160;:1 &amp; 
+</pre>
+<p>CTRL-ALT-F8
+</p>
+<pre>DISPLAY=:1 ssh -X pi@IPPI lxsession 
+</pre>
+<h3><span class="mw-headline" id="VNC">VNC</span></h3>
+<pre>sudo apt-get install -y tightvncserver 
+vncserver&#160;:1 
+</pre>
+<p>Donnez un mot de passe
+</p><p>Depuis le laptop&#160;: 
+</p>
+<pre>vinagre
+</pre>
+<h3><span class="mw-headline" id="VNC_Over_SSH">VNC Over SSH</span></h3>
+<p>Pour sécuriser un peu tout ça&#160;:
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Supprimer_l.27extinction_de_l.27.C3.A9cran">Supprimer l'extinction de l'écran</span></h2>
+<p>[<a rel="nofollow" class="external autonumber" href="http://framboisepi.fr/desactiver-la-veille-decran/">[2]</a>]
+</p>
+<h2><span class="mw-headline" id="Debug">Debug</span></h2>
+<pre>/lib/modules/3.10.25+/build: No such file or directory.  Stop.
+</pre>
+<p>Il faut ajouter des modules <a rel="nofollow" class="external autonumber" href="http://www.raspberrypi.org/forums/viewtopic.php?t=67347&amp;p=495080">[3]</a>
+</p>
+<pre>    sudo apt-get install linux-headers
+</pre>
+<p>choisir le dernier module
+</p>
+<pre>   sudo apt-get install linux-headers-3.10-3-rpi
+   sudo ln -s /lib/modules/3.10-3-rpi/build /lib/modules/3.10.25+/build
+</pre>
+<h2><span class="mw-headline" id="Camera">Camera</span></h2>
+<p>La raspicam est minuscule, de bonne qualité et pas chère
+</p>
+<h3><span class="mw-headline" id="Debug_2">Debug</span></h3>
+<p>Avec motion, vous n'obtenez pas de flux ,mais "unable to open video device"
+</p><p>Lancer motion à la main
+</p>
+<pre>Failed to open video device /dev/video0: No such file or directory
+</pre>
+<p>La <a rel="nofollow" class="external text" href="http://www.karesyk.de/raspicam-webcam-server/">solution</a>
+</p><p>Ajouter à votre sources.list
+</p>
+<pre>deb <a rel="nofollow" class="external free" href="http://www.linux-projects.org/listing/uv4l_repo/raspbian/">http://www.linux-projects.org/listing/uv4l_repo/raspbian/</a> wheezy main
+</pre>
+<pre>wget <a rel="nofollow" class="external free" href="http://www.linux-projects.org/listing/uv4l_repo/lrkey.asc">http://www.linux-projects.org/listing/uv4l_repo/lrkey.asc</a> &amp;&amp; sudo apt-key add ./lrkey.asc
+apt-get update
+apt-get dist-upgrade
+sudo apt-get install uv4l uv4l-raspicam
+uv4l --driver raspicam --auto-video_nr
+sudo apt-get install motion
+sudo LD_PRELOAD=/usr/lib/uv4l/uv4lext/armv6l/libuv4lext.so motion -c /etc/motion/motion.conf
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20171020075035
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.100 seconds
+Real time usage: 0.095 seconds
+Preprocessor visited node count: 54/1000000
+Preprocessor generated node count: 60/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:301-0!*!*!!fr!*!* and timestamp 20171020075035 and revision id 3288
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Raspberry_Pi&amp;oldid=3288">http://www.openbsd-edu.net/index.php?title=Raspberry_Pi&amp;oldid=3288</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Raspberry+Pi.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Raspberry_Pi.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Raspberry_Pi&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Raspberry_Pi.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Raspberry_Pi.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Raspberry_Pi&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Raspberry_Pi&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Raspberry_Pi.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FRaspberry_Pi.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Raspberry_Pi" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Raspberry_Pi&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Raspberry_Pi&amp;oldid=3288" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Raspberry_Pi&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 11 décembre 2016 à 19:26.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.100","walltime":"0.095","ppvisitednodes":{"value":54,"limit":1000000},"ppgeneratednodes":{"value":60,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020075035","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1338});});</script>
+	</body>
+</html>

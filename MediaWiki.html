@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>MediaWiki — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"MediaWiki","wgTitle":"MediaWiki","wgCurRevisionId":3433,"wgRevisionId":3433,"wgArticleId":222,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"MediaWiki","wgRelevantArticleId":222,"wgRequestId":"329aec0302f6b2ff7110f9d3","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-MediaWiki rootpage-MediaWiki skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">MediaWiki</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=MediaWiki.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=MediaWiki.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=MediaWiki.html#Installation"><span class="tocnumber">1</span> <span class="toctext">Installation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=MediaWiki.html#Ubuntu"><span class="tocnumber">1.1</span> <span class="toctext">Ubuntu</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=MediaWiki.html#OpenBSD"><span class="tocnumber">1.2</span> <span class="toctext">OpenBSD</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=MediaWiki.html#Migration"><span class="tocnumber">2</span> <span class="toctext">Migration</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=MediaWiki.html#Droits_.26_Config"><span class="tocnumber">3</span> <span class="toctext">Droits &amp; Config</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=MediaWiki.html#Extensions"><span class="tocnumber">4</span> <span class="toctext">Extensions</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=MediaWiki.html#Mobile"><span class="tocnumber">4.1</span> <span class="toctext">Mobile</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=MediaWiki.html#Authentification_externe"><span class="tocnumber">4.2</span> <span class="toctext">Authentification externe</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=MediaWiki.html#LDAP"><span class="tocnumber">4.2.1</span> <span class="toctext">LDAP</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=MediaWiki.html#AD"><span class="tocnumber">4.2.2</span> <span class="toctext">AD</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=MediaWiki.html#Configuration_fine"><span class="tocnumber">4.3</span> <span class="toctext">Configuration fine</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=MediaWiki.html#Divers"><span class="tocnumber">4.4</span> <span class="toctext">Divers</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=MediaWiki.html#Logs_cumul.C3.A9s_d.27acc.C3.A8s....Sa_e-reputation_en_fait"><span class="tocnumber">4.4.1</span> <span class="toctext">Logs cumulés d'accès....Sa e-reputation en fait</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=MediaWiki.html#Debug"><span class="tocnumber">4.5</span> <span class="toctext">Debug</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<h3><span class="mw-headline" id="Ubuntu">Ubuntu</span></h3>
+<pre>sudo apt-get install apache2 mysql-server php5 php5-mysql mediawiki
+sudo vi /etc/mediawiki/apache.conf
+</pre>
+<p>Décommenter l'Alias
+</p>
+<pre> sudo apache2ctl restart
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="OpenBSD">OpenBSD</span></h3>
+<p>Le paquet Mediawiki n'existe plus.
+</p>
+<ul><li> Installez <a href="index.php%3Ftitle=MySQL.html#M.C3.A9thode_actuelle" title="MySQL"> MySQL/MariaDB</a></li></ul>
+<pre>cd /root/
+pkg_add wget nginx php php-mysql  php-gd php-intl mariadb-client mariadb-server 
+wget <a rel="nofollow" class="external free" href="https://releases.wikimedia.org/mediawiki/1.29/mediawiki-1.29.0.tar.gz">https://releases.wikimedia.org/mediawiki/1.29/mediawiki-1.29.0.tar.gz</a>
+mkdir -p  /var/www/conf/modules
+ln -sf /var/www/conf/modules.sample/php-5.6.conf /var/www/conf/modules/php.conf
+ln -sf /etc/php-5.6.sample/gd.ini /etc/php-5.6/gd.ini
+ln -sf /etc/php-5.6.sample/intl.ini /etc/php-5.6/intl.ini
+ln -sf /etc/php-5.6.sample/mysql.ini /etc/php-5.6/mysql.ini
+cd /var/www
+tar zxvf /root/mediawiki-1.29.0.tar.gz 
+mv mediawiki-1.29.0/ mediawiki
+</pre>
+<p><br />
+</p>
+<ul><li> Sur MySQL:</li></ul>
+<pre>
+create database MBDD;
+CREATE USER 'ADMINWIKI'@'localhost' IDENTIFIED BY 'PASS';
+use mysql;
+GRANT ALL PRIVILEGES ON MABDD.* TO 'ADMINWIKI'@'localhost' IDENTIFIED BY 'PASS';
+exit;
+</pre>
+<p>Par défaut, sur OpenBSD, le nginx.conf contient une second directive root&#160;:
+</p>
+<pre>           root           /var/www/htdocs;
+</pre>
+<p>une fois décommentée et php-fpm installé et lancé, tout marche.
+</p><p>INstallez le cache apc&#160;:
+</p>
+<pre>pkg_add pecl-APC
+    ln -sf /etc/php-5.4.sample/apc.ini /etc/php-5.4/apc.ini
+</pre>
+<p>Relancez php-fpm et NginX
+</p><p><br />
+</p>
+<ul><li> Faites un tour à <a rel="nofollow" class="external free" href="http://@IP/mediawiki">http://@IP/mediawiki</a> et suivez les consignes</li>
+<li></li></ul>
+<pre>mv /var/www/mediawiki/config/LocalSettings.php /var/www/mediawiki/
+chmod 600 /var/www/mediawiki/LocalSettings.php
+</pre>
+<h2><span class="mw-headline" id="Migration">Migration</span></h2>
+<ul><li> Faire une sauvegarde de la base</li>
+<li> Faire une sauvegarde des fichiers</li>
+<li> Restaurer les fichiers</li></ul>
+<p>Sur l'ancien serveur&#160;: 
+</p>
+<pre>/usr/local/bin/mysqldump --user=root --host=localhost  --password=PASSROOTMYSQL MABDDWIKI  &gt;  /root/MABDDWIKI.sql
+tar zcvf /root/MABDDWIKI.Images.tar.gz /var/www/mediawiki/images
+
+</pre>
+<p>Sur le nouveau:
+</p>
+<pre>mysql MABDD &lt; /root/MABDDWIKI.sql
+tar zxvf /root/MABDDWIKI.Images.tar.gz
+mv /PATH/mediawiki/images/* /var/www/mediawiki/images/
+</pre>
+<h2><span class="mw-headline" id="Droits_.26_Config">Droits &amp; Config</span></h2>
+<ul><li> MaJ de Mediawiki qui perd les accents et donc tous les liens...</li></ul>
+<pre>UPDATE page set  page_title='Acceder_a_internet_depuis_son_IPhone_:_Iphone_en_Routeur_3G' WHERE page_id=160;
+</pre>
+<ul><li> Une page inutile à supprimer&#160;? Faites plutôt une <a class="external text" href="http://www.mediawiki.org/wiki/Help:Redirects/fr">redirection</a></li></ul>
+<ol><li>REDIRECT <a href="http://www.openbsd-edu.net/index.php?title=Nompage&amp;action=edit&amp;redlink=1" class="new" title="Nompage (page inexistante)">Nompage</a></li></ol>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Extensions">Extensions</span></h2>
+<h3><span class="mw-headline" id="Mobile">Mobile</span></h3>
+<pre>wget <a rel="nofollow" class="external free" href="https://extdist.wmflabs.org/dist/extensions/MobileApp-REL1_29-742caf7.tar.gz">https://extdist.wmflabs.org/dist/extensions/MobileApp-REL1_29-742caf7.tar.gz</a>
+tar zxvf MobileApp-REL1_29-742caf7.tar.gz 
+mv MobileApp /var/www/mediawiki/extensions/
+wget <a rel="nofollow" class="external free" href="https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_29-00fab28.tar.gz">https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_29-00fab28.tar.gz</a>
+tar zxvf MobileFrontend-REL1_29-00fab28.tar.gz 
+mv MobileFrontend /var/www/mediawiki/extensions/
+</pre>
+<p>Ajouter à LocalSettings.php
+</p>
+<pre>require_once "$IP/extensions/MobileApp/MobileApp.php";
+wfLoadExtension( 'MobileFrontend' );
+$wgMFAutodetectMobileView = true;
+</pre>
+<p>Et ça vous fait un WikiBSD tout beau sur mobile&#160;!
+</p>
+<h3><span class="mw-headline" id="Authentification_externe">Authentification externe</span></h3>
+<p><a class="external text" href="http://www.mediawiki.org/wiki/Special:ExtensionDistributor/LdapAuthentication">DL l'extension</a>
+</p>
+<h4><span class="mw-headline" id="LDAP">LDAP</span></h4>
+<ul><li> Dans Localsettings.php</li></ul>
+<pre>
+require_once("AuthPlugin.php");
+require_once ("extensions/LdapAuthentication.php");
+$wgAuth = new LdapAuthenticationPlugin();
+$wgLDAPDomainNames = array(  'lyceenobel.org' );
+#$wgLDAPDebug = 6;
+$wgLDAPServerNames = array(  'lyceenobel.org' =&gt; 'ip' ); # Ajout autre serveur LDAP séparé par espace
+$wgLDAPProxyAgent = array(   'lyceenobel.org' =&gt; 'cn=admin,ou=0932026x,ou=ac-creteil,ou=education,o=gouv,c=fr' );
+$wgLDAPProxyAgentPassword = array('lyceenobel.org' =&gt; "pass");
+$wgLDAPBaseDNs  = array( 'lyceenobel.org' =&gt; 'ou=0932026x,ou=ac-creteil,ou=education,o=gouv,c=fr' );
+$wgLDAPEncryptionType = array( 'lyceenobel.org' =&gt; 'clear' );
+$wgLDAPSearchStrings = array(  'lyceenobel.org' =&gt; 'uid=USER-NAME,ou=People,ou=0932026x,ou=ac-creteil,ou=education,o=gouv,c=fr' );
+$wgLDAPRequiredGroups = array( "lyceenobel.org"=&gt; array("cn=Profs,ou=Groups,ou=0932026x,ou=ac-creteil,ou=education,o=gouv,c=fr",
+							"cn=admins,ou=Groups,ou=0932026x,ou=ac-creteil,ou=education,o=gouv,c=fr",
+							"cn=administratifs,ou=Groups,ou=0932026x,ou=ac-creteil,ou=education,o=gouv,c=fr", )); # OK 
+
+$wgLDAPGroupUseFullDN = array( "lyceenobel.org"=&gt;false );
+$wgLDAPGroupUseRetrievedUsername = array('lyceenobel.org' =&gt; false);
+$wgLDAPLowerCaseUsername = array( "lyceenobel.org"=&gt;true, );
+$wgLDAPGroupAttribute = array( "lyceenobel.org"=&gt;"memberUid" );
+$wgLDAPGroupSearchNestedGroups = array( "lyceenobel.org"=&gt;false );
+$wgLDAPUseLDAPGroups = array( "lyceenobel.org"=&gt;true );
+$wgLDAPGroupNameAttribute = array( "lyceenobel.org"=&gt;"cn" );
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="AD">AD</span></h4>
+<pre>wget <a rel="nofollow" class="external free" href="http://upload.wikimedia.org/ext-dist/LdapAuthentication-MW1.15-r45350.tar.gz">http://upload.wikimedia.org/ext-dist/LdapAuthentication-MW1.15-r45350.tar.gz</a>
+
+</pre>
+<p>tar -xzf LdapAuthentication-MW1.15-r45350.tar.gz -C /var/www/mediawiki/extensions
+</p>
+<pre>
+require_once("AuthPlugin.php");
+require_once ('extensions/LdapAuthentication/LdapAuthentication.php');
+$wgAuth = new LdapAuthenticationPlugin();
+$wgLDAPDomainNames = array('AD');
+$wgLDAPServerNames = array('AD' =&gt; 'IP');
+$wgLDAPProxyAgent = array('AD'=&gt;'DN dun user autorisé à lire les OU');
+$wgLDAPProxyAgentPassword = array('AD'=&gt;'PASS');
+$wgLDAPRequiredGroups = array( "AD"=&gt;array('CN=PROF,OU=PROFESSEURS,OU=GROUPES,......'));
+$wgLDAPEncryptionType = array( "AD"=&gt;'false'); # clear/ssl
+$wgLDAPGroupUseFullDN = array( "AD"=&gt;true );
+$wgLDAPGroupObjectclass = array( "AD"=&gt;"group" );
+$wgLDAPGroupAttribute = array( "AD"=&gt;"member" );
+$wgLDAPGroupSearchNestedGroups = array( "AD"=&gt;true );
+$wgLDAPGroupNameAttribute = array( "AD"=&gt;"CN" );
+$wgLDAPBaseDNs = array( "AD"=&gt;"BaseDN" );
+#$wgLDAPBaseDNs = array( "AD"=&gt;"OU=PROFESSEURS,OU=UTILISATEURS,....." );
+$wgLDAPSearchAttributes = array( "AD"=&gt;"sAMAccountName" );
+#$wgLDAPUseLocal = false;
+$wgLDAPDebug = 99;
+$wgDebugLogGroups["ldap"] = "/tmp/debug.log"&#160;;
+
+</pre>
+<h3><span class="mw-headline" id="Configuration_fine">Configuration fine</span></h3>
+<ul><li> Anonymous users can't create pages</li></ul>
+<p>$wgGroupPermissions['*']['createpage'] = false;
+</p>
+<ul><li> Disable anonymous editing</li></ul>
+<p>$wgGroupPermissions['*']['edit'] = false;
+</p>
+<ul><li> Interdire la lecture des pages aux anonymes</li></ul>
+<p>$wgWhitelistRead = array("Main Page", "Accueil","Special:Userlogin", "-", "MediaWiki:Monobook.css" );
+$wgGroupPermissions['*']['read'] = false;
+</p>
+<ul><li>Telechargements possibles</li></ul>
+<p>$wgFileExtensions = array( 'png', 'gif', 'jpg', 'jpeg' ,'3gp','rw3');
+</p>
+<ul><li>Logo</li></ul>
+<p>$wgLogo             = "/skins/common/Logo.jpg";
+</p>
+<ul><li> Permettre l'upload de fichiers&#160;:</li></ul>
+<pre>$wgEnableUploads = true;
+</pre>
+<p><br />
+Puis 
+chown -R www.www Rep/mediawiki/images/
+</p>
+<h3><span class="mw-headline" id="Divers">Divers</span></h3>
+<h4><span class="mw-headline" id="Logs_cumul.C3.A9s_d.27acc.C3.A8s....Sa_e-reputation_en_fait">Logs cumulés d'accès....Sa e-reputation en fait</span></h4>
+<pre>select sum(page_counter) from page;
+</pre>
+<p>+-------------------+
+| sum(page_counter) |
++-------------------+
+|            667653 |
++-------------------+
+</p><p>700 mille visites...Pas mal vue la ligne ADSL;-)
+</p><p>Bon, pour des raisons de performance, les stats en temps réel via page_counter sont désactivées depuis la version 1.25.
+</p><p>Vous allez devoir utiliser les logs web pour cet usage.
+</p>
+<h3><span class="mw-headline" id="Debug">Debug</span></h3>
+<ul><li> Soit vous rencontrez&#160;: </li></ul>
+<pre>Sorry! This site is experiencing technical difficulties.
+Try waiting a few minutes and reloading.
+(Cannot contact the database server)
+</pre>
+<ul><li> Soit une page blanche, avece rreur 500</li></ul>
+<p>==&gt; Souci de résolution de nom&#160;:
+Dans Localsettings.php: 
+</p><p>Remplacez localhost par 127.0.0.1 pour DbHost...
+</p><p>Ou $wgDBserver = "127.0.0.1";
+</p><p>Et mettre un fichier /var/www/etc/hosts ne suffit pas..
+</p><p>Oui, ça énerve!
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020132758
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.140 seconds
+Real time usage: 0.140 seconds
+Preprocessor visited node count: 81/1000000
+Preprocessor generated node count: 120/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:222-0!*!0!!fr!*!* and timestamp 20171020132758 and revision id 3433
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=MediaWiki&amp;oldid=3433">http://www.openbsd-edu.net/index.php?title=MediaWiki&amp;oldid=3433</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=MediaWiki.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=MediaWiki.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:MediaWiki&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=MediaWiki.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=MediaWiki.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=MediaWiki&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=MediaWiki&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=MediaWiki.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FMediaWiki.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/MediaWiki" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=MediaWiki&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=MediaWiki&amp;oldid=3433" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=MediaWiki&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 11 août 2017 à 21:07.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.140","walltime":"0.140","ppvisitednodes":{"value":81,"limit":1000000},"ppgeneratednodes":{"value":120,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132758","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1606});});</script>
+	</body>
+</html>

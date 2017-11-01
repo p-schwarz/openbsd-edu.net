@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>NginX — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"NginX","wgTitle":"NginX","wgCurRevisionId":3459,"wgRevisionId":3459,"wgArticleId":253,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"NginX","wgRelevantArticleId":253,"wgRequestId":"041d97b7c6fb7d18a25d7c33","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-NginX rootpage-NginX skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">NginX</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=NginX.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=NginX.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=NginX.html#Installation"><span class="tocnumber">1</span> <span class="toctext">Installation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=NginX.html#OpenBSD"><span class="tocnumber">1.1</span> <span class="toctext">OpenBSD</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=NginX.html#Debian"><span class="tocnumber">1.2</span> <span class="toctext">Debian</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=NginX.html#Configuration"><span class="tocnumber">2</span> <span class="toctext">Configuration</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=NginX.html#PHP"><span class="tocnumber">2.1</span> <span class="toctext">PHP</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=NginX.html#Serveurs_virtuels"><span class="tocnumber">2.2</span> <span class="toctext">Serveurs virtuels</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=NginX.html#Permettre_l.27affichage_du_contenu_d.27un_r.C3.A9pertoire_virtuel"><span class="tocnumber">2.3</span> <span class="toctext">Permettre l'affichage du contenu d'un répertoire virtuel</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=NginX.html#Filtrer_les_acc.C3.A8s_.C3.A0_un_site"><span class="tocnumber">2.4</span> <span class="toctext">Filtrer les accès à un site</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=NginX.html#Sp.C3.A9cificit.C3.A9_OpenBSD"><span class="tocnumber">2.4.1</span> <span class="toctext">Spécificité OpenBSD</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=NginX.html#Debian_2"><span class="tocnumber">2.5</span> <span class="toctext">Debian</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=NginX.html#OpenBSD_2"><span class="tocnumber">2.6</span> <span class="toctext">OpenBSD</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=NginX.html#Compilation_de_NginX"><span class="tocnumber">3</span> <span class="toctext">Compilation de NginX</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=NginX.html#Redirection_http"><span class="tocnumber">4</span> <span class="toctext">Redirection http</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=NginX.html#Optimisations_TLS"><span class="tocnumber">5</span> <span class="toctext">Optimisations TLS</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=NginX.html#Reverse_Proxy"><span class="tocnumber">6</span> <span class="toctext">Reverse Proxy</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=NginX.html#Authentification_TLS_mutuelle"><span class="tocnumber">6.1</span> <span class="toctext">Authentification TLS mutuelle</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Installation">Installation</span></h1>
+<h2><span class="mw-headline" id="OpenBSD">OpenBSD</span></h2>
+<p>Désormais, NginX est le serveur web par défaut sous OpenBSD; plus besoin de ports.
+</p>
+<pre>pkg_add nginx
+</pre>
+<p>Script de lancement désormais classique 
+</p>
+<pre>/etc/rc.d/nginx
+</pre>
+<pre>perl -pi -e 's/nginx_flags=NO/nginx_flags=""/' /etc/rc.conf
+/etc/rc.d/nginx start
+</pre>
+<p><br />
+Les logs sont stockés dans /var/www/logs.
+C'est vers ce répertoire que pointe le <i>logs</i> de nginx.conf
+</p>
+<h2><span class="mw-headline" id="Debian">Debian</span></h2>
+<pre>apt-get install nginx-full php5 php5-fpm php5-cgi php5-cli php5-common
+</pre>
+<h1><span class="mw-headline" id="Configuration">Configuration</span></h1>
+<p>Testez et retestez&#160;:
+</p>
+<pre>nginx -t
+</pre>
+<p>nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+</p><p>nginx: configuration file /etc/nginx/nginx.conf test is successful
+</p><p>Vérifiez la config 
+</p>
+<pre>nginx -s reload
+</pre>
+<h2><span class="mw-headline" id="PHP">PHP</span></h2>
+<p>Votre installation de base vous lance un téléchargement des fichiers php et non une éxécution; 
+</p><p>Ajoutez, à votre directive <i>server</i> dans '/etc/ningx/nginx.conf<i>&#160;:</i>
+</p>
+<pre>   location ~ \.php$ {
+           fastcgi_pass   127.0.0.1:9000;
+           fastcgi_index  index.php;
+           fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+           include        fastcgi_params;
+       }
+</pre>
+<p>php.ini se trouve dans /etc/php-70ini
+</p>
+<ul><li> Ne pas oublier le </li></ul>
+<pre>;listen = /var/run/php7-fpm.sock
+listen = 127.0.0.1:9000
+</pre>
+<p>dans /etc/php/7.0/fpm/pool.d/www.conf
+</p>
+<h2><span class="mw-headline" id="Serveurs_virtuels">Serveurs virtuels</span></h2>
+<p>Ajouter dans le fichier de conf&#160;:
+</p>
+<pre>server {
+       listen       80;
+       server_name      FQDN;
+       access_log  logs/access_FQDN.log&#160;;
+       error_log logs/error_FQDN.log &#160;;
+       root         /var/www/htdocs/FQDN;
+   }
+</pre>
+<h2><span class="mw-headline" id="Permettre_l.27affichage_du_contenu_d.27un_r.C3.A9pertoire_virtuel">Permettre l'affichage du contenu d'un répertoire virtuel</span></h2>
+<p>Dans une accolade server
+</p>
+<pre>location /SubDir {
+       autoindex       on;
+       autoindex_exact_size off;
+       autoindex_localtime off;
+       allow all;
+}
+</pre>
+<h2><span class="mw-headline" id="Filtrer_les_acc.C3.A8s_.C3.A0_un_site">Filtrer les accès à un site</span></h2>
+<p>Dans <i>/etc/nginx/nginx.conf</i>
+</p>
+<pre> auth_basic "Zone a acces restreint";
+ auth_basic_user_file conf/Fichierdemotsdepasse;
+</pre>
+<p>Avec <i>Fichierdemotsdepasse</i> obtenu grâce à la commande htpassd&#160;:
+</p>
+<pre>htpasswd -c Fichierdemotsdepasse User
+</pre>
+<p><b>Attention</b>
+Fichierdemotsdepasse est donc ici dans le sous répertoire <b>conf</b> du répertoire contenant nginx.conf
+</p>
+<h3><span class="mw-headline" id="Sp.C3.A9cificit.C3.A9_OpenBSD">Spécificité OpenBSD</span></h3>
+<p>NginX est chrooté, c'est à dire mis dans une prison <b>/var/www</b>
+</p><p>Le Fichierdemotsdepasse doit donc se trouver dans cette arborescence, soit&#160;:
+</p>
+<pre>mkdir -p /var/www/etc/nginx/conf
+cp Fichierdemotsdepasse /var/www/etc/nginx/conf
+/etc/rc.d/nginx restart
+</pre>
+<h2><span class="mw-headline" id="Debian_2">Debian</span></h2>
+<ul><li>Fichier de conf&#160;: /etc/nginx/nginx.conf</li>
+<li>Sites /etc/nginx/sites-available</li>
+<li>Arbo web /usr/share/nginx/www</li></ul>
+<h2><span class="mw-headline" id="OpenBSD_2">OpenBSD</span></h2>
+<ul><li>Fichier de conf&#160;: /etc/nginx/nginx.conf</li>
+<li>Sites /etc/nginx/sites-available</li>
+<li>Arbo web classique&#160;: /var/www</li></ul>
+<h1><span class="mw-headline" id="Compilation_de_NginX">Compilation de NginX</span></h1>
+<p>NginX ne supporte pas (contrairement à Apache) le chargement de modules dynamique; il faut tout compiler au départ... Ben oui, il lui faut bien des avantages à l'ancêtre au scalp..
+</p><p>Une <a rel="nofollow" class="external text" href="http://wiki.nginx.org/OnOpenBSD">| doc</a> d'install avant la mise en place de NginX en standard.
+</p>
+<pre>pkg_add pcre gnupg
+wget <a rel="nofollow" class="external free" href="http://nginx.org/download/nginx-1.6.2.tar.gz">http://nginx.org/download/nginx-1.6.2.tar.gz</a>
+wget <a rel="nofollow" class="external free" href="http://nginx.org/download/nginx-1.6.2.tar.gz.asc">http://nginx.org/download/nginx-1.6.2.tar.gz.asc</a>
+wget <a rel="nofollow" class="external free" href="http://nginx.org/keys/is.key">http://nginx.org/keys/is.key</a>
+gpg --import is.key 
+ gpg --keyserver pgp.mit.edu --recv-keys 0xA1C052F8
+gpg --verify nginx-1.6.2.tar.gz.asc 
+ gpg: Signature made Tue Sep 16 14:25:45 2014 CEST using RSA key ID A1C052F8
+ gpg: Good signature from "Maxim Dounin &lt;mdounin@mdounin.ru&gt;"
+ gpg: WARNING: This key is not certified with a trusted signature!
+ gpg:          There is no indication that the signature belongs to the owner.
+ Primary key fingerprint: B0F4 2533 73F8 F6F5 10D4  2178 520A 9993 A1C0 52F8
+</pre>
+<pre> tar zxvf nginx-1.6.2.tar.gz
+ ./configure --sbin-path=/usr/local/sbin/nginx --conf-path=/etc/nginx/nginx.conf --pid-path=/var/run/nginx.pid --with-http_ssl_module --http-log-path=/var/log/nginx.log --error-log-path=/var/log/nginx-error.log --http-fastcgi-temp-path=/var/tmp/fastcgi_tmp --http-proxy-temp-path=/var/tmp/proxy_tmp --http-client-body-temp-path=/var/tmp/client_body_temp --with-http_stub_status_module  --with-http_mp4_module   --user=www --group=www
+</pre>
+<p>J'ai rajouté le <i>--with-http_mp4_module </i>
+</p><p>Votre nouvel nginx se retrouve dans /usr/local/sbin
+</p><p><br />
+</p>
+<h1><span class="mw-headline" id="Redirection_http">Redirection http</span></h1>
+<p>Ajouter dans  un sites-enabled
+</p>
+<pre>server {
+listen 80 default_server;
+listen [::]:80 default_server;
+server_name MON_SERVEUR&#160;;
+return 301 <a rel="nofollow" class="external free" href="https://$server_name$request_uri">https://$server_name$request_uri</a>;
+}
+</pre>
+<h1><span class="mw-headline" id="Optimisations_TLS">Optimisations TLS</span></h1>
+<p>(En partie tirées <a rel="nofollow" class="external text" href="https://www.bjornjohansen.no/">de</a> )
+</p>
+<ul><li> Permet de mettre en cache 	</li></ul>
+<p>Ici 200sessions durant 1/2h
+</p>
+<pre>ssl_session_cache shared:SSL:1m;
+ssl_session_timeout 180m;
+</pre>
+<ul><li> Permet l'accès HSTS ( Un accès via https une fois sur votre site forcera le navigateur client à utiliser systématiquement ce protocole)</li></ul>
+<pre>add_header Strict-Transport-Security "max-age=31536000" always;
+</pre>
+<h1><span class="mw-headline" id="Reverse_Proxy">Reverse Proxy</span></h1>
+<p><a rel="nofollow" class="external autonumber" href="http://homeserver-diy.net/wiki/index.php?title=Installation_et_configuration_d%E2%80%99un_reverse_proxy_avec_NginX">[1]</a>
+</p><p>Dans  /etc/nginx/conf.d/proxy.conf&#160;:
+</p>
+<pre>proxy_redirect          off;
+proxy_set_header        Host            $host;
+proxy_set_header        X-Real-IP       $remote_addr;
+proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+client_max_body_size    10m;
+client_body_buffer_size 128k;
+client_header_buffer_size 64k;
+proxy_connect_timeout   90;
+proxy_send_timeout      90;
+proxy_read_timeout      90;
+proxy_buffer_size   16k;
+proxy_buffers       32   16k;
+proxy_busy_buffers_size 64k;
+</pre>
+<p>Dans  /etc/nginx/sites-enabled/default&#160;:
+</p>
+<pre>server {
+listen   80;
+server_name     Nom.QDN.serveur1;
+location / {
+proxy_pass         <a rel="nofollow" class="external free" href="http://10.0.0.101/">http://10.0.0.101/</a>;
+}
+}
+server {
+listen   80;
+server_name     Nom.QDN.serveur2;
+location / {
+proxy_pass         <a rel="nofollow" class="external free" href="http://10.0.0.102/">http://10.0.0.102/</a>;
+}
+}
+</pre>
+<h2><span class="mw-headline" id="Authentification_TLS_mutuelle">Authentification TLS mutuelle</span></h2>
+<p>Votre IGC perso a généré des certificats TLS serveurs et clients issus de la même AC racine&#160;?
+Couplez les deux éléments dans une authentification TLS mutuelle.
+"<i>Tu ne pourras te connecter ici QUE si tu arrives avec un certificat client issu de la même AC que moi</i>
+</p><p>Très haute sécu, mais adieu les interceptions TLS qui ne pourront pas rejouer l'authent cliente après vous avoir présenté une fausse AC racine....
+</p>
+<pre>server {
+       listen       443 ssl;
+       server_name  localhost;
+       root         /var/www/htdocs;
+       ssl_certificate     /etc/ssl/certs/cert.crt;
+       ssl_certificate_key /etc/ssl/private/cert.key;
+       ssl_client_certificate /etc/ssl/certs/ca.crt;
+</pre>
+<p>C'est là&#160;:
+</p>
+<pre>       ssl_verify_client on;
+</pre>
+<p>En plus, on prend des suites cryptos de haut-niveau&#160;:
+</p>
+<pre>       ssl_protocols        TLSv1.2;
+       ssl_ciphers         HIGH:!aNULL:!MD5;
+</pre>
+<p>On peut également passer à l'appli derrière des éléments du certificat dans le header http:
+</p>
+<pre>       proxy_set_header X-SSL-client-serial $ssl_client_serial;
+          proxy_set_header X-SSL-client-s-dn $ssl_client_s_dn;
+           proxy_set_header X-SSL-client-i-dn $ssl_client_i_dn;
+           proxy_set_header X-SSL-client-session-id $ssl_session_id;
+           proxy_set_header X-SSL-client-verify $ssl_client_verify;
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20171020132750
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.120 seconds
+Real time usage: 0.131 seconds
+Preprocessor visited node count: 62/1000000
+Preprocessor generated node count: 68/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:253-0!*!*!!fr!*!* and timestamp 20171020132750 and revision id 3459
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=NginX&amp;oldid=3459">http://www.openbsd-edu.net/index.php?title=NginX&amp;oldid=3459</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=NginX.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=NginX.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:NginX&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=NginX.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=NginX.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=NginX&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=NginX&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=NginX.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FNginX.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/NginX" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=NginX&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=NginX&amp;oldid=3459" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=NginX&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 18 octobre 2017 à 11:37.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.120","walltime":"0.131","ppvisitednodes":{"value":62,"limit":1000000},"ppgeneratednodes":{"value":68,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132751","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1607});});</script>
+	</body>
+</html>

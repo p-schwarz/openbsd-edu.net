@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>FOG — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"FOG","wgTitle":"FOG","wgCurRevisionId":1876,"wgRevisionId":1876,"wgArticleId":203,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"FOG","wgRelevantArticleId":203,"wgRequestId":"9a7202a42eab454c9399f553","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-FOG rootpage-FOG skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">FOG</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=FOG.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=FOG.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=FOG.html#Install"><span class="tocnumber">1</span> <span class="toctext">Install</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=FOG.html#config"><span class="tocnumber">2</span> <span class="toctext">config</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=FOG.html#Boot"><span class="tocnumber">3</span> <span class="toctext">Boot</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=FOG.html#Sur_le_serveur_DHCP"><span class="tocnumber">4</span> <span class="toctext">Sur le serveur DHCP</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=FOG.html#Sur_le_client_Windows"><span class="tocnumber">5</span> <span class="toctext">Sur le client Windows</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=FOG.html#HCL"><span class="tocnumber">6</span> <span class="toctext">HCL</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=FOG.html#Cr.C3.A9ation_d.27une_image_disque"><span class="tocnumber">7</span> <span class="toctext">Création d'une image disque</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=FOG.html#Int.C3.A9gration_AD"><span class="tocnumber">8</span> <span class="toctext">Intégration AD</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=FOG.html#Changement_IP_serveur"><span class="tocnumber">9</span> <span class="toctext">Changement IP serveur</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=FOG.html#Migration_point_de_stockage"><span class="tocnumber">10</span> <span class="toctext">Migration point de stockage</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Install">Install</span></h2>
+<ul><li> debian squeeze</li>
+<li> Ne pas installer le package language int</li></ul>
+<pre>cd bin
+./installfog.sh
+</pre>
+<ul><li> <b>2</b>&#160;: Debian</li>
+<li> <b>N</b>ormal</li>
+<li> @IP</li>
+<li> router: <b>N</b> ne sera pas server dhcp</li>
+<li> DNS: <b>N</b></li>
+<li> Change eth0 default&#160;: <b>N</b></li>
+<li> USe fog for dhcp&#160;: <b>N</b></li>
+<li> Install packages langues&#160;:<b>N</b></li>
+<li> Ready&#160;? <b>Y</b></li></ul>
+<h2><span class="mw-headline" id="config">config</span></h2>
+<ul><li> Mettre bon mdp mysql dans /var/www/fog/commons/config.php</li>
+<li> Le service tftp a changé en Squeeze&#160;:</li></ul>
+<pre>perl -pi -e 's/\/srv\/tftp/\/tftpboot\/' /etc/default/tftpd-hpa
+/etc/init.d/tftpd-hpa restart
+</pre>
+<ul><li> On modifie rexpectivement les adresses de la passerelle et du DNS</li></ul>
+<pre>cd /opt/fog/packages/tftp/pxelinux.cfg
+cp default /tmp/
+perl -pi -e 's/1.1.1.100/AdressDuDNS/g' default 
+perl -pi -e 's/1.1.1.38/AdressDuWEB/g' default
+</pre>
+<p><br />
+<s> cp /tftpboot/pxelinux.cfg/default /opt/fog/packages/tftp/pxelinux.cfg/default</s>
+</p>
+<h2><span class="mw-headline" id="Boot">Boot</span></h2>
+<ul><li> F12=Boot réseau</li>
+<li> fog.reg (<i>fog:reg</i> sur un clavier qwerty) pour l'enregistrement auto</li></ul>
+<h2><span class="mw-headline" id="Sur_le_serveur_DHCP">Sur le serveur DHCP</span></h2>
+<p>Option 66&#160;:  @IP PXE
+</p><p>Option 67&#160;: pxelinux.0
+</p>
+<h2><span class="mw-headline" id="Sur_le_client_Windows">Sur le client Windows</span></h2>
+<p>Pour récupérer le service fog&#160;:
+</p><p><a rel="nofollow" class="external free" href="http://@IP_server_fog/fog/client">http://@IP_server_fog/fog/client</a>
+</p>
+<h2><span class="mw-headline" id="HCL">HCL</span></h2>
+<ul><li>Optiplex 740</li></ul>
+<pre>Not enough memory to load kernel
+</pre>
+<p><a rel="nofollow" class="external free" href="http://www.fogproject.org/wiki/index.php?title=Talk:Dell_Optiplex_740">http://www.fogproject.org/wiki/index.php?title=Talk:Dell_Optiplex_740</a>
+</p><p>=&gt; MAj du noyau&#160;:
+</p><p>About/Kernel Updates/
+</p><p><br />
+</p>
+<ul><li> Dell Optiplex GX620&#160;: RAS dès le BIOS <a rel="nofollow" class="external text" href="http://www.dell.com/support/drivers/us/en/usgen1/DriverDetails/DriverFileFormats?DriverId=R142230">A11</a></li>
+<li> Portable NEC Versa&#160;: RAS</li></ul>
+<h2><span class="mw-headline" id="Cr.C3.A9ation_d.27une_image_disque">Création d'une image disque</span></h2>
+<ul><li> Onglet Host</li>
+<li> List all hosts</li>
+<li> Edit</li>
+<li> régler image et OS</li>
+<li> Update</li>
+<li> Basic tasks</li>
+<li> Upload</li>
+<li> reboot du client</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Int.C3.A9gration_AD">Intégration AD</span></h2>
+<p>Si vous faites le tout sans rien changer, vous aurez des soucis de postes identiques dans AD.
+</p>
+<ul><li> Sortez éventuellement le poste d'un quelconque domaine</li>
+<li> Téléchargez netdom.exe à coller dans c:\program files\support tools</li>
+<li> Copier le dossier FOGCrypt du serveur sur un poste Windows</li>
+<li> <b>Modifier le passkey dans etc\config.ini</b>&#160;!!  C'est vraiment important. La clé étant générique,il <b>FAUT</b> la changer.</li>
+<li> Lancer FOGCrypt password_user_AD</li></ul>
+<p><br />
+</p>
+<pre> Input string: password_user_AD
+ Passkey:      Clé_de_config_ini
+ Output:       2834529h9eac4de8744cb77b2a98890807785ad323ef90d576
+</pre>
+<ul><li> Coller l'output dans l'interface web</li></ul>
+<ul><li> Sur un Windows (XP/SP3 minimum)&#160;:
+<ul><li> Télécharger le source <a rel="nofollow" class="external free" href="http://sourceforge.net/projects/freeghost/files/FOG/fog_0.29/">http://sourceforge.net/projects/freeghost/files/FOG/fog_0.29/</a></li>
+<li> Détarrer sur une clé sous Linux puis copier sous Windows...Plus simple!</li>
+<li> Télécharger &amp; installer MS Visual Studio C# LIte&#160;:<a rel="nofollow" class="external free" href="http://www.microsoft.com/downloads/en/confirmation.aspx?FamilyID=26bae65f-b0df-4081-ae6e-1d828993d4d0&amp;displaylang=en">http://www.microsoft.com/downloads/en/confirmation.aspx?FamilyID=26bae65f-b0df-4081-ae6e-1d828993d4d0&amp;displaylang=en</a></li>
+<li> Télécharger <a rel="nofollow" class="external free" href="http://downloads.sourceforge.net/sevenzip/7z920.exe">http://downloads.sourceforge.net/sevenzip/7z920.exe</a> au cas où..</li></ul></li></ul>
+<p>(C'est très long en téléchargement et installation..)
+</p>
+<ul><li> Aller dans FOG Service\src\FOG_HostNameChanger</li>
+<li> Dble clic sur HostnameChange.sln</li>
+<li> Convert&#160;? -&gt; Finish</li>
+<li> Fermer</li>
+<li> A droite "Solution Explorer", double-click sur MOD_HostNameChanger.cs.</li>
+<li> Chercher la ligne </li></ul>
+<pre>private const String PASSKEY = "FOG-OpenSource-Imaging"; 
+</pre>
+<p>et remplacer le mdp
+</p>
+<ul><li>  File -&gt; Save All.</li>
+<li> Build -&gt; Build Solution.</li>
+<li> "FOG Service\src\FOG_HostNameChanger\bin\Release"</li>
+<li> Copier  HostnameChange.dll sru tous les ordis avec le serivce fFOG installé&#160;:</li></ul>
+<pre>c:\Program Files\FOG\HostnameChange.dll 
+</pre>
+<p><br />
+</p>
+<ul><li> user doit avoir compte admin du domaine.</li></ul>
+<h2><span class="mw-headline" id="Changement_IP_serveur">Changement IP serveur</span></h2>
+<pre>
+
+#!/bin/bash
+# Permet de changer l'adresse IP du serveur FOG
+# Impose d'avoir accès sans mdp à la base MySQL
+# Suppose enfin, que tout fog est sur la même @IP
+OLDIP=`mysql --batch -e 'use fog; select  settingValue from globalSettings where settingKey="FOG_TFTP_HOST";' |grep -v "settingValue"`
+echo "Quelle est la nouvelle IPv4 du serveur fog&#160;?"
+read NEWIP
+
+#BDD
+mysql --batch -e "use fog;update globalSettings set settingValue=\"$NEWIP\" where settingKey=\"FOG_TFTP_HOST\";"
+mysql --batch -e "use fog;update globalSettings set settingValue=\"$NEWIP\" where settingKey=\"FOG_PXE_IMAGE_DNSADDRESS\";"
+mysql --batch -e "use fog;update globalSettings set settingValue=\"$NEWIP\" where settingKey=\"FOG_WEB_HOST\";"
+mysql --batch -e "use fog;update globalSettings set settingValue=\"$NEWIP\" where settingKey=\"FOG_WOL_HOST\";"
+
+#Ouebe
+perl -pi -e "s/$OLDIP/$NEWIP/g" /var/www/fog/commons/config.php
+
+#TFTP
+ perl -pi -e "s/$OLDIP/$NEWIP/g"  /opt/fog/packages/tftp/pxelinux.cfg/default
+ perl -pi -e "s/dns=$OLDIP/dns=$NEWIP/g" /tftpboot/pxelinux.cfg/default
+ perl -pi -e "s/web=$OLDIP/web=$NEWIP/g" /tftpboot/pxelinux.cfg/default
+</pre>
+<ul><li> Puis pour  NFS&#160;: Storage/Storages nodes</li></ul>
+<h2><span class="mw-headline" id="Migration_point_de_stockage">Migration point de stockage</span></h2>
+<pre>mkdir /var/images
+mv /images/* /var/images/
+mv /images/.mntcheck /var/images/
+rmdir /images/
+ln -s /var/images/ /images
+chown -R fog.fog /var/images
+</pre>
+<pre>perl -pi -e 's/images/var\/images/g' /etc/exports 
+/etc/init.d/nfs-common restart
+/etc/init.d/nfs-kernel-server restart
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20171020133025
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.090 seconds
+Real time usage: 0.100 seconds
+Preprocessor visited node count: 47/1000000
+Preprocessor generated node count: 64/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:203-0!*!*!!fr!*!* and timestamp 20171020133025 and revision id 1876
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=FOG&amp;oldid=1876">http://www.openbsd-edu.net/index.php?title=FOG&amp;oldid=1876</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=FOG.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=FOG.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:FOG&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=FOG.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=FOG.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=FOG&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=FOG&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=FOG.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FFOG.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/FOG" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=FOG&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=FOG&amp;oldid=1876" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=FOG&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 25 novembre 2011 à 15:36.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.090","walltime":"0.100","ppvisitednodes":{"value":47,"limit":1000000},"ppgeneratednodes":{"value":64,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020133025","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1569});});</script>
+	</body>
+</html>

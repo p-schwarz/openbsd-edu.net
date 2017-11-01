@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Installation — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Installation","wgTitle":"Installation","wgCurRevisionId":3280,"wgRevisionId":3280,"wgArticleId":7,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Installation","wgRelevantArticleId":7,"wgRequestId":"9655d8fabb9c166f6fc28f61","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Installation rootpage-Installation skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Installation</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Installation.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Installation.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Installation.html#Install_moderne...o.C3.B9_je_vous_tiens_un_peu_par_la_main.."><span class="tocnumber">1</span> <span class="toctext">Install <i>moderne</i>...où je vous tiens un peu par la main..</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Installation.html#Media"><span class="tocnumber">1.1</span> <span class="toctext">Media</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Installation.html#Que_faire_.3F"><span class="tocnumber">1.2</span> <span class="toctext">Que faire&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Installation.html#Clavier"><span class="tocnumber">1.3</span> <span class="toctext">Clavier</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Installation.html#Nom"><span class="tocnumber">1.4</span> <span class="toctext">Nom</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Installation.html#R.C3.A9seau"><span class="tocnumber">1.5</span> <span class="toctext">Réseau</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Installation.html#Password_root"><span class="tocnumber">1.6</span> <span class="toctext">Password root</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Installation.html#Quelques_services_...importants.21"><span class="tocnumber">1.7</span> <span class="toctext">Quelques services ...importants!</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Installation.html#Du_X_sur_un_serveur_.3F.3F.3F.3F"><span class="tocnumber">1.8</span> <span class="toctext">Du X sur un serveur&#160;????</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Installation.html#La_sortie.2C_c.27est_par_o.C3.B9_.3F"><span class="tocnumber">1.9</span> <span class="toctext">La sortie, c'est par où&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Installation.html#Fuseau_horaire"><span class="tocnumber">1.10</span> <span class="toctext">Fuseau horaire</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Installation.html#Bonne_habitude"><span class="tocnumber">1.11</span> <span class="toctext">Bonne habitude</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Installation.html#Le_disque_.21"><span class="tocnumber">1.12</span> <span class="toctext">Le disque&#160;!</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=Installation.html#Post_Install"><span class="tocnumber">2</span> <span class="toctext">Post Install</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Installation.html#Installer_un_environnement_de_travail_minimal"><span class="tocnumber">2.1</span> <span class="toctext">Installer un environnement de travail minimal</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Installation.html#Changer_le_shell_d.27un_utilisateur"><span class="tocnumber">2.2</span> <span class="toctext">Changer le shell d'un utilisateur</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Installation.html#Installation_des_ports"><span class="tocnumber">2.3</span> <span class="toctext">Installation des ports</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="index.php%3Ftitle=Installation.html#Oubli_de_fileset_durant_l.27install_.21.21"><span class="tocnumber">3</span> <span class="toctext">Oubli de fileset durant l'install&#160;!!</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="index.php%3Ftitle=Installation.html#M.C3.A9nage_dans_l.27arbre_des_paquets"><span class="tocnumber">4</span> <span class="toctext">Ménage dans l'arbre des paquets</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="index.php%3Ftitle=Installation.html#Ancienne_doc_d.27install_.28en_version_3.0_.21.21.21.29"><span class="tocnumber">5</span> <span class="toctext">Ancienne doc d'install (en version 3.0&#160;!!!)</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=Installation.html#Installation_.C3.A0_partir_du_Cdrom_d.27OpenBSD"><span class="tocnumber">5.1</span> <span class="toctext">Installation à partir du Cdrom d'OpenBSD</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=Installation.html#Disques"><span class="tocnumber">5.2</span> <span class="toctext">Disques</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=Installation.html#Mdp"><span class="tocnumber">5.3</span> <span class="toctext">Mdp</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Installation.html#Installation_du_syst.C3.A8me"><span class="tocnumber">5.4</span> <span class="toctext">Installation du système</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=Installation.html#Debug"><span class="tocnumber">5.5</span> <span class="toctext">Debug</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Install_moderne...o.C3.B9_je_vous_tiens_un_peu_par_la_main..">Install <i>moderne</i>...où je vous tiens un peu par la main..</span></h2>
+<h3><span class="mw-headline" id="Media">Media</span></h3>
+<ul><li> Sur le CDROM acheté (c'est bien)</li>
+<li> Sur l'image ISO du CD , en <a rel="nofollow" class="external text" href="ftp://ftp.openbsd.org/pub/OpenBSD/4.8/i386/">i386</a>(c'est légal, mais c'est moins bien, vous ne participez pas financièrement au projet)</li>
+<li> En boot <a href="index.php%3Ftitle=Boitier_Soekris.html#OpenBSD_en_PXE" title="Boitier Soekris"> PXE</a> (c'est classe!)</li></ul>
+<h3><span class="mw-headline" id="Que_faire_.3F">Que faire&#160;?</span></h3>
+<pre><b>i</b>nstall pour installer
+</pre>
+<p><a href="./index.php%3Ftitle=Fichier:Install1.png.html" class="image"><img alt="Install1.png" src="images/1/10/Install1.png" width="600" height="53" /></a>
+</p>
+<h3><span class="mw-headline" id="Clavier">Clavier</span></h3>
+<pre><b>fr</b> pour le clavier français.
+</pre>
+<p><a href="./index.php%3Ftitle=Fichier:Install2.png.html" class="image"><img alt="Install2.png" src="images/3/3a/Install2.png" width="600" height="20" /></a>
+</p>
+<h3><span class="mw-headline" id="Nom">Nom</span></h3>
+<p>Soyez originaux...
+</p><p><a href="./index.php%3Ftitle=Fichier:Install3.png.html" class="image"><img alt="Install3.png" src="images/6/6c/Install3.png" width="600" height="14" /></a>
+</p>
+<h3><span class="mw-headline" id="R.C3.A9seau">Réseau</span></h3>
+<p>On ne rigole plus,là.
+</p><p>Pour chaque interface détectée vous allez successivement&#160;:
+</p>
+<ul><li> Choisir l'interface</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Install4.png.html" class="image"><img alt="Install4.png" src="images/0/03/Install4.png" width="600" height="32" /></a>
+</p>
+<ul><li> Choisir le mode d'attribution des adresses IPv4 (dhcp ou fixe)</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Install5.png.html" class="image"><img alt="Install5.png" src="images/c/ce/Install5.png" width="600" height="17" /></a>
+</p>
+<ul><li> Choisir le mode d'attribution des adresses IPv6 (rtsol ou fixe. Et oui dhcpv6 n'est pas implémenté apparemment..Et tant mieux, ça semble pas très nécessaire ce truc.)</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Install6.png.html" class="image"><img alt="Install6.png" src="images/0/0a/Install6.png" width="600" height="13" /></a>
+</p>
+<ul><li> Quand vous avez fait le tour, <i>done</i> vous permet de terminer.</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Install7.png.html" class="image"><img alt="Install7.png" src="images/4/4b/Install7.png" width="600" height="15" /></a>
+</p>
+<ul><li> Si vous le souhaitez,un petit tour de shell pour faire quelques modifs persos.</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Install8.png.html" class="image"><img alt="Install8.png" src="images/4/49/Install8.png" width="600" height="41" /></a>
+</p>
+<h3><span class="mw-headline" id="Password_root">Password root</span></h3>
+<p>RAS
+</p><p><a href="./index.php%3Ftitle=Fichier:Install9.png.html" class="image"><img alt="Install9.png" src="images/2/26/Install9.png" width="600" height="29" /></a>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Quelques_services_...importants.21">Quelques services ...importants!</span></h3>
+<p>AMHA, il <b>faut</b> démarrer sshd (connection sécurisée).
+</p><p>Quant à ntpd (serveur de temps), ça ne coûte pas.
+</p><p><a href="./index.php%3Ftitle=Fichier:Install10.png.html" class="image"><img alt="Install10.png" src="images/7/78/Install10.png" width="600" height="26" /></a>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Du_X_sur_un_serveur_.3F.3F.3F.3F">Du X sur un serveur&#160;????</span></h3>
+<p>Même si vous ne démarrerez jamais de serveur X11 sur votre serveur, j'ai eu quelques mésaventures en répondant non ici. 
+</p><p><a href="./index.php%3Ftitle=Fichier:Install11.png.html" class="image"><img alt="Install11.png" src="images/2/2a/Install11.png" width="600" height="28" /></a>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="La_sortie.2C_c.27est_par_o.C3.B9_.3F">La sortie, c'est par où&#160;?</span></h3>
+<p>Si vous avez une machine headless (sans sortie VGA, type Soekris), c'est intéressant de rediriger la sortie vers le port série.
+</p><p><a href="./index.php%3Ftitle=Fichier:Install12.png.html" class="image"><img alt="Install12.png" src="images/5/53/Install12.png" width="600" height="15" /></a>
+</p>
+<h3><span class="mw-headline" id="Fuseau_horaire">Fuseau horaire</span></h3>
+<p>Défini par défaut. En dehors des amis québécois, ça devrait aller.
+</p><p><a href="./index.php%3Ftitle=Fichier:Install14.png.html" class="image"><img alt="Install14.png" src="images/3/3b/Install14.png" width="600" height="14" /></a>
+</p>
+<h3><span class="mw-headline" id="Bonne_habitude">Bonne habitude</span></h3>
+<p><i>Qui travaille en root toujours, aura des soucis un jour&#160;!</i>
+</p><p>Un second user non privilégié, c'est pas mal...
+</p><p><a href="./index.php%3Ftitle=Fichier:Install13.png.html" class="image"><img alt="Install13.png" src="images/2/24/Install13.png" width="600" height="13" /></a>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Le_disque_.21">Le disque&#160;!</span></h3>
+<p>Petite nouveauté de ce côté avec la 4.8. Une étape de compatibilité avec les autres OS...
+</p><p>On choisira tout le disque: <b>whole</b>.
+</p><p>Puis <b>c</b>ustom layout (Agencement personnel).
+</p><p><a href="./index.php%3Ftitle=Fichier:Install15.png.html" class="image"><img alt="Install15.png" src="images/8/8e/Install15.png" width="600" height="30" /></a>
+</p><p><a href="./index.php%3Ftitle=Fichier:Install16.png.html" class="image"><img alt="Install16.png" src="images/6/66/Install16.png" width="600" height="162" /></a>
+</p><p><a href="./index.php%3Ftitle=Fichier:Install17.png.html" class="image"><img alt="Install17.png" src="images/1/1b/Install17.png" width="600" height="201" /></a>
+</p><p><a href="./index.php%3Ftitle=Fichier:Install18.png.html" class="image"><img alt="Install18.png" src="images/3/38/Install18.png" width="600" height="160" /></a>
+</p><p><a href="./index.php%3Ftitle=Fichier:Install19.png.html" class="image"><img alt="Install19.png" src="images/9/95/Install19.png" width="600" height="295" /></a>
+</p><p><a href="./index.php%3Ftitle=Fichier:Install20.png.html" class="image"><img alt="Install20.png" src="images/7/74/Install20.png" width="600" height="125" /></a>
+</p><p><a href="./index.php%3Ftitle=Fichier:Install21.png.html" class="image"><img alt="Install21.png" src="images/9/91/Install21.png" width="600" height="127" /></a>
+</p><p><a href="./index.php%3Ftitle=Fichier:Install22.png.html" class="image"><img alt="Install22.png" src="images/2/2b/Install22.png" width="600" height="205" /></a>
+</p><p><br />
+<a href="./index.php%3Ftitle=Fichier:Install23.png.html" class="image"><img alt="Install23.png" src="images/d/d3/Install23.png" width="600" height="333" /></a>
+</p>
+<h2><span class="mw-headline" id="Post_Install">Post Install</span></h2>
+<h3><span class="mw-headline" id="Installer_un_environnement_de_travail_minimal">Installer un environnement de travail minimal</span></h3>
+<ul><li> Variables d'environnement&#160;:</li></ul>
+<p>Coller ça dans /etc/profile
+</p>
+<pre>
+PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin
+if  [ "$BASH" ];then
+	PS1='\u@\h:\w:\$&gt; '
+else
+	if [ "`id -u`" -eq 0 ]; then
+	PS1='# '
+	else
+	PS1='$ '
+fi
+fi
+TERM=vt220
+ALT_PKG_PATH=ftp://ftp.irisa.fr/pub/OpenBSD/$(uname -r)/packages/$(uname -m)/
+PKG_PATH=http://ftp.openbsd.org/pub/OpenBSD/$(uname -r)/packages/$(uname -m)/
+export PATH 
+export PATH HOME PS1 TERM PKG_PATH ALT_PKG_PATH
+umask 022 
+</pre>
+<p>Pour que ce fichier soit lu, il faut vous déconnecter/reconnecter...Pas de reboot, non ,-)
+</p>
+<h3><span class="mw-headline" id="Changer_le_shell_d.27un_utilisateur">Changer le shell d'un utilisateur</span></h3>
+<pre>pkg_add bash
+chsh -s /usr/local/bin/bash  user
+echo 'export PS1="\u@\h\[$(tput bold)\]:\[$(tput sgr0)\][\t]\[$(tput bold)\]:\[$(tput sgr0)\]\w:\[$(tput bold)\]\\$\[$(tput sgr0)\]&gt;\[$(tput sgr0)\]"' &gt;&gt; .bashrc
+exit
+</pre>
+<p>Ou jouer avec les possibilités de <a rel="nofollow" class="external text" href="http://bashrcgenerator.com/">bashrc generator</a>
+</p>
+<h3><span class="mw-headline" id="Installation_des_ports">Installation des ports</span></h3>
+<pre> wget ftp.fr.openbsd.org/pub/OpenBSD/5.5/ports.tar.gz
+ wget ftp.fr.openbsd.org/pub/OpenBSD/5.5/SHA256.sig
+ signify -C -p /etc/signify/openbsd-55-base.pub -x SHA256.sig ports.tar.gz
+ cd /usr
+ tar zxvf  /root/ports.tar.gz
+</pre>
+<h2><span class="mw-headline" id="Oubli_de_fileset_durant_l.27install_.21.21">Oubli de fileset durant l'install&#160;!!</span></h2>
+<p>Vous tenez d'installer un paquet par pkg_add et l'on vous répond qu'il manque telle ou telle librairie&#160;:
+</p>
+<pre> Can't install XXXX because of libraries
+|library X11.15.2 not found
+| not found anywhere
+|library Xpm.8.0 not found
+| not found anywhere
+|library freetype.20.0 not found
+| not found anywhere
+Direct dependencies for XXXX resolve to YYYY ZZZ
+Full dependency tree is YYYY ZZZZ RRRR
+</pre>
+<p>Il faut réinstaller un fileset openBSD&#160;:
+1. Soit vous faites un upgrade avec le CD d'install
+2. Soit à la main:
+</p>
+<pre>mount -t cd9660 -r /dev/cd0a /mnt/
+cd /mnt/5.4/amd64
+tar -C / -xzvphf xbase54.tgz 
+ldconfig -m /usr/X11R6/lib
+</pre>
+<h2><span class="mw-headline" id="M.C3.A9nage_dans_l.27arbre_des_paquets">Ménage dans l'arbre des paquets</span></h2>
+<p>Vous avez installé un paquet (et donc ses dépendances) et vous vous en débarassez
+</p>
+<pre>pkg_delete paquet
+</pre>
+<p>OK, mais qu'arrive-t-il aux dépendances&#160;??
+Pas de panique&#160;;
+</p>
+<pre>pkg_delete -a
+</pre>
+<h2><span class="mw-headline" id="Ancienne_doc_d.27install_.28en_version_3.0_.21.21.21.29">Ancienne doc d'install (en version 3.0&#160;!!!)</span></h2>
+<center><i><b>C'est vraiment rapide (20 minutes en moyenne) et facile, après avoir passé l'étape plutot complexe (la première fois) du partitionnement.</b></i></center>
+<h3><span class="mw-headline" id="Installation_.C3.A0_partir_du_Cdrom_d.27OpenBSD">Installation à partir du Cdrom d'OpenBSD</span></h3>
+<p>Si l'installation directement avec le cdrom n'est pas possible sur votre machine, vous pouvez créer une disquette d'installation <br /> pour faire [Disquette.htm <b>votre installation à partir de la disquette</b>].<br /><br />
+Le cdrom que vous <a href="index.php%3Ftitle=Licence.html" title="Licence"> devez vous procurer</a> est un cdrom boootable.<br /> Avant de commencer&#160;:<br /> 
+- Puisque <a href="index.php%3Ftitle=Licence.html" title="Licence">vous avez achetévotre</a> CD d'OpenBSD, vous trouverez dans la jaquette une explication très détaillée de cette installation.<br /> 
+- Vous devez vérifier que votre machine correspond au besoin de l'installation. A savoir taille du disque, carte réseau. <br />
+</p>
+<table width="100%" border="1" cellspacing="2" cellpadding="2">
+<tr>
+<td width="25%">
+<p>Clavier Français
+</p>
+</td>
+<td width="25%">
+<p>Equivalent Anglais
+</p>
+</td>
+<td width="25%">
+<p>Clavier Français
+</p>
+</td>
+<td width="25%">
+<p>Equivalent Anglais
+</p>
+</td></tr>
+<tr>
+<td width="25%">
+<p>§
+</p>
+</td>
+<td width="25%">
+<p>/ (ou le clavier numérique)
+</p>
+</td>
+<td width="25%">
+<p>:
+</p>
+</td>
+<td width="25%">
+<p>. (ou le clavier numérique)
+</p>
+</td></tr>
+<tr>
+<td width="25%">
+<p>?
+</p>
+</td>
+<td width="25%">
+<p>m
+</p>
+</td>
+<td width="25%">
+<p>)
+</p>
+</td>
+<td width="25%">
+<p>- (ou le clavier numérique)
+</p>
+</td></tr>
+<tr>
+<td width="25%">
+<p>_
+</p>
+</td>
+<td width="25%">
+<p>* (ou le clavier numérique)
+</p>
+</td>
+<td width="25%">
+<p>q
+</p>
+</td>
+<td width="25%">
+<p>a
+</p>
+</td></tr>
+<tr>
+<td width="25%">
+<p>Shift §
+</p>
+</td>
+<td width="25%">
+<p>?
+</p>
+</td>
+<td width="25%">
+<p>"
+</p>
+</td>
+<td width="25%">
+<p>%
+</p>
+</td></tr></table>
+<p><br /> Une fois le boot lancé, vous allez obtenir<br /><br /><a href="./index.php%3Ftitle=Fichier:Install-1.jpg.html" class="image"><img alt="Install-1.jpg" src="images/9/98/Install-1.jpg" width="475" height="80" /></a><br /><br /> 
+Sélectionner I pour lancer l'installation.<br /><br /><a href="./index.php%3Ftitle=Fichier:Install-2.jpg.html" class="image"><img alt="Install-2.jpg" src="images/b/be/Install-2.jpg" width="703" height="79" /></a><br /><br /> 
+Puis première demande <br /><br /><a href="./index.php%3Ftitle=Fichier:Install-3.jpg.html" class="image"><img alt="Install-3.jpg" src="images/3/33/Install-3.jpg" width="520" height="73" /></a><br /><br /> Lorsque vous avez une question et entre crochet une réponse, vous pouvez vous contenter de valider. Ce qui est le cas ici.<br /> 
+Puis arrive la partie la plus compliquée, à savoir les disques.<br /><br /> 
+Vous pouvez spécifier ici le clavier Français. Le luxe.<br /> Il vous demande Do you wish to select a keyboard encoding table [n] Répondre y puis choisir le clavier fr.<br /><br /><b><u>Partitionnement</u></b><br /><br /><a href="./index.php%3Ftitle=Fichier:Install-4.jpg.html" class="image"><img alt="Install-4.jpg" src="images/1/13/Install-4.jpg" width="709" height="130" /></a>
+</p>
+<h3><span class="mw-headline" id="Disques">Disques</span></h3>
+<p>Ici je n'ai qu'un seul disque (wd0). Cela peut donc changer suivant votre configuration, si vous en avez deux le nom sera wd1, si les disques sont des disques scsi le nom sd0..... 
+([Disques.htm Plus d'informations sur les disques]). <br /> Encore une fois je ne fais que valider.<br /> Puis il vous demande, si vous voulez utiliser la totalité du disque
+</p>
+<pre>(<b>Do you want tu use the *entire* disk for OpenBSD? [no])</b><br /> Si votre réponse doit être positive taper <b>yes</b> et valider. Si vous souhaitez faire du multi boot, valider simplement (j'ai répondu yes pour ma démonstration). <br /><br /> Puis arrive le moment de créer vos partitions <br /><b><u>Disklabel</u></b>
+</pre>
+<p><a href="./index.php%3Ftitle=Fichier:Install-5.jpg.html" class="image"><img alt="Install-5.jpg" src="images/f/f3/Install-5.jpg" width="719" height="289" /></a>
+</p><p>Vous vous retrouvez avec un prompt, qui va vous permettre de faire cela. Pour avoir de l'aide tapez <b>?</b><br /> Voici quelques commandes les plus utiles. <br /><b>p</b> pour afficher les tables de partitions<br /><b>d a</b> pour détruire la partition a (d b pour détruire la b....)<br /><b>a a</b> pour créer la partition a (a b pour créer la partition b)<br /><b>q</b> quitte et sauvegarde les changements, en passant à la suite de l'installation (attention au clavier&#160;!).<br /><br /> Voici le résultat de la commande <b>p</b><br /><br /><a href="./index.php%3Ftitle=Fichier:Install-6.jpg.html" class="image"><img alt="Install-6.jpg" src="images/6/6a/Install-6.jpg" width="567" height="305" /></a>
+</p><p>Je veux détruire la partition a pour commencer avec du tout beau tout neuf. Attention il <b><u>ne faut surtout pas</u></b> détruire c qui correspond à votre disque.<br /> 
+Donc si vous souhaitez par la suite créer plusieurs partitions, les premières seront a, b, puis d jusqu'à p.<br /><br /><a href="./index.php%3Ftitle=Fichier:Install-7.jpg.html" class="image"><img alt="Install-7.jpg" src="images/6/61/Install-7.jpg" width="659" height="303" /></a><br /><br />
+</p>
+<pre>Puis je recrée avec la commande <b>a</b> suivi du nom de la partition a, b, d, ...etc<b><u><i>.Attention </i></u></b>! 
+Le noyau doit <b><u>Toujours</u></b><span style="text-decoration: none"> se trouver dans une partie du disque matériellement «&#160;accessible&#160;». OpenBSD sait gérer jusqu'à 128 Go. Mais lors du démarrage c'est la bootROM du BIOS qui lance le chargeur de démarrage (NTLDR, LILO,GRUB,...). Or cette ROM est limitée à 8 Go, voire 504 Mo pour les plus vieilles machines (I386). Lors de la primo installation, pas de problème, le processus d'installation place le noyau (<b><u>/bsd</u></b>) dans la bonne limite. Mais lors de la première [OpenBSD-maj.html#2.2 recompilation] , la recopie de </span><b>/usr/src/sys/arch/i386/compile/MonKernel/bsd</b> vers<b> /bsd</b> n'engendre pas d'écrasement du second par le premier, mais une copie à un autre endroit du disque, une suppression du précédent et une mise à jour de la table des inodes (la table d'allocation d'OpenBSD). Or, cette copie se fera dans la partition<b> /</b>. Si celle ci sort de la limite adressable par le BIOS, votre machine ne redémarrera jamais. Quand ca vous arrive en SSH, vous etes un peu obligé de vous déplacer (du vécu&#160;!)<br />
+Donc , vous devez spécifier une partition<b> /</b> dans la limite de l'espace adressable par le BIOS&#160;:<br /> -&gt; la partition<b><u> a</u></b><span style="text-decoration: none"> sera /<br /> 
+</pre>
+<p>-&gt; Sa taille sera inférieure à la plus petite des deux valeurs suivantes&#160;: 8 Go <b>ou</b> à 1024 cylindres (selon le mode LBA ou LARGE).<br /></span><br /><br />&lt;/span&gt;<a href="./index.php%3Ftitle=Fichier:Install-8.jpg.html" class="image"><img alt="Install-8.jpg" src="images/4/4f/Install-8.jpg" width="367" height="111" /></a>
+</p><p>Vous devez indiquer la taille ici 200M pour 200 Mo, si vous travaillez en Go mettre 2G pour 2 Go.<br /> Puis il vous demande le nom du point de montage, le premier doit être / (root).<br /><br /> Il vous faut encore la partition de swap, et éventuellement les autres partitions. Cet ordre ne devrait pas être modifié (/, puis swap, puis les autres)<br /><br /><a href="./index.php%3Ftitle=Fichier:Instal1.gif.html" class="image"><img alt="Instal1.gif" src="images/a/a0/Instal1.gif" width="380" height="95" /></a><br /><br /> Idem pour la partition /var, puis pour les autres.<br /><br /><a href="./index.php%3Ftitle=Fichier:Instal2.gif.html" class="image"><img alt="Instal2.gif" src="images/9/9a/Instal2.gif" width="379" height="101" /></a>
+</p><p><a href="./index.php%3Ftitle=Fichier:Instal3.jpg.html" class="image"><img alt="Instal3.jpg" src="images/b/bb/Instal3.jpg" width="236" height="35" /></a><br /><br /> On arrive à la page suivante&#160;:<br /><br /><a href="./index.php%3Ftitle=Fichier:Install-9.jpg.html" class="image"><img alt="Install-9.jpg" src="images/7/74/Install-9.jpg" width="665" height="308" /></a><br /><br /> En répondant yes vous lancez la création du filesystem. <br /> 
+Puis on passe à la partie finale&#160;:<br /><br /><b><u>Configuration du réseau</u></b><br /><b><br /> Configure the network? [y]</b><br /> Je pense que vous souhaitez avoir le réseau, donc validez.<br /><br />
+</p>
+<pre>Puis il vous demande le hostname (Enter system hostname)<br /> J'ai répondu soleil.<br /><br /> Puis on configure la carte réseau. Attention le nom de la carte (ici le1) dépend du nom de la marque de votre carte réseau.<br /><br /><a href="./index.php%3Ftitle=Fichier:Install-10.jpg.html" class="image"><img alt="Install-10.jpg" src="images/3/3f/Install-10.jpg" width="625" height="104" /></a><br /><br /> Validez simplement.<br /> 
+</pre>
+<p>Il vous demande alors l'adresse IP de la machine ou si vous souhaitez utiliser un serveur dhcp indiquer simplement dhcp, puis le nom symbolique (il vous propose le hostname que vous avez précédemment donné par défaut, puis le masque, puis le nom de domaine et enfin la route par défaut, l'adresse IP de votre serveur DNS, et il vous demande si vous souhaitez utiliser le serveur de nom maintenant.Validez. <br /> Si vous avez d'autres cartes réseau, vous pouvez les configurer maintenant ou le faire après. D'ailleurs vous pouvez toujours [Reseau.htm modifier la configuration réseau après l'installation]. Ce qui est important dans un premier temps, avoir une connexion avec l'internet pour rapatrier les sources.<br /><br /><a href="./index.php%3Ftitle=Fichier:Install-11.jpg.html" class="image"><img alt="Install-11.jpg" src="images/d/dc/Install-11.jpg" width="686" height="343" /></a>
+</p><p>Si vous souhaitez ici prendre la main sur le shell afin de configurer manuellement d'autres cartes vous pouvez le faire ici, ou mieux le faire après.<br /><br />
+</p>
+<h3><span class="mw-headline" id="Mdp">Mdp</span></h3>
+<pre>Il vous demande de rentrer le mot de passe du compte root. Attention au clavier anglais.<br /><br /> Il vous demande alors si vous souhaitez installer l'interface graphique. Ce n'est pas mon choix ici (jamais sur nos serveurs). <br /> J'ai donc répondu non à cette question.<br />
+</pre>
+<h3><span class="mw-headline" id="Installation_du_syst.C3.A8me">Installation du système</span></h3>
+<p>Il vous demande alors depuis quelle source vous souhaitez installer les sources. Comme j'ai le cdrom, je préfère faire cela depuis le cdrom, puis faire la mise à jour immédiatement après. Vous pouvez toujours faire le choix de le faire par ftp, mais attention au débit pour cela.<br />
+<br /> Si vous faites <u>l'installation via ftp</u>, il vous demande si vous passez par un proxy, puis si vous souhaitez utiliser le mode actif du ftp, ce que je ne vous conseille pas, surtout si vous avez un Firewall devant, puis vous propose de lister les serveurs ftp disponibles. Tapez <b>q</b> pour quitter la liste, mais choisissez le serveur ftp que vous souhaitez utiliser. <br />
+<i>Server IP addresses, hostname, or list#? []</i><br /> Indiquez le numéro du serveur ftp que vous voulez utiliser, et validez les autres questions. J'ai rencontré des problèmes avec certains serveurs FTP, avec impossibilité de trouver les packages. Il suffit de choisir un autre serveur ftp.<br /><br /> Le reste est après identique. <br />
+<br /><a href="./index.php%3Ftitle=Fichier:Instal4.jpg.html" class="image"><img alt="Instal4.jpg" src="images/9/9f/Instal4.jpg" width="630" height="151" /></a><br /><br /> Puis il vous demande le répertoire ou se trouve les packages. Il propose <b>[/3.0/i386]</b>, vous n'avez qu'à accepter.<br /><br /><a href="./index.php%3Ftitle=Fichier:Instal5.jpg.html" class="image"><img alt="Instal5.jpg" src="images/3/32/Instal5.jpg" width="569" height="261" /></a><br /><br /> Vous arrivez sur la liste des packages à installer. <br /> taper all pour les sélectionner tous<br /><b>+mis*</b> pour sélectionner le package misc30.tgz<br /><b>-mis*</b> pour l'enlever.<br /> Ici je sélectionne en plus misc et comp. Vous en avez en fait besoin pour compiler ou mettre à jour votre machine. <br /> 
+On peut les ajouter après, mais il est difficile de s'en passer, donc autant le faire tout de suite. Une fois sélectionné ce que vous voulez faire&#160;:done.<br /><br /><a href="./index.php%3Ftitle=Fichier:Install-12.jpg.html" class="image"><img alt="Install-12.jpg" src="images/e/ed/Install-12.jpg" width="610" height="280" /></a><br /><br />
+</p>
+<pre>Si vous souhaitez en installer par la suite un cd / &amp;&amp; tar xvfzp game30.tgz pour installer les jeux par exemple.<br /><br /><b><u>Configuration de la zone horaire</u></b><br /> Puis il ne vous reste plus qu'à configurer la zone horaire<br /> Répondre <b>Europe</b> et valider.<br /><a href="./index.php%3Ftitle=Fichier:Instal6.gif.html" class="image"><img alt="Instal6.gif" src="images/f/f2/Instal6.gif" width="654" height="84" /></a><br /><br /> 
+</pre>
+<p>Puis <b>Paris </b>pour la sub-timezone et valider (ou plus rapidement Europe/Paris)<br /> Il construit le répertoire /dev<br /> Puis le mot de la fin&#160;:<br /><br /><a href="./index.php%3Ftitle=Fichier:Install-14.jpg.html" class="image"><img alt="Install-14.jpg" src="images/3/3b/Install-14.jpg" width="664" height="80" /></a><br /><br /> Un reboot de la machine, vous ne pouvez rien faire dans cet état.<br /> Et après cela certain vont dire qu'il est compliqué d'installer OpenBSD...;-))<br /><br />
+</p>
+<h3><span class="mw-headline" id="Debug">Debug</span></h3>
+<pre>Au redémarrage il peut vous arriver un problème. OpenBSD refusant de booter (Avec des machines Dell entre autre) Voir [Disques.htm ici] pour une solution. Ce bug a été corrigé sur la 3.1.<br /><br /><b><u>Par la suite dans l'ordre pour finir d'installer la machine il vous faut&#160;:</u></b><br />[Console.htm#Clavier%20francais Mettre le clavier en Français (version &lt; 3.1)]<br />[Console.htm#Cr%E9er+un+premier+compte Créer des comptes autres que le seul compte root]<br />[OpenBSD-maj.html Mettre à jour votre machine (sources - ports)]<br />[Console.htm#Rendez%20moi%20mon%20shell Éventuellement changer le shell de votre machine]<br />[Console.htm#Mettre+%E0+l%27heure+votre+machine Mettre à l'heure votre machine]<br />[Console.htm#Modifier+le+prompt+du+bash+par+d%E9faut Modifier le prompt]<br />[applications.html Installer les applications dont vous avez besoin via les packages ou via les ports]<br />[Console.htm#Modifier+SSH+par+d%E9faut Configurer les fichiers de ssh]<br />[Fichiers_Conf.htm Adapter les fichiers de configurations]<br />[Disquette.htm Créer une disquette de secours]<br />[Console.htm#Les+d%E9mons+lanc%E9s+par+d%E9faut Contrôler les processus qui tournent par défaut ][Console.htm#Modifier+l%27%E9diteur+Vi+par+d%E9faut <br /> Améliorer l'éditeur Vi par défaut avec VIM]
+</pre>
+<p><br /> Pour automatiser l'installation ,voir [Disquette.htm#4 ici].<br />
+</p>
+<hr />
+<p>© Philippe &amp; Philippe
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020132724
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 1.330 seconds
+Real time usage: 1.658 seconds
+Preprocessor visited node count: 285/1000000
+Preprocessor generated node count: 486/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:7-0!*!0!!fr!5!* and timestamp 20171020132722 and revision id 3280
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Installation&amp;oldid=3280">http://www.openbsd-edu.net/index.php?title=Installation&amp;oldid=3280</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Installation.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Installation.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Installation&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Installation.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Installation.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Installation&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Installation&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Installation.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FInstallation.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Installation" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Installation&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Installation&amp;oldid=3280" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Installation&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 11 novembre 2016 à 11:23.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"1.330","walltime":"1.658","ppvisitednodes":{"value":285,"limit":1000000},"ppgeneratednodes":{"value":486,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132724","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":3120});});</script>
+	</body>
+</html>

@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Munin — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Munin","wgTitle":"Munin","wgCurRevisionId":3386,"wgRevisionId":3386,"wgArticleId":122,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Munin","wgRelevantArticleId":122,"wgRequestId":"3b5e045db80f61d670f96d71","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Munin rootpage-Munin skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Munin</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Munin.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Munin.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>Un suivi en temps réel des charges CPU,disque etc...
+</p><p>Pas un système d'alerte à la <a href="index.php%3Ftitle=Nagios.html" title="Nagios">Nagios</a>, mais un joli cracheur des graphes.
+</p><p>Une bonne base de départ, <a rel="nofollow" class="external text" href="http://technique.arscenic.org/services-web/munin/monitoring-specifiques/article/monitorer-apache">ici</a>.
+</p><p>Principe&#160;:
+</p><p>One master to rule them all&#160;!!
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Munin.html#Serveur_:_Qui_aura_l.27interface_ouebe"><span class="tocnumber">1</span> <span class="toctext">Serveur&#160;: Qui aura l'interface ouebe</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Munin.html#Test"><span class="tocnumber">1.1</span> <span class="toctext">Test</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Munin.html#Client"><span class="tocnumber">2</span> <span class="toctext">Client</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Munin.html#Apache_1.3"><span class="tocnumber">2.1</span> <span class="toctext">Apache 1.3</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Munin.html#Apache2"><span class="tocnumber">2.2</span> <span class="toctext">Apache2</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Munin.html#Ajouter_un_plugin_de_surveillance"><span class="tocnumber">2.3</span> <span class="toctext">Ajouter un plugin de surveillance</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=Munin.html#Linux"><span class="tocnumber">2.3.1</span> <span class="toctext">Linux</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=Munin.html#OpenBSD"><span class="tocnumber">2.3.2</span> <span class="toctext">OpenBSD</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Munin.html#Samba"><span class="tocnumber">2.3.3</span> <span class="toctext">Samba</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Munin.html#OpenLdap"><span class="tocnumber">2.3.4</span> <span class="toctext">OpenLdap</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="index.php%3Ftitle=Munin.html#FreeRadius"><span class="tocnumber">2.3.5</span> <span class="toctext">FreeRadius</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=Munin.html#MySQL"><span class="tocnumber">2.3.6</span> <span class="toctext">MySQL</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=Munin.html#Nagios"><span class="tocnumber">2.3.7</span> <span class="toctext">Nagios</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=Munin.html#BackupPC"><span class="tocnumber">2.3.8</span> <span class="toctext">BackupPC</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=Munin.html#M.C3.A9t.C3.A9o"><span class="tocnumber">2.3.9</span> <span class="toctext">Météo</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="index.php%3Ftitle=Munin.html#Pf"><span class="tocnumber">2.3.10</span> <span class="toctext">Pf</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="index.php%3Ftitle=Munin.html#Pf_juste_les_paquets_IPV4.2FIPv6"><span class="tocnumber">2.3.11</span> <span class="toctext">Pf juste les paquets IPV4/IPv6</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="index.php%3Ftitle=Munin.html#SSH"><span class="tocnumber">2.3.12</span> <span class="toctext">SSH</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="index.php%3Ftitle=Munin.html#Dovecot"><span class="tocnumber">2.3.13</span> <span class="toctext">Dovecot</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="index.php%3Ftitle=Munin.html#Postfix"><span class="tocnumber">2.3.14</span> <span class="toctext">Postfix</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="index.php%3Ftitle=Munin.html#Drupal"><span class="tocnumber">2.3.15</span> <span class="toctext">Drupal</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="index.php%3Ftitle=Munin.html#Bind"><span class="tocnumber">2.3.16</span> <span class="toctext">Bind</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="index.php%3Ftitle=Munin.html#drbd"><span class="tocnumber">2.3.17</span> <span class="toctext">drbd</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="index.php%3Ftitle=Munin.html#KVM"><span class="tocnumber">2.3.18</span> <span class="toctext">KVM</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="index.php%3Ftitle=Munin.html#OpenVZ"><span class="tocnumber">2.3.19</span> <span class="toctext">OpenVZ</span></a></li>
+<li class="toclevel-3 tocsection-26"><a href="index.php%3Ftitle=Munin.html#APC"><span class="tocnumber">2.3.20</span> <span class="toctext">APC</span></a></li>
+<li class="toclevel-3 tocsection-27"><a href="index.php%3Ftitle=Munin.html#Mediawiki"><span class="tocnumber">2.3.21</span> <span class="toctext">Mediawiki</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="index.php%3Ftitle=Munin.html#Moodle"><span class="tocnumber">2.3.22</span> <span class="toctext">Moodle</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="index.php%3Ftitle=Munin.html#NginX"><span class="tocnumber">2.3.23</span> <span class="toctext">NginX</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-30"><a href="index.php%3Ftitle=Munin.html#OpenBSD_sp.C3.A9cifique"><span class="tocnumber">2.4</span> <span class="toctext">OpenBSD spécifique</span></a>
+<ul>
+<li class="toclevel-3 tocsection-31"><a href="index.php%3Ftitle=Munin.html#Plugins_buggu.C3.A9s"><span class="tocnumber">2.4.1</span> <span class="toctext">Plugins buggués</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-32"><a href="index.php%3Ftitle=Munin.html#FreeBSD_sp.C3.A9cifique"><span class="tocnumber">2.5</span> <span class="toctext">FreeBSD spécifique</span></a>
+<ul>
+<li class="toclevel-3 tocsection-33"><a href="index.php%3Ftitle=Munin.html#ZFS"><span class="tocnumber">2.5.1</span> <span class="toctext">ZFS</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-34"><a href="index.php%3Ftitle=Munin.html#IPhone_sp.C3.A9cifique"><span class="tocnumber">2.6</span> <span class="toctext">IPhone spécifique</span></a>
+<ul>
+<li class="toclevel-3 tocsection-35"><a href="index.php%3Ftitle=Munin.html#Avoir_un_oeil_sur_les_dur.C3.A9es_d.27appel"><span class="tocnumber">2.6.1</span> <span class="toctext">Avoir un oeil sur les durées d'appel</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-36"><a href="index.php%3Ftitle=Munin.html#S.C3.A9curiser_les_flux_et_authentifier_mutuellement"><span class="tocnumber">3</span> <span class="toctext">Sécuriser les flux et authentifier mutuellement</span></a>
+<ul>
+<li class="toclevel-2 tocsection-37"><a href="index.php%3Ftitle=Munin.html#Sur_le_client"><span class="tocnumber">3.1</span> <span class="toctext">Sur le client</span></a></li>
+<li class="toclevel-2 tocsection-38"><a href="index.php%3Ftitle=Munin.html#Sur_le_serveur"><span class="tocnumber">3.2</span> <span class="toctext">Sur le serveur</span></a></li>
+<li class="toclevel-2 tocsection-39"><a href="index.php%3Ftitle=Munin.html#Tests_.26_config"><span class="tocnumber">3.3</span> <span class="toctext">Tests &amp; config</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-40"><a href="index.php%3Ftitle=Munin.html#Trucs"><span class="tocnumber">4</span> <span class="toctext">Trucs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-41"><a href="index.php%3Ftitle=Munin.html#Renommer_sans_perdre_l.27historique"><span class="tocnumber">4.1</span> <span class="toctext">Renommer sans perdre l'historique</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-42"><a href="index.php%3Ftitle=Munin.html#Debug"><span class="tocnumber">5</span> <span class="toctext">Debug</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Serveur_:_Qui_aura_l.27interface_ouebe">Serveur&#160;: Qui aura l'interface ouebe</span></h2>
+<pre>apt-get install munin munin-node apache2
+</pre>
+<p>Ajouter les clients dans /etc/munin/munin.conf
+</p>
+<pre>[bcdiX]
+   address @IP
+   use_node_name yes
+</pre>
+<p><br />
+</p>
+<pre>a2ensite
+</pre>
+<p>Sous Debian Squeeze, ajouter&#160;:
+</p>
+<pre> echo '&lt;directory /var/cache/munin/www&gt;
+allow from all
+&lt;/directory&gt;' &gt;&gt; /etc/apache2/sites-enabled/000-default
+</pre>
+<p>ou à /etc/munin.apache2.conf
+si virtualhosts
+</p>
+<pre>ln -s /var/cache/munin/www/ /var/www/munin
+</pre>
+<p>Sinon Error 403
+</p>
+<pre>/etc/init.d/apache2 reload
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Test">Test</span></h3>
+<pre>su munin --shell=/bin/bash
+/usr/share/munin/munin-update --nofork --debug
+</pre>
+<h2><span class="mw-headline" id="Client">Client</span></h2>
+<pre>apt-get install munin-node munin-plugins-extra
+</pre>
+<p>ou
+</p>
+<pre>pkg_add p5-LWP-UserAgent-Determined munin-node
+</pre>
+<p><br />
+Le Fiere wall
+</p>
+<pre>  # Autorise munin
+  /sbin/iptables -A INPUT -i interface -p tcp --dport 4949 -j ACCEPT
+</pre>
+<p>ou 
+</p>
+<pre>pass in quick on $LAN_IF inet  proto tcp from $SRV_MUNIN to any port 4949 keep state
+</pre>
+<p><br />
+Autoriser le serveur à se connecter sur le client , port 4949 (par défaut)
+</p><p>Ajouter au fichier /etc/munin/munin-node.conf
+la ligne correspondant au serveur munin&#160;:
+</p>
+<pre>allow ^IP\.IP\.0\.1$
+</pre>
+<p>Forcément en regexp&#160;!
+</p>
+<pre>/etc/init.d/munin-node restart
+</pre>
+<p><br />
+Les points à surveiller
+</p>
+<pre>munin-node-configure --shell
+</pre>
+<p>Il faudra patienter 5 minutes, au maximum.
+</p><p>A la fin&#160;:
+</p>
+<pre>apache2ctl restart
+</pre>
+<p><br />
+Attention, la communication entre le client et le serveur munin se fait en clair.
+Issu d'un tcpdump sur le port TCP/4949:
+</p>
+<pre>
+ .......U........
+	0x0020:  8018 0227 92c4 0000 0101 080a 0ad2 ce58  ...'...........X
+	0x0030:  0ad6 95ce 6665 7463 6820 6170 6163 6865  ....fetch.apache
+	0x0040:  5f61 6363 6573 7365 730a                 _accesses.
+IP Client.munin &gt; SRV.57545: tcp 23
+	0x0000:  4500 004b 357d 4000 4006 f105 0a08 001a  E..K5}@.@.......
+	0x0010:  0a08 0001 1355 e0c9 b3e9 bab5 b0a1 c3a5  .....U..........
+	0x0020:  8018 005b a363 0000 0101 080a 0ad6 95e7  ...[.c..........
+	0x0030:  0ad2 ce58 6163 6365 7373 6573 3830 2e76  ...Xaccesses80.v
+	0x0040:  616c 7565 2034 3136 3735 0a              alue.41675.
+</pre>
+<p>Néanmoins, vous pouvez utiliser les capacités TLS de munin. <i>(man munin.conf)</i> pour chiffre le tout.
+</p>
+<h3><span class="mw-headline" id="Apache_1.3">Apache 1.3</span></h3>
+<ul><li> Sous OpenBSD&#160;:</li></ul>
+<p>Modifier le /var/www/conf/httpd.conf
+</p><p>Décommenter 
+</p>
+<pre>#ExtendedStatus On
+</pre>
+<p><br />
+Décommenter la directive <i>server-status</i> et autoriser le serveur Munin
+</p>
+<pre>#&lt;Location /server-status&gt;
+#    SetHandler server-status
+#    Order deny,allow
+#    Deny from all
+#    Allow from .your_domain.com
+#&lt;/Location&gt;
+</pre>
+<p><br />
+Devient
+</p>
+<pre>&lt;Location /server-status&gt;
+    SetHandler server-status
+    Order deny,allow
+    Deny from all
+    Allow from 127.0.0.1
+    Allow from @IP_SRV_MUNIN
+&lt;/Location&gt;
+</pre>
+<pre>apachectl stop
+apachectl starssl
+</pre>
+<p>Munin, maintenant
+</p>
+<pre>ln -s /usr/local/libexec/munin/plugins/apache_volume /etc/munin/plugins/apache_volume
+ln -s /usr/local/libexec/munin/plugins/apache_accesses /etc/munin/plugins/apache_accesses
+ln -s /usr/local/libexec/munin/plugins/apache_processes /etc/munin/plugins/apache_processes
+kill -HUP `ps ax |grep munin |awk '{print $1}'`
+</pre>
+<p><br />
+</p>
+<ul><li> Sous Debian </li></ul>
+<pre>ln -s /usr/share/munin/plugins/apache_accesses /etc/munin/plugins/apache_accesses
+ln -s /usr/share/munin/plugins/apache_processes /etc/munin/plugins/apache_processes
+ln -s /usr/share/munin/plugins/apache_volume /etc/munin/plugins/apache_volume
+/etc/init.d/munin restart
+</pre>
+<h3><span class="mw-headline" id="Apache2">Apache2</span></h3>
+<pre>a2enmod status
+a2enmod info
+</pre>
+<pre>echo "&lt;Location /server-status&gt;
+SetHandler server-status
+Order Deny,Allow
+Allow from 127.0.0.1
+Allow from @IP_SRV_Nagios_Munin
+Deny from All
+&lt;/Location&gt;" &gt;&gt; /etc/apache2/httpd.conf
+</pre>
+<pre>echo "
+ExtendedStatus On
+" &gt;&gt; /etc/apache2/apache2.conf
+</pre>
+<pre>apache2ctl restart
+</pre>
+<p>Fini pour un client Nagios. Pour le client Munin, il faut ajouter&#160;:
+</p>
+<pre>munin-node-configure --shell
+ln -s /usr/share/munin/plugins/apache_accesses /etc/munin/plugins/apache_accesses
+ln -s /usr/share/munin/plugins/apache_processes /etc/munin/plugins/apache_processes
+ln -s /usr/share/munin/plugins/apache_volume /etc/munin/plugins/apache_volume
+</pre>
+<p>Commandes qu'il faut copier coller
+</p><p>Vous devez obtenir&#160;:
+</p>
+<pre>munin-node-configure  |grep apache
+apache_accesses            | yes  |                                        
+apache_processes           | yes  |                                        
+apache_volume              | yes  |
+</pre>
+<pre>/etc/init.d/munin-node restart
+</pre>
+<h3><span class="mw-headline" id="Ajouter_un_plugin_de_surveillance">Ajouter un plugin de surveillance</span></h3>
+<h4><span class="mw-headline" id="Linux">Linux</span></h4>
+<ul><li> Copier le plugin dans /etc/munin/plugins</li>
+<li> L'ajouter dans /etc/munin/plugin-conf.d/munin-node </li></ul>
+<p><br />
+</p>
+<pre>munin-node-configure --shell
+/etc/munin/plugins/PLUGIN config
+/etc/init.d/munin-node restart
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="OpenBSD">OpenBSD</span></h4>
+<ul><li> Copier le plugin dans /etc/munin/plugins</li>
+<li> L'ajouter dans /etc/munin/plugin-conf.d/openbsd-packages </li></ul>
+<pre>munin-node-configure --shell
+/etc/munin/plugins/PLUGIN config
+</pre>
+<h4><span class="mw-headline" id="Samba">Samba</span></h4>
+<p>Téléchargez <a href="./index.php%3Ftitle=Fichier:Samba.txt.html" title="Fichier:Samba.txt">Fichier:Samba.txt</a> renommez-le et en samba.
+</p>
+<pre>samba configure
+/etc/init.d/munin-node restart
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="OpenLdap">OpenLdap</span></h4>
+<h4><span class="mw-headline" id="FreeRadius">FreeRadius</span></h4>
+<p><a rel="nofollow" class="external text" href="http://munin-monitoring.org/attachment/wiki/PluginCat/freeradius.2">Ce plugin</a> configuré avec [ces modifications ] de syslog permettent de suivre les cx/deconnexions, etc..
+</p>
+<h4><span class="mw-headline" id="MySQL">MySQL</span></h4>
+<p><a rel="nofollow" class="external text" href="http://alexcline.net/2013/07/12/setting-up-the-mysql_-plugin-in-munin/">| Source</a>
+</p>
+<pre>echo "[mysql_*]
+  env.mysqlconnection DBI:mysql:mysql;host=127.0.0.1;port=3306
+  env.mysqluser munin
+  env.mysqlpassword 5uperS3cr3tPassw0rd 
+</pre>
+<p>" &gt;&gt; /etc/munin/plugin-conf.d/openbsd-packages
+</p><p><br />
+</p>
+<pre>mysql
+use mysql;
+CREATE USER munin@127.0.0.1 IDENTIFIED BY '5uperS3cr3tPassw0rd'
+GRANT SUPER,PROCESS ON *.* TO munin@127.0.0.1;
+GRANT SELECT ON mysql.* TO munin@127.0.0.1;
+FLUSH PRIVILEGES;
+</pre>
+<pre>munin-node-configure --shell
+</pre>
+<pre>ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_bin_relay_log'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_commands'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_connections'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_files_tables'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_innodb_bpool'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_innodb_bpool_act'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_innodb_insert_buf'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_innodb_io'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_innodb_io_pend'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_innodb_log'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_innodb_rows'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_innodb_semaphores'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_innodb_tnx'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_myisam_indexes'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_network_traffic'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_qcache'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_qcache_mem'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_replication'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_select_types'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_slow'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_sorts'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_table_locks'
+ln -s '/usr/local/libexec/munin/plugins/mysql_' '/etc/munin/plugins/mysql_tmp_tables'
+</pre>
+<h4><span class="mw-headline" id="Nagios">Nagios</span></h4>
+<p>Munin surveille Nagios
+</p><p><a rel="nofollow" class="external autonumber" href="http://exchange.munin-monitoring.org/plugins/nagiosstatus/details">[1]</a>
+</p><p>J'ai modifié le fichier de log
+</p>
+<h4><span class="mw-headline" id="BackupPC">BackupPC</span></h4>
+<ul><li> Télécharger le <a rel="nofollow" class="external text" href="http://munin-monitoring.org/browser/munin-contrib/plugins/backuppc/backuppc">plugin</a> dans /etc/munin/plugins/backuppc</li></ul>
+<pre> chmod +rxw /etc/munin/plugins/backuppc 
+ /etc/init.d/munin-node restart
+</pre>
+<ul><li> Modifier la ligne PCDIR=${pcdir:-"/var/lib/backuppc/pc"} pour qu'elle colle à votre install sur le serveur BackupPC</li></ul>
+<ul><li> Tester</li></ul>
+<pre>munin-run backuppc
+</pre>
+<p><br />
+</p>
+<pre>tar zxvf backuppc.tar.gz
+mv munin-plugins-backuppc-1.2/backuppc /usr/share/munin/plugins/
+rm -rf munin-plugins-backuppc-1.2/
+ln -s /usr/share/munin/plugins/backuppc backuppc
+chown root.root /usr/share/munin/plugins/backuppc 
+echo "
+[backuppc] 
+user backuppc
+group backuppc
+" &gt;&gt; /etc/munin/plugin-conf.d/munin-node
+/etc/init.d/munin-node restart
+</pre>
+<p><br />
+J'ai du ajouter ce script en crontab. Le test munin se basant sur un fichier LOG qui n'existe pas en debian squeeze.
+</p>
+<pre>
+#!/bin/bash
+
+REP=/var/lib/backuppc/pc
+
+for PC in `ls $REP`
+ do echo $REP/$PC
+ LOGFILE=`ls -lht $REP/$PC/LOG.* |  awk 'NR&gt;1{exit};1' |  awk '{ print $NF }' |cut -d"/" -f7`
+ cp $REP/$PC/$LOGFILE $REP/$PC/LOG
+ chown backuppc.backuppc $REP/$PC/LOG
+done
+
+
+</pre>
+<p>A mettre dans la crontab toutes les ..5 (?) minutes
+</p>
+<h4><span class="mw-headline" id="M.C3.A9t.C3.A9o">Météo</span></h4>
+<ul><li> Télécharger le <a rel="nofollow" class="external text" href="http://exchange.munin-monitoring.org/plugins/weather_/version/2/download">le plugin</a></li></ul>
+<pre>gunzip weather_2.gz
+mv weather_  /usr/share/munin/plugins/weather_
+ln -s /usr/share/munin/plugins/weather_ weather_XXXXXX
+/etc/init.d/munin-node restart
+</pre>
+<p>où XXXXX est le code de votre lieu à l'adresse <a rel="nofollow" class="external autonumber" href="http://fr.weather.com/weather/">[2]</a>
+</p><p>Si le plugin affiche <i>Unknown</i> pour la ville&#160;:
+</p>
+<pre>perl -pi -e 's/Unknown/VILLE/'  /etc/munin/plugins/weather_XXXXXX
+/etc/init.d/munin-node restart
+</pre>
+<h4><span class="mw-headline" id="Pf">Pf</span></h4>
+<ul><li> Télécharger <a rel="nofollow" class="external text" href="http://exchange.munin-monitoring.org/plugins/pf/version/1">le plugin</a></li></ul>
+<pre>gunzip pf-1.gz
+mv pf-1 pf
+chmod 755 pf 
+mv pf /usr/local/libexec/munin/plugins/
+cd /etc/munin/plugins
+ln -s  /usr/local/libexec/munin/plugins/pf pf
+echo "[pf]
+user root
+" &gt;&gt; /etc/munin/plugin-conf.d/openbsd-packages
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="Pf_juste_les_paquets_IPV4.2FIPv6">Pf juste les paquets IPV4/IPv6</span></h4>
+<ul><li> Télécharger <a rel="nofollow" class="external text" href="http://exchange.munin-monitoring.org/plugins/pf_ipv4_ipv6_packets/details">le plugin</a></li></ul>
+<pre>gunzip pf_ipv4_ipv6_packets-v1.gz
+chmod 755 pf_ipv4_ipv6_packets-v1
+mv pf_ipv4_ipv6_packets-v1 pf_ipv4_ipv6 
+mv pf_ipv4_ipv6  /usr/local/libexec/munin/plugins/
+cd /etc/munin/plugins
+ln -s  /usr/local/libexec/munin/plugins/pf_ipv4_ipv6 pf_ipv4_ipv6 
+echo "[pf_ipv4_ipv6 ]
+user root
+" &gt;&gt; /etc/munin/plugin-conf.d/openbsd-packages
+munin-node-configure --shell
+</pre>
+<p><br />
+</p>
+<pre>kill -HUP `ps ax |grep munin|cut -d" " -f1`
+</pre>
+<p>ou, sous 4.9
+</p>
+<pre>/etc/rc.d/munin-node restart
+</pre>
+<h4><span class="mw-headline" id="SSH">SSH</span></h4>
+<ul><li> Télécharger <a rel="nofollow" class="external text" href="http://exchange.munin-monitoring.org/plugins/sshd_log/details">le plugin</a></li></ul>
+<pre>gunzip sshd_log
+mv sshd_log-1 sshd_log
+chmod 755 sshd_log
+dos2unix sshd_log
+mv sshd_log /usr/local/libexec/munin/plugins/
+ln -s  /usr/local/libexec/munin/plugins/sshd_log sshd_log
+echo "
+[sshd_log]
+user root
+group root
+env.logfile /var/log/messages
+env.category users
+" &gt;&gt; etc/munin/plugin-conf.d/munin-node
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="Dovecot">Dovecot</span></h4>
+<ul><li>  Télécharger le <a rel="nofollow" class="external text" href="http://exchange.munin-monitoring.org/plugins/dovecot126/version/1/download">paquet</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.tumfatig.net/20110724/monitor-dovecot-with-munin-on-openbsd/">Merci </a> pour l'idée.</li>
+<li> Pour OpenBSD, je l'ai modifié afin qu'il ..fonctionne juste&#160;!. C'est [<a rel="nofollow" class="external text" href="images/0/02/Dovecot.sh">ici</a>]</li></ul>
+<pre>mv dovecot.sh /etc/munin/plugins/dovecot
+
+echo "[dovecot]
+env.logfile /var/log/maillog
+env.statefile /var/run/munin/plugin-dovecot.state
+" &gt;&gt; /etc/munin/plugin-conf.d/openbsd-packages 
+</pre>
+<pre>chmod 755 /etc/munin/plugins/dovecot
+chown root._munin /var/run/munin/
+chmod -R g+w /var/run/munin/
+chown root._munin /var/log/maillog
+chmod g+r /var/log/maillog
+/etc/rc.d/munin_node restart
+</pre>
+<p>La partie 
+</p>
+<pre>chown root._munin /var/run/munin/
+chmod -R g+w /var/run/munin/
+chown root._munin /var/log/maillog
+chmod g+r /var/log/maillog
+</pre>
+<p>devant être relancée à chaque redémarrage de la machine, ou du démon syslog
+</p>
+<h4><span class="mw-headline" id="Postfix">Postfix</span></h4>
+<p>Sur munin_exchange,  il y a le choix.
+J'aime bien celui là&#160;: <a rel="nofollow" class="external text" href="https://github.com/munin-monitoring/contrib/tree/master/plugins/postfix">postfix_stats</a>
+</p>
+<pre>Wget <a rel="nofollow" class="external text" href="https://raw.github.com/munin-monitoring/contrib/master/plugins/postfix/postfix_mail_stats">| le paquet</a>
+dos2unix download
+mv download postfix_stats
+
+wget <a rel="nofollow" class="external free" href="http://jimsun.linxnet.com/downloads/pflogsumm-1.1.1.tar.gz">http://jimsun.linxnet.com/downloads/pflogsumm-1.1.1.tar.gz</a>
+tar zxvf pflogsumm-1.1.1.tar.gz 
+cd pflogsumm-1.1.1
+cp pflogsumm.pl /usr/local/bin/pflogsumm
+chown bin:bin /usr/local/bin/pflogsumm
+chmod 755 /usr/local/bin/pflogsumm
+</pre>
+<pre>perl -MCPAN -e 'install Date::Calc'
+</pre>
+<pre>chmod g+r /var/log/maillog
+</pre>
+<pre>echo "
+</pre>
+<p>[postfix_stats]
+user _postfix
+" &gt;&gt; /etc/munin/plugin-conf.d/openbsd-packages 
+</p>
+<ul><li> Modifier le plugins&#160;:</li></ul>
+<pre>/usr/local/bin/pflogsumm --smtpd_stats -d today /var/log/maillog /var/log/maillog.0.gz | head -n 15 &gt; $TMP
+</pre>
+<h4><span class="mw-headline" id="Drupal">Drupal</span></h4>
+<p>Monitorer le nombre d'articles et d'utilisateurs, pourquoi pas .
+L'idée est tirée <a rel="nofollow" class="external text" href="http://drupal.org/project/munin">d'ici</a> et modifiée pour ..marcher chez moi .
+</p><p>Vous installez le module te suivez les instructions ou&#160;:
+</p>
+<ul><li> Les nodes&#160;:</li></ul>
+<pre>
+#!/usr/local//bin/bash
+# Drupal munin plugin - This script was generated by the munin Drupal module.
+# Nodes
+# Variables
+CONF_MYSQL_USER="xxxxxx"
+CONF_MYSQL_PASS="xxxxxxx"
+CONF_DATABASE="xxxxxxx"
+SOCK=" --socket=xxxxxxx/mysql.sock "
+#SOCK=""
+#Moi mon MySQL utilise des sockets///
+
+# config settings
+case $1 in
+  config)
+    cat &lt;&lt;'EOM'
+graph_title Content statistics
+graph_vlabel Amount
+graph_category Drupal
+curnodes.label Existing nodes
+curnodes.type GAUGE
+curcmnt.label Existing comments
+curcmnt.type GAUGE
+newnodes.label New nodes
+newnodes.type GAUGE
+newcmnt.label New Comments
+newcmnt.type GAUGE
+EOM
+  exit 0;;
+esac
+
+# Stats for Existing nodes
+# Number of existing nodes on this site.
+echo "select count(nid) from node" | mysql --user=$CONF_MYSQL_USER --password=$CONF_MYSQL_PASS --database $CONF_DATABASE $SOCK | tail -n+2 | {
+  read VALUE&#160;; echo "curnodes.value $VALUE.00"
+}
+
+# Stats for Existing comments
+# Number of existing comments on this site.
+echo "select count(cid) from comments" | mysql --user=$CONF_MYSQL_USER --password=$CONF_MYSQL_PASS --database $CONF_DATABASE $SOCK | tail -n+2 | {
+  read VALUE&#160;; echo "curcmnt.value $VALUE.00"
+}
+
+# Stats for New nodes
+# Number of new nodes on this site.
+echo "select count(nid) from node where unix_timestamp() - created &lt; 300" | mysql --user=$CONF_MYSQL_USER --password=$CONF_MYSQL_PASS --database $CONF_DATABASE $SOCK | tail -n+2 | {
+  read VALUE&#160;; echo "newnodes.value $VALUE.00"
+}
+
+# Stats for New Comments
+# Number of new comments on this site.
+echo "select count(cid) from comments where unix_timestamp() - timestamp &lt; 300" | mysql --user=$CONF_MYSQL_USER --password=$CONF_MYSQL_PASS --database $CONF_DATABASE $SOCK | tail -n+2 | {
+  read VALUE&#160;; echo "newcmnt.value $VALUE.00"
+}
+
+</pre>
+<ul><li> Les users&#160;:</li></ul>
+<pre>
+#!/usr/local/bin/bash
+# Drupal munin plugin - This script was generated by the munin Drupal module.
+# Users
+# Variables
+CONF_MYSQL_USER="xxxxxx"
+CONF_MYSQL_PASS="xxxxxxx"
+CONF_DATABASE="xxxxxxx"
+SOCK=" --socket=xxxxxxx/mysql.sock "
+#SOCK=""
+
+# config settings
+case $1 in
+  config)
+    cat &lt;&lt;'EOM'
+graph_title User information
+graph_vlabel Nombre
+graph_category Drupal
+curuser.label Currently logged in user
+curuser.type GAUGE 
+newuser.label New users
+newuser.type GAUGE
+EOM
+  exit 0;;
+esac
+
+# Stats for Currently logged in user
+# This item shows the number of currently logged in users.
+echo "select count(uid) from users where unix_timestamp() - access &lt; 300" | mysql --user=$CONF_MYSQL_USER --password=$CONF_MYSQL_PASS --database $CONF_DATABASE $SOCK | tail -n+2 | {
+  read VALUE&#160;; echo "curuser.value $VALUE.00"
+}
+
+# Stats for New users
+# This item shows the number of users that have been created.
+echo "select count(uid) from users where unix_timestamp() - created &lt; 300" | mysql --user=$CONF_MYSQL_USER --password=$CONF_MYSQL_PASS --database $CONF_DATABASE $SOCK | tail -n+2 | {
+  read VALUE&#160;; echo "newuser.value $VALUE.00"
+}
+
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="Bind">Bind</span></h4>
+<ul><li> Wget le <a rel="nofollow" class="external text" href="http://exchange.munin-monitoring.org/plugins/bind95_/version/1">paquet</a></li>
+<li> Installez <a href="./index.php%3Ftitle=Serveur_DNS_:_Bind.html#rndc:_la_commande_de_Bind" class="mw-redirect" title="Serveur DNS : Bind"> rndc</a></li>
+<li> Bind est chrooté, il faut rajouter le fichier à lire par le process munin&#160;:</li></ul>
+<pre>mkdir -p /var/named/var/run
+chown -R named.named /var/named/var/run/
+chmod -R ug+w /var/named/var/run/
+</pre>
+<ul><li> Ajoutez dans la partie <i>options</i>&#160;:</li></ul>
+<pre>  statistics-file "/var/run/named.stats";
+  one-statistics yes&#160;;
+</pre>
+<ul><li> On relance et on demande les stats&#160;:</li></ul>
+<pre>rndc reload
+rndc stats
+</pre>
+<p>et le fichier se remplit.
+</p>
+<ul><li> Installez le paquet perl:</li></ul>
+<pre>perl -MCPAN -e 'install Digest::MD5'
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="drbd">drbd</span></h4>
+<p><a rel="nofollow" class="external text" href="https://github.com/munin-monitoring/contrib/tree/33ba3d4634a7e1ac46c6c605a50ccc819996fa7f/plugins/drbd">A creuser</a>
+</p>
+<h4><span class="mw-headline" id="KVM">KVM</span></h4>
+<p><a rel="nofollow" class="external autonumber" href="https://github.com/munin-monitoring/contrib/tree/33ba3d4634a7e1ac46c6c605a50ccc819996fa7f/plugins/kvm">[3]</a>
+</p>
+<h4><span class="mw-headline" id="OpenVZ">OpenVZ</span></h4>
+<p><a rel="nofollow" class="external autonumber" href="https://github.com/munin-monitoring/contrib/tree/33ba3d4634a7e1ac46c6c605a50ccc819996fa7f/plugins/openvz">[4]</a>
+</p>
+<h4><span class="mw-headline" id="APC">APC</span></h4>
+<p><a rel="nofollow" class="external autonumber" href="https://github.com/munin-monitoring/contrib/tree/33ba3d4634a7e1ac46c6c605a50ccc819996fa7f/plugins/ups">[5]</a>
+</p>
+<h4><span class="mw-headline" id="Mediawiki">Mediawiki</span></h4>
+<p><a rel="nofollow" class="external autonumber" href="https://raw.github.com/munin-monitoring/contrib/33ba3d4634a7e1ac46c6c605a50ccc819996fa7f/plugins/wiki/mediawiki">[6]</a>
+</p>
+<h4><span class="mw-headline" id="Moodle">Moodle</span></h4>
+<p><a rel="nofollow" class="external free" href="https://github.com/thepurpleblob/moodle-mysql-munin">https://github.com/thepurpleblob/moodle-mysql-munin</a>
+</p>
+<ul><li> Sur le serveur Moodle</li></ul>
+<pre>mysql
+GRANT SELECT ON moodle.* TO moodleRead@localhost IDENTIFIED BY 'PASS'; 
+GRANT SELECT ON moodle.* TO moodleRead@IPMunin IDENTIFIED BY 'PASS'; 
+cd /usr/share/munin/plugins
+wget <a rel="nofollow" class="external free" href="https://github.com/thepurpleblob/moodle-mysql-munin/blob/master/moodle_">https://github.com/thepurpleblob/moodle-mysql-munin/blob/master/moodle_</a> --no-check-certificate
+ cd /etc/munin/plugins/
+ ln -s /usr/share/munin/plugins/moodle_ moodle_moodle
+/etc/init.d/munin-node restart
+</pre>
+<p><br />
+</p>
+<ul><li> Sur le serveur Munin</li></ul>
+<h4><span class="mw-headline" id="NginX">NginX</span></h4>
+<pre> pkg_add  p5-LWP-UserAgent-Determined
+</pre>
+<p>ou
+</p>
+<pre>apt-get install liblwp-useragent-determined-perl
+</pre>
+<p><br />
+</p>
+<pre>echo "[nginx*]
+env.url <a rel="nofollow" class="external free" href="http://localhost/nginx_status">http://localhost/nginx_status</a>
+" &gt;&gt; /etc/munin/plugin-conf.d/openbsd-packages
+</pre>
+<p><br />
+Ajouter dans chaque vhost de nginx&#160;:
+</p>
+<pre>location /nginx_status {
+   stub_status on;    # activate stub_status module
+   access_log off;    
+   allow 127.0.0.1;   # restrict access to local only
+   deny all;
+}
+</pre>
+<p>Vérifier que  lynx <a rel="nofollow" class="external free" href="http://127.0.0.1/nginx_status">http://127.0.0.1/nginx_status</a> fonctionne et ne renvoie pas d'erreur 404
+</p>
+<pre>munin-node-configure --shell
+ln -s '/usr/local/libexec/munin/plugins/nginx_request' '/etc/munin/plugins/nginx_request'
+ln -s '/usr/local/libexec/munin/plugins/nginx_status' '/etc/munin/plugins/nginx_status'
+</pre>
+<h3><span class="mw-headline" id="OpenBSD_sp.C3.A9cifique">OpenBSD spécifique</span></h3>
+<p><a rel="nofollow" class="external autonumber" href="http://weblog.frlinux.net/?cat=7&amp;paged=2">[7]</a>
+</p><p><br />
+</p>
+<pre>pkg_add munin-node
+</pre>
+<pre>/etc/rc.d/munin-node  {start|restart..}
+</pre>
+<h4><span class="mw-headline" id="Plugins_buggu.C3.A9s">Plugins buggués</span></h4>
+<ul><li> Uptime va chercher dans /proc....qui n'existe pas sous OpenBSD!</li></ul>
+<h3><span class="mw-headline" id="FreeBSD_sp.C3.A9cifique">FreeBSD spécifique</span></h3>
+<pre>pkg install munin-node
+echo 'munin_node_enable="YES"'&gt;&gt; /etc/rc.conf
+/usr/local/sbin/munin-node-configure --shell | sh -x
+/usr/local/etc/rc.d/munin-node onestart
+</pre>
+<ul><li> fichier de config&#160;: <i>/usr/local/etc/munin/munin-node.conf</i></li></ul>
+<h4><span class="mw-headline" id="ZFS">ZFS</span></h4>
+<pre>cd /usr/ports/lang/gawk/
+make config install clean 
+</pre>
+<pre>
+#!/usr/local/bin/bash
+
+if [ "$1" = "autoconf" ]; then
+                echo yes
+                exit 0
+fi
+
+zlines=`/sbin/zpool iostat -v| wc -l|sed 's/ //g'`
+ztail=`echo "-"$zlines`
+ztmp=/var/run/munin/zpool_iostat
+zdata=`/sbin/zpool iostat -v 1 1| tail $ztail &gt; $ztmp`
+zlist=`cat $ztmp|gawk '/alloc/ {next}; /avail/ {next}; /raid/ {next}; /mirror/ {next}; { if ( $4 &gt;=0 ) print $1}'`
+zname=`cat $ztmp|gawk '/alloc/ {next}; /avail/ {next}; /raid/ {next}; /mirror/ {next}; { if ( $4 &gt;=0 ) print $1}'|gawk '{gsub("[^a-zA-Z0-9_]", "_", $1); print}'`
+zorder=`for o in $zname; do echo $o'_read '; echo $o'_write '; done`
+
+if [ "$1" = "config" ]; then
+        echo 'graph_title zpool iostat'
+        echo 'graph_args --base 1000 -l 0'
+        echo 'graph_vlabel write - read KBytes/s'
+        echo 'graph_category zfs'
+        echo 'graph_scale no'
+        echo 'graph_info This graph shows zpool iostat'
+	echo 'graph_order '$zorder
+	echo $zlist | tr ' ' '\n' | while read i; do
+                case $i in
+                *) name=`echo $i | gawk '{ gsub("[^a-zA-Z0-9_]", "_", $1); print }'`&#160;;;
+                esac
+                echo $name'_read.label '$i
+		echo $name'_read.type GAUGE'
+		echo $name'_read.graph no'
+		echo $name'_write.label '$i
+		echo $name'_write.type GAUGE'
+		echo $name'_write.negative '$name'_read'
+        done
+        exit 0
+fi
+echo $zlist | tr ' ' '\n' | while read iz; do
+	zlabel=`echo $iz|gawk '{print $1}'`
+	case $iz in
+	*) name=`echo $iz | gawk '{ gsub("[^a-zA-Z0-9_]", "_", $1); print $1 }'`&#160;;;
+	esac
+	echo -n $name'_read.value '
+	grep '^[ ]*'$zlabel $ztmp|gawk '{print $6}'|gawk '/M/ {print strtonum($1)*1000}; /K/ {print strtonum($1)}; /[0-9]$/ {print int($1)/1000}; /^0/ {print strtonum($1)}'
+	echo -n $name'_write.value '
+	grep '^[ ]*'$zlabel $ztmp|gawk '{print $7}'|gawk '/M/ {print strtonum($1)*1000}; /K/ {print strtonum($1)}; /[0-9]$/ {print int($1)/1000}; /^0/ {print strtonum($1)}'
+done
+
+rm $ztmp; touch $ztmp
+</pre>
+<p><br />
+Obsolète
+<s>
+</p>
+<ul><li> Télécharger le <a rel="nofollow" class="external text" href="http://exchange.munin-monitoring.org/plugins/zfs-statistics-for-freebsd/details">paquet</a></li></ul>
+<pre>mv ZFS_statistics_for_FreeBSD-v1 ZFS_statistics_for_FreeBSD-v1.tar
+cp ZFS_statistics_for_FreeBSD-v1.tar /usr/local/etc/munin/plugins/
+tar xvf ZFS_statistics_for_FreeBSD-v1.tar
+rm ZFS_statistics_for_FreeBSD-v1.tar
+chown root.wheel zfs_*
+chown root zfs_*
+chgrp wheel zfs_*
+</pre>
+<ul><li>Relancer munin-node</li>
+<li> Installer zfs-stats</li></ul>
+<pre>cd /usr/ports/sysutils/zfs-stats/
+make config install clean
+</pre>
+<ul><li></li></ul>
+<p></s>
+</p>
+<h3><span class="mw-headline" id="IPhone_sp.C3.A9cifique">IPhone spécifique</span></h3>
+<p>Et oui, on peut monitorer beaucoup de trucs inutiles avec Munin..
+</p><p>Tiré d'<a rel="nofollow" class="external text" href="http://ingvar.blog.linpro.no/2010/09/24/munin-node-running-on-the-iphone/">ici</a> 
+</p>
+<pre>apt-get install --reinstall perl p5-Getopt-Long p5-Exporter p5-lib p5-IO p5-AutoLoader p5-XSLoader  p5-Net-Server
+lynx <a rel="nofollow" class="external free" href="http://sourceforge.net/projects/munin/files/munin%20stable/1.4.5/munin-1.4.5.tar.gz">http://sourceforge.net/projects/munin/files/munin%20stable/1.4.5/munin-1.4.5.tar.gz</a>
+tar zxvf munin-1.4.5.tar.gz 
+cd munin-1.4.5
+perl -pi -e 's/USER      &#160;:= munin/USER      &#160;:= mobile/' Makefile.config
+perl -pi -e 's/GROUP     &#160;:= munin/GROUP     &#160;:= mobile/' Makefile.config
+make
+make install-common-prime install-node-prime install-plugins-prime
+/opt/munin/sbin/munin-node-configure --shell --families=contrib,auto | sh
+perl -pi -e 's/user root/user mobile/' /etc/opt/munin/munin-node.conf 
+perl -pi -e 's/group root/group mobile/' /etc/opt/munin/munin-node.conf 
+</pre>
+<ul><li>Ajouter l'@IP du serveur Munin dans /etc/opt/munin/munin-node.conf </li>
+<li> Ne pas oublier de mettre le <i>host_name iphone-de-XXXXX</i> dans <i>/etc/opt/munin/munin-node.conf </i>. Attention à la casse.</li></ul>
+<pre>/opt/munin/sbin/munin-node
+</pre>
+<h4><span class="mw-headline" id="Avoir_un_oeil_sur_les_dur.C3.A9es_d.27appel">Avoir un oeil sur les durées d'appel</span></h4>
+<p>Coller ce script dans /etc/opt/munin/plugins
+</p>
+<pre>
+#!/bin/bash
+#Philippe Schwarz 
+#GPL v3
+# Mars 2011
+# Munin plugin to log call history of IPhone over the 24 last hours
+# Telco ''offers'' 3 free numbers, they're computed separetly
+
+#Pour les 3 numéros gratuits, je vire le préfixe pour éviter les ennuis entre 06 et +336
+# 3 Telcos offered Numbers. Only the last 8 digits
+
+FREENUM1="MON_NUM1"
+FREENUM2="MON_NUM1"
+FREENUM3="MON_NUM1"
+
+BASE=/private/var/wireless/Library/CallHistory/call_history.db
+#On calcule sur les dernières 24h
+H24=`echo \`date +"%s"\` - 86400 |bc`
+
+case $1 in
+   config)
+        cat &lt;&lt;'EOM'
+graph_category Phone
+graph_title 24h Call Log
+graph_vlabel Duration of Calls
+graph_order  Incoming_Calls Outgoing_Calls Outgoing_Free_Calls Outgoing_Non_free_Calls
+Incoming_Calls.label Incoming_Calls
+Outgoing_Calls.label Outgoing_Calls
+Outgoing_Free_Calls.label Outgoing_Free_Calls
+Outgoing_Non_free_Calls.label Outgoing_Non_free_Calls
+EOM
+        exit 0;;
+esac
+
+echo -n "Incoming_Calls.value "
+
+IC=`sqlite3 $BASE "select sum(duration) from call where flags=4  and date &gt; $H24 "`
+if [ "$IC" == "" ]
+then IC=0
+fi
+echo $IC / 60 |bc
+
+echo -n "Outgoing_Calls.value "
+OC=`sqlite3 $BASE "select sum(duration) from call where flags=5  and date &gt; $H24 "`  
+if [ "$OC" == "" ]
+then OC=0
+fi
+echo $OC / 60 |bc
+
+echo -n "Outgoing_Free_Calls.value "
+OCF=`sqlite3 $BASE "select sum(duration) from call where ( address like \"%$FREENUM1\" or address  like \"%$FREENUM2\" or address like \"%$FREENUM3\") and flags=5  and date &gt; $H24"`
+
+if [ "$OCF" == "" ]
+then OCF=0
+fi
+echo $OCF / 60 |bc
+
+echo -n "Outgoing_Non_free_Calls.value "
+ONFC=`sqlite3 $BASE "select sum(duration) from call where flags=5 and address not like \"%$FREENUM1\" and address not like \"%$FREENUM2\" and address not like \"%$FREENUM3\" and date &gt; $H24"`
+if [ "$ONFC" == "" ]
+then ONFC=0
+fi
+echo $ONFC / 60 |bc
+
+</pre>
+<p>On obtient ça&#160;:
+</p><p><a href="./index.php%3Ftitle=Fichier:Call_hist-day.png.html" class="image"><img alt="Call hist-day.png" src="images/2/2f/Call_hist-day.png" width="497" height="316" /></a>
+</p>
+<h2><span class="mw-headline" id="S.C3.A9curiser_les_flux_et_authentifier_mutuellement">Sécuriser les flux et authentifier mutuellement</span></h2>
+<p>Tiré <a rel="nofollow" class="external text" href="http://munin-monitoring.org/wiki/MuninTLSSetup#TLSconfigurationwithcompletecertificatechain">d'ici</a>
+</p><p>On va chiffrer et authentifier la connexion de manière bi-directionnelle; je m'explique&#160;:
+</p>
+<ul><li> Le serveur sera certain de bien parler au client, sans aucune possibilité pour quelqu'un d'autre de se faire passer pour le client.</li>
+<li> de même, le client sera certain de l'identité du serveur.</li>
+<li> Enfin le flux de données sera chiffré et illisible pour un tiers.</li></ul>
+<ul><li> <a href="index.php%3Ftitle=TinyCA.html#Debian.2FUbuntu_-_Munin" title="TinyCA"> vous créez vos certificats et clés</a></li>
+<li> Il vous faut pour le client comme pour le serveur&#160;:
+<ul><li>La clé de serveur au format <i>.pem</i>, sans passphrase, avec le certificat.</li>
+<li>Le certificat de serveur  au format <i>.pem</i>, avec la clé, avec l'empreinte.</li>
+<li>Le certificat au format <i>.pem</i> de l'AC.</li></ul></li></ul>
+<p>Sous OpenBSD&#160;:
+</p>
+<pre>pkg_add p5-Net-SSLeay
+</pre>
+<p>Sous Debian
+</p>
+<pre> apt-get install libnet-ssleay-perl
+</pre>
+<h3><span class="mw-headline" id="Sur_le_client">Sur le client</span></h3>
+<pre>Dans <i>munin-node.conf</i>
+</pre>
+<pre>
+tls paranoid
+tls_verify_certificate yes
+tls_private_key    /etc/munin/client.key.pem
+tls_certificate    /etc/munin/client.crt.pem
+tls_ca_certificate /etc/munin/cacert.pem
+tls_verify_depth 5
+</pre>
+<h3><span class="mw-headline" id="Sur_le_serveur">Sur le serveur</span></h3>
+<pre>Dans <i>munin.conf</i>
+</pre>
+<pre>
+tls paranoid
+tls_verify_certificate yes
+tls_private_key    /etc/munin/serveur.key.pem
+tls_certificate    /etc/munin/serveur.crt.pem
+tls_ca_certificate /etc/munin/cacert.pem
+tls_verify_depth 5
+</pre>
+<h3><span class="mw-headline" id="Tests_.26_config">Tests &amp; config</span></h3>
+<p>Une fois TLS activé de manière obligatoire,de chaque côté&#160;:
+</p>
+<pre>
+telnet @client 4949
+Trying @client...
+Connected to @client.
+Escape character is '^]'.
+# munin node at dirac.schwarz-fr.net
+list
+# I require TLS. Closing.
+Connection closed by foreign host.
+</pre>
+<p>Il est obligatoire de causer TLS avec celui-là...
+</p><p>Si vous souhaitez ne pas causer TLS avec certains, ajoutez la directive 
+</p>
+<pre>        tls disabled
+</pre>
+<p>dans leur partie sur le serveur dans <i>munin.conf</i>.
+</p><p><a href="index.php%3Ftitle=TinyCA.html#Debug" title="TinyCA"> <b>Debug</b> de la partie TLS</a>
+</p>
+<h2><span class="mw-headline" id="Trucs">Trucs</span></h2>
+<h3><span class="mw-headline" id="Renommer_sans_perdre_l.27historique">Renommer sans perdre l'historique</span></h3>
+<p><a rel="nofollow" class="external text" href="https://beeznest.com/blog/2011/06/13/howto-rename-munin-node-without-loosing-history/">Où</a> l'on voit que c'est simple.
+</p>
+<pre>service munin stop
+</pre>
+<h2><span class="mw-headline" id="Debug">Debug</span></h2>
+<ul><li> Votre client n'apparait pas dans les machines surveillées.
+<ul><li> Patientez&#160;! Jusqu'à deux cycles (2X5 minutes) sont parfois nécessaires.</li>
+<li> Il faut que les deux commandes suivantes renvoient <b>exactement</b> le même nom, <b>avec la même casse</b>!!</li></ul></li></ul>
+<p>Depuis le serveur
+</p>
+<pre>telnet IP_CLIENT 4949
+ Trying IP_CLIENT...iphone-de-XXXXX
+ Connected to IP_CLIENT.
+ Escape character is '^]'.
+ # munin node at iphone-de-XXXXX
+</pre>
+<p>Le nom attendu est donc <i>iphone-de-XXXXX</i>
+</p><p>Depuis le client
+</p>
+<pre>grep host_name /etc/opt/munin/munin-node.conf 
+ host_name iphone-de-XXXX
+</pre>
+<ul><li><ul><li> Et le pare-feu&#160;?</li></ul></li></ul>
+<pre> /sbin/iptables -A INPUT -i interface -p tcp --dport 4949 -j ACCEPT
+</pre>
+<ul><li> Vous pouvez également tester les plugins à la main</li></ul>
+<pre>munin-run nom-du-plugin
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20171020001504
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.510 seconds
+Real time usage: 0.527 seconds
+Preprocessor visited node count: 248/1000000
+Preprocessor generated node count: 352/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:122-0!*!0!!fr!5!* and timestamp 20171020001504 and revision id 3386
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Munin&amp;oldid=3386">http://www.openbsd-edu.net/index.php?title=Munin&amp;oldid=3386</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Munin.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Munin.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Munin&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Munin.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Munin.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Munin&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Munin&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Munin.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FMunin.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Munin" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Munin&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Munin&amp;oldid=3386" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Munin&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 13 mai 2017 à 17:55.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.510","walltime":"0.527","ppvisitednodes":{"value":248,"limit":1000000},"ppgeneratednodes":{"value":352,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020001505","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1352});});</script>
+	</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>ZFSGuru, le SAN/NAS pret a l'emploi — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"ZFSGuru,_le_SAN/NAS_pret_a_l'emploi","wgTitle":"ZFSGuru, le SAN/NAS pret a l'emploi","wgCurRevisionId":3455,"wgRevisionId":3455,"wgArticleId":282,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"ZFSGuru,_le_SAN/NAS_pret_a_l'emploi","wgRelevantArticleId":282,"wgRequestId":"6bfd68f93c48ad9858b417e3","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ZFSGuru_le_SAN_NAS_pret_a_l_emploi rootpage-ZFSGuru_le_SAN_NAS_pret_a_l_emploi skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">ZFSGuru, le SAN/NAS pret a l'emploi</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>Un équivalent de <a rel="nofollow" class="external text" href="https://fr.wikipedia.org/wiki/FreeNAS">FreeNas</a>, ou de tout autre outil permettant de transformer un ensemble de disques en stockage réseau servant des fichiers (NAS) ou des blocs (SAN).
+</p><p>La <a rel="nofollow" class="external text" href="http://zfsguru.com/">source</a>
+</p><p>La page <a rel="nofollow" class="external text" href="https://fr.wikipedia.org/wiki/ZFSGuru">Wikipédia</a>
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Points_forts"><span class="tocnumber">1</span> <span class="toctext">Points forts</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Points_faibles"><span class="tocnumber">2</span> <span class="toctext">Points faibles</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Nouveaut.C3.A9s_Novembre_2015"><span class="tocnumber">3</span> <span class="toctext">Nouveautés Novembre 2015</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Install"><span class="tocnumber">4</span> <span class="toctext">Install</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Rescue"><span class="tocnumber">5</span> <span class="toctext">Rescue</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Config"><span class="tocnumber">6</span> <span class="toctext">Config</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Paquets_logiciels"><span class="tocnumber">7</span> <span class="toctext">Paquets logiciels</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Debug"><span class="tocnumber">7.1</span> <span class="toctext">Debug</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Changer_le_mot_de_passe_de_l.27interface"><span class="tocnumber">7.1.1</span> <span class="toctext">Changer le mot de passe de l'interface</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#R.C3.A9seau"><span class="tocnumber">8</span> <span class="toctext">Réseau</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#.40IP"><span class="tocnumber">8.1</span> <span class="toctext">@IP</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#C.C3.B4t.C3.A9_NAS"><span class="tocnumber">9</span> <span class="toctext">Côté NAS</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Samba"><span class="tocnumber">9.1</span> <span class="toctext">Samba</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#LDAP"><span class="tocnumber">9.1.1</span> <span class="toctext">LDAP</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Disques"><span class="tocnumber">10</span> <span class="toctext">Disques</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#En_cas_de_refus_de_formatter_un_disque_operation_not_permitted"><span class="tocnumber">10.1</span> <span class="toctext">En cas de refus de formatter un disque <i>operation not permitted</i></span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Expansion_de_pool_en_live"><span class="tocnumber">10.2</span> <span class="toctext">Expansion de pool en live</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#Remplacement_d.27un_disque_malade_.28mais_pas_mort.29"><span class="tocnumber">10.3</span> <span class="toctext">Remplacement d'un disque malade (mais pas mort)</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Points_forts">Points forts</span></h2>
+<ul><li> Gestion du filesystem&#160;: ZFS&#160;! (80% de l'intérêt selon moi)</li>
+<li> OS&#160;: FreeBSD  (10% de l'intérêt restant)</li>
+<li> Boot /ZFS, donc chaque disque est bootable</li>
+<li> ZFS version 28, donc <a rel="nofollow" class="external text" href="http://synergeek.fr/zfs-deduplication-mythe-ou-realite">dedup</a> (Besoin d'une énorme quantité de RAM..., z'êtes prévenus)</li>
+<li> ZFS config fine des paramètres par interface web</li>
+<li> Ajout simple (interface) d'outils supplémentaires (serveur web, bittorent, virtualbox,owncloud,..)</li>
+<li> Des développeurs attentifs et serviables.</li></ul>
+<h2><span class="mw-headline" id="Points_faibles">Points faibles</span></h2>
+<ul><li> <s>L'install se fait depuis un CD et pas depuis une clé USB; on n'est plus habitués..</s></li>
+<li> Fini, un dd depuis l'image .img suffit.</li>
+<li> En revanche, en 2012, un comparatif contre FreeNAS et OpenIndiana donnait ZFSGurur largement perdant. A voir 3 ans après..</li></ul>
+<h2><span class="mw-headline" id="Nouveaut.C3.A9s_Novembre_2015">Nouveautés Novembre 2015</span></h2>
+<ul><li> L'ajout d'un SSD (à priori pour tous les dispositifs, mais je n'ai pas les moyens de mettre du ZEUS ou du nvme SSD en PCIE pour tester) en zil ou cache peut se faire après un test de vitesse (usage de <i>rawio</i>) qui donne le gain en vitesse.</li>
+<li> Owncloud qui s'installe en tant que service 
+<ul><li>(Juste penser à mettre root lors de l'install de la bdd)</li>
+<li> chmod -R 0770 /cloud</li>
+<li> chown -R zfsguru-web:zfsguru-web /cloud/</li></ul></li></ul>
+<h2><span class="mw-headline" id="Install">Install</span></h2>
+<p>Tout en mode web.
+</p>
+<ul><li> Il faut juste télécharger la dernière iso et la graver (oui, pas de stick USB..), puis on suit&#160;:
+<ul><li> Choix de l'image (9.1.004 à ce jour)</li>
+<li> Partitionnement des secteurs de boot des disques</li>
+<li> Install de ZFS on Root</li>
+<li> On n'oublie pas de cliquer sur <i>install</i>.</li>
+<li> Un reboot plus tard, vous avez un NAS/SAN prêt.</li></ul></li></ul>
+<p>Vous pouvez jouer avec les installations de services, les partitionnments multiples de pools ZFS, etc..
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Rescue">Rescue</span></h2>
+<ul><li> Boot sur clé USB et accès en interface web pour réinstaller ce qui manque.&#160;!!!Attention, vous écrasez votre root pool&#160;!!!!!</li></ul>
+<h2><span class="mw-headline" id="Config">Config</span></h2>
+<h2><span class="mw-headline" id="Paquets_logiciels">Paquets logiciels</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://zfsguru.com/forum/softwarepackages/228">Comment démarrer/stopper automatiquement les VMS de VirtualBox</a> et <a rel="nofollow" class="external text" href="http://zfsguru.com/forum/softwarepackages/370">là</a></li></ul>
+<p>Sinon&#160;:
+</p>
+<pre>cp /etc/rc.conf /tmp
+echo '# VirtualBox' &gt;&gt; /etc/rc.conf
+echo 'vboxwebsrv_user="root" ' &gt;&gt; /etc/rc.conf
+echo 'vboxnet_enable="YES"'  &gt;&gt; /etc/rc.conf
+echo '# automatically start VirtualBox VMs ' &gt;&gt; /etc/rc.conf
+echo 'vboxheadless_enable="YES" ' &gt;&gt; /etc/rc.conf
+echo 'vboxheadless_user="root" ' &gt;&gt; /etc/rc.conf
+echo 'vboxheadless_machines="vm1 vm2" ' &gt;&gt; /etc/rc.conf
+echo 'vboxheadless_vm1_name="SambaEdu3;5900" ' &gt;&gt; /etc/rc.conf
+echo 'vboxheadless_vm2_name="apt-cacher;5901" ' &gt;&gt; /etc/rc.conf
+</pre>
+<p>Les VM sont stockées dans <i>/zroot/zfsguru/services/9.1-004/virtualbox/data/VM</i>
+</p>
+<h3><span class="mw-headline" id="Debug">Debug</span></h3>
+<ul><li> Le lancement de VirtualBox fraichement installé ne fonctionne pas&#160;: <i>PHP does not have the SOAP extension enabled'</i></li></ul>
+<pre>Vous devez redémarrer le serveur web lighthttpd (Services/Internal/lighthttpd restart)
+</pre>
+<ul><li> Partage samba accessible en read-only&#160;: <i>open_directory: unable to create ..... Error was NT_STATUS_ACCESS_DENIED</i></li></ul>
+<p>Il faut modifier les réglages en passant de "Share level-security" à "USer Level Security"
+</p>
+<h4><span class="mw-headline" id="Changer_le_mot_de_passe_de_l.27interface">Changer le mot de passe de l'interface</span></h4>
+<pre>mv  /usr/local/www/zfsguru/config/config.bin /tmp
+</pre>
+<p>et relancez le wizard
+</p>
+<h2><span class="mw-headline" id="R.C3.A9seau">Réseau</span></h2>
+<h3><span class="mw-headline" id=".40IP">@IP</span></h3>
+<p>Changer la config réseau se fait avec sysinstall (attention, vous aurez un segfault uniquement lors de la phase d'install de ZFSguru)&#160;:
+</p><p>Sur la console 1 (celle avec l'écran bleu)
+</p>
+<ul><li> Shell access</li></ul>
+<pre>sysinstall
+</pre>
+<h2><span class="mw-headline" id="C.C3.B4t.C3.A9_NAS">Côté NAS</span></h2>
+<h3><span class="mw-headline" id="Samba">Samba</span></h3>
+<h4><span class="mw-headline" id="LDAP">LDAP</span></h4>
+<p>Par défaut le samba installé ne supporte pas le backend LDAP pour la gestion des comptes; on va y remédier.
+</p>
+<ul><li> Installer les ports <i>Service/Install/ZFSGuru/FreeBSD Porttree</i></li></ul>
+<pre>cd /usr/ports/net/samba36
+make deinstall clean
+make config
+</pre>
+<p>Cocher la première case&#160;: LDAP
+</p>
+<pre>make clean &amp;&amp; make install clean
+/usr/local/etc/rc.d/samba restart
+</pre>
+<ul><li> Configurer samba<i>Service/Internal/Samba</i>&#160;: Domain-level Security</li></ul>
+<pre>smbpasswd -w LEPASSWORD admin
+vi /usr/local/etc/smb.conf
+</pre>
+<pre>passdb backend = ldapsam:ldap://@IPLDAPServeur
+#passdb backend = tdbsam
+ldap suffix = BASEDN
+ldap admin dn = cn=admin,BASEDN
+ldap group suffix = ou=Groups,BASEDN
+ldap user suffix = ou=People,BASEDN
+ldap machine suffix = ou=Computers,BASEDN
+ldap ssl = off
+</pre>
+<pre>/usr/local/etc/rc.d/samba restart
+</pre>
+<h2><span class="mw-headline" id="Disques">Disques</span></h2>
+<p>Un conseil, <i>évitez les disques Green</i>. Une catastrophe, ils passent leur temps à s'eteindre, puis à se relancer...
+Donc Le WD Caviar Green est mon disque sous surveillance..
+</p>
+<h3><span class="mw-headline" id="En_cas_de_refus_de_formatter_un_disque_operation_not_permitted">En cas de refus de formatter un disque <i>operation not permitted</i></span></h3>
+<p><a rel="nofollow" class="external autonumber" href="http://zfsguru.com/forum/zfsgurusupport/494">[1]</a> Plus d'infos
+</p>
+<pre> Creating GPT partition scheme on ada1gpart: geom 'ada1': Operation not permitted
+</pre>
+<p>Votre disque a été utilisé par le passé dans une grappe raid hardware; le controlleur raid a marqué le disque.
+</p>
+<pre> dmesg |grep GEOM_RAID|grep ada0                
+ GEOM_RAID: Promise: Disk ada0 state changed from NONE to ACTIVE.
+ GEOM_RAID: Promise: Subdisk ProxMox-Raid10:2-ada0 state changed from NONE to ACTIVE.
+</pre>
+<p>Le controlleur <b>Promise</b> a marqué le disque
+</p>
+<pre>graid status -g 
+ Name Status Components
+ Promise DEGRADED ada1 (ACTIVE (ACTIVE))
+
+graid remove Promise ada1
+Done
+
+</pre>
+<p>Eventuellement
+</p>
+<pre>reboot
+</pre>
+<h3><span class="mw-headline" id="Expansion_de_pool_en_live">Expansion de pool en live</span></h3>
+<p>Vous avez échangé un petit disque contre un grand, lancé un scrub, redémarré, mais votre pool n'augmente pas de taille..
+</p><p>Found the solution ( <a rel="nofollow" class="external free" href="http://forums.freebsd.org/showthread.php?t=28703">http://forums.freebsd.org/showthread.php?t=28703</a> )
+</p>
+<pre>zpool online -e zroot gpt/zroot-disk1 gpt/zroot-disk3 gpt/zroot-disk4
+</pre>
+<p>Si vos disques sont nommés selon GPT&#160;: gpt/zroot-diskXX
+</p><p>Même pas besoin de redémarrer&#160;!
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Remplacement_d.27un_disque_malade_.28mais_pas_mort.29">Remplacement d'un disque malade (mais pas mort)</span></h3>
+<p>Si vous avez une emplacement de libre pour le nouveau disque, c'est encore plus simple
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020020910
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.130 seconds
+Real time usage: 0.127 seconds
+Preprocessor visited node count: 71/1000000
+Preprocessor generated node count: 76/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:282-0!*!*!!fr!*!* and timestamp 20171020020910 and revision id 3455
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=ZFSGuru,_le_SAN/NAS_pret_a_l%27emploi&amp;oldid=3455">http://www.openbsd-edu.net/index.php?title=ZFSGuru,_le_SAN/NAS_pret_a_l%27emploi&amp;oldid=3455</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=ZFSGuru%252C+le+SAN%252FNAS+pret+a+l'emploi.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:ZFSGuru,_le_SAN/NAS_pret_a_l'emploi&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=ZFSGuru,_le_SAN/NAS_pret_a_l'emploi&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=ZFSGuru,_le_SAN/NAS_pret_a_l'emploi&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=ZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FZFSGuru,_le_SAN%252FNAS_pret_a_l'emploi.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/ZFSGuru,_le_SAN/NAS_pret_a_l'emploi" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=ZFSGuru,_le_SAN/NAS_pret_a_l'emploi&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=ZFSGuru,_le_SAN/NAS_pret_a_l'emploi&amp;oldid=3455" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=ZFSGuru,_le_SAN/NAS_pret_a_l'emploi&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 24 septembre 2017 à 13:35.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.130","walltime":"0.127","ppvisitednodes":{"value":71,"limit":1000000},"ppgeneratednodes":{"value":76,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020020911","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1356});});</script>
+	</body>
+</html>

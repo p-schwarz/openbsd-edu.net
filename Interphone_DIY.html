@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Interphone DIY — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Interphone_DIY","wgTitle":"Interphone DIY","wgCurRevisionId":3010,"wgRevisionId":3010,"wgArticleId":317,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Interphone_DIY","wgRelevantArticleId":317,"wgRequestId":"9a6fcfecec632a5fbe69d68c","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Interphone_DIY rootpage-Interphone_DIY skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Interphone DIY</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Interphone_DIY.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Interphone_DIY.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>Lassé des interphones audio ou vidéo analogiques&#160;? Envie de tirer du catégorie 6 jusqu'au portail&#160;? Envie de recevoir les appels et d'ouvrir avec son smartphone, mais pas envie d'investir dans un magnifique mais couteux) IP-Interphone&#160;?
+</p><p>On y va&#160;:
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Interphone_DIY.html#Mat.C3.A9riel"><span class="tocnumber">1</span> <span class="toctext">Matériel</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Interphone_DIY.html#C.C3.B4t.C3.A9_portail"><span class="tocnumber">2</span> <span class="toctext">Côté portail</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Interphone_DIY.html#C.C3.B4t.C3.A9_maison"><span class="tocnumber">3</span> <span class="toctext">Côté maison</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Interphone_DIY.html#Config_RPi_Portail"><span class="tocnumber">4</span> <span class="toctext">Config RPi Portail</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Interphone_DIY.html#Connexion_SSH"><span class="tocnumber">4.1</span> <span class="toctext">Connexion SSH</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Interphone_DIY.html#Config_RPi_Maison"><span class="tocnumber">5</span> <span class="toctext">Config RPi Maison</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Interphone_DIY.html#Connexion_SSH_2"><span class="tocnumber">5.1</span> <span class="toctext">Connexion SSH</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Interphone_DIY.html#Image"><span class="tocnumber">5.2</span> <span class="toctext">Image</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Interphone_DIY.html#Galerie_de_photos"><span class="tocnumber">5.2.1</span> <span class="toctext">Galerie de photos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Interphone_DIY.html#Son"><span class="tocnumber">5.3</span> <span class="toctext">Son</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Interphone_DIY.html#Sch.C3.A9mas"><span class="tocnumber">6</span> <span class="toctext">Schémas</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Interphone_DIY.html#Le_microphone"><span class="tocnumber">7</span> <span class="toctext">Le microphone</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Interphone_DIY.html#Le_soft"><span class="tocnumber">8</span> <span class="toctext">Le soft</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=Interphone_DIY.html#L.27interrupteur"><span class="tocnumber">9</span> <span class="toctext">L'interrupteur</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=Interphone_DIY.html#La_cam.C3.A9ra"><span class="tocnumber">10</span> <span class="toctext">La caméra</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Interphone_DIY.html#R.C3.A9glages"><span class="tocnumber">10.1</span> <span class="toctext">Réglages</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Interphone_DIY.html#Scripts"><span class="tocnumber">10.2</span> <span class="toctext">Scripts</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="index.php%3Ftitle=Interphone_DIY.html#Badge_Ibutton.2F1wire"><span class="tocnumber">11</span> <span class="toctext">Badge Ibutton/1wire</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Interphone_DIY.html#Le_hard"><span class="tocnumber">11.1</span> <span class="toctext">Le hard</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=Interphone_DIY.html#Le_soft_2"><span class="tocnumber">11.2</span> <span class="toctext">Le soft</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="index.php%3Ftitle=Interphone_DIY.html#Notifications_Smartphone"><span class="tocnumber">12</span> <span class="toctext">Notifications Smartphone</span></a>
+<ul>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=Interphone_DIY.html#IOS"><span class="tocnumber">12.1</span> <span class="toctext">IOS</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=Interphone_DIY.html#Android"><span class="tocnumber">12.2</span> <span class="toctext">Android</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Interphone_DIY.html#Mail"><span class="tocnumber">12.3</span> <span class="toctext">Mail</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=Interphone_DIY.html#Syslog"><span class="tocnumber">12.4</span> <span class="toctext">Syslog</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-26"><a href="index.php%3Ftitle=Interphone_DIY.html#Divers"><span class="tocnumber">13</span> <span class="toctext">Divers</span></a>
+<ul>
+<li class="toclevel-2 tocsection-27"><a href="index.php%3Ftitle=Interphone_DIY.html#Mettre_.C3.A0_jour_le_firmware_de_sa_framboise"><span class="tocnumber">13.1</span> <span class="toctext">Mettre à jour le firmware de sa framboise</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Mat.C3.A9riel">Matériel</span></h2>
+<ul><li> 2 RaspberryPi MOdèle B</li>
+<li> 2 micros cravate filaire</li>
+<li> 2 cartes son USB (2€ sur Ebay)</li>
+<li> Un écran LCD 7' ou moins (chercher lcd moniteur recul) sur un site de vente en ligne (Un de ceux qui ne payent pas leurs impôts...)</li>
+<li> 1 Webcam ou bien 1 module Picam</li>
+<li> 1 relais adafruit pour alimenter la gâche électrique</li>
+<li> 2 amplis adafruit pour la sortie HP</li></ul>
+<p><br />
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="C.C3.B4t.C3.A9_portail">Côté portail</span></h2>
+<ul><li> 1 Rpi avec micro, HP, raspicam, ampli et relais</li></ul>
+<pre>sudo apt-get install music123 mpg123 vorbis-tools python-picamera python3-picamera python-rpi.gpio python-prowlpy python-ow ffmpeg python-mailer
+</pre>
+<p><br />
+</p><p>Si vous voulez n'utiliser le Rpi que comme interface, mais pas comme stockage des données, on va monter une VM distante pour cela&#160;:
+</p>
+<pre> sudo apt-get install sshfs rsync openbsd-inetd
+</pre>
+<p>Les deux derniers ne sont que pour BackupPC
+</p>
+<h2><span class="mw-headline" id="C.C3.B4t.C3.A9_maison">Côté maison</span></h2>
+<ul><li> 1 Rpi avec micro,HP, écran et ampli</li></ul>
+<p><br />
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Config_RPi_Portail">Config RPi Portail</span></h2>
+<h3><span class="mw-headline" id="Connexion_SSH">Connexion SSH</span></h3>
+<pre>adduser doorphone
+su doorphone
+ssh-keygen - t rsa
+</pre>
+<p>Depuis RPI maison&#160;:
+</p>
+<pre>ssh-copy-id doorphone@doorbell
+</pre>
+<p>Vous pouvez scripter des connexions ssh depuis la maison vers le portail.
+</p>
+<h2><span class="mw-headline" id="Config_RPi_Maison">Config RPi Maison</span></h2>
+<h3><span class="mw-headline" id="Connexion_SSH_2">Connexion SSH</span></h3>
+<pre>adduser doorbell
+su doorbell
+ssh-keygen - t rsa
+</pre>
+<p>Depuis RPI portail&#160;:
+</p>
+<pre>ssh-copy-id doorbell@doorphone
+</pre>
+<p>Vous pouvez scripter des connexions ssh depuis le portail vers la maison
+</p>
+<h3><span class="mw-headline" id="Image">Image</span></h3>
+<pre>sudo apt-get install fbi rsync openbsd-inetd
+</pre>
+<p>Les deux derniers ne sont que pour BackupPC 
+</p>
+<h4><span class="mw-headline" id="Galerie_de_photos">Galerie de photos</span></h4>
+<pre>sudo pkill fbi
+sudo /usr/bin/fbi -T 1 -a -t 5 -u `find /home/pi/Images -iname *.jpg`
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Son">Son</span></h3>
+<ul><li> Activer la carte son USB&#160;: <a rel="nofollow" class="external autonumber" href="http://computers.tutsplus.com/articles/using-a-usb-audio-device-with-a-raspberry-pi--mac-55876">[1]</a></li></ul>
+<p>Commenter la ligne correspondant dans <i>/etc/modprobe.d/alsa-base.conf</i>
+</p>
+<pre>#options snd-usb-audio index=-2
+
+sudo reboot
+</pre>
+<p>Si ça ne fonctionne pas&#160;: <a rel="nofollow" class="external autonumber" href="https://learn.adafruit.com/usb-audio-cards-with-a-raspberry-pi/figure-out-your-chipset">[2]</a>
+</p>
+<ul><li> Message d'erreur lors de la lecture d'un son&#160;:</li></ul>
+<pre> ALSA lib dlmisc.c:254:(snd1_dlobj_cache_get) Cannot open shared library /usr/lib/arm-linux-gnueabihf/alsa-lib/libasound_module_rate_samplerate.so
+</pre>
+<p>Solution&#160;:
+</p>
+<pre> sudo apt-get install libasound2-plugins
+</pre>
+<h2><span class="mw-headline" id="Sch.C3.A9mas">Schémas</span></h2>
+<p>Ajoutez la librairie Adafruit à Fritzing <a rel="nofollow" class="external autonumber" href="https://github.com/adafruit/Fritzing-Library/blob/master/AdaFruit.fzbz">[3]</a>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Le_microphone">Le microphone</span></h2>
+<p>Compliqué de trouver son bonheur.
+Le Pi possède une entrée micra qu'on va remplacer par une carte son USB.
+</p><p>Les cartes de base (Moins de 5€ sur Amazon/ebay) sont de chipset C-Media et la qualité est à la hauteur du prix. Néanmoins, pour un interphone, on ne demande pas une qualité formidable de restitution et ça suffira bien.
+</p><p><br />
+<a rel="nofollow" class="external autonumber" href="http://techscrapbox.blogspot.fr/2014/06/enabling-usb-audio-card-in-raspberry-pi.html">[4]</a>
+</p>
+<h2><span class="mw-headline" id="Le_soft">Le soft</span></h2>
+<p>On pensera à mettre ces scripts en démarrage&#160;: <a rel="nofollow" class="external autonumber" href="https://mkaz.com/2013/07/03/run-script-at-start-on-debian/">[5]</a>
+</p>
+<h2><span class="mw-headline" id="L.27interrupteur">L'interrupteur</span></h2>
+<pre>#!/usr/bin/env python
+# -*- coding: latin-1 -*-
+import RPi.GPIO as GPIO, time
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+BUTTON1_STATE = False
+GPIO.setup(BUTTON1, GPIO.IN)
+while True:
+ # Ce bout de code a été piqué (puis largement modifié) du site <a rel="nofollow" class="external free" href="http://....Aretrouver">http://....Aretrouver</a>...
+ # -- Lecture avec déparasitage logiciel
+ # Si le bouton est pressé, la broche GPIO est raccordée
+ #   à la masse. Le GPIO est donc à LOW (bas).
+ #   Bouton pressé -&gt; Input = LOW = False         
+ ETAT1WIRE=onewire()
+   if ETAT1WIRE&#160;!= 0:
+    PIC="/usr/script/"+ETAT1WIRE+".jpg"
+    print PIC
+    remoteaudioout("Nuit.ogg") #Joue le morceau en SSH sur l'autre pi interne
+    sendmail(PIC,"MOI",ETAT1WIRE+" rentré(e)")
+    notifApple(ETAT1WIRE+" rentré(e)")
+    logger(ETAT1WIRE+" est rentré")
+    gpioRead1 = GPIO.input( BUTTON1 )
+    state1    = not(gpioRead1)
+    # Si change d'etat ALORS refaire lecture de déparasitage
+    if( state1&#160;!= BUTTON1_STATE ):
+      # - attendre 10ms
+      time.sleep( 10 / 1000 )
+      # faire une 2ieme lecture
+      gpioRead2 = GPIO.input( BUTTON1 )
+      state2 = not(gpioRead2)
+      # SI les deux lectures concordent
+      # ALORS memoriser le nouvel etat du bouton
+      if( state1 == state2 ):
+         BUTTON1_STATE = state2
+       # -- Programme principal --
+       # SI le bouton est pressé
+       # ALORS allumer la LED verte  
+       if( BUTTON1_STATE == True ):
+               GPIO.output(GREEN_LED, False)
+               GPIO.output(RED_LED, True)
+               print "-----------------------------Bouton appuyé---------------------------"
+               remoteaudioout("GoT.ogg")
+               subprocess.Popen(['/usr/bin/mpg123', "Afraid2.mp3"])
+               recordpic(PHOTO)
+               recordaudio(5)
+               sendmail(PHOTO,"MOI","Appuyé")
+               notifApple("Pressed")
+               notifAndroid("Pressed",'Moi')
+               logger("Bouton appuyé")
+          else:
+               GPIO.output(GREEN_LED, True)
+               GPIO.output(RED_LED, False)
+               #print "Relaché"
+</pre>
+<h2><span class="mw-headline" id="La_cam.C3.A9ra">La caméra</span></h2>
+<p>Vous ne pouvez pas baisser la quantité de mémoire du GPU en dessous de 128 Mo. Sinon:
+</p>
+<pre>mmal: mmal_vc_component_enable: failed to enable component: ENOSPC
+mmal: camera component couldn't be enabled
+mmal: main: Failed to create camera component
+</pre>
+<h3><span class="mw-headline" id="R.C3.A9glages">Réglages</span></h3>
+<ul><li> Resolution <a rel="nofollow" class="external autonumber" href="http://raspberrypi.stackexchange.com/questions/24232/picamera-taking-pictures-fast-and-processing-them">[6]</a></li></ul>
+<h3><span class="mw-headline" id="Scripts">Scripts</span></h3>
+<pre>#!/usr/bin/env python
+# -*- coding: latin-1 -*-
+import picamera
+import os
+def recordvideo(DUREE):
+  print "Debut enregistrement VIDEO"
+  camera.start_preview()
+  camera.start_recording('FILE..h264')
+  time.sleep(DUREE)
+  camera.stop_recording()
+  camera.stop_preview()
+  print "Fin enregistrement VIDEO"
+def recordpic(FILE):
+  #camera_width = 320
+  #camera_height = 240
+  with picamera.PiCamera() as camera:
+    #camera.resolution = (camera_width, camera_height)
+    #camera.start_preview()
+    camera.capture(FILE)
+    #camera.stop_preview()
+    NOW = str(time.strftime("%c"))
+    os.system("/usr/bin/montage -label '"+NOW+"' "+FILE+"   -geometry +1+1 "+FILE)
+</pre>
+<p>Génére une photo avec la date en surimpression
+</p>
+<h2><span class="mw-headline" id="Badge_Ibutton.2F1wire">Badge Ibutton/1wire</span></h2>
+<h3><span class="mw-headline" id="Le_hard">Le hard</span></h3>
+<ul><li> Le lecteur de badge <a rel="nofollow" class="external autonumber" href="http://www.loxone.com/tl_files/loxone/documentation/DE/extensions/1wire/ibutton_holder_neu.png">[7]</a></li>
+<li> Le convertisseur USB-1WIre <a rel="nofollow" class="external autonumber" href="http://www.domolio.fr/wp-content/uploads/2012/03/ds9490r_rj11.jpg">[8]</a></li>
+<li> Config du DS9490B <a rel="nofollow" class="external autonumber" href="http://owfs.org/index.php?page=quickstart-guide">[9]</a></li></ul>
+<h3><span class="mw-headline" id="Le_soft_2">Le soft</span></h3>
+<pre>#!/usr/bin/env python
+# -*- coding: latin-1 -*-
+import os,syslog
+LESCLES={'ID1':'Moi','ID2':'Miss'}
+os.system("/usr/bin/mpg123  smoke.mp3") # On s'exprime au démarrage
+while True:
+ CLE=str(os.listdir("/mnt/1wire/uncached")[0])[0:15]
+  try:
+     print LESCLES[CLE]
+     syslog.openlog( 'RaspberryPIDoorBell', 0, syslog.LOG_LOCAL4 )
+     syslog.syslog( "CLE")
+     os.system("/usr/bin/ogg123  starwars.ogg") #Badge lu
+       except Exception:
+</pre>
+<p>	    BIDON=1
+</p>
+<h2><span class="mw-headline" id="Notifications_Smartphone">Notifications Smartphone</span></h2>
+<p>C'est là que le <a rel="nofollow" class="external text" href="http://fr.wikipedia.org/wiki/Wife_acceptance_factor">WAF</a> augmente rapidement&#160;;-)
+</p>
+<h3><span class="mw-headline" id="IOS">IOS</span></h3>
+<p>Prowl est votre ami
+</p><p>Idem que pour Android. Le code Python est&#160;:
+</p>
+<pre>#!/usr/bin/env python
+# -*- coding: latin-1 -*-
+import pynma
+def notifApple(SUBJ):
+  api_key="MONAPIKEY"
+  provider_key="PROVID"
+  p = prowlpy.Prowl(api_key)
+  p.add('DoorPhone',SUBJ, "<a rel="nofollow" class="external free" href="http://Doorbell">http://Doorbell</a>")
+notifApple("TEST")
+</pre>
+<h3><span class="mw-headline" id="Android">Android</span></h3>
+<p><a rel="nofollow" class="external text" href="https://play.google.com/store/apps/details?id=com.usk.app.notifymyandroid">NMA</a>, notify My Android pour les intimes&#160;:
+</p>
+<ul><li> Installez l'appli sur l'android de votre choix</li>
+<li>Faites un tour sur <a rel="nofollow" class="external text" href="https://www.notifymyandroid.com/index.jsp">le site NMA</a></li>
+<li> Créez un compte</li>
+<li> Configurez l'appli NMA sur vous doudoud numérique</li>
+<li> Générez une <a rel="nofollow" class="external text" href="https://www.notifymyandroid.com/account.jsp">clé pour l'API</a></li>
+<li> Faites un test de notification. Si ca marhce il faut prendre la clé API dans votre code&#160;:</li></ul>
+<p>En Python&#160;:
+</p>
+<pre>#!/usr/bin/env python
+# -*- coding: latin-1 -*-
+import pynma
+APIKEY={'User1':'APIKEY1', 'User2': 'APIKEY2' ,'Tablette'&#160;: 'APIKEY3','Moi'&#160;: 'MONAPIKEY' }
+def notifAndroid(SUBJ,DEST):
+   p = pynma.PyNMA( APIKEY[DEST])
+   p.push('DoorBell',SUBJ, "<a rel="nofollow" class="external free" href="http://DoorBell">http://DoorBell</a>",  "<a rel="nofollow" class="external free" href="http://www.prowlapp.com/">http://www.prowlapp.com/</a>")
+notifAndroid("TEST",'Moi')
+</pre>
+<h3><span class="mw-headline" id="Mail">Mail</span></h3>
+<pre>#!/usr/bin/env python
+# -*- coding: latin-1 -*-
+import smtplib
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
+import mimetypes
+def sendmail(FILE,DEST,SUBJ):
+  FROM="Pi@Home"
+  SMTPSRV="smtp.schwarz-fr.net"
+  # Create the container (outer) email message.
+  msg = MIMEMultipart()   
+  msg['Subject'] = SUBJ
+  msg['From'] = FROM
+  msg['To'] = COMMASPACE.join(DEST)
+  #msg.preamble ="SUBJ" 
+  fp = open(FILE, 'rb')
+  #img = MIMEImage(fp.read())
+  img = MIMEImage(fp.read(),_subtype="jpeg")
+  fp.close()
+  msg.attach(img)
+  s = smtplib.SMTP(SMTPSRV)
+  s.sendmail(FROM, DEST, msg.as_string())
+  s.quit()
+</pre>
+<h3><span class="mw-headline" id="Syslog">Syslog</span></h3>
+<pre>#!/usr/bin/env python
+# -*- coding: latin-1 -*-
+import syslog
+def logger(TEXT):
+ syslog.openlog( 'RaspberryPI', 0, syslog.LOG_LOCAL4 )
+ syslog.syslog( TEXT )
+</pre>
+<h2><span class="mw-headline" id="Divers">Divers</span></h2>
+<h3><span class="mw-headline" id="Mettre_.C3.A0_jour_le_firmware_de_sa_framboise">Mettre à jour le firmware de sa framboise</span></h3>
+<p>Depuis chez Korben&#160;: <a rel="nofollow" class="external autonumber" href="http://korben.info/raspberry-pi-comment-mettre-a-jour-le-firmware.html">[10]</a>
+</p>
+<pre>/opt/vc/bin/vcgencmd version
+ Jun  4 2014 21:04:32 
+Copyright (c) 2012 Broadcom
+version c89591d3959d5fec88856f2460ee641f3a1d29dc (clean) (release)
+
+sudo apt-get install ca-certificates git-core binutils
+sudo wget <a rel="nofollow" class="external free" href="https://raw.github.com/Hexxeh/rpi-update/master/rpi-update">https://raw.github.com/Hexxeh/rpi-update/master/rpi-update</a>
+sudo cp rpi-update /usr/local/bin/rpi-update
+sudo chmod +x /usr/local/bin/rpi-update
+sudo rpi-update
+sudo reboot
+</pre>
+<pre>/opt/vc/bin/vcgencmd version
+Dec 19 2014 18:40:20 
+Copyright (c) 2012 Broadcom
+version 5abd572e2ed1811283443387af09377b95501c50 (clean) (release)
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20171019192000
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.310 seconds
+Real time usage: 0.669 seconds
+Preprocessor visited node count: 107/1000000
+Preprocessor generated node count: 112/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:317-0!*!*!!fr!*!* and timestamp 20171019191959 and revision id 3010
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Interphone_DIY&amp;oldid=3010">http://www.openbsd-edu.net/index.php?title=Interphone_DIY&amp;oldid=3010</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Interphone+DIY.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Interphone_DIY.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Interphone_DIY&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Interphone_DIY.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Interphone_DIY.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Interphone_DIY&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Interphone_DIY&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Interphone_DIY.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FInterphone_DIY.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Interphone_DIY" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Interphone_DIY&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Interphone_DIY&amp;oldid=3010" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Interphone_DIY&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 19 février 2015 à 14:49.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.310","walltime":"0.669","ppvisitednodes":{"value":107,"limit":1000000},"ppgeneratednodes":{"value":112,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171019192000","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1347});});</script>
+	</body>
+</html>

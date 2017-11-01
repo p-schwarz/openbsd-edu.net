@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>SunRay : Principe &amp; Installation — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"SunRay_:_Principe_\u0026_Installation","wgTitle":"SunRay : Principe \u0026 Installation","wgCurRevisionId":1918,"wgRevisionId":1918,"wgArticleId":231,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"SunRay_:_Principe_\u0026_Installation","wgRelevantArticleId":231,"wgRequestId":"01db154e3552fe259e514e6b","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgRedirectedFrom":"SunRay","wgInternalRedirectTargetUrl":"/index.php?title=SunRay_:_Principe_%26_Installation"});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.action.view.redirect","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+<link rel="canonical" href="./index.php%3Ftitle=SunRay_:_Principe_%2526_Installation.html"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-SunRay_Principe_Installation rootpage-SunRay_Principe_Installation skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">SunRay : Principe &amp; Installation</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"><span class="mw-redirectedfrom">(Redirigé depuis <a href="index.php%3Ftitle=SunRay&amp;redirect=no.html" class="mw-redirect" title="SunRay">SunRay</a>)</span></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=SunRay.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=SunRay.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><center>
+<p><b>Mise à jour</b>
+</p><p>Voilà ce que je comptais il y a un peu plus d'un an&#160;:
+</p><p><i>Depuis le rachat de Sun par Oracle, les produits deviennent de plus en plus fermés, payants, et les licences d'usage et d'achat se réduisent comme peau de chagrin. Résultat, je ne sais même pas si on peut désormais télécharger encore SRSS.... Non, inutile de demander de laisser un SRSS 4.2 en DL par ici...</i>
+C'est assez triste ce que vous faites de ce beau produit Mr Ellison&#160;!
+</p>
+</center>
+<p>En fait, la période de turbulences semble derrière nous.
+</p>
+<ul><li> SRSS est de nouveau librement téléchargeable</li>
+<li> Il (SRSS) tourne (peut-être) sans perte de fonctionnalités sous Oracle/RedHat Linux</li>
+<li> Oracle linux &amp; Solaris 11 sont librement téléchargeables.</li>
+<li> Les DTU ont beaucoup baissés.</li></ul>
+<p><br />
+</p><p><br />
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=SunRay.html#Qu.27est-ce_.3F"><span class="tocnumber">1</span> <span class="toctext">Qu'est-ce&#160;?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=SunRay.html#Installation"><span class="tocnumber">2</span> <span class="toctext">Installation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=SunRay.html#Solaris_11"><span class="tocnumber">2.1</span> <span class="toctext">Solaris 11</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=SunRay.html#Configuration_initiale"><span class="tocnumber">3</span> <span class="toctext">Configuration initiale</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=SunRay.html#Mode_kiosque"><span class="tocnumber">3.1</span> <span class="toctext">Mode kiosque</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=SunRay.html#Configuration_des_sessions_du_mode_kiosk"><span class="tocnumber">3.2</span> <span class="toctext">Configuration des sessions du mode kiosk</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=SunRay.html#Communication_DTU-Serveur"><span class="tocnumber">3.3</span> <span class="toctext">Communication DTU-Serveur</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=SunRay.html#Oracle_Virtual_Desktop_Client"><span class="tocnumber">4</span> <span class="toctext">Oracle Virtual Desktop Client</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=SunRay.html#Oracle_Virtual_Desktop_infrastructure"><span class="tocnumber">5</span> <span class="toctext">Oracle Virtual Desktop infrastructure</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=SunRay.html#Workaround_:_L.27Oracle_Virtual_Desktop_infrastructure_du_pauvre"><span class="tocnumber">6</span> <span class="toctext">Workaround&#160;: L'Oracle Virtual Desktop infrastructure du pauvre</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=SunRay.html#VirtualBox"><span class="tocnumber">7</span> <span class="toctext">VirtualBox</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=SunRay.html#Interface_Web_d.27administration"><span class="tocnumber">8</span> <span class="toctext">Interface Web d'administration</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=SunRay.html#Gestion_du_firmware"><span class="tocnumber">9</span> <span class="toctext">Gestion du firmware</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=SunRay.html#Combinaison_de_touches_des_DTU"><span class="tocnumber">10</span> <span class="toctext">Combinaison de touches des DTU</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=SunRay.html#GUI_des_DTU"><span class="tocnumber">11</span> <span class="toctext">GUI des DTU</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="index.php%3Ftitle=SunRay.html#Sunray_.C3.A0_distance"><span class="tocnumber">12</span> <span class="toctext">Sunray à distance</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=SunRay.html#Ports_.C3.A0_ouvrir_dans_le_pare-feu"><span class="tocnumber">12.1</span> <span class="toctext">Ports à ouvrir dans le pare-feu</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="index.php%3Ftitle=SunRay.html#Debug"><span class="tocnumber">13</span> <span class="toctext">Debug</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=SunRay.html#utdtsession:_.5BID_702911_user.error.5D_Error:_No_display_numbers_available"><span class="tocnumber">13.1</span> <span class="toctext">utdtsession: [ID 702911 user.error] Error: No display numbers available</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=SunRay.html#utauthd:_.5BID_199539_user.info.5D_Worker1_NOTICE:_Denying_X.X.X.X:_Signature_validation_failed"><span class="tocnumber">13.2</span> <span class="toctext">utauthd: [ID 199539 user.info] Worker1 NOTICE: Denying X.X.X.X: Signature validation failed</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=SunRay.html#utati_.5BID_702911_user.error.5D_Site_ATI_script_did_not_return_.27registered.27_key_on_stdout.2C_no_action_taken"><span class="tocnumber">13.3</span> <span class="toctext">utati [ID 702911 user.error] Site ATI script did not return 'registered' key on stdout, no action taken</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=SunRay.html#Plus_de_serveur.2C_de_token.2C_dans_l.27interface_web.21.21"><span class="tocnumber">13.4</span> <span class="toctext">Plus de serveur, de token, dans l'interface web!!</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Qu.27est-ce_.3F">Qu'est-ce&#160;?</span></h2>
+<p>Les Sunray sont des boitiers petits
+</p><p><a href="./index.php%3Ftitle=Fichier:Sunray.png.html" class="image" title="SunRay2"><img alt="SunRay2" src="images/4/44/Sunray.png" width="200" height="242" /></a>
+</p><p>ou intégrés à un écran LCD 17'
+</p><p><a href="./index.php%3Ftitle=Fichier:SunRay270.jpg.html" class="image" title="SunRay270"><img alt="SunRay270" src="images/2/2e/SunRay270.jpg" width="400" height="440" /></a>
+</p><p>, à faible consommation électrique (5W) contenant&#160;:
+</p><p><br />
+</p>
+<ul><li> Un peu de CPU</li>
+<li> Une petite dose de RAM</li></ul>
+<p>et avec les connexions suivantes 
+</p>
+<ul><li> USB</li>
+<li> Audio IN/Out</li>
+<li> Réseau ( Cuivre ou fibre)</li>
+<li> DVI</li>
+<li> Lecteur de carte à puce (On va y revenir, mais c'est à tomber ça!)</li></ul>
+<p>Ce sont de <b>vrais</b> clients légers! En ce sens, ils sont totalement interchangeables, ne contiennent strictement aucune donnée et seraient à voir comme des déports d'affichage, de clavier de souris. Tout se passe sur le serveur (Solaris voire Linux). A tel point que même la connexion d'un périphérique USB se fait par encapsulation des données du port USB à destination du serveur.
+</p><p>Ils fonctionnent par boot réseau (à la PXE, mais ne testez pas avec un serveur PXE, ça ne marche pas; c'est un peu plus subtil) et accèdent à un serveur SunRAY Server (Serveur SRSS) qui leur fournit les infos.
+<i>Ce serveur SRSS peut être local (LAN) <b>ou distant (Ligne ADSL)!</b></i> Dans ce dernier cas, ça lagge un poil, mais ça reste utilisable, ...même pour Youtube!
+</p><p>Quant à la dernière fonctionnalité, la gestion des cartes à puces; si vous l'activez (HotDesking) on obtient ça&#160;:
+</p>
+<ul><li> Au bureau j'insère la carte à puce et je me retrouve (temps de cx &lt; 2s)devant ma session.</li>
+<li> Je travaille un peu..</li>
+<li> Au moment de partir, je ne ferme pas ma session,mais j'enlève la carte à puce. Ma session se verrouille sur le serveur et le client léger redevient un poste anonyme.</li>
+<li> De retour chez moi, j'insère la carte dans le client léger <i>et je me retrouve devant ma session  <b>dans l'état exact dans lequel je l'avais laissée.</b> </i></li></ul>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a href="http://www.openbsd-edu.net/index.php?title=SunRay_:_Obsol%C3%A8te&amp;action=edit&amp;redlink=1" class="new" title="SunRay : Obsolète (page inexistante)"> Solaris 10 </a>
+</p>
+<h3><span class="mw-headline" id="Solaris_11">Solaris 11</span></h3>
+<p>Beaucoup plus rapide qu'avec SRSS4 &amp; Solaris10
+</p>
+<ul><li> DL <a rel="nofollow" class="external text" href="http://www.oracle.com/technetwork/server-storage/solaris11/downloads/index.html">solaris </a> et <a rel="nofollow" class="external text" href="https://www.virtualbox.org/wiki/Downloads">VirtualBox avec son pack d'extension</a>
+<ul><li> Attention à choisir l'image <i>LiveCD</i> et pas l'image <i>text</i>, elle n'installe pas d'environnement graphique par défaut.</li>
+<li> Sous VirtualBox, il faut choisir Solaris 11/09 and later, et pas la version 64bits.</li></ul></li>
+<li> Installer l'<a href="index.php%3Ftitle=Solaris.html" title="Solaris"> OS</a></li></ul>
+<p>Mes 2cts&#160;: Installez l'OS en anglais, les éventuels messages d'erreur seront plus faciles à débugguer..
+</p>
+<ul><li> Téléchargez <a rel="nofollow" class="external text" href="http://www.oracle.com/technetwork/server-storage/sunrayproducts/downloads/index.html">SRSS</a></li>
+<li> Installez SRSS</li></ul>
+<pre>unzip SRSS5.2-Solaris32-64-V26743-01.zip
+cd srs_5.2/Supplemental/Java_Runtime_Environment/Solaris
+./jre-6u23-solaris-i586.sh
+java -version
+ java version "1.6.0_21"
+ Java(TM) SE Runtime Environment (build 1.6.0_21-b06)
+ Java HotSpot(TM) Client VM (build 17.0-b16, mixed mode)
+</pre>
+<pre>cd ../../Apache_Tomcat
+gzcat apache-tomcat-5.5.20.tar.gz | /usr/sfw/bin/gtar -xf -
+mv apache-tomcat-5.5.20 /opt/
+ln -s /opt/apache-tomcat-5.5.20/ /opt/apache-tomcat
+cd ../../
+./utinstall
+</pre>
+<ul><li> Le résultat de l'install est stocké dans le fichier de log <i>/var/adm/log/utinstall.DATE-HEURE.log</i></li></ul>
+<ul><li> On modifie le fichier <i>/etc/hosts</i>, sinon, ça ne fonctionnera pas&#160;:</li></ul>
+<pre>::1 localhost 
+127.0.0.1 localhost loghost 
+@IP SRV
+</pre>
+<p><br />
+</p>
+<ul><li> On redémarre à l'ancienne&#160;;-)</li></ul>
+<pre>sync;sync;init 6
+</pre>
+<pre>/opt/SUNWut/sbin/utconfig 
+</pre>
+<p>On valide tout sauf
+</p>
+<pre>   * Enable remote server administration? (y/[n])? y
+   * Configure Sun Ray Kiosk Mode? (y/[n])? y 
+   * Enter number of users [25] 200
+</pre>
+<ul><li> Le résultat de l'install est stocké dans le fichier de log <i>/var/adm/log/utconfig.DATE-HEURE.log</i></li></ul>
+<pre>pkg install SUNWdhcs SUNWdhcsb SUNWdhcm
+</pre>
+<ul><li> Selon <a rel="nofollow" class="external text" href="http://wiki.sun-rays.org/index.php/SRS_5.1_on_Solaris_11_Express">cette</a> page, il faut ajouter d'autres paquets&#160;:</li></ul>
+<pre> pkg install SUNWmfrun SUNWtltk SUNWdtbas
+</pre>
+<p>Je n'ai pas vu de différence.
+</p><p><br />
+</p>
+<pre>/opt/SUNWut/sbin/utstart
+</pre>
+<p>(remplace <i>utrestart</i>, deprecated)
+</p><p><br />
+</p><p><br />
+Votre serveur SRSS est prêt&#160;!
+Faites un tour sur <a rel="nofollow" class="external free" href="http://FQDN_serveur:1660">http://FQDN_serveur:1660</a> avec admin comme nom d'utilisateur
+</p>
+<ul><li> Les services <i>srwc</i> (SunRay Windows Connector) sont désormais inclus en standard dans SRSS. Ne reste plus qu'à les configurer&#160;:</li></ul>
+<pre>/opt/SUNWut/sbin/utadm -L on
+/opt/SUNWut/sbin/utstart
+</pre>
+<p><a href="http://www.openbsd-edu.net/index.php?title=SunRay_:_Obsol%C3%A8te&amp;action=edit&amp;redlink=1" class="new" title="SunRay : Obsolète (page inexistante)"> Oracle Linux</a>
+</p>
+<h2><span class="mw-headline" id="Configuration_initiale">Configuration initiale</span></h2>
+<h3><span class="mw-headline" id="Mode_kiosque">Mode kiosque</span></h3>
+<ul><li> Allez sur <a rel="nofollow" class="external text" href="https://SRSS:1661">l'interface d'administration</a></li>
+<li> Onglets <i>Paramètres avancés</i> / <i>Mode kiosque</i></li>
+<li> Editer</li>
+<li> Dans <i>Session</i>, choisissez <i>Sunray Connector for Windows OS</i></li>
+<li> Dans <i>Arguments</i>, choisissez le nom FQDN de votre serveur virtualBox.</li>
+<li> Vous devez redémarrer les sessions kiosque (STOP+A) des DTUs.</li></ul>
+<h3><span class="mw-headline" id="Configuration_des_sessions_du_mode_kiosk">Configuration des sessions du mode kiosk</span></h3>
+<p>Oracle verrouillant les docs Sun, j'ai récupéré <a rel="nofollow" class="external text" href="http://www.openbsd-edu.net/html/managing_Kiosk.html">ça</a>pendant que je pouvais.
+</p>
+<h3><span class="mw-headline" id="Communication_DTU-Serveur">Communication DTU-Serveur</span></h3>
+<ul><li> Onglets <i>Paramètres avancés</i> / <i>Sécurité</i></li></ul>
+<h2><span class="mw-headline" id="Oracle_Virtual_Desktop_Client">Oracle Virtual Desktop Client</span></h2>
+<p>Vous pouvez désormais accéder aux sessions sur le serveur SRSS avec votre Mac/Windows/Linuxette&#160;!
+</p>
+<pre>unzip VDClient-32-64--V24110-01.zip 
+</pre>
+<ul><li> Mac&#160;:  OracleVirtualDesktopClient.dmg</li>
+<li> Debian AMD64 ovdc_2.1.7-1_amd64.deb</li>
+<li> Debian i386 ovdc_2.1.7-1_i386.deb</li>
+<li> RedHat i386 ovdc-2.1.7-1.i386.rpm</li>
+<li> MS Windows vdc.msi</li></ul>
+<p>Existe même sur l'<a rel="nofollow" class="external text" href="http://itunes.apple.com/us/app/oracle-virtual-desktop-client/id443381936?mt=8&amp;ls=1">Ipad </a>&amp; l'android
+</p>
+<h2><span class="mw-headline" id="Oracle_Virtual_Desktop_infrastructure">Oracle Virtual Desktop infrastructure</span></h2>
+<p>Cet outil (qui s'appuie sur ZFS &amp; VirtuaBox) permet de gérer et d'attribuer automatiquement aux utilisateurs, les pools de machines virtuelles.
+</p><p>Attention, Cet hôte (ou ce groupe d'hôtes) <b>ne peut pas</b> être un serveur SRSS&#160;!
+</p><p><a rel="nofollow" class="external text" href="http://wikis.sun.com/display/VDI3dot2/Oracle+Virtual+Desktop+Infrastructure+Demo+%28Oracle+VDI+Hypervisor%29">Plus d'infos</a>
+</p><p><a rel="nofollow" class="external text" href="http://wikis.sun.com/display/VDI3dot2/Architecture">L'architecture</a>
+</p><p><a rel="nofollow" class="external text" href="http://wikis.sun.com/display/VDI3dot2/Info+Map+%28Oracle+VDI+Hypervisor%29">Le planning</a>
+</p><p><br />
+</p>
+<ul><li> A télécharger, comme d'hab sur <a rel="nofollow" class="external free" href="http://edelivery.oracle.com">http://edelivery.oracle.com</a></li></ul>
+<pre> unzip V26835-01.zip
+cd vda_3.3_solaris_amd64/
+unzip vbox_4.0.zip
+cd vbox_4.0
+<s> perl -pi -e 's/APACHE2_PKGS="SUNWapch2r SUNWapch2u"/APACHE2_PKGS="SUNWapch22r SUNWapch22u"/' vb-install 
+./vb-install</s>
+pkgadd -d VirtualBox-4.0.10-SunOS-r72436.pkg 
+</pre>
+<p><br />
+</p>
+<ul><li> Créer un espace de stockage des VM. ZFS obligatoire.</li></ul>
+<pre> zpool create vm mirror c7t0d0s2 c7t1d0s2
+invalid vdev specification
+  use '-f' to override the following errors:
+ /dev/dsk/c7t0d0s2 overlaps with /dev/dsk/c7t0d0s0 
+</pre>
+<p>Ce qui est une erreur. On va donc lui forcer la main
+</p>
+<pre>zpool create -f  vm mirror c7t0d0s2 c7t1d0s2
+set zfs:zfs_arc_max = 2147483648
+</pre>
+<p><br />
+</p>
+<ul><li> MySQL va gérer les pools de VM</li></ul>
+<pre>svcadm enable mysql
+/usr/mysql/5.1/bin/mysql_secure_installation
+</pre>
+<p>J'ai supprimé les comptes de test,bases de test, cx distante.
+</p>
+<pre>mysql -u root -h localhost -p
+GRANT ALL PRIVILEGES ON *.* TO 'vda'@'localhost' IDENTIFIED BY 'MDP' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'vda'@'FQDN' IDENTIFIED BY <i> WITH GRANT OPTION;</i>
+flush privileges;
+</pre>
+<ul><li> On installe le coeur <i>vda</i></li></ul>
+<pre>cd vda_3.3_solaris_amd64
+./vda-install
+Oracle Virtual Desktop Infrastructure 3.3 Installation
+Error: The software cannot be installed because Sun Ray Software 5 is already installed.
+Installing Oracle VDI 3.3 requires a new installed operating system. Then it is necessary to reboot the server and configure Oracle VDI 3.3 with  
+'/opt/SUNWvda/sbin/vda-config'.
+</pre>
+<p>Terminé&#160;! Il faut une autre machine pour VDI...
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Workaround_:_L.27Oracle_Virtual_Desktop_infrastructure_du_pauvre">Workaround&#160;: L'Oracle Virtual Desktop infrastructure du pauvre</span></h2>
+<p>On garde le principe, mais on bricole un truc sur une unique machine&#160;:
+</p>
+<ul><li> VirtualBox gère les VM</li>
+<li> ZFS (dedup=on,compression=on) gère le stockage des VM</li></ul>
+<ul><li> A télécharger&#160;:  <a rel="nofollow" class="external text" href="http://download.virtualbox.org/virtualbox/4.1.2/VirtualBox-4.1.2-73507-SunOS.tar.gz">VB4.1.2</a> et <a rel="nofollow" class="external text" href="http://download.virtualbox.org/virtualbox/4.1.2/Oracle_VM_VirtualBox_Extension_Pack-4.1.2-73507.vbox-extpack">les extensions</a></li></ul>
+<pre>tar zxvf VirtualBox-4.1.2-73507-SunOS.tar.gz
+pkgadd -d  VirtualBox-4.1.2-SunOS-r73507.pkg
+</pre>
+<ul><li> Puis installer le pack d'extension depuis le serveur.</li>
+<li> Télécharger le script de session générique, <a rel="nofollow" class="external text" href="http://blogs.sun.com/ThinkThin/resource/Addons/Kiosk-Generic-Session-0.3.tar.gz">ici</a></li></ul>
+<pre>tar zxvf Kiosk-Generic-Session-0.3.tar.gz 
+cd Kiosk-Generic-Session-0.3
+./install.sh 
+</pre>
+<ul><li> Installe un nouveau type de session dans <i>/etc/opt/SUNWkio/sessions</i> quiapparati dans le mode kiosque.</li></ul>
+<h2><span class="mw-headline" id="VirtualBox"><a href="index.php%3Ftitle=VirtualBox.html" title="VirtualBox">VirtualBox</a></span></h2>
+<h2><span class="mw-headline" id="Interface_Web_d.27administration">Interface Web d'administration</span></h2>
+<p><a rel="nofollow" class="external free" href="http://srss_serveur:1660">http://srss_serveur:1660</a>
+</p><p>Puis un certificat auto-signé vous emmène sur le port suivant.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Gestion_du_firmware">Gestion du firmware</span></h2>
+<p>Lors d'un démarrage, le DTU télécharge les éventuelles mises à jour de firmware depuis le serveur SRSS.
+</p><p>Pour cela, la façon la plus simple de procéder est la suivante&#160;:
+</p>
+<ul><li> Ajoutez, une fois pour toutes, à votre serveur DNS les deux enregistrements suivants&#160;:</li></ul>
+<pre>sunray-config-servers   IN      CNAME   serveurSRSS
+sunray-servers  IN      CNAME   serveurSRSS
+</pre>
+<ul><li> Générez les fichiers de config des firmwares pour chaque modèle de  DTU&#160;:</li></ul>
+<pre>/opt/SUNWut/sbin/utfwadm -AaV
+</pre>
+<ul><li> Vérifiez que tout y est</li></ul>
+<pre>ls /tftpboot
+</pre>
+<ul><li> Interrogez un DTU pour connaitre son état avant MaJ:</li></ul>
+<pre>/opt/SUNWut/sbin/utquery @IP_DTU
+</pre>
+<ul><li> Redémarrez les DTU (ou utilisez la <a href="index.php%3Ftitle=SunRay.html#Combinaison_de_touches_des_DTU"> touche </a> qui va bien )</li></ul>
+<p>Vous devriez voir la MaJ s'effectuer
+</p><p>Et parmi les infos, vous obtenez la
+</p>
+<ul><li> Interrogez un DTU pour connaitre son état après MaJ:</li></ul>
+<pre>/opt/SUNWut/sbin/utquery @IP_DTU
+</pre>
+<pre>..
+..
+parmsVersion=4.3_50_2011.04.22.22.07
+..
+</pre>
+<p>La nouvelle version du firmware est installée..Avec le look&amp;feel Oracle désormais&#160;;-)
+</p>
+<h2><span class="mw-headline" id="Combinaison_de_touches_des_DTU">Combinaison de touches des DTU</span></h2>
+<h2><span class="mw-headline" id="GUI_des_DTU">GUI des DTU</span></h2>
+<h2><span class="mw-headline" id="Sunray_.C3.A0_distance">Sunray à distance</span></h2>
+<ul><li> Vérifier que les flux sont chiffrés et authentifiés.</li></ul>
+<h3><span class="mw-headline" id="Ports_.C3.A0_ouvrir_dans_le_pare-feu">Ports à ouvrir dans le pare-feu</span></h3>
+<ul><li> En entrée</li></ul>
+<pre>SRV_TCP="{7007,7008,7009,7010,7011,7012,7013,7015,7077}"
+SRV_UDP="{7009,7013,40000:42000}"
+pass in quick on $IF_WAN proto tcp from $TRUST_WAN to any port $SRV_TCP rdr-to $SRV
+pass in quick on $IF_WAN proto udp from $TRUST_WAN to any port  $SRV_UDP rdr-to $SRV
+</pre>
+<h2><span class="mw-headline" id="Debug">Debug</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://wikis.sun.com/display/SRSS4dot2/SRSS+Troubleshooting+Icons">Les codes d'erreur des DTUs</a></li></ul>
+<p><b> MAJ </b>&#160;: Comme Mr Oracle colle même ses wikis sous accès restreint, j'ai récupéré ça avant fermeture&#160;: <a rel="nofollow" class="external text" href="http://www.openbsd-edu.net/html/t-s.html">c'est ici</a>
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="http://wikis.sun.com/display/SRSS4dot2/Solaris+Sun+Ray+System+Administration+Commands+-+man%281m%29">Toutes les commandes</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.google.fr/url?sa=t&amp;source=web&amp;cd=6&amp;ved=0CEkQFjAF&amp;url=http%3A%2F%2Fwww.sun-rays.org%2Flib%2Fhardware%2Fsunray%2F4.3%2FSRS5.2-AG-E22661-01.pdf&amp;rct=j&amp;q=sunray%20utfwadm%20%20firmware%20external%20dhcp&amp;ei=jaOSTuTfD8rQhAeQqdzhDw&amp;usg=AFQjCNFYCIRpAfL-FRIia0sA3dBSkKL7MQ&amp;cad=rja">Toute la doc du SRSS5.2</a></li></ul>
+<h4><span class="mw-headline" id="utdtsession:_.5BID_702911_user.error.5D_Error:_No_display_numbers_available">utdtsession: [ID 702911 user.error] Error: No display numbers available</span></h4>
+<p><i>Explication</i>&#160;:  Il manque des sessions X en stock&#160;? En fait, vous avez tout bonnement oublié d'installer le serveur X sur le serveur SRSS! Benêt,va!
+</p><p><b>Solution</b>&#160;: Installer le serveur X et le gestionnaire graphique qui va bien..
+</p>
+<h4><span class="mw-headline" id="utauthd:_.5BID_199539_user.info.5D_Worker1_NOTICE:_Denying_X.X.X.X:_Signature_validation_failed">utauthd: [ID 199539 user.info] Worker1 NOTICE: Denying X.X.X.X: Signature validation failed</span></h4>
+<p><i>Explication</i>&#160;:  Vous avez activé l'authentification cliente et le mode de sécurité complet entre client et serveur. Ce DTU n' a pas été enregistré préalablement.
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="utati_.5BID_702911_user.error.5D_Site_ATI_script_did_not_return_.27registered.27_key_on_stdout.2C_no_action_taken">utati [ID 702911 user.error] Site ATI script did not return 'registered' key on stdout, no action taken</span></h4>
+<p><i>Explication</i>&#160;:  Vous avez activé l'enregistrement préalable des smartcard avant ouverture de session. Cette carte n'a pas été enregistrée préalablement.
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="Plus_de_serveur.2C_de_token.2C_dans_l.27interface_web.21.21">Plus de serveur, de token, dans l'interface web!!</span></h4>
+<p>C'est la faute de Firefox4. Il existe un contournement&#160;:
+</p>
+<pre>cd /tmp/
+unzip /opt/SUNWut/webadmin/webapps/ut/WEB-INF/lib/suntheme.jar com/sun/web/ui/suntheme/css/css_master.css 
+echo "#f1\3Ap1\3At1 { display:block;}" &gt;&gt; com/sun/web/ui/suntheme/css/css_master.css 
+zip -r /opt/SUNWut/webadmin/webapps/ut/WEB-INF/lib/suntheme.jar com/sun/web/ui/suntheme/css/css_master.css 
+/etc/init.d/utwadmin stop; /etc/init.d/utwadmin start 
+</pre>
+<p>Tiré d'<a rel="nofollow" class="external text" href="http://www.filibeto.org/pipermail/sunray-users/2011-April/017556.html">ici</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020132913
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.410 seconds
+Real time usage: 0.432 seconds
+Preprocessor visited node count: 87/1000000
+Preprocessor generated node count: 92/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:231-0!*!0!!fr!5!* and timestamp 20171020132913 and revision id 1918
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=SunRay_:_Principe_%26_Installation&amp;oldid=1918">http://www.openbsd-edu.net/index.php?title=SunRay_:_Principe_%26_Installation&amp;oldid=1918</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=SunRay+%253A+Principe+%2526+Installation.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="./index.php%3Ftitle=SunRay_:_Principe_%2526_Installation.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:SunRay_:_Principe_%26_Installation&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=SunRay.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="./index.php%3Ftitle=SunRay_:_Principe_%2526_Installation.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=SunRay_:_Principe_%26_Installation&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=SunRay_:_Principe_%26_Installation&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=SunRay.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FSunRay_:_Principe_%2526_Installation.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/SunRay_:_Principe_%26_Installation" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=SunRay_:_Principe_%26_Installation&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=SunRay_:_Principe_%26_Installation&amp;oldid=1918" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=SunRay_:_Principe_%26_Installation&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 4 janvier 2012 à 13:49.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.410","walltime":"0.432","ppvisitednodes":{"value":87,"limit":1000000},"ppgeneratednodes":{"value":92,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132914","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1919});});</script>
+	</body>
+</html>

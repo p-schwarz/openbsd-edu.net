@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>VirtualBox — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"VirtualBox","wgTitle":"VirtualBox","wgCurRevisionId":2646,"wgRevisionId":2646,"wgArticleId":241,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"VirtualBox","wgRelevantArticleId":241,"wgRequestId":"9870610c2cc938397fc96b5a","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-VirtualBox rootpage-VirtualBox skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">VirtualBox</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=VirtualBox.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=VirtualBox.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=VirtualBox.html#Mise_.C3.A0_jour_de_VBox.2FSolaris"><span class="tocnumber">1</span> <span class="toctext">Mise à jour de VBox/Solaris</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=VirtualBox.html#Extensions"><span class="tocnumber">2</span> <span class="toctext">Extensions</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=VirtualBox.html#Migration_du_r.C3.A9pertoire_des_VM"><span class="tocnumber">3</span> <span class="toctext">Migration du répertoire des VM</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=VirtualBox.html#Cr.C3.A9ation_d.27une_VM_en_ligne_de_commande_.28CLI.29"><span class="tocnumber">3.1</span> <span class="toctext">Création d'une VM en ligne de commande (CLI)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=VirtualBox.html#Debug"><span class="tocnumber">4</span> <span class="toctext">Debug</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=VirtualBox.html#Debian.2C_pas_d.27acc.C3.A8s_au_port_USB_dans_la_VM"><span class="tocnumber">4.1</span> <span class="toctext">Debian, pas d'accès au port USB dans la VM</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=VirtualBox.html#Install_Windows_7_impossible"><span class="tocnumber">4.2</span> <span class="toctext">Install Windows 7 impossible</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Mise_.C3.A0_jour_de_VBox.2FSolaris">Mise à jour de VBox/Solaris</span></h3>
+<pre>wget <a rel="nofollow" class="external free" href="http://download.virtualbox.org/virtualbox/4.1.4/Oracle_VM_VirtualBox_Extension_Pack-4.1.4-74291.vbox-extpack">http://download.virtualbox.org/virtualbox/4.1.4/Oracle_VM_VirtualBox_Extension_Pack-4.1.4-74291.vbox-extpack</a>
+tar zxvf VirtualBox-4.1.4-74291-SunOS.tar.gz 
+pkgrm SUNWvbox
+pkgadd -d VirtualBox-4.1.4-SunOS-r74291.pkg
+VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-4.1.4-74291.vbox-extpack
+</pre>
+<h3><span class="mw-headline" id="Extensions">Extensions</span></h3>
+<ul><li>En CLI&#160;: </li></ul>
+<pre> VBoxManage extpack install --replace Oracle_VM_VirtualBox_Extension_Pack-4.1.4-74291.vbox-extpack
+</pre>
+<ul><li> Sous Windows7</li></ul>
+<pre>Il faut redémarrer en mode sans échaec (F8) puis installer les add-ons, puis redémarrer.
+</pre>
+<h2><span class="mw-headline" id="Migration_du_r.C3.A9pertoire_des_VM">Migration du répertoire des VM</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://robertoschiabel.wordpress.com/2013/04/21/virtualbox-move-vm-to-another-disk/">[1]</a>
+</p>
+<h3><span class="mw-headline" id="Cr.C3.A9ation_d.27une_VM_en_ligne_de_commande_.28CLI.29">Création d'une VM en ligne de commande (CLI)</span></h3>
+<pre>
+#!/bin/bash
+#Creation d'une VM en CLI
+#Paramètres à modifier
+TYPE=Ubuntu
+RAM=1024
+SIZE=80000
+PATH2ISO=/home/10.iso
+RIF=bge1
+IPSRV_RIF=@IP
+
+ VBoxManage createvm --name "$1" --ostype $TYPE --register
+ VBoxManage modifyvm "$1" --memory $RAM --acpi on --boot1 dvd --boot2 disk  --nic1 bridged  --nictype1 82540EM --bridgeadapter1 $RIF --audio oss
+  --usb on  --usbehci on --vrde on --vrdemulticon on  --vrdevideochannel on   --vrdevideochannelquality 100 --accelerate3d on --vrdeaddress $IPSRV_RIF
+ VBoxManage createhd --filename "$1.vdi" --size $SIZE
+ VBoxManage storagectl "$1" --name "IDE Controller" --add ide --controller PIIX4
+ VBoxManage storageattach "$1" --storagectl "IDE Controller" --port 0 --device 0 --type hdd --medium "$1.vdi"
+ VBoxManage storageattach "$1" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium $PATH2ISO
+ VBoxHeadless --startvm "$1"
+
+</pre>
+<ul><li> Lancer la VM&#160;: </li></ul>
+<pre>VBoxHeadless --startvm VM
+</pre>
+<ul><li> Modifier la VM pour lui intégrer une carte réseau compatible WinXP de base</li></ul>
+<pre>VBoxManage modifyvm "VM" --nictype1 Am79C973
+</pre>
+<p><br />
+</p>
+<ul><li> Attacher la carte réseau de la VM à la bonne interface physique du serveur avec le câble réseau virtuel branché&#160;:</li></ul>
+<pre>VBoxManage modifyvm "VM" --nictype1 Am79C973 --bridgeadapter1 net0 --cableconnected1 on
+</pre>
+<ul><li> Voir les infos de la VM</li></ul>
+<pre>VBoxManage showvminfo  VM
+</pre>
+<ul><li> Attacher un DVD au lecteur&#160;:</li></ul>
+<pre>VBoxManage storageattach  "VM" --storagectl "IDE Controller" --port 0 --device 1 --type dvddrive --medium /root/WarcraftIII.iso&#160;:-)
+</pre>
+<h2><span class="mw-headline" id="Debug">Debug</span></h2>
+<h3><span class="mw-headline" id="Debian.2C_pas_d.27acc.C3.A8s_au_port_USB_dans_la_VM">Debian, pas d'accès au port USB dans la VM</span></h3>
+<p><i>Erreur d'accès au sous-système USB.</i>
+Le service de relais de périphériques USB n'a pas pû être activé (erreur VERR_FILE_NOT_FOUND). Il se peut que le service ne soit pas installé sur l'ordinateur hôte.
+</p><p>Ajouter l'user au groupe vboxusers et redémarrer la session
+</p>
+<ul><li>SOuci USB de montage&#160;:</li></ul>
+<p><i>Failed to create a proxy device for the USB device. (Error: VERR_READ_ERROR).</i>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Install_Windows_7_impossible">Install Windows 7 impossible</span></h3>
+<p>Erreur  0xc0000225&#160;:
+Il faut activer les IO Apic sur la VM.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020100542
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.040 seconds
+Real time usage: 0.044 seconds
+Preprocessor visited node count: 35/1000000
+Preprocessor generated node count: 52/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:241-0!*!*!!fr!*!* and timestamp 20171020100542 and revision id 2646
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=VirtualBox&amp;oldid=2646">http://www.openbsd-edu.net/index.php?title=VirtualBox&amp;oldid=2646</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=VirtualBox.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=VirtualBox.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:VirtualBox&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=VirtualBox.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=VirtualBox.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=VirtualBox&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=VirtualBox&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=VirtualBox.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FVirtualBox.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/VirtualBox" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=VirtualBox&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=VirtualBox&amp;oldid=2646" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=VirtualBox&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 28 avril 2014 à 12:15.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.040","walltime":"0.044","ppvisitednodes":{"value":35,"limit":1000000},"ppgeneratednodes":{"value":52,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020100542","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1362});});</script>
+	</body>
+</html>

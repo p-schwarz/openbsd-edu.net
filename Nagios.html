@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Nagios — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Nagios","wgTitle":"Nagios","wgCurRevisionId":2232,"wgRevisionId":2232,"wgArticleId":71,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Nagios","wgRelevantArticleId":71,"wgRequestId":"3e508f08fa4fcf43e12ce024","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Nagios rootpage-Nagios skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Nagios</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Nagios.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Nagios.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>Ce sera Nagios3 Sous debian Squeeze (Mais fonctionnel sous Lenny)
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Nagios.html#Install_Nagios3"><span class="tocnumber">1</span> <span class="toctext">Install Nagios3</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Nagios.html#Usage"><span class="tocnumber">2</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Nagios.html#Tests"><span class="tocnumber">3</span> <span class="toctext">Tests</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Nagios.html#A_v.C3.A9rifier_au_pr.C3.A9alable"><span class="tocnumber">4</span> <span class="toctext">A vérifier au préalable</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Nagios.html#Ajouter_utilisateur_Nagios"><span class="tocnumber">4.1</span> <span class="toctext">Ajouter utilisateur Nagios</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Nagios.html#G.C3.A9rer_le_reboot_du_serveur_Nagios"><span class="tocnumber">4.2</span> <span class="toctext">Gérer le reboot du serveur Nagios</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Nagios.html#G.C3.A9n.C3.A9rer_les_cles_SSH"><span class="tocnumber">4.3</span> <span class="toctext">Générer les cles SSH</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Nagios.html#Ajouter_les_plugins_Nagios"><span class="tocnumber">4.4</span> <span class="toctext">Ajouter les plugins Nagios</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Nagios.html#MySQL_:_Ajouter_user_nagios_sur_le_SE3"><span class="tocnumber">4.5</span> <span class="toctext">MySQL&#160;:  Ajouter user nagios sur le SE3</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Nagios.html#G.C3.A9n.C3.A9rer_les_cles_SSH_2"><span class="tocnumber">4.6</span> <span class="toctext">Générer les cles SSH</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Nagios.html#Ajouter_les_plugins_Nagios_2"><span class="tocnumber">4.7</span> <span class="toctext">Ajouter les plugins Nagios</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Nagios.html#MySQL_:_Ajouter_user_nagios_sur_le_SE3_2"><span class="tocnumber">4.8</span> <span class="toctext">MySQL&#160;:  Ajouter user nagios sur le SE3</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Nagios.html#Config_.26_Scripts_Nagios3"><span class="tocnumber">4.9</span> <span class="toctext">Config &amp; Scripts Nagios3</span></a>
+<ul>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=Nagios.html#templates.cfg"><span class="tocnumber">4.9.1</span> <span class="toctext">templates.cfg</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=Nagios.html#services.cfg"><span class="tocnumber">4.9.2</span> <span class="toctext">services.cfg</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="index.php%3Ftitle=Nagios.html#hostgroup.cfg"><span class="tocnumber">4.9.3</span> <span class="toctext">hostgroup.cfg</span></a></li>
+<li class="toclevel-3 tocsection-17"><a href="index.php%3Ftitle=Nagios.html#by_ssh.cfg"><span class="tocnumber">4.9.4</span> <span class="toctext">by_ssh.cfg</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="index.php%3Ftitle=Nagios.html#La_Geek-solution"><span class="tocnumber">5</span> <span class="toctext">La Geek-solution</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Nagios.html#Surveillance_active"><span class="tocnumber">5.1</span> <span class="toctext">Surveillance active</span></a>
+<ul>
+<li class="toclevel-3 tocsection-20"><a href="index.php%3Ftitle=Nagios.html#IPhone_:_Inag"><span class="tocnumber">5.1.1</span> <span class="toctext">IPhone&#160;: Inag</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="index.php%3Ftitle=Nagios.html#Android_:_Nagroid"><span class="tocnumber">5.1.2</span> <span class="toctext">Android&#160;: Nagroid</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=Nagios.html#Surveillance_passive_:_Prowl"><span class="tocnumber">5.2</span> <span class="toctext">Surveillance passive&#160;: Prowl</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="index.php%3Ftitle=Nagios.html#Visualisation_seule"><span class="tocnumber">6</span> <span class="toctext">Visualisation seule</span></a></li>
+<li class="toclevel-1 tocsection-24"><a href="index.php%3Ftitle=Nagios.html#Surveillance_de_diff.C3.A9rents_services"><span class="tocnumber">7</span> <span class="toctext">Surveillance de différents services</span></a>
+<ul>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=Nagios.html#Apache2"><span class="tocnumber">7.1</span> <span class="toctext">Apache2</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="index.php%3Ftitle=Nagios.html#On_le_stresse_un_peu_ce_serveur_web_.3F.3F"><span class="tocnumber">7.2</span> <span class="toctext">On le stresse un peu ce serveur web&#160;??</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="index.php%3Ftitle=Nagios.html#Debug"><span class="tocnumber">8</span> <span class="toctext">Debug</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Install_Nagios3">Install Nagios3</span></h2>
+<pre>
+apt-get install nagios3 
+htpasswd -c /etc/nagios3/htpasswd.users nagiosadmin 
+</pre>
+<p>Attention , nagiosamdin est l'user par défaut. Si vous choisissez un autre nom&#160;:
+</p>
+<pre>perl -pi -e 's/nagiosadmin/NOUVEAUNOM/g' /etc/nagios3/cgi.cfg
+</pre>
+<p>Modifier&#160;: /etc/nagios3/nagios.cfg
+</p>
+<pre>
+cfg_file=/etc/nagios3/objects/commands.cfg
+cfg_file=/etc/nagios3/objects/contacts.cfg
+cfg_file=/etc/nagios3/objects/timeperiods.cfg
+cfg_file=/etc/nagios3/objects/templates.cfg
+cfg_file=/etc/nagios3/objects/hostextinfo.cfg
+cfg_file=/etc/nagios3/objects/service.cfg
+cfg_file=/etc/nagios3/objects/hostgroups.cfg
+
+cfg_file=/etc/nagios3/objects/windows.cfg
+cfg_file=/etc/nagios3/objects/esx.cfg
+cfg_file=/etc/nagios3/objects/dtu-2.cfg
+#cfg_file=/etc/nagios3/objects/dtu.cfg
+cfg_file=/etc/nagios3/objects/wifi.cfg
+cfg_file=/etc/nagios3/objects/linux.cfg
+cfg_file=/etc/nagios3/objects/solaris.cfg
+cfg_file=/etc/nagios3/objects/openbsd.cfg
+cfg_file=/etc/nagios3/objects/switch.cfg
+cfg_file=/etc/nagios3/objects/printer.cfg
+
+</pre>
+<p><br />
+Localisations&#160;:
+Les images 
+</p>
+<pre>/usr/share/nagios3/htdocs/images/logos
+</pre>
+<pre>mkdir objects
+touch objects/commands.cfg
+touch objects/contacts.cfg
+touch objects/timeperiods.cfg
+touch objects/templates.cfg
+touch objects/windows.cfg
+touch objects/switch.cfg
+touch objects/printer.cfg
+touch objects/service.cfg
+touch objects/hostgroups.cfg
+touch objects/wifi.cfg
+touch objects/linux.cfg
+touch objects/openbsd.cfg
+</pre>
+<p><br />
+</p><p>C'est tout.
+Puis aller sur <a rel="nofollow" class="external free" href="http://@IP/nagios">http://@IP/nagios</a>
+</p><p><i>J'ai abandonné l'installation de centreon/Oréon, des usines à gaz..</i>
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<p>Côté serveur, j'ai fait cette doc&#160;: <a rel="nofollow" class="external autonumber" href="http://wwdeb.crdp.ac-caen.fr/mediase3/index.php/Surveillance">[1]</a> dont voici l'original&#160;:
+</p><p>Notez que <b>se3</b> est un projet communautaire de serveur pour les lycées, collèges etc...
+</p><p><br />
+<b>Comment surveiller à distance le bon fonctionnement du serveur se3&#160;?</b>
+</p><p>Il est tout à fait possible de surveiller localement le serveur; c'est le rôle de  l'interface d'alerte.
+</p><p><i>Merci à Mr Plouf pour cette précision.</i>
+</p><p>Néanmoins, il peut être utile de faire reposer la surveillance du se3 sur une autre machine. Si vous avez de multiples serveurs, ça me semble même tout à fait indispensable. 
+</p><p><br />
+</p><p>Le choix du logiciel de surveillance est Nagios. Pour la métrologie on verra plus tard.
+</p><p>L'installation du serveur Nagios (version 3) n'est pas décrite ici.
+</p><p>J'ai délibérément fait le choix de passer un peu de temps à l'installation des prérequis sur le serveur se3 afin d'avoir un plus grand contrôle sur les tests et une meilleure sécurité.
+</p><p>Les tests seront donc effectués pour certains en local grâce aux capacités de check_by_ssh.
+</p><p>Le principe est de créer un utilisateur local se3 (user Unix, pas LDAP) qui fera les tests locaux en permettant ainsi de ne pas ouvrir nrpe ou nsca les modules de check distants de Nagios. Cet user renvoit les résultats des tests par un tunnel ssh au serveur Nagios.
+</p><p><br />
+Au final, vous aurez ça&#160;: 
+</p><p><a href="./index.php%3Ftitle=Fichier:Nagios-se3.png.html" class="image"><img alt="Nagios-se3.png" src="images/1/1e/Nagios-se3.png" width="1056" height="167" /></a>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Tests">Tests</span></h2>
+<p>Les tests actuellement disponibles sont
+</p><p><br />
+</p>
+<table border="1" cellpadding="5">
+
+<tr>
+<td> <b>Nom du test</b>
+</td>
+<td> <b>Service testé</b>
+</td>
+<td><b>Test local/Distant</b>
+</td></tr>
+
+<tr>
+<td> ApacheSe3
+</td>
+<td> Interface d'administration Se3
+</td>
+<td>Distant
+</td></tr>
+
+<tr>
+<td> Charge CPU
+</td>
+<td> Etat des CPU
+</td>
+<td> Local
+</td></tr>
+
+<tr>
+<td> DHCP
+</td>
+<td> Etat du serveur DHCP
+</td>
+<td> Distant
+</td></tr>
+
+<tr>
+<td> DisqueSe3
+</td>
+<td> Etat des partitions /var/se3, /var , /home
+</td>
+<td> Local
+</td></tr>
+
+
+<tr>
+<td> LDAP
+</td>
+<td> Annuaire en état
+</td>
+<td> Distant
+</td></tr>
+
+<tr>
+<td> MySQL
+</td>
+<td> Etat de la base MySQL
+</td>
+<td> Local
+</td></tr>
+
+<tr>
+<td> SSH
+</td>
+<td> Serveur SSH OK
+</td>
+<td> Distant
+</td></tr>
+
+<tr>
+<td>TFTP
+</td>
+<td> Le serveur TFTP tourne et un pxelinux.0 est disponible
+</td>
+<td> Distant
+</td></tr>
+
+
+
+
+</table>
+<h2><span class="mw-headline" id="A_v.C3.A9rifier_au_pr.C3.A9alable">A vérifier au préalable</span></h2>
+<ul><li> Autoriser ICMP (les ping) sur le serveur se3 depuis le serveur Nagios</li></ul>
+<p><b>Client</b>&#160;: La commande est à passer sur le serveur à surveiller
+</p><p><b>Nagios</b>&#160;: La commande est à passer  sur le serveur Nagios
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Ajouter_utilisateur_Nagios">Ajouter utilisateur Nagios</span></h3>
+<ul><li><b>Client</b>  Linux</li></ul>
+<pre>adduser nagios 
+</pre>
+<p>(N'importe quel mdp)
+</p>
+<ul><li><b>Client</b>  OpenBSD</li></ul>
+<pre>adduser nagios 
+</pre>
+<p>(Shell = nologin)
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="G.C3.A9rer_le_reboot_du_serveur_Nagios">Gérer le reboot du serveur Nagios</span></h3>
+<p><b>Nagios</b>  
+</p><p>L'utilisateur nagios existe dont le repertoire home est /var/lib/nagios
+</p>
+<pre>
+su nagios -c` ssh-keygen -t rsa -f /root/Nagios_id_rsa`
+ Generating public/private rsa key pair.
+
+ echo "
+ #!/bin/bash
+ cp /root/Nagios_id_rsa/* /var/run/nagios3/.ssh/
+ chown nagios.nagios /var/run/nagios3/.ssh/*
+ logger -t NagiosBoot "Recopie des cles Nagios"
+" &gt; /usr/script/clenagios.sh
+
+chmod +x /usr/script/clenagios.sh
+
+/usr/script/clenagios.sh
+
+</pre>
+<p>Maintenant, on fait en sorte que le nécessaire soit fait au reboot&#160;:
+</p><p><br />
+Copier ça dans /etc/init.d/clenagios
+</p>
+<pre>
+#!/bin/bash
+
+case "$1" in
+  start) 
+        # au démarrage
+       /usr/script/clenagios.sh 
+	;;
+  stop)   
+        # à l'arret
+       &#160;;;
+  *)
+        exit 3
+       &#160;;;
+esac
+</pre>
+<pre>
+/usr/script/clenagios.sh 
+update-rc.d clenagios defaults 58
+
+
+
+</pre>
+<h3><span class="mw-headline" id="G.C3.A9n.C3.A9rer_les_cles_SSH">Générer les cles SSH</span></h3>
+<p><b>SE3</b> 
+</p>
+<pre>sudo -u nagios ssh-keygen -t rsa
+</pre>
+<p><b>N</b> On vérifie la connexion&#160;: (Important, il faut accepter l'hôte une 1ère fois)
+</p>
+<pre>scp -P PORT_SSH /var/run/nagios3/.ssh/id_rsa.pub root@IP_SE3:/home/nagios/.ssh/authorized_keys
+sudo -u nagios ssh -p PORT_SSH nagios@IP_SE3
+yes
+exit
+</pre>
+<p><b>SE3</b> 
+</p>
+<pre>chown nagios.nagios /home/nagios/.ssh/authorized_keys
+</pre>
+<p><b>N</b>
+</p>
+<pre>sudo -u nagios ssh -p PORT_SSH nagios@IP_SE3
+</pre>
+<p>Si cette dernière commande ne se fait pas <i>automatiquement</i>, vous avez un souci de clé, la suite ne fonctionnera pas.
+</p>
+<h3><span class="mw-headline" id="Ajouter_les_plugins_Nagios">Ajouter les plugins Nagios</span></h3>
+<p><b>SE3</b>
+</p>
+<pre> apt-get install nagios-plugins lm-sensors sensord
+</pre>
+<p>On se fiche des réponses; répondre par entrée 2X
+</p>
+<pre> mkdir -p /usr/script/nagios
+ cp /usr/lib/nagios/plugins/* /usr/script/nagios/
+ chown nagios /usr/script/nagios/*
+</pre>
+<h3><span class="mw-headline" id="MySQL_:_Ajouter_user_nagios_sur_le_SE3">MySQL&#160;:  Ajouter user nagios sur le SE3</span></h3>
+<p><b>SE3</b>&#160;:
+</p>
+<pre>
+ mysql
+   use mysql;
+   insert into user (Host,User,password) values ('localhost','nagios',password('Le mot de passe Mysql de l'user Nagios.'));
+   flush privileges;
+   exit
+</pre>
+<p><br />
+</p>
+<pre>
+ echo "[client]
+ password=le fameux mdp Mysql
+ user=nagios
+" &gt; /home/nagios/.my.cnf
+chown nagios.nagios /home/nagios/.my.cnf
+chmod 400  /home/nagios/.my.cnf
+</pre>
+<p><br />
+Tester la cx mysql:
+</p>
+<pre>su nagios
+mysql
+</pre>
+<p>Vous devez arriver à l'invite de commande MySQL.
+</p>
+<h3><span class="mw-headline" id="G.C3.A9n.C3.A9rer_les_cles_SSH_2">Générer les cles SSH</span></h3>
+<p><b>SE3</b> 
+</p>
+<pre>su -u nagios ssh-keygen -t rsa
+</pre>
+<p><b>N</b> On vérifie la connexion&#160;: (Important, il faut accepter l'hôte une 1ère fois)
+</p>
+<pre>scp -P PORT_SSH /var/run/nagios3/.ssh/id_rsa.pub root@IP_SE3:/home/nagios/.ssh/authorized_keys
+sudo -u nagios ssh -p PORT_SSH nagios@IP_SE3
+yes
+exit
+</pre>
+<p><b>SE3</b> 
+</p>
+<pre>chown nagios.nagios /home/nagios/.ssh/authorized_keys
+</pre>
+<p><b>N</b>
+</p>
+<pre>sudo -u nagios ssh -p PORT_SSH nagios@IP_SE3
+</pre>
+<p>Si cette dernière commande ne se fait pas <i>automatiquement</i>, vous avez un souci de clé, la suite ne fonctionnera pas.
+</p>
+<h3><span class="mw-headline" id="Ajouter_les_plugins_Nagios_2">Ajouter les plugins Nagios</span></h3>
+<p><b>SE3</b>
+</p>
+<pre> apt-get install nagios-plugins lm-sensors sensord
+</pre>
+<p>On se fiche des réponses; répondre par entrée 2X
+</p>
+<pre> mkdir -p /usr/script/nagios
+ cp /usr/lib/nagios/plugins/* /usr/script/nagios/
+ chown nagios /usr/script/nagios/*
+</pre>
+<h3><span class="mw-headline" id="MySQL_:_Ajouter_user_nagios_sur_le_SE3_2">MySQL&#160;:  Ajouter user nagios sur le SE3</span></h3>
+<p><b>SE3</b>&#160;:
+</p>
+<pre>
+ mysql
+   use mysql;
+   insert into user (Host,User,password) values ('localhost','nagios',password('Le mot de passe Mysql de l'user Nagios.'));
+   flush privileges;
+   exit
+</pre>
+<p><br />
+</p>
+<pre>
+ echo "[client]
+ password=le fameux mdp Mysql
+ user=nagios
+" &gt; /home/nagios/.my.cnf
+chown nagios.nagios /home/nagios/.my.cnf
+chmod 400  /home/nagios/.my.cnf
+</pre>
+<p><br />
+Tester la cx mysql:
+</p>
+<pre>su nagios
+mysql
+</pre>
+<p>Vous devez arriver à l'invite de commande MySQL.
+</p>
+<h3><span class="mw-headline" id="Config_.26_Scripts_Nagios3">Config &amp; Scripts Nagios3</span></h3>
+<p>Dans /etc/nagios3/objects
+</p>
+<h4><span class="mw-headline" id="templates.cfg">templates.cfg</span></h4>
+<pre>
+
+
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="services.cfg">services.cfg</span></h4>
+<pre>
+###### Tftp #####
+define service{
+use generic-service
+hostgroup_name     tftp_servers
+service_description Tftp
+check_command check_tftp
+}
+
+###### Users  #####
+define service{
+use generic-service
+hostgroup_name     users_servers
+service_description Utilisateurs
+check_command check_ssh_users
+}
+
+###### Apache se3 ######
+define service{
+use generic-service
+host_name       se3
+service_description ApacheSe3
+check_command check_tcp!909
+}
+
+
+######### MySQL BY SSH #######
+define service{
+use generic-service
+hostgroup_name     mysql_servers
+service_description MySQL
+check_command check_ssh_mysql
+}
+
+######### LOAD_BY_SSH  ###
+define service{
+use generic-service
+hostgroup_name load_servers
+service_description Charge CPU
+check_command check_ssh_load!5.0,4.0,3.0!10.0,6.0,4.0
+}
+
+
+######### DISK__SE3_BY_SSH ####
+define service{
+use generic-service
+hostgroup_name  se3_disk_servers
+service_description Disque Se3
+check_command check_ssh_se3_disk!70%!50%!/var/se3!70%!50%!/home!75%!60%!/var
+}
+
+
+######### SSH  ###
+#define service{
+#use generic-service
+#hostgroup_name     ssh_22_servers
+#service_description SSH
+#check_command check_ssh_port!22
+#}
+define service{
+use generic-service
+hostgroup_name     ssh_1022_servers
+service_description SSH
+check_command check_ssh_port!1022
+}
+
+
+######### DHCP ######
+define service{
+use generic-service
+host_name se3
+service_description DHCP
+check_command check_dhcp
+}
+
+
+######### LDAP #########
+
+define service{
+use generic-service
+host_name se3
+service_description LDAP
+check_command check_ldap
+}
+
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="hostgroup.cfg">hostgroup.cfg</span></h4>
+<pre>
+
+###### Les Serveurs avec TFTP  ####
+define hostgroup {
+        hostgroup_name  tftp_servers
+        alias           Tftp
+        members       se3
+}
+
+###### Les Serveurs SE3 #####
+define hostgroup {
+        hostgroup_name  se3_disk_servers
+        alias           Disques serveurs se3
+        members         se3
+}
+
+###### Les Serveurs qui z'ont une charge CPU.. ##
+define hostgroup {
+        hostgroup_name  load_servers
+        alias           Serveurs avec CPU..
+        members         euclide,darwin,se3,fourier,galilee,arrhenius,penzias,faraday
+}
+
+###### Les Serveurs MySQL ####
+define hostgroup {
+        hostgroup_name  mysql_servers
+        alias           Serveurs MySQL
+        members         galilee,fourier,arrhenius,se3
+}
+
+
+###### Les Serveurs SSH sur port non-standard #######
+define hostgroup {
+        hostgroup_name  ssh_1022_servers
+        alias           Serveurs SSH port 1022
+        members         darwin,thales,esx1,esx2,se3,faraday,solaris,galilee, fourier,arrhenius,penzias,euclide
+
+}
+
+</pre>
+<p>Dans /etc/nagios-plugins/config
+</p>
+<h4><span class="mw-headline" id="by_ssh.cfg">by_ssh.cfg</span></h4>
+<pre>
+
+# 'check_ssh_se3_disk'
+define command{
+        command_name    check_ssh_se3_disk
+        command_line    $USER1$/check_by_ssh -H $HOSTADDRESS$ -p 1022 -i /var/run/nagios3/.ssh/id_rsa -l nagios -C "/usr/script/nagios/check_disk -u 
+
+GB -w $ARG1$ -c $ARG2$ -p $ARG3$ -w $ARG4$ -c $ARG5$ -p $ARG6$ -w $ARG7$ -c $ARG8$ -p $ARG9$"
+}
+
+# 'check_ssh_users'
+define command{
+        command_name    check_ssh_users
+        command_line    $USER1$/check_by_ssh -H $HOSTADDRESS$ -p 1022 -i /var/run/nagios3/.ssh/id_rsa -l nagios -C "/usr/script/nagios/check_users -w 
+
+20 -c 50"
+}
+
+
+# 'check_ssh_mysql'
+define command{
+        command_name    check_ssh_mysql
+        command_line    $USER1$/check_by_ssh -H $HOSTADDRESS$ -p 1022 -i /var/run/nagios3/.ssh/id_rsa -l nagios -C "/usr/script/nagios/check_mysql -p 
+
+MdpMySQLUserNagios"
+}
+
+# 'check_ssh_load'
+define command{
+        command_name    check_ssh_load
+        command_line    $USER1$/check_by_ssh -H $HOSTADDRESS$ -p 1022 -i /var/run/nagios3/.ssh/id_rsa -l nagios -C "/usr/script/nagios/check_load -w 
+
+$ARG1$ -c $ARG2$"
+}
+
+
+</pre>
+<p><br />
+<b>Important </b>&#160;:
+Si vos tests fonctionnent enligne de commande, mais échouent avec le check_by_ssh, vous <b>devez</b> rendre le serveur nagios connu du se3, soit par son nom DNS, soit par le fichier /etc/hosts.
+</p>
+<h2><span class="mw-headline" id="La_Geek-solution">La Geek-solution</span></h2>
+<h3><span class="mw-headline" id="Surveillance_active">Surveillance active</span></h3>
+<h4><span class="mw-headline" id="IPhone_:_Inag">IPhone&#160;: Inag</span></h4>
+<p>Si vous avez un joli téléphone bien fermé avec une pomme derrière, je ne saurais trop vous conseiller de craquer pour une des meilleures applis que j'y ai trouvé&#160;: <a rel="nofollow" class="external text" href="http://idevelop.fullnet.com/iapps/modules/apps/inag.php">inag</a>.
+</p><p>Quelques copies d'écran pour vous donner envie...
+</p><p><br />
+</p>
+<table border="1" cellpadding="5">
+
+<tr>
+<td> L'écran synthétique&#160;:
+</td>
+<td> Le se3 en direct
+</td></tr>
+
+<tr>
+<td><a href="./index.php%3Ftitle=Fichier:Inag-Tactical.png.html" class="image"><img alt="Inag-Tactical.png" src="images/d/d2/Inag-Tactical.png" width="300" height="386" /></a>
+</td>
+<td><a href="./index.php%3Ftitle=Fichier:Inag-se3.png.html" class="image"><img alt="Inag-se3.png" src="images/3/3d/Inag-se3.png" width="300" height="374" /></a>
+</td></tr>
+
+</table>
+<ul><li> Téléchargez le paquet&#160;: <a rel="nofollow" class="external autonumber" href="http://idevelop.fullnet.com/iapps/modules/wfdownloads/viewcat.php?cid=1">[2]</a></li>
+<li> Modifiez les deux clés $ROkey et $RWkey dans inag.php</li>
+<li> Installez le inag.php dans l'arborescence du serveur web <b>public</b>, accessible en <b>httpS</b>...</li></ul>
+<ul><li> Ajoutez, sur le serveur web, dans la crontab, un lien vers ce script&#160;:</li></ul>
+<pre>#!/usr/local/bin/bash
+scp -P PORT USER@IP_Nagios:/var/cache/nagios3/status.dat /var/www/tmp/
+scp -P PORT USER@IP_Nagios:/var/log/nagios3/nagios.log /var/www/tmp/
+</pre>
+<ul><li> Ajoutez sur le serveur Nagios un user dédié</li></ul>
+<pre>adduser USER
+</pre>
+<ul><li> Mettre USER dans le groupe www-data</li></ul>
+<p>ne pas lui coller de shell
+</p>
+<ul><li> Générer la structure SSH qui va bien</li></ul>
+<pre>su USER -c ssh-keygen
+</pre>
+<ul><li> Générer sur le serveur web le trousseau</li></ul>
+<pre>ssh-keygen -t rsa -b 1024
+</pre>
+<p>1024, pour des infos de monitoring ça devrait suffire.
+</p>
+<ul><li> Copier la clé publique sur le serveur Nagios</li></ul>
+<pre>scp /root/.ssh/id_rsa.pub USER@NAGIOS:/home/USER/.ssh/authorized_keys
+</pre>
+<h4><span class="mw-headline" id="Android_:_Nagroid">Android&#160;: Nagroid</span></h4>
+<p>L'<a rel="nofollow" class="external text" href="http://code.google.com/p/nagroid/">équivalent</a>] semble exister sur le smartphone de Google 
+</p><p><i>Merci à Olivier Sauzet pour la référence</i>
+</p>
+<h3><span class="mw-headline" id="Surveillance_passive_:_Prowl">Surveillance passive&#160;: Prowl</span></h3>
+<p>Et si le serveur Nagios vous prévenait d'un souci sans même que vous ayez à penser à son existence&#160;??? L'idée est totalement reprise d'<a rel="nofollow" class="external text" href="http://reluctanthacker.rollett.org/content/setting-nagios3-send-prowl-notifications">ici</a>.
+</p><p>Il vous suffit de vous enregistrer chez prowl, de télécharger l'appli sur votre closed-smartphone à la pomme et d'ajouter les notifications suivantes à votre nagios&#160;:
+</p>
+<pre>wget -O /usr/local/bin/prowl.pl <a rel="nofollow" class="external free" href="http://prowl.weks.net/static/prowl.pl">http://prowl.weks.net/static/prowl.pl</a>
+chmod +x /usr/local/bin/prowl.pl
+apt-get install libwww-perl libcrypt-ssleay-perl
+</pre>
+<p>N'oubliez pas de vous enregistrer pour obtenir la clé&#160;:
+<a rel="nofollow" class="external autonumber" href="https://prowl.weks.net/register.php">[3]</a>
+</p><p>Un script de test&#160;:
+</p>
+<pre>#!/bin/bash
+DATE=`date "+%Y-%m-%d_%H:%M"`
+/usr/local/bin/prowl.pl -apikey='LACLEAPIDEPROWL ' -application='SRV_Nagios' -event="Notification \n -$DATE-"  -notification="$1"
+</pre>
+<p>Puis
+</p>
+<pre>script.sh Coucou
+</pre>
+<p><br />
+</p>
+<ul><li> Dans commands.cfg</li></ul>
+<pre>
+define command{
+        command_name notify-prowl-host
+        command_line /usr/bin/perl -w /usr/local/bin/prowl.pl  -apikey="$_CONTACTPROWL_APIKEY$" -priority=1 -application="Nagios" -event="Host" 
+-notification="$HOSTNAME$ $HOSTSTATE$ "
+}
+
+define command{
+        command_name notify-prowl-service
+        command_line /usr/bin/perl -w /usr/local/bin/prowl.pl  -apikey="$_CONTACTPROWL_APIKEY$" -priority=1 -application="Nagios" -event="Service" 
+-notification="$HOSTNAME$ $SERVICEDESC$ '$SERVICEOUTPUT$'"
+        #command_line /usr/bin/perl -w /usr/local/bin/prowl.pl -apikey="$_CONTACTPROWL_APIKEY$" -priority=1 -application="Nagios" -event="Service" 
+-notification="$HOSTNAME$ $SERVICEDESC$ '$SERVICEOUTPUT$'"
+}
+
+</pre>
+<ul><li> Dans contacts.cfg</li></ul>
+<pre>
+  host_notification_commands   notify-prowl-host,host-notify-by-email,notify-by-muzik
+  service_notification_commands   notify-prowl-service,notify-by-email,notify-by-muzik,service-notify-by-email
+  _prowl_apikey                   LacléfournieparProwl
+</pre>
+<p><br />
+Et vous recevrez une notification au moindre souci...si votre ligne internet est encore en état....
+</p><p>Ca donnera ça&#160;: 
+</p><p><br />
+</p>
+<table border="1" cellpadding="5">
+
+<tr>
+<td> Sur le smartphone
+</td>
+<td> Sur l'interface Web de Nagios
+</td></tr>
+
+<tr>
+<td><a href="./index.php%3Ftitle=Fichier:Prowl.png.html" class="image"><img alt="Prowl.png" src="images/4/4f/Prowl.png" width="300" height="185" /></a>
+</td>
+<td><a href="./index.php%3Ftitle=Fichier:DarwinDown.png.html" class="image"><img alt="DarwinDown.png" src="images/5/5a/DarwinDown.png" width="124" height="113" /></a>
+</td></tr>
+
+</table>
+<h2><span class="mw-headline" id="Visualisation_seule">Visualisation seule</span></h2>
+<p>Ben oui, read-only quoi&#160;!
+</p><p>Un utilisateur qui n'aurait le droit que de lire l'état du serveur: 
+</p>
+<ul><li> Créer un utilisateur </li></ul>
+<pre>htpasswd  htpasswd.users ROuser
+</pre>
+<ul><li> AJouter à cgi.cfg</li></ul>
+<pre>authorized_for_read_only=ROuser
+</pre>
+<ul><li>Remplacer les deux premières lignes par les deux suivantes&#160;:</li></ul>
+<pre>authorized_for_all_services=nagiosadmin
+authorized_for_all_hosts=nagiosadmin
+</pre>
+<pre>authorized_for_all_services=*
+authorized_for_all_hosts=*
+</pre>
+<p>puis relancer apache 
+</p>
+<pre>apachectl stop &amp;&amp; apachectl start
+</pre>
+<p>Si vous souhaiter incorporer ceci dans une page de monitoring auto&#160;:
+</p>
+<pre><a rel="nofollow" class="external free" href="https://user:pass@IP/cgi-bin/nagios3/status.cgi?host=all">https://user:pass@IP/cgi-bin/nagios3/status.cgi?host=all</a>
+</pre>
+<h2><span class="mw-headline" id="Surveillance_de_diff.C3.A9rents_services">Surveillance de différents services</span></h2>
+<h3><span class="mw-headline" id="Apache2">Apache2</span></h3>
+<p>Sur le serveur Web:
+</p><p>Faire <a href="index.php%3Ftitle=Munin.html#Apache2" title="Munin">Munin#Apache2</a>
+</p><p>Sur Nagios:
+</p>
+<pre>lynx <a rel="nofollow" class="external free" href="http://www.monitoringexchange.org/inventory/Check-Plugins/Software/HTTP-%2526-FTP/check_apache2-sh">http://www.monitoringexchange.org/inventory/Check-Plugins/Software/HTTP-%2526-FTP/check_apache2-sh</a>
+</pre>
+<p>et récupérer le check_apache2.sh 
+</p>
+<pre>mv  check_apache2.sh  /usr/lib/nagios/plugins/check_apache2.sh
+chown nagios.nagios /usr/lib/nagios/plugins/check_apache2.sh
+chmod +x /usr/lib/nagios/plugins/check_apache2.sh
+</pre>
+<pre>echo "# 'check_apache2' command definition
+define command{
+</pre>
+<p>	command_name	check_apache2
+	command_line	/usr/lib/nagios/plugins/check_apache2.sh -H '$HOSTADDRESS$' -p 80  -wr '$ARG1$' -cr '$ARG2$'
+	}
+" &gt; /etc/nagios3/objects/apache2.cfg
+</p><p><br />
+</p><p>Test&#160;:
+</p>
+<pre>./check_apache2.sh -H se3 -p 80 -cr 10 -wr 100 -e
+</pre>
+<pre>OK - Apache serves 1 Requests per second with an average CPU utilization of 0% since 81 seconds. Amount of workers currently busy: 1, currently 
+
+idle:   5! | 'req_psec'=1 'cpu_load'=0 'uptime'=81 'workers_busy'=1 'workers_idle'=5 'total_req'=10 'total_kb'=11 'bytes_psec'=139.062 
+</pre>
+<pre>'bytes_preq'=1126.4
+</pre>
+<p>-wr&#160;: Warning
+</p><p>-cr&#160;: Critical
+</p><p>-e&#160;: Extended info
+</p>
+<h3><span class="mw-headline" id="On_le_stresse_un_peu_ce_serveur_web_.3F.3F">On le stresse un peu ce serveur web&#160;??</span></h3>
+<pre>apt-get install httperf tsung...
+</pre>
+<h2><span class="mw-headline" id="Debug">Debug</span></h2>
+<p>Attention, les notifications et autres configs de contacts.cfg ne supportent pas d'espace ou de tabulation. Exemple&#160;:
+</p><p>Mauvaise config
+</p>
+<pre>   service_notification_commands        notify-prowl-service,          notify-by-email,            notify-by-muzik,             service-notify-by-email
+</pre>
+<p>Bonne config
+</p>
+<pre>   service_notification_commands        notify-prowl-service,notify-by-email,notify-by-muzik,service-notify-by-email
+</pre>
+<ul><li> <i>Error: Service check command 'check_machin' specified in service 'SSSSS' for host 'XXX' not defined anywhere!</i></li></ul>
+<p>Vous avez essayé de définir un test de service (SSSS) sans passer par le fichier de définition de plugins (/etc/nagios-plugins/config' sous Debian)
+</p><p>Mauvais exemple&#160;: 
+</p>
+<pre>check_command check_http " -H www.maxp.fr -u <a rel="nofollow" class="external free" href="http://www.maxp.fr/drupal6/">http://www.maxp.fr/drupal6/</a>    -s \"Actualit\""
+</pre>
+<p>Bon exemple
+</p>
+<pre>check_command check_http!www.maxp.fr!<a rel="nofollow" class="external free" href="http://www.maxp.fr/drupal6/">http://www.maxp.fr/drupal6/</a>!"Actualit"
+</pre>
+<p>avec dans le fichier ./config/http.cfg&#160;:
+</p>
+<pre>define command{
+       command_name    check_http
+       command_line    /usr/lib/nagios/plugins/check_http -H '$HOSTADDRESS$' -I '$HOSTADDRESS$' -u '$ARG2' -s '$ARG3'
+       }
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20171020072922
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.490 seconds
+Real time usage: 0.529 seconds
+Preprocessor visited node count: 242/1000000
+Preprocessor generated node count: 412/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:71-0!*!0!!fr!5!* and timestamp 20171020072921 and revision id 2232
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Nagios&amp;oldid=2232">http://www.openbsd-edu.net/index.php?title=Nagios&amp;oldid=2232</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Nagios.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Nagios.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Nagios&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Nagios.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Nagios.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Nagios&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Nagios&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Nagios.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FNagios.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Nagios" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Nagios&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Nagios&amp;oldid=2232" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Nagios&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 20 novembre 2012 à 14:02.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.490","walltime":"0.529","ppvisitednodes":{"value":242,"limit":1000000},"ppgeneratednodes":{"value":412,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020072922","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1350});});</script>
+	</body>
+</html>

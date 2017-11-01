@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Puppet, Gestion de configuration — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Puppet,_Gestion_de_configuration","wgTitle":"Puppet, Gestion de configuration","wgCurRevisionId":2684,"wgRevisionId":2684,"wgArticleId":313,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Puppet,_Gestion_de_configuration","wgRelevantArticleId":313,"wgRequestId":"c0139c0a8eb4e050501c994d","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Puppet_Gestion_de_configuration rootpage-Puppet_Gestion_de_configuration skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Puppet, Gestion de configuration</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>Puppet, c'est la gestion de la conformité des machines avec un référentiel établi.
+</p><p>En gros&#160;: <i>Je veux que toutes mes machines aient cette config de sshd, utilisent cette passerelle, et aient la config munin, nagios, clés ssh,..automatiquement gérées" et puppet se débrouille&#160;!</i>
+</p><p>Pas forcément intéressant pour une unique install, là où l'outil devient génial c'est pour des déploiements massifs (qui a dit des parcs de VM en VDI&#160;???).
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Docs"><span class="tocnumber">1</span> <span class="toctext">Docs</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Remarque_sur_la_s.C3.A9curit.C3.A9"><span class="tocnumber">2</span> <span class="toctext">Remarque sur la sécurité</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Installation"><span class="tocnumber">3</span> <span class="toctext">Installation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Sur_le_serveur"><span class="tocnumber">3.1</span> <span class="toctext">Sur le serveur</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Appli_de_test"><span class="tocnumber">3.2</span> <span class="toctext">Appli de test</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Sur_le_client"><span class="tocnumber">3.3</span> <span class="toctext">Sur le client</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Ajout_d.27un_nouveau_client"><span class="tocnumber">4</span> <span class="toctext">Ajout d'un nouveau client</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Appli_de_test_2"><span class="tocnumber">4.1</span> <span class="toctext">Appli de test</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Installation_application"><span class="tocnumber">5</span> <span class="toctext">Installation application</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Config"><span class="tocnumber">5.1</span> <span class="toctext">Config</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Installation_2"><span class="tocnumber">5.2</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Exemples"><span class="tocnumber">5.3</span> <span class="toctext">Exemples</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Serveur_de_galerie_de_photos.2C_Piwigo"><span class="tocnumber">5.3.1</span> <span class="toctext">Serveur de galerie de photos, Piwigo</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Serveur_Bdd_:_MySQL"><span class="tocnumber">5.3.2</span> <span class="toctext">Serveur Bdd&#160;: MySQL</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#PHP"><span class="tocnumber">5.3.3</span> <span class="toctext">PHP</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Drupal_en_CLI_:_drush"><span class="tocnumber">5.3.4</span> <span class="toctext">Drupal en CLI&#160;: drush</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Pour_Windows"><span class="tocnumber">6</span> <span class="toctext">Pour Windows</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Gestion_des_diff.C3.A9rences"><span class="tocnumber">7</span> <span class="toctext">Gestion des différences</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Lors_de_la_mise_en_route_d.27un_nouveau_serveur"><span class="tocnumber">8</span> <span class="toctext">Lors de la mise en route d'un nouveau serveur</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Cr.C3.A9ation_d.27une_nouvelle_appli_.28un_manifest.29"><span class="tocnumber">9</span> <span class="toctext">Création d'une nouvelle appli (un manifest)</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#R.C3.A8gles_de_cr.C3.A9ation_d.27un_.28bon.29_manifest"><span class="tocnumber">10</span> <span class="toctext">Règles de création d'un (bon) manifest</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Debug"><span class="tocnumber">11</span> <span class="toctext">Debug</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Lors_de_l.27installation_d.27un_nouveau_client_du_m.C3.AAme_nom"><span class="tocnumber">11.1</span> <span class="toctext">Lors de l'installation d'un nouveau client du même nom</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Changement_d.27IP_d.27un_client_enregistr.C3.A9"><span class="tocnumber">11.2</span> <span class="toctext">Changement d'IP d'un client enregistré</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#Logs"><span class="tocnumber">12</span> <span class="toctext">Logs</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Docs">Docs</span></h2>
+<p>Merci à <a rel="nofollow" class="external text" href="http://blog.nicolargo.com/2012/09/puppet-installation-et-premiere-configuration.html">Nicolargo</a>
+</p><p><a rel="nofollow" class="external text" href="http://example42.com/tutorials/build/deck/essentials/">Slides</a>
+</p>
+<h2><span class="mw-headline" id="Remarque_sur_la_s.C3.A9curit.C3.A9">Remarque sur la sécurité</span></h2>
+<p><b>Vous allez déployer des applis sensibles avec des mots de passe, voire des règles de pare-feu avec cet outil; bref il va devenir TRES sensible&#160;! N'oubliez de mettre ceinture et bretelles pour sa sécurisation!!! </b>
+</p>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p>Par la suite , FQDN_C désignera le nom DNQ du client et FQDN_S, celui du serveur Puppet
+</p>
+<h3><span class="mw-headline" id="Sur_le_serveur">Sur le serveur</span></h3>
+<pre>apt-get install puppetmaster
+service puppetmaster status
+</pre>
+<p>Au fichier /etc/puppet/puppet.conf, ajouter dans la section [main]&#160;:
+</p>
+<pre>server=FQDN_S
+report =        true
+reports =       log,store
+</pre>
+<pre>service puppetmaster restart
+</pre>
+<p>Attention, le bon nom DNS est primordial&#160;!
+</p>
+<ul><li> Créer le fichier  /etc/puppet/manifests/site.pp</li></ul>
+<pre>filebucket { 'main': server =&gt; 'FQDN_S' }
+File { backup =&gt; 'main' } 
+import "node"
+</pre>
+<ul><li> Créer le fichier  /etc/puppet/manifests/node.pp</li></ul>
+<pre>node 'FQDN_C' {
+   include dummy
+}
+</pre>
+<pre>mkdir -p /etc/puppet/modules/dummy/manifests
+mkdir -p /etc/puppet/modules/dummy/files
+</pre>
+<h3><span class="mw-headline" id="Appli_de_test">Appli de test</span></h3>
+<ul><li>Pour tester, créer le fichier /etc/puppet/modules/dummy/manifests/init.pp</li></ul>
+<pre>class dummy {
+       file { "/etc/puppet.txt":
+               owner =&gt; root,
+               group =&gt; root,
+               mode =&gt; 644,
+               source =&gt; "puppet:///dummy/puppet.txt"
+       }
+}
+</pre>
+<pre> echo "test" &gt; /etc/puppet/modules/dummy/files/puppet.txt
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Sur_le_client">Sur le client</span></h3>
+<ul><li> Debian</li></ul>
+<pre>apt-get install puppet
+</pre>
+<ul><li>OpenBSD</li></ul>
+<pre> pkg_add <a rel="nofollow" class="external free" href="ftp://ftp.irisa.fr/pub/OpenBSD/$(uname">ftp://ftp.irisa.fr/pub/OpenBSD/$(uname</a> -r)/packages/$(uname -m)/puppet
+</pre>
+<p>comme il s'agit de faire installer l'environnement par Puppet, les chemis et URL sont inconnus
+</p><p>Au fichier /etc/puppet/puppet.conf, ajouter dans la section [main]&#160;:
+</p>
+<pre>server = FQDN_S
+report = true
+</pre>
+<p>Important&#160;: 
+</p><p>Si vos serveurs sont nattés et donc non-accessibles par un FQDN, alors jouez avec les fichiers hosts!
+</p>
+<ul><li> Debian</li></ul>
+<p>Dans /etc/default/puppet , modifiez le START=no en START=yes
+</p>
+<pre>service puppet restart
+</pre>
+<ul><li>OpenBSD</li></ul>
+<pre>/etc/rc.d/puppetd start
+</pre>
+<p><br />
+Attention, le bon nom DNS est primordial&#160;!
+</p>
+<h2><span class="mw-headline" id="Ajout_d.27un_nouveau_client">Ajout d'un nouveau client</span></h2>
+<ul><li> Sur le client</li></ul>
+<p>Debian:
+</p>
+<pre> puppetd -t -v -w 60
+</pre>
+<p>OpenBSD&#160;:
+</p>
+<pre>/etc/rc.d/puppetd restart
+</pre>
+<ul><li> Puis sur le serveur:</li></ul>
+<pre>  puppetca --list
+ "FQDN_C" (58:FINGERPRINT:8D)
+</pre>
+<pre>puppetca --sign FQDN_C
+notice: Signed certificate request for FQDN_C
+notice: Removing file Puppet::SSL::CertificateRequest FQDN_C at '/var/lib/puppet/ssl/ca/requests/FQDN_C.pem'
+</pre>
+<p><br />
+Ce qui donne côté client&#160;:
+</p>
+<pre>info: Caching catalog for FQDN_C
+info: Applying configuration version '1372649'
+notice: Finished catalog run in 0.02 seconds
+</pre>
+<p>Voilà , votre client est configuré, le tunnel SSL est prêt, on va désormais voir comment puppetiser le client/
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Appli_de_test_2">Appli de test</span></h3>
+<ul><li> Debian</li></ul>
+<pre>puppetd -t -v 
+</pre>
+<ul><li> OpenBSD</li></ul>
+<pre> /etc/rc.d/puppetd restart
+</pre>
+<pre>cat /etc/puppet.txt 
+</pre>
+<p>test
+</p><p>Ca marche&#160;!
+</p>
+<h2><span class="mw-headline" id="Installation_application">Installation application</span></h2>
+<h3><span class="mw-headline" id="Config">Config</span></h3>
+<p>Je veux installer des applis qui nécessitent des fichiers OS-dépendant, soit&#160;:
+</p><p>Comment installer munin-node sur tous les OS en choisissant le miroir (OpenBSD) ou le proxy-apt (Debian)&#160;:
+</p>
+<pre>mkdir -p /etc/puppet/modules/socle/manifests
+mkdir -p /etc/puppet/modules/socle/files/OpenBSD
+mkdir -p /etc/puppet/modules/socle/files/Debian
+echo "installpath=<a rel="nofollow" class="external free" href="http://mirrors.ircam.fr/pub/OpenBSD/5.4/packages/amd64/">http://mirrors.ircam.fr/pub/OpenBSD/5.4/packages/amd64/</a>" &gt;&gt; /etc/puppet/modules/socle/files/OpenBSD/pkg.conf 
+echo "Acquire::http { Proxy \"<a rel="nofollow" class="external free" href="http://apt:3142">http://apt:3142</a>\"; };"  &gt;&gt; /etc/puppet/modules/socle/files/Debian/01apt-cacher-ng-proxy 
+</pre>
+<p>cat  /etc/puppet/modules/socle/manifests/init.pp
+</p>
+<pre>class socle {
+</pre>
+<p>	case $::osfamily {
+	   'redhat': {
+	     # do something RHEL specific
+	   		}
+	   'debian': {
+	    file { "/etc/apt/apt.conf.d/01apt-cacher-ng-proxy":
+</p>
+<pre>              		owner =&gt; root,
+              		group =&gt; root,
+              		mode =&gt; 644,
+              		source =&gt; "puppet:///socle/Debian/01apt-cacher-ng-proxy"
+      			}
+</pre>
+<p>		}
+	   'OpenBSD': {
+	    file { "/etc/profile":
+</p>
+<pre>              		owner =&gt; root,
+              		group =&gt; wheel,
+              		mode =&gt; 644,
+              		source =&gt; "puppet:///socle/OpenBSD/profile"
+      			}
+</pre>
+<p>	    file { "/etc/pkg.conf":
+</p>
+<pre>              		owner =&gt; root,
+              		group =&gt; wheel,
+              		mode =&gt; 644,
+              		source =&gt; "puppet:///socle/OpenBSD/pkg.conf"
+      			}
+</pre>
+<p>		}
+	   default: {
+	     # ...
+		   }
+</p><p><br />
+			}			
+</p>
+<pre>}
+</pre>
+<pre>cat  /etc/puppet/manifests/node.pp
+</pre>
+<pre>node 'FQDN_C' {
+   include dummy,socle,paquets
+}
+</pre>
+<h3><span class="mw-headline" id="Installation_2">Installation</span></h3>
+<p><a rel="nofollow" class="external text" href="http://www.puppetcookbook.com/posts/install-multiple-packages.html">Doc</a>
+</p><p><br />
+Dans le /etc/puppet/modules/MODULE/manifests/init.pp&#160;:
+</p>
+<pre>Package { ensure =&gt; "installed" }
+$enhancers = [ "screen", "strace", "sudo" ]
+package { $enhancers: }
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Exemples">Exemples</span></h3>
+<h4><span class="mw-headline" id="Serveur_de_galerie_de_photos.2C_Piwigo">Serveur de galerie de photos, Piwigo</span></h4>
+<pre>class piwigo {
+RepWeb = "/var/www"
+require apache
+require mysql-server
+</pre>
+<pre>Package { ensure =&gt; "installed" }
+$enhancers = [  "imagemagick-common","imagemagick" ]
+package { $enhancers: }
+</pre>
+<pre>exec { "/usr/bin/wget <a rel="nofollow" class="external free" href="http://piwigo.org/download/dlcounter.php?code=latest">http://piwigo.org/download/dlcounter.php?code=latest</a> -O /root/piwigo.zip":
+          creates  =&gt;  "/root/piwigo.zip",
+       }
+exec { "/usr/bin/unzip /root/piwigo.zip -d $RepWeb ":}
+exec { "/bin/mv $RepWeb/piwigo/* $RepWeb/ ":}
+exec { "/bin/chown -R www-data.www-data $RepWeb/plugins ":}
+exec { "/bin/chmod -R  g+w $RepWeb/plugins ":}
+exec { "/bin/chown -R www-data.www-data $RepWeb/themes ":}
+exec { "/bin/chmod -R  g+w $RepWeb/themes ":}
+}
+</pre>
+<p>Et voilà; un Piwigo from scratch en 30 secondes&#160;!
+</p>
+<h4><span class="mw-headline" id="Serveur_Bdd_:_MySQL">Serveur Bdd&#160;: MySQL</span></h4>
+<p><a rel="nofollow" class="external text" href="http://projects.puppetlabs.com/projects/1/wiki/My_Sql_Server_Patterns">Doc</a>
+</p><p>class mysql-server {
+</p>
+<pre> $ROOTpassword = "Mot de passe root MySQL"
+ $DBname=Nom de la BDD créée
+ $USER=User de la BDD
+ $USERpassword="Password du user"
+service { "mysql":
+   enable =&gt; true,
+   ensure =&gt; running,
+   require =&gt; Package["mysql-server"],
+ }
+ package { "mysql-client": ensure =&gt; installed }
+ package { "mysql-server": ensure =&gt; installed }
+ exec { "Set MySQL server root password":
+   subscribe =&gt; [ Package["mysql-server"], Package["mysql-client"] ],
+   refreshonly =&gt; true,
+   unless =&gt; "mysqladmin -uroot -p$ROOTpassword status",
+   path =&gt; "/bin:/usr/bin",
+   command =&gt; "mysqladmin -uroot password $ROOTpassword",
+         }
+   exec { "/bin/echo \"[client] \" &gt; /root/.my.cnf":}
+   exec { "/bin/echo \"user=root\" &gt;&gt; /root/.my.cnf":}
+   exec { "/bin/echo \"password=$ROOTpassword \" &gt;&gt; /root/.my.cnf":}
+   exec { "/bin/chmod go-rwx /root/.my.cnf":}
+       exec { "create-${DBname}-db":
+     unless =&gt; "/usr/bin/mysql -u${USER} -p${USERpassword} ${DBname}",
+     command =&gt; "/usr/bin/mysql -uroot -p$ROOTpassword -e \"create database ${DBname}; grant all on ${DBname}.* to ${USER}@localhost identified by '$USERpassword';\"",
+     require =&gt; Service["mysql"],
+                                      }
+</pre>
+<p>}
+</p>
+<h4><span class="mw-headline" id="PHP">PHP</span></h4>
+<pre>class php {
+exec { " /usr/sbin/pkg_add php-5.3.27":}
+exec { "/bin/ln -s /usr/local/bin/php-5.3 /usr/local/bin/php":}
+}
+</pre>
+<h4><span class="mw-headline" id="Drupal_en_CLI_:_drush">Drupal en CLI&#160;: drush</span></h4>
+<pre>class drupal{
+$RepScript = "/usr/script"
+exec { "/usr/local/bin/wget <a rel="nofollow" class="external free" href="http://ftp.drupal.org/files/projects/drush-7.x-5.9.tar.gz">http://ftp.drupal.org/files/projects/drush-7.x-5.9.tar.gz</a> -O /root/drush.tar.gz":
+          creates  =&gt;  "/root/drush.tar.gz",}
+exec { "/bin/mkdir -p $RepScript/drush":}
+exec { "/bin/tar -zxvf /root/drush.tar.gz -C $RepScript/ ":}
+exec { "/bin/chmod -r $RepScript/drush/drush":}
+exec { "/bin/ln -s   $RepScript/drush/drush /usr/local/bin/drush":}
+exec { "/usr/local/bin/wget <a rel="nofollow" class="external free" href="http://download.pear.php.net/package/Console_Table-1.2.0.tgz">http://download.pear.php.net/package/Console_Table-1.2.0.tgz</a> -O /root/console.tgz":
+          creates  =&gt;  "/root/console.tgz",}
+exec { "/bin/tar -zxvf /root/console.tgz -C $RepScript/drush/includes/ ":}
+}
+</pre>
+<h2><span class="mw-headline" id="Pour_Windows">Pour Windows</span></h2>
+<p>Puppet permet également de gérer des clients windows.
+Attention, le type source en puppet:// ne fonctionne pas sous windows (<i>Install Failed on INt 24</i>); vous devez copier le fichier localement, soit par une copie puppet, soit par un chemin UNC, soit en fin par un lien réseau; pas une URL puppet&#160;!
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Gestion_des_diff.C3.A9rences">Gestion des différences</span></h2>
+<p>En reprenant le module <i>dummy</i> de l'exemple précédent, on voit bien le souci dans le cas d'un parc multi-OS; essayez de coller un fichier avec le groupe root sur un BSD...
+</p><p>La solution, les variables&#160;:
+</p><p>Utilisez <i>facter</i>&#160;:
+</p>
+<pre>facter |grep operating
+  operatingsystem =&gt; OpenBSD
+  operatingsystemrelease =&gt; 5.4
+</pre>
+<p><br />
+Et le module devient&#160;:
+</p>
+<pre>class dummy {
+       file { "/etc/puppet.txt":
+               owner =&gt; root,
+               group   =&gt; $operatingsystem&#160;? {
+                       /(?i:Ubuntu|Debian|Mint)/ =&gt; 'root',
+                       /(?i:OpenBSD|FreeBSD)/ =&gt; 'wheel',
+                           default                   =&gt; 'root'
+       },
+               mode =&gt; 644,
+               source =&gt; "puppet:///dummy/puppet.txt"
+       }
+}
+</pre>
+<h2><span class="mw-headline" id="Lors_de_la_mise_en_route_d.27un_nouveau_serveur">Lors de la mise en route d'un nouveau serveur</span></h2>
+<p>0. Client&#160;: Install Puppet
+</p><p>1. Client&#160;: puppetd -t -v -w 120
+</p><p>2. Serveur&#160;: puppetca --list
+</p><p>3. Serveur&#160;: puppetca --sign FQDN_C
+</p><p>4. Serveur&#160;: Ajouter client à /etc/puppet/manifests/node.pp 
+</p><p>5. Client&#160;: puppetd -t -v
+</p><p>Fini, toute la mise en conformité se fait seule&#160;!
+</p><p>Soit&#160;: 
+</p><p>Client 
+</p>
+<pre>apt-get install puppet
+puppetd -t -v -w 120
+</pre>
+<pre> puppetd -t -v
+</pre>
+<p>Serveur&#160;:
+</p>
+<pre> puppetca --list
+ puppetca --sign FQDN_C
+</pre>
+<h2><span class="mw-headline" id="Cr.C3.A9ation_d.27une_nouvelle_appli_.28un_manifest.29">Création d'une nouvelle appli (un manifest)</span></h2>
+<pre>cd /etc/puppet/modules/
+cp -R Ancient Nouveau
+perl -pi 's/class Ancien/class Nouveau/' Nouveau/manifests/init.pp
+</pre>
+<p>Puis ajoutez le paquet dans /etc/puppet/manifests/node.pp
+</p>
+<h2><span class="mw-headline" id="R.C3.A8gles_de_cr.C3.A9ation_d.27un_.28bon.29_manifest">Règles de création d'un (bon) manifest</span></h2>
+<p>1. Des chemins absolus pour les commandes tu utiliseras
+</p>
+<pre>/sbin/ifconfig et non ifconfig
+</pre>
+<p>2. Pas d'espace devant les noms de fichiers ne mettras
+</p>
+<pre>"/etc/hosts" et pas " /etc/hosts"
+</pre>
+<h2><span class="mw-headline" id="Debug">Debug</span></h2>
+<h3><span class="mw-headline" id="Lors_de_l.27installation_d.27un_nouveau_client_du_m.C3.AAme_nom">Lors de l'installation d'un nouveau client du même nom</span></h3>
+<pre>err: Could not request certificate: Retrieved certificate does not match private key; please remove certificate from server and regenerate it with the current key
+</pre>
+<p>Sur le serveur puppet&#160;: <a rel="nofollow" class="external autonumber" href="http://blog.pablo-ruth.fr/index.php/puppet-retrieved-certificate-does-not-match-private-key/">[1]</a>
+</p>
+<pre>puppetca --list --all
+puppetca --revoke machine.domaine.com
+puppetca --clean machine.domaine.com
+</pre>
+<p><br />
+Sur le client&#160;:
+</p><p>Debian
+</p>
+<pre>rm /var/lib/puppet/ssl/{certificate_requests,certs,private,private_keys,public_keys}/*
+</pre>
+<p>OpenBSD
+</p>
+<pre>rm /etc/puppet/ssl/{certificate_requests,certs,private,private_keys,public_keys}/*
+</pre>
+<p><br />
+Puis on réinstalle puppet
+</p>
+<h3><span class="mw-headline" id="Changement_d.27IP_d.27un_client_enregistr.C3.A9">Changement d'IP d'un client enregistré</span></h3>
+<pre>Voir juste au dessus
+</pre>
+<h2><span class="mw-headline" id="Logs">Logs</span></h2>
+
+<!-- 
+NewPP limit report
+Cached time: 20171019151636
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.160 seconds
+Real time usage: 0.157 seconds
+Preprocessor visited node count: 99/1000000
+Preprocessor generated node count: 104/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:313-0!*!*!!fr!*!* and timestamp 20171019151636 and revision id 2684
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Puppet,_Gestion_de_configuration&amp;oldid=2684">http://www.openbsd-edu.net/index.php?title=Puppet,_Gestion_de_configuration&amp;oldid=2684</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Puppet%252C+Gestion+de+configuration.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Puppet,_Gestion_de_configuration&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Puppet,_Gestion_de_configuration&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Puppet,_Gestion_de_configuration&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Puppet,_Gestion_de_configuration.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FPuppet,_Gestion_de_configuration.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Puppet,_Gestion_de_configuration" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Puppet,_Gestion_de_configuration&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Puppet,_Gestion_de_configuration&amp;oldid=2684" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Puppet,_Gestion_de_configuration&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 26 mai 2014 à 13:16.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.160","walltime":"0.157","ppvisitednodes":{"value":99,"limit":1000000},"ppgeneratednodes":{"value":104,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171019151637","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1344});});</script>
+	</body>
+</html>

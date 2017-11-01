@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Wifi — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Wifi","wgTitle":"Wifi","wgCurRevisionId":2842,"wgRevisionId":2842,"wgArticleId":193,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages avec des liens de fichiers brisés"],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Wifi","wgRelevantArticleId":193,"wgRequestId":"381dbf854282b6631551893e","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Wifi rootpage-Wifi skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Wifi</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Wifi.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Wifi.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Wifi.html#Pour_quoi_faire_.3F"><span class="tocnumber">1</span> <span class="toctext">Pour quoi faire&#160;?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Wifi.html#Comment_faire_.3F"><span class="tocnumber">2</span> <span class="toctext">Comment faire&#160;?</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Wifi.html#Principe"><span class="tocnumber">3</span> <span class="toctext">Principe</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Wifi.html#FreeRadius"><span class="tocnumber">4</span> <span class="toctext">FreeRadius</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Wifi.html#clients.conf"><span class="tocnumber">4.1</span> <span class="toctext">clients.conf</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Wifi.html#R.C3.A9seau"><span class="tocnumber">4.2</span> <span class="toctext">Réseau</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Wifi.html#Monter_son_FreeWifi-like_.C3.A0_soi"><span class="tocnumber">5</span> <span class="toctext">Monter son FreeWifi-like à soi</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Wifi.html#Les_clients.2C_AP_Wifi.2C_Switches...."><span class="tocnumber">6</span> <span class="toctext">Les clients, AP Wifi, Switches....</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Wifi.html#AP_WIFI"><span class="tocnumber">6.1</span> <span class="toctext">AP WIFI</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=Wifi.html#Reset_de_la_config"><span class="tocnumber">6.1.1</span> <span class="toctext">Reset de la config</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="index.php%3Ftitle=Wifi.html#Config"><span class="tocnumber">6.1.2</span> <span class="toctext">Config</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=Wifi.html#Setup"><span class="tocnumber">6.1.3</span> <span class="toctext">Setup</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=Wifi.html#Wireless"><span class="tocnumber">6.1.4</span> <span class="toctext">Wireless</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=Wifi.html#Administration"><span class="tocnumber">6.1.5</span> <span class="toctext">Administration</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=Wifi.html#Localisation_.26_Itin.C3.A9rance"><span class="tocnumber">7</span> <span class="toctext">Localisation &amp; Itinérance</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="index.php%3Ftitle=Wifi.html#Portables"><span class="tocnumber">8</span> <span class="toctext">Portables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Wifi.html#Linux"><span class="tocnumber">8.1</span> <span class="toctext">Linux</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="index.php%3Ftitle=Wifi.html#Gnome"><span class="tocnumber">8.1.1</span> <span class="toctext">Gnome</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="index.php%3Ftitle=Wifi.html#Kde"><span class="tocnumber">8.1.2</span> <span class="toctext">Kde</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=Wifi.html#Windows"><span class="tocnumber">8.2</span> <span class="toctext">Windows</span></a>
+<ul>
+<li class="toclevel-3 tocsection-21"><a href="index.php%3Ftitle=Wifi.html#Debug"><span class="tocnumber">8.2.1</span> <span class="toctext">Debug</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=Wifi.html#MacOSX_Non_test.C3.A9"><span class="tocnumber">8.3</span> <span class="toctext">MacOSX <span> Non testé </span></span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-23"><a href="index.php%3Ftitle=Wifi.html#Smartphone"><span class="tocnumber">9</span> <span class="toctext">Smartphone</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Wifi.html#Iphone"><span class="tocnumber">9.1</span> <span class="toctext">Iphone</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=Wifi.html#Android_Non_test.C3.A9"><span class="tocnumber">9.2</span> <span class="toctext">Android <span> Non testé</span></span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="index.php%3Ftitle=Wifi.html#Samsung_Non_test.C3.A9"><span class="tocnumber">9.3</span> <span class="toctext">Samsung <span> Non testé </span></span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="index.php%3Ftitle=Wifi.html#Nokia_Non_test.C3.A9"><span class="tocnumber">9.4</span> <span class="toctext">Nokia <span> Non testé </span></span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Pour_quoi_faire_.3F">Pour quoi faire&#160;?</span></h2>
+<p><i>Du wifi, du wifi, du wifi....</i> Certains dans les établissements scolaires <a rel="nofollow" class="external text" href="http://www.ina.fr/politique/politique-internationale/video/I00012536/charles-de-gaulle-petite-phrase-cabri-l-europe-l-europe.fr.html">sautent comme des cabris</a> pour faire mumuse avec leur Smartphone ou pour éviter de débrancher l'imprimante de la salle des profs et lui piquer son câble réseau... (Bon, d'accord, je me retrouve un peu dans la première catégorie..)
+</p><p>Donc, du wifi. <b>OK</b>
+</p><p>Mais du vrai, pas du hotspot public en accès ouvert ou avec une clé WEP en 4 octet dont la passphrase commence par <i>to</i> et finit par <i>to</i> et qui sera affichée sur la machine à café de la salle des profs...
+</p><p>Et un MINIMUM de gestion des clients et de leur utilisateur...
+</p><p><br />
+Bref, afin d'installer un service Wifi pas trop troué, on installe un serveur <a href="index.php%3Ftitle=FreeRadius.html" title="FreeRadius"> Radius</a> (en VM)....
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Comment_faire_.3F">Comment faire&#160;?</span></h2>
+<p>Plusieurs possibilités existent, mais au final, le choix est pour le moins réduit&#160;:
+</p>
+<ul><li> Le mot de passe est stocké chiffré dans l'annuaire LDAP de manière non-reversible. Donc <s> MS-CHAP</s> côté authentification et <s> PEAP</s> côté protocole.</li></ul>
+<ul><li> On ne veut pas avoir de certificat client à gérer, donc <s> EAP-TLS</s>.</li></ul>
+<ul><li> On veut un algorithme de chiffrement robuste donc <s> EAP-MD5</s> et assez ouvert dont la solidité ne repose pas exclusivement sur la solidité des mots de passe, donc <s> LEAP</s>.</li></ul>
+<p>Reste....tada ..
+</p>
+<center><b>EAP-TTLS</b></center>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Principe">Principe</span></h2>
+<p>La connexion est chiffrée en WPA-Enterprise. En gros, un certificat serveur seul est utilisé pour chiffrer la connexion <a rel="nofollow" class="external text" href="http://fr.wikipedia.org/wiki/Extensible_Authentication_Protocol#EAP-TTLS">(EAP-TTLS)</a> entre le poste client et le point d'accès Wifi (802.11b &amp; g) qui va servir d'intermédiaire avec le serveur Radius. Ce dernier va alors interroger l'annuaire <a href="http://www.openbsd-edu.net/index.php?title=Proc%C3%A9dures_utilisateurs&amp;action=edit&amp;redlink=1" class="new" title="Procédures utilisateurs (page inexistante)"> LDAP</a> pour valider les identifiants de connexion. Très simple pour l'utilisateur (un tout petit peu moins pour l'administrateur&#160;;-) ) et très sécurisé. Les clés de chiffrement sont à usage unique et à changement réguliers.
+</p><p>Le concept&#160;:<a rel="nofollow" class="external autonumber" href="http://wiki.freeradius.org/Concepts">[1]</a>
+</p>
+<h2><span class="mw-headline" id="FreeRadius"><a href="index.php%3Ftitle=FreeRadius.html" title="FreeRadius">FreeRadius</a></span></h2>
+<h4><span class="mw-headline" id="clients.conf">clients.conf</span></h4>
+<p>Il gère les clients au sens radius (les <i>authenticator</i>, les switches, les AP Wifi).
+</p>
+<ul><li> Copie de sauvegarde</li></ul>
+<pre>cp /etc/raddb/clients.conf /etc/raddb/clients.conf.ORI
+</pre>
+<ul><li> Ajout des AP Wifi, du serveur Nagios etc..</li></ul>
+<pre>echo "
+   
+#Nagios
+client Nagios {
+secret = SECRETNAGIOS
+shortname =  Nagios
+ipaddr = @IP NAgios
+}
+  
+#Wifi AP3
+client AP3 {
+secret = \"SECRET_AP3\"
+shortname = AP3
+ipaddr = @IP AP3
+nastype     = other
+}
+  
+# En local
+client localhost {
+       ipaddr = 127.0.0.1
+       secret          = \"SECRETLOCAL\"
+       require_message_authenticator = no
+       shortname       = localhost
+       nastype     = other
+}
+" &gt; /etc/raddb/clients.conf
+</pre>
+<p>Où les <i>SECRET_XX</i> est le secret partagé entre l'authenticator et le serveur radius.
+</p><p>Si votre supplicant n'est pas correctement enregistré dans clients.conf&#160;:
+</p>
+<pre>Ignoring request to authentication address * port 1812 from unknown client @IP  port 54762
+</pre>
+<h3><span class="mw-headline" id="R.C3.A9seau">Réseau</span></h3>
+<p>Comme on a eu un souci avec <a href="index.php%3Ftitle=Wifi.html#AP_WIFI"> les limitations du matériel </a>, il a fallu aliaser (un petit néologisme pour la route) la carte réseau:
+</p>
+<pre>ifconfig em0 alias 192.168.1.9 netmask 255.255.255.0
+</pre>
+<p>La carte est donc aliasée (rebelote)&#160;:
+</p>
+<pre>ifconfig -a
+  
+em0: flags=8843&lt;UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST&gt; mtu 1500
+inet 172.16.0.223 netmask 0xffff0000 broadcast 172.16.255.255
+inet 192.168.1.9 netmask 0xffffff00 broadcast 192.168.1.255
+</pre>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Monter_son_FreeWifi-like_.C3.A0_soi">Monter son FreeWifi-like à soi</span></h2>
+<p>Et si aviez envie de faire comme Free&#160;? Tout plein d'AP partout en France (ou ailleurs) et une base d'authentification unique&#160;? Un AP estampillé<i>compatible openBSD-edu.net</i> et vous pouvez vous loguer avec vos identifiants de l'annuaire LDAP distant de plusieurs centaines (milliers&#160;??) de km&#160;?
+</p><p>Trop de la balle!
+</p>
+<ul><li> Vous demandez à votre AP d'utiliser comme serveur Radius la patte LAN de votre routeur NAT.</li>
+<li> Vous redirigez toute requête entrante sur la patte LAN en UDP/1812 vers l@IP publique de votre établissement</li></ul>
+<pre>rdr pass log on $Interface_LAN proto udp from $PLageIP_WIFI to $@IP_LAN_PEDA  port radius   -&gt; $@WAN_EPLE port radius
+</pre>
+<ul><li> Sur le routeur de l'établissement, vous faites la manip inverse</li></ul>
+<pre>rdr pass on $INterface_WAN proto udp from $La_Liste_des_@IP_atutorisees to $@IP_WAN port radius -&gt; $@IP_SRV_RADIUS  port radius
+</pre>
+<p><br />
+</p><p>Cerise sur le gateau, si vous utilisez le même SSID qu'au bahut,...c'est totalement transparent! Je vous promet un beau succès d'estime avec vos collègues dont le smartphone configuré pour l'établissement marche à l'identique chez vous et......leur permet de regarder la coupe du monde de foot <i>(Spéciale dédicace Luton&#160;;-) )</i>
+</p><p>Pour info, seule l'auth radius va faire sa  centaine de km aller-retour, les paquets suivants ne suivent que VOTRE ligne ADSL, avec le débit qui va bien.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Les_clients.2C_AP_Wifi.2C_Switches....">Les clients, AP Wifi, Switches....</span></h2>
+<h3><span class="mw-headline" id="AP_WIFI">AP WIFI</span></h3>
+<p>On utilise des linksys WRT54G&amp; WAP54G (Quasiment le même prix, mais pas de https pour l'interface web, bof bof). Il faut les configurer ainsi&#160;:
+</p>
+<h4><span class="mw-headline" id="Reset_de_la_config">Reset de la config</span></h4>
+<p><a rel="nofollow" class="external autonumber" href="http://technicallyeasy.net/2008/01/how-to-reset-linksys-wrt54g-wireless/">[2]</a>
+</p>
+<ul><li> Reset durant 30 secondes</li>
+<li> Débrancher</li>
+<li> Rebrancher</li>
+<li> Reset durant 30 secondes</li></ul>
+<h4><span class="mw-headline" id="Config">Config</span></h4>
+<p>Par défo les WRT54G sont en 192.168.1.1
+</p><p>Par défo les WAP54G sont en 192.168.1.245
+</p>
+<h4><span class="mw-headline" id="Setup">Setup</span></h4>
+<p>Name&#160;: APX
+</p><p>Hostname&#160;: APX
+</p><p>Domain: Lyceenobel.org
+</p><p>DHCP
+</p><p>@IP&#160;:192.168.1.10X/24
+</p><p>DHCP Server&#160;: <b>disable</b>
+</p>
+<h4><span class="mw-headline" id="Wireless">Wireless</span></h4>
+<p>Mode&#160;:Mixed
+</p><p>SSID&#160;: Nobel
+</p><p>Broadcast SSID&#160;: Enable
+</p><p>Security mode&#160;:  WPA Enterprise
+</p><p>TKIP
+</p><p>@IP RAdius&#160;: 192.168.1.99
+</p><p>POrt 1812
+</p><p>Shared_key   &#160;:-)
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="Administration">Administration</span></h4>
+<p>Mdp
+</p><p>https only
+</p><p>wireless access Enable
+</p><p>remote mgmt no
+</p><p>upnp no
+</p><p><br />
+</p>
+<ul><li> On utilise les ports LAN et pas le port WAN (appelé Internet)</li></ul>
+<ul><li> Basic Setup&#160;:
+<ul><li> DHCP server Disabled</li>
+<li> Local IP&#160;: C'est le GROS souci. On ne peut pas changer le masque comme on veut. Résultat, il faut coller un alias en 192.168.1.0/24 sur la patte du serveur radius. Ce n'est pas très grave, les clients utilisant le plan d'adressage que vous souhaitez.</li></ul></li></ul>
+<ul><li> Wireless&#160;:
+<ul><li> WPA Entreprise &amp; TKIP (<a rel="nofollow" class="external text" href="http://sid.rstack.org/blog/index.php/330-wpa-psktkip">AES à tester..</a>)</li>
+<li> @IP du radius et le port (UDP/1812 par défaut)</li>
+<li> Shared key&#160;: C'est le fameux SECRET_XX rentré dans <a href="index.php%3Ftitle=Wifi.html#clients.conf"> le clients.conf</a></li>
+<li> Filtrage Mac, pour un AP permettant aux profs d'utiliser leur portable ou leur smartphone, ça me semble irréaliste..</li></ul></li></ul>
+<p><br />
+</p>
+<ul><li> Administration&#160;:
+<ul><li> Forcer le httpS (pas dispo sur les WAP54G ...)</li>
+<li> Changer le mdp</li>
+<li> Désactiver Upnp et le remote management..</li></ul></li></ul>
+<h2><span class="mw-headline" id="Localisation_.26_Itin.C3.A9rance">Localisation &amp; Itinérance</span></h2>
+<p>Les AP {Points d'accès Wifi} sont actuellement disponibles aux endroits suivants et permettent une connexion dans un rayon de quelques dizaines de m&#160;:
+</p>
+<ul><li> Bâtiment 1. 1er étage, Labo de Chimie</li>
+<li> Bâtiment 2. 1er étage, Local informatique</li>
+<li> Bâtiment 4. 1er étage, Salle des profs</li>
+<li> Bâtiment 4. 1er étage, CDI <i>(A déplacer, les murs porteurs bloquent le signal)</i></li></ul>
+<p><br />
+La zone approximative de couverture est actuellement la suivante&#160;:
+</p><p><a href="./index.php%3Ftitle=Fichier:Nobel.png.html" class="image"><img alt="Nobel.png" src="images/0/00/Nobel.png" width="500" height="560" /></a>
+</p><p><b>Itinérance</b> <i>(Roaming)</i>&#160;:
+</p><p>Les AP sont configurés pour gérer les déplacements. Si vous commencez à rédiger un article pour le portail du lycée au B1 et que vous traversez la cours pour aller prendre un café en salle des profs, les AP successifs vont se relayer l'authentification et vous allez poursuivre votre travail.
+</p>
+<h2><span class="mw-headline" id="Portables">Portables</span></h2>
+<center>
+<p>Cette doc est tirée de celle produite pour mon ancien lycée; il faut donc que je l'adapte...C'est en cours.
+</p>
+</center>
+<h3><span class="mw-headline" id="Linux">Linux</span></h3>
+<h4><span class="mw-headline" id="Gnome">Gnome</span></h4>
+<p>Vous utilisez NetworkManager, et vous avez déjà incorporé le <a href="index.php%3Ftitle=Accueil.html#Certificat_Racine" title="Accueil"> certificat de l'AC</a>, une fois pour toutes.
+</p><p><br />
+</p>
+<ul><li> Une fois le Wifi allumé, vous détectez le SSID <b>Nobel</b>&#160;:</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:NetworkManager-Nobel.jpg.html" class="image"><img alt="NetworkManager-Nobel.jpg" src="images/2/20/NetworkManager-Nobel.jpg" width="400" height="65" /></a>
+</p>
+<ul><li> Vous fournissez vos identifiants habituels du SI:</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:NetworkManager-credentials.jpg.html" class="image"><img alt="NetworkManager-credentials.jpg" src="images/4/4d/NetworkManager-credentials.jpg" width="400" height="310" /></a>
+</p>
+<ul><li> L'attribution des paramètres réseau...</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:NetworkManager-dhcp.jpg.html" class="image"><img alt="NetworkManager-dhcp.jpg" src="images/2/2f/NetworkManager-dhcp.jpg" width="400" height="45" /></a>
+</p><p><br />
+</p>
+<ul><li> Vous êtes connecté (de manière permanente).</li></ul>
+<p><a href="http://www.openbsd-edu.net/index.php?title=Fichier:NeuworkManager-OK.jpg" title="Fichier:NeuworkManager-OK.jpg">400px</a>
+</p><p><a href="./index.php%3Ftitle=Fichier:NetworkManager-OK-WLAN.jpg.html" class="image"><img alt="NetworkManager-OK-WLAN.jpg" src="images/d/d2/NetworkManager-OK-WLAN.jpg" width="400" height="100" /></a>
+</p>
+<h4><span class="mw-headline" id="Kde">Kde</span></h4>
+<p><span style="color:#ff9c00"> Non-testé, mais devrait fonctionner sans trop de souci. </span>
+</p>
+<h3><span class="mw-headline" id="Windows">Windows</span></h3>
+<p>Comme à son habitude, lorsqu'elle arrive sur un marché concurrentiel,  la firme de Redmond réinvente la roue plutôt que d'utiliser des standards existants. Microsoft a ainsi inventé PEAP, sous-copie de EAP-TTLS, standard préalable, imposant par là-même à ses utilisateurs des acrobaties inutiles. ....Mais ils ont l'habitude de payer cher pour un service dégradé,ces utilisateurs.Pourquoi changer&#160;?
+</p><p><br />
+</p><p><b>XP, Vista et Seven</b> ne possèdent pas de client TTLS de base, il faut en télécharger un. Un logiciel gratuit pour usage non commercial (SecureW2) existait, mais une <a rel="nofollow" class="external text" href="http://www.securew2.com/node/16">nouvelle politique de licence</a> rend les nouvelles payantes..... 
+</p><p><s>Utilisons donc l'ancienne..</s> L'ancienne version ne fonctionne pas; il faut utiliser la nouvelle (3.4.0).
+</p><p>Il y a deux possibilités&#160;: 
+</p><p>- Vous téléchargez <a rel="nofollow" class="external text" href="http://www.securew2.com/node/8?vid=87">sur le site</a>, la dernière version, fonctionnelle <b> 1 mois.</b> Et oui, après ça risque de ne plus fonctionner.
+</p><p>- Le lycée achète une licence globale.
+</p><p>1. Téléchargez le soft.
+</p><p>1.bis. Téléchargez <a rel="nofollow" class="external text" href="http://www.lyceenobel.org/docs/AC-Racine.der">le certificat racine</a> (Clic droit/Enregistrer la cible du lien sous...)
+</p>
+<ul><li> Récupérez les certificats de l'AC et du serveur Radius (<b>au format der</b>) en les plaçant dans </li></ul>
+<p>- <i>Placer tous les certificats dans le magasin suivant</i>
+</p><p>- <i>Parcourir</i>
+</p><p>- <i>Afficher les magasins physiques</i>
+</p><p>- <i>Autorités de certification racines de confiance</i>
+</p><p>- <i>Ordinateur local</i>
+</p><p><br />
+2. Installez le biniou. (<i>Attention, il faut avoir une connexion réseau filaire pour activer le tout.</i>)
+</p><p>Choisissez EAP-TTLS
+</p><p>3. Redémarrez l'ordi.
+</p><p>4.Suivez <a rel="nofollow" class="external text" href="http://cri.univ-mlv.fr/public/resyst/wifi/html/conf-802.1x-windows-XP.html#config-secureW2">cette doc</a>
+</p><p>Login &amp; Mdp&#160;: Ceux du lycée
+</p><p>Domaine: Rien du tout
+</p><p><br />
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="Debug">Debug</span></h4>
+<pre><i>Received an invalid server certificate, please verify your certificate configuration</i>
+</pre>
+<p>Vous n'avez pas intégré, au magasin, les bons certificats:
+</p>
+<ul><li> Récupérez les certificats de l'AC et du serveur Radius (<b>au format der</b>) en les plaçant dans </li></ul>
+<p>- <i>Placer tous les certificats dans le magasin suivant</i>
+</p><p>- <i>Parcourir</i>
+</p><p>- <i>Afficher les magasins physiques</i>
+</p><p>- <i>Autorités de certification racines de confiance</i>
+</p><p>- <i>Ordinateur local</i>
+</p>
+<h3><span class="mw-headline" id="MacOSX_Non_test.C3.A9">MacOSX <span style="color:#9200f1"> Non testé </span></span></h3>
+<h2><span class="mw-headline" id="Smartphone">Smartphone</span></h2>
+<p>Il vous faudra, évidemment, une connexion Wifi sur le téléphone..
+</p>
+<h4><span class="mw-headline" id="Iphone">Iphone</span></h4>
+<ul><li> Une fois le Wifi allumé, vous détectez le SSID <b>Nobel</b>&#160;:</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Iphone-Nobel.jpg.html" class="image"><img alt="Iphone-Nobel.jpg" src="images/5/50/Iphone-Nobel.jpg" width="400" height="99" /></a>
+</p>
+<ul><li> Vous fournissez vos identifiants habituels du SI:</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Iphone-credentials.jpg.html" class="image"><img alt="Iphone-credentials.jpg" src="images/1/1d/Iphone-credentials.jpg" width="400" height="257" /></a>
+</p>
+<ul><li> On vous demande d'accepter le certificat de serveur Radius <b>faraday.lyceenobel.org </b></li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Iphone-CA.jpg.html" class="image"><img alt="Iphone-CA.jpg" src="images/3/37/Iphone-CA.jpg" width="400" height="351" /></a>
+</p><p>...Que vous vérifiez (<i>Plus de détails</i>) par acquis de conscience&#160;:
+</p><p><a href="./index.php%3Ftitle=Fichier:Iphone-X509v3.jpg.html" class="image"><img alt="Iphone-X509v3.jpg" src="images/7/7f/Iphone-X509v3.jpg" width="400" height="336" /></a>
+</p><p>La signature <b>DOIT</b> correspondre.
+</p>
+<ul><li> Vous êtes connecté (de manière permanente).</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Iphone-OK.jpg.html" class="image"><img alt="Iphone-OK.jpg" src="images/a/a2/Iphone-OK.jpg" width="400" height="62" /></a>
+</p>
+<h4><span class="mw-headline" id="Android_Non_test.C3.A9">Android <span style="color:#9200f1"> Non testé</span></span></h4>
+<h4><span class="mw-headline" id="Samsung_Non_test.C3.A9">Samsung <span style="color:#9200f1"> Non testé </span></span></h4>
+<p>Réseau / Propriétés 802.1X / EAP-TTLS
+</p>
+<h4><span class="mw-headline" id="Nokia_Non_test.C3.A9">Nokia <span style="color:#9200f1"> Non testé </span></span></h4>
+<p><span style="color:#ff0000"> Non-fonctionel pour le moment </span>
+</p><p><br />
+</p>
+<ul><li> Une fois le Wifi allumé, vous détectez le SSID <b>Nobel</b>&#160;:</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Nokia-Nobel.jpg.html" class="image"><img alt="Nokia-Nobel.jpg" src="images/2/21/Nokia-Nobel.jpg" width="400" height="98" /></a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171019220514
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.580 seconds
+Real time usage: 0.656 seconds
+Preprocessor visited node count: 112/1000000
+Preprocessor generated node count: 124/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:193-0!*!0!!fr!5!* and timestamp 20171019220514 and revision id 2842
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Wifi&amp;oldid=2842">http://www.openbsd-edu.net/index.php?title=Wifi&amp;oldid=2842</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Cat%25C3%25A9gories.html" title="Spécial:Catégories">Catégorie</a> : <ul><li><a href="http://www.openbsd-edu.net/index.php?title=Cat%C3%A9gorie:Pages_avec_des_liens_de_fichiers_bris%C3%A9s&amp;action=edit&amp;redlink=1" class="new" title="Catégorie:Pages avec des liens de fichiers brisés (page inexistante)">Pages avec des liens de fichiers brisés</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Wifi.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Wifi.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Wifi&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Wifi.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Wifi.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Wifi&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Wifi&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Wifi.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FWifi.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Wifi" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Wifi&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Wifi&amp;oldid=2842" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Wifi&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 16 octobre 2014 à 14:27.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.580","walltime":"0.656","ppvisitednodes":{"value":112,"limit":1000000},"ppgeneratednodes":{"value":124,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171019220514","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1371});});</script>
+	</body>
+</html>

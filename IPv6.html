@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>IPv6 — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"IPv6","wgTitle":"IPv6","wgCurRevisionId":2059,"wgRevisionId":2059,"wgArticleId":164,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"IPv6","wgRelevantArticleId":164,"wgRequestId":"e04cf277c17c79e7516bbea9","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-IPv6 rootpage-IPv6 skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">IPv6</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=IPv6.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=IPv6.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>Cette doc montre comment <i>utiliser</i> IPv6, pas <i>ce qu'est</i> IPv6. D'excellentes docs existent à ce sujet.
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=IPv6.html#Le_FAI"><span class="tocnumber">1</span> <span class="toctext">Le FAI</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=IPv6.html#Un_point_de_th.C3.A9orie"><span class="tocnumber">2</span> <span class="toctext">Un point de théorie</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=IPv6.html#Architecture"><span class="tocnumber">3</span> <span class="toctext">Architecture</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=IPv6.html#Tunnel_HE"><span class="tocnumber">4</span> <span class="toctext">Tunnel HE</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=IPv6.html#IPv6_sur_la_passerelle_OpenBSD"><span class="tocnumber">4.1</span> <span class="toctext">IPv6 sur la passerelle OpenBSD</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=IPv6.html#Sur_les_clients"><span class="tocnumber">4.2</span> <span class="toctext">Sur les clients</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=IPv6.html#Obsol.C3.A8te_:_Solution_Free"><span class="tocnumber">5</span> <span class="toctext">Obsolète&#160;: Solution Free</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=IPv6.html#IPv6_sur_la_passerelle_OpenBSD_2"><span class="tocnumber">5.1</span> <span class="toctext">IPv6 sur la passerelle OpenBSD</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=IPv6.html#Adressage"><span class="tocnumber">5.1.1</span> <span class="toctext">Adressage</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=IPv6.html#Routage.2C_filtrage.2C_etc.."><span class="tocnumber">5.1.2</span> <span class="toctext">Routage, filtrage, etc..</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=IPv6.html#Services_IPv6"><span class="tocnumber">6</span> <span class="toctext">Services IPv6</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=IPv6.html#DNS_:_Bind"><span class="tocnumber">6.1</span> <span class="toctext">DNS&#160;: Bind</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=IPv6.html#RR"><span class="tocnumber">6.1.1</span> <span class="toctext">RR</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=IPv6.html#Binding_ipv6"><span class="tocnumber">6.1.2</span> <span class="toctext">Binding ipv6</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=IPv6.html#Apache"><span class="tocnumber">6.2</span> <span class="toctext">Apache</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="index.php%3Ftitle=IPv6.html#S.C3.A9curit.C3.A9"><span class="tocnumber">7</span> <span class="toctext">Sécurité</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="index.php%3Ftitle=IPv6.html#Test_de_connectivit.C3.A9"><span class="tocnumber">8</span> <span class="toctext">Test de connectivité</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="index.php%3Ftitle=IPv6.html#Hurricane_Electric"><span class="tocnumber">9</span> <span class="toctext">Hurricane Electric</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=IPv6.html#Tunnels"><span class="tocnumber">9.1</span> <span class="toctext">Tunnels</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=IPv6.html#Certification"><span class="tocnumber">9.2</span> <span class="toctext">Certification</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=IPv6.html#Exercices_et_codes"><span class="tocnumber">9.3</span> <span class="toctext">Exercices et codes</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Le_FAI">Le FAI</span></h2>
+<p>Chez free, on peut avoir gratuitement un bloc d'adresses IPv6 rien qu'à soi, en cochant une case sur la console de gestion et en redémarrant la FreeBox. <i>Cool&#160;!</i>
+</p><p>Oui, sauf que le tunnel 6to4rd utilisé (pour faire circuler le flux IPv6 dans le tunnel IPv4 jusqu'au backbone IPv6 de Free) ne peut être routé&#160;! Vous avez un beau /64 ...qui doit être à plat depuis la freebox!
+</p><p>Plusieurs solutions existent des plus <a rel="nofollow" class="external text" href="http://ip6.fr/free-broute/">crados</a> aux plus <a rel="nofollow" class="external text" href="http://linux-attitude.fr/post/proxy-ndp-ipv6">propres</a>.
+</p><p>Au final, on va juste virer la solution semi-geek de Free, pour un truc qui marche&#160;: Les tunnels Hurricane-Electric.
+</p>
+<h2><span class="mw-headline" id="Un_point_de_th.C3.A9orie">Un point de théorie</span></h2>
+<p>Que ce soit chez Free ou HE, ils fournissent, par défaut un /64&#160;: le préfixe (on ne parle plus de masque  mais de préfixe en IPv6) est long de 64 bits et la partie machine de 64 bits.
+</p><p>Or ce /64 n'est pas découpable en sous-réseaux; vous aurez un réseau à plat.
+</p><p>Pour obtenir des sous-réseaux, il faut demander au FAI de réduire la partie réseau.
+Ainsi chez HE, ils proposent de router un /48 au lieu d'un /64 et de vous laisser ainsi un /16 ,c'est à dire plus de 65000 sous-réseaux de 2^64 machines chacun; vous aurez de la marge.
+</p>
+<h2><span class="mw-headline" id="Architecture">Architecture</span></h2>
+<p>Derrière le routeur, je souhaite avoir potentiellement 3 réseaux physiques connectés&#160;:
+</p>
+<ul><li> 1 DMZ avec les serveurs en dual-stack accessibles directement en IPv6 et en rdr (un D-NAT) en IPv4.</li>
+<li> 1 LAN clients IPv4 only</li>
+<li> 1 LAN de test disponible si j'ajoute une carte réseau au routeur.</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Tunnel_HE">Tunnel HE</span></h2>
+<p>Le principe est de tunneler {tunneliser&#160;?} les flux IPv6 dans des tunnels IPv4. Ca choque, ça devrait lagger..en faut pas trop.HE possède des POP {Point Of Presence} un peu partout.
+</p><p>Ils utilisent <a rel="nofollow" class="external text" href="https://en.wikipedia.org/wiki/List_of_IPv6_tunnel_brokers">6in4</a> comme protocole de tunnel.
+</p><p>Une fois inscrit sur <a rel="nofollow" class="external text" href="http://ipv6.he.net">le site</a>, vous commencez, jeune padawan que vous êtes, en statut Newbie.
+</p><p>Moi, <i>qui me la joue un peu</i>, je suis maintenant&#160;:<a href="./index.php%3Ftitle=Fichier:IPV6-Pro.png.html" class="image"><img alt="IPV6-Pro.png" src="images/d/d0/IPV6-Pro.png" width="133" height="134" /></a>. Ça claque!
+</p>
+<h3><span class="mw-headline" id="IPv6_sur_la_passerelle_OpenBSD">IPv6 sur la passerelle OpenBSD</span></h3>
+<ul><li> On route les paquets IPv6, ce qui est bien sur un routeur.</li></ul>
+<pre>sysctl -w net.inet6.ip6.forwarding=1
+</pre>
+<ul><li> On demande à créer un tunnel chez HE et on recopie (voire on copie/colle) les exemples de config&#160;:</li></ul>
+<pre>#Tunnel HE IPv6
+ifconfig gif0 tunnel 82.237.239.48 216.66.84.42
+ifconfig gif0 inet6 alias 2001:470:00ff:cba::2 2001:470:00ff:cba::1 prefixlen 128
+route -n add -inet6 default 2001:470:00ff:cba::1
+</pre>
+<p>Votre routeur a une double-pile IP [On causera de dual-stack].
+</p>
+<ul><li> Maintenant, en IPv6, on n'utilise pas DHCPv6, grosse verrue moisie passéiste, mais directement <i>radvd</i> qui implémente le protocole <i>ndp</i>.</li>
+<li> Dans <i>/etc/rc.conf</i>&#160;:</li></ul>
+<pre>perl -pi -e 's/rtadvd_flags=NO/rtadvd_flags="sis1"/' /etc/rc.conf
+</pre>
+<ul><li> Alors, je rappelle ici qu'en IPv6 la longueur du préfixe est <b>toujours</b> de 64&#160;! Pas de subnetting de longueur variable!</li></ul>
+<p>Donc, choisissez vous-même vos subnets et jouant sur le préfixe.
+</p><p><br />
+</p>
+<ul><li> On configure le routeur&#160;:</li></ul>
+<pre>echo "
+</pre>
+<p>sis1:\
+</p>
+<dl><dd>addrs#1:addr="2001:XXX:YY:100::":prefixlen#64:raflags#64:</dd></dl>
+<p>sis2:\
+</p>
+<dl><dd>addrs#1:addr="2001:XXX:YY:200::":prefixlen#64:raflags#64:</dd></dl>
+<pre>" &gt;&gt; /etc/rtadvd.conf 
+</pre>
+<p>Vous alimentez vos deux sous-réseaux physiques avec deux préfixes différents. Votre fournisseur de tunnel vous a fourni un /48 (2001:XXX:YY), vous ajoutez, au choix la suite (:100 et&#160;:200 ici)
+</p><p><br />
+Et pour faire marcher le tout, tout de suite&#160;:
+</p>
+<pre>rtadvd sis1 sis2 sis3 whatever4
+</pre>
+<p>C'est bon, votre routeur diffuse des annonces de préfixe.
+</p>
+<h3><span class="mw-headline" id="Sur_les_clients">Sur les clients</span></h3>
+<p>rtsol interface
+</p>
+<h2><span class="mw-headline" id="Obsol.C3.A8te_:_Solution_Free">Obsolète&#160;: Solution Free</span></h2>
+<p>Cette solution ne permet pas d'avoir simplement un accès IPv6 au delà d'un ensemble de machines à plat sur un LAN derrière la FreeBox; pour celà voir tunnel HE.
+</p><p>ndp -s addr_ipv6 mac_addr proxy sur
+</p>
+<h3><span class="mw-headline" id="IPv6_sur_la_passerelle_OpenBSD_2">IPv6 sur la passerelle OpenBSD</span></h3>
+<h4><span class="mw-headline" id="Adressage">Adressage</span></h4>
+<p>Activation de l'acceptation des infos ICMPv6 depuis le routeur Free
+</p>
+<pre>sysctl -w net.inet6.ip6.accept_rtadv=1
+</pre>
+<p>Idem au reboot
+</p>
+<pre>perl -pi -e 's/#net.inet6.ip6.accept_rtadv=1/net.inet6.ip6.accept_rtadv=1/' /etc/sysctl.conf 
+</pre>
+<p>Vérification que l'IPv6 n'arrivera pas encore sur mon LAN interne, chaque chose en son temps.
+</p>
+<pre>sysctl -a |grep inet6 |grep forward
+   net.inet6.ip6.forwarding=0
+   net.inet6.ip6.mforwarding=0 
+</pre>
+<p><i>dhclient</i> devient <i>rtsol</i> (routeur sollicitation)
+</p>
+<pre>rtsol xl0
+</pre>
+<p>et 
+</p>
+<pre>ifconfig xl0
+</pre>
+<p>ajoute une ligne:
+</p>
+<pre>inet6 2a01:e35:2ede:f300:201:2ff:fe9d:daee prefixlen 64 pltime 86134 vltime 86134
+</pre>
+<p>où <i>2a01:e35:2EDE:F300::/64 </i>est mon préfixe à moi alloué par mon gentil FAI IPv6-compliant. avec&#160;:
+</p><p><i>2a01:e3 </i> préfixe Free aux abonnés
+</p><p><i>5:2EDE:F30</i> = Mon IPv4 en hexa
+</p><p><i>0</i> Reservé
+</p><p><i>::</i> Pour nous
+</p>
+<h4><span class="mw-headline" id="Routage.2C_filtrage.2C_etc..">Routage, filtrage, etc..</span></h4>
+<ul><li> On laisse passer l'IPv6 vers les machines des LAN</li></ul>
+<pre>sysctl -w   net.inet6.ip6.forwarding=1
+</pre>
+<p>pour le multicast, on verra&#160;:    net.inet6.ip6.mforwarding=0 
+</p>
+<ul><li> On annonce le prefixe et les infos qui vont aux machines de la DMZ (ICMPv6 rulez!)</li></ul>
+<pre>perl -pi -e 's/rtadvd_flags=NO/rtadvd_flags="sis1"/' /etc/rc.conf
+</pre>
+<ul><li> On active le proxy NDP (Neighbor Discovery Protocol, le remplacement de ARP en plus beaucoup mieux)</li></ul>
+<h2><span class="mw-headline" id="Services_IPv6">Services IPv6</span></h2>
+<h3><span class="mw-headline" id="DNS_:_Bind">DNS&#160;: Bind</span></h3>
+<h4><span class="mw-headline" id="RR">RR</span></h4>
+<p>Les enregistrements <i>IN A</i> deviennent <i>IN AAA</i>&#160;:
+</p><p>On a donc ici&#160;:
+</p>
+<pre>dirac IN	AAAA	2a01:e35:2ede:f300:201:2ff:fe9d:daee
+</pre>
+<h4><span class="mw-headline" id="Binding_ipv6">Binding ipv6</span></h4>
+<pre>listen-on-v6 port 53 { any; };
+</pre>
+<h3><span class="mw-headline" id="Apache">Apache</span></h3>
+<p>1.3 n'est pas compatible, faut passer en 2.0, sauf sous....OpenBSD dont l'apache 1.3 cause IPv6&#160;;-)
+</p>
+<ul><li> Ajouter </li></ul>
+<pre>Listen [::]:80
+</pre>
+<p>à /var/www/conf/httpd.conf
+</p>
+<h2><span class="mw-headline" id="S.C3.A9curit.C3.A9">Sécurité</span></h2>
+<ul><li> Revoyez <b>scrupuleusement</b> vos règles de pare-feu&#160;! De beaux trous en perspective... En phase de test, je me suis rendu compte que le wiki perso de mon portable natté en IPv4 devenait...public!</li></ul>
+<h2><span class="mw-headline" id="Test_de_connectivit.C3.A9">Test de connectivité</span></h2>
+<p><a rel="nofollow" class="external free" href="http://test-ipv6.com/">http://test-ipv6.com/</a>
+</p>
+<h2><span class="mw-headline" id="Hurricane_Electric">Hurricane Electric</span></h2>
+<h3><span class="mw-headline" id="Tunnels">Tunnels</span></h3>
+<p>Ils proposent gratuitement jusqu'à 5 <a rel="nofollow" class="external text" href="http://www.tunnelbroker.net/">tunnels</a> IPv6.
+</p>
+<h3><span class="mw-headline" id="Certification">Certification</span></h3>
+<p><a rel="nofollow" class="external text" href="http://ipv6.he.net/certification/">La certification</a>
+</p>
+<ul><li> Niveau <i>Newbie</i></li></ul>
+<p>Vous avez répondu aux questions de base sur IPv6.
+</p>
+<ul><li> Niveau <i>Explorer</i></li></ul>
+<p>Vous pouvez accéder au site hurricane en IPv6.
+</p>
+<ul><li> Niveau <i>Enthusiast</i></li></ul>
+<p>Vous avez mis en place un serveur Web en IPv6.
+</p>
+<ul><li> Niveau <i>Administrator</i></li></ul>
+<p>Vous avez mis en place un serveur Mail en IPv6.
+</p>
+<ul><li> Niveau <i>Professionnal</i></li></ul>
+<p>Vous avez mis en place les enregistrements DNS directs et inverses en IPv6.
+</p>
+<h3><span class="mw-headline" id="Exercices_et_codes">Exercices et codes</span></h3>
+<p>Existe également une base de <a rel="nofollow" class="external text" href="http://code.he.net/">codes</a> disponibles servant aussi de thèmes d'exercices.
+Pas forcément orientés IPv6, ces exos sont très détaillés, progressifs.
+</p><p>les langages suivants sont proposés&#160;:
+</p>
+<ul><li> Perl</li>
+<li> PHP</li>
+<li> Python</li>
+<li> ruby</li>
+<li> SQLite</li>
+<li> HTML</li>
+<li> XML</li>
+<li> CSS</li>
+<li> JQuery</li>
+<li> Javascript</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20171020132936
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.300 seconds
+Real time usage: 0.319 seconds
+Preprocessor visited node count: 83/1000000
+Preprocessor generated node count: 88/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:164-0!*!*!!fr!5!* and timestamp 20171020132936 and revision id 2059
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=IPv6&amp;oldid=2059">http://www.openbsd-edu.net/index.php?title=IPv6&amp;oldid=2059</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=IPv6.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=IPv6.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:IPv6&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=IPv6.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=IPv6.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=IPv6&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=IPv6&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=IPv6.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FIPv6.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/IPv6" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=IPv6&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=IPv6&amp;oldid=2059" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=IPv6&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 6 juin 2012 à 09:51.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.300","walltime":"0.319","ppvisitednodes":{"value":83,"limit":1000000},"ppgeneratednodes":{"value":88,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132937","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1783});});</script>
+	</body>
+</html>

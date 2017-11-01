@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Systeme de fichiers ZFS — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Systeme_de_fichiers_ZFS","wgTitle":"Systeme de fichiers ZFS","wgCurRevisionId":3208,"wgRevisionId":3208,"wgArticleId":218,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Systeme_de_fichiers_ZFS","wgRelevantArticleId":218,"wgRequestId":"b17c174a11d4aa55dd1a4649","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Systeme_de_fichiers_ZFS rootpage-Systeme_de_fichiers_ZFS skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Systeme de fichiers ZFS</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Bonnes_docs"><span class="tocnumber">1</span> <span class="toctext">Bonnes docs</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Choix_techniques"><span class="tocnumber">2</span> <span class="toctext">Choix techniques</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Identification_des_disques"><span class="tocnumber">3</span> <span class="toctext">Identification des disques</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Mise_en_place_du_Pool"><span class="tocnumber">4</span> <span class="toctext">Mise en place du Pool</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Mise_en_place_du_FS"><span class="tocnumber">5</span> <span class="toctext">Mise en place du FS</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Options"><span class="tocnumber">6</span> <span class="toctext">Options</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Debug"><span class="tocnumber">7</span> <span class="toctext">Debug</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Un_souci_de_disque_.3F"><span class="tocnumber">8</span> <span class="toctext">Un souci de disque&#160;?</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Ce_qui_n.27est_pas_possible_avec_ZFS"><span class="tocnumber">9</span> <span class="toctext">Ce qui n'est pas possible avec ZFS</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Commandes_communes"><span class="tocnumber">10</span> <span class="toctext">Commandes communes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Extension_de_taille_de_volume"><span class="tocnumber">10.1</span> <span class="toctext">Extension de taille de volume</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Extension_d.27un_pool_par_remplacement_de_disque"><span class="tocnumber">10.2</span> <span class="toctext">Extension d'un pool par remplacement de disque</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Disque_Mort"><span class="tocnumber">10.2.1</span> <span class="toctext">Disque Mort</span></a></li>
+<li class="toclevel-3 tocsection-14"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Disque_Encore_vivant"><span class="tocnumber">10.2.2</span> <span class="toctext">Disque Encore vivant</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Obtenir_l.27historique"><span class="tocnumber">10.3</span> <span class="toctext">Obtenir l'historique</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Quel_est_la_config_d.27un_pool_.3F"><span class="tocnumber">10.4</span> <span class="toctext">Quel est la config d'un pool&#160;?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#.3D_V.C3.A9rifier_le_pool"><span class="tocnumber">11</span> <span class="toctext">= Vérifier le pool</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Partage_r.C3.A9seau"><span class="tocnumber">12</span> <span class="toctext">Partage réseau</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#NFS"><span class="tocnumber">12.1</span> <span class="toctext">NFS</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Samba"><span class="tocnumber">12.2</span> <span class="toctext">Samba</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-21"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Snapshot_.26_Rollback"><span class="tocnumber">13</span> <span class="toctext">Snapshot &amp; Rollback</span></a></li>
+<li class="toclevel-1 tocsection-22"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Backup.2Frestore_et_synchro_vers_une_autre_machine"><span class="tocnumber">14</span> <span class="toctext">Backup/restore et synchro vers une autre machine</span></a></li>
+<li class="toclevel-1 tocsection-23"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Sp.C3.A9cificit.C3.A9s_FreeBSD"><span class="tocnumber">15</span> <span class="toctext">Spécificités FreeBSD</span></a>
+<ul>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Configuration_et_lancement"><span class="tocnumber">15.1</span> <span class="toctext">Configuration et lancement</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Sp.C3.A9cificit.C3.A9s_Linux_:_ZFS_on_Linux"><span class="tocnumber">16</span> <span class="toctext">Spécificités Linux&#160;: ZFS on Linux</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Sp.C3.A9cificit.C3.A9s_Solaris"><span class="tocnumber">17</span> <span class="toctext">Spécificités  Solaris</span></a></li>
+<li class="toclevel-1 tocsection-27"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Surveillance"><span class="tocnumber">18</span> <span class="toctext">Surveillance</span></a></li>
+<li class="toclevel-1 tocsection-28"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Comment_r.C3.A9utiliser_un_disque_ZFS_sous_un_autre_OS"><span class="tocnumber">19</span> <span class="toctext">Comment réutiliser un disque ZFS sous un autre OS</span></a></li>
+<li class="toclevel-1 tocsection-29"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#Sauver_un_pool_ZFS_du_d.C3.A9sastre"><span class="tocnumber">20</span> <span class="toctext">Sauver un pool ZFS du désastre</span></a></li>
+<li class="toclevel-1 tocsection-30"><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#MOnter_deux_pools_ZFS_de_noms_identiques"><span class="tocnumber">21</span> <span class="toctext">MOnter deux pools ZFS de noms identiques</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Bonnes_docs">Bonnes docs</span></h2>
+<p><a rel="nofollow" class="external text" href="http://www.napp-it.org/manuals/tuning_en.htmlTuning">ZFS</a>
+</p><p><a rel="nofollow" class="external text" href="https://storagetuning.wordpress.com/2011/12/01/zfs-tuning-for-ssds/">Tuning ZFS avec des SSD en cache</a>
+</p><p><a rel="nofollow" class="external text" href="http://richardhartmann.de/blog/posts/2012/02/RAID-sucks/">Why Raid Sucks!</a>
+</p><p><a rel="nofollow" class="external text" href="http://constantin.glez.de/blog/2011/07/zfs-dedupe-or-not-dedupe">Dedup: Good feature ou gouffre à fric&#160;?</a>
+</p><p><a rel="nofollow" class="external text" href="https://blogs.oracle.com/bonwick/en_US/?page=1">Blog du papa de ZFS</a>
+</p><p><a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/Storage:_ZFS">ZFS utilisable sous ProxMox, bientôt!</a>
+</p>
+<h2><span class="mw-headline" id="Choix_techniques">Choix techniques</span></h2>
+<p>Avec un éventail de disques de tailles différentes, on va tenter de concilier&#160;:
+</p>
+<ul><li> Performances</li>
+<li> Fiabilité</li>
+<li> Espace</li></ul>
+<p>Bref, assez inconciliable, non&#160;??
+</p><p>Dans mon panier neuf&#160;:
+</p>
+<ul><li> 3 disques de 1TB</li>
+<li> 3 disques de 500 GB</li>
+<li> 1 SSD de 30GB</li>
+<li> 1 carte Raid 3Ware 8506-8LP en PCI-X</li>
+<li> 1 carte Raid 3Ware 9500S-4LP en PCI-X</li></ul>
+<p>Ebay est parfois un endroit merveilleux..
+</p>
+<ul><li> On utilisera les contrôleurs Raid comme des simples contrôleurs disques exportant les disques 1 par 1 en mode JBOD, en utilisant juste le cache, mais aucune fonction raid, ZFS fera le boulot.</li></ul>
+<ul><li> Pour limiter les dégâts liés à une panne disque, on génère des miroirs (aka Raid1) de deux disques.</li>
+<li> Pour limiter les dégâts liés à une panne de contrôleur, on génère les miroirs avec chaque disque sur une carte différente.</li></ul>
+<ul><li> Le SSD sera partitionné en 2: Une partie en cache en lecture, l'autre pour le cache en écriture.</li></ul>
+<h2><span class="mw-headline" id="Identification_des_disques">Identification des disques</span></h2>
+<ul><li> twa0 = AMCC 9500S-4LP
+<ul><li> twa0 port 0 = da0 1TB</li>
+<li> twa0 port 1 = da1 1TB</li>
+<li> twa0 port 2 = da2 500GB</li>
+<li> twa0 port 3 = da3 500 GB</li></ul></li>
+<li> twe0 = AMCC 8506-8LP
+<ul><li> twe0 port 2 = twed0 500 GB</li>
+<li> twe0 port 4 = twed1 1 TB</li>
+<li> twe0 port 6 = twed2 1 TB</li></ul></li>
+<li> twe1 = AMCC 7006-2P
+<ul><li> twe1 unit 0 = twed3 Boot Raid hard de 20GB</li></ul></li></ul>
+<h2><span class="mw-headline" id="Mise_en_place_du_Pool">Mise en place du Pool</span></h2>
+<ul><li> Création de l'agrégat de miroirs (stripe of mirrors)</li></ul>
+<pre>zpool create datas mirror da0 twed1 mirror da1 twed2 mirror da3 twed0
+
+</pre>
+<ul><li> Vérification</li></ul>
+<pre>zpool status
+  pool: datas
+ state: ONLINE
+ scrub: none requested
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	datas       ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da0     ONLINE       0     0     0
+	    twed1   ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da1     ONLINE       0     0     0
+	    twed2   ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da3     ONLINE       0     0     0
+	    twed0   ONLINE       0     0     0
+
+errors: No known data errors
+
+</pre>
+<p><br />
+</p>
+<ul><li> Ajout d'un ZIL et d'un L2ARC sur un SSD</li></ul>
+<p>Le ZIL (ZFS INtent Log) est un cache en écriture
+</p><p>Le L2ARC est un cache en lecture.
+</p><p><br />
+</p>
+<pre>zpool add datas log da2s1
+zpool add datas cache da2s2
+</pre>
+<pre>
+zpool status
+  pool: datas
+ state: ONLINE
+ scrub: scrub completed after 0h2m with 0 errors on Wed May 11 20:39:59 2011
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	datas       ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da0     ONLINE       0     0     0
+	    twed1   ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da1     ONLINE       0     0     0
+	    twed2   ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da3     ONLINE       0     0     0
+	    twed0   ONLINE       0     0     0
+	logs
+	  da2s1     ONLINE       0     0     0
+	cache
+	  da2s2     ONLINE       0     0     0
+
+errors: No known data errors
+</pre>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Mise_en_place_du_FS">Mise en place du FS</span></h2>
+<pre>zfs create datas/films
+</pre>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Options">Options</span></h2>
+<pre>zfs get all 
+zfs set compression=on datas/photos
+zfs set copies=2 datas/photos
+</pre>
+<h2><span class="mw-headline" id="Debug">Debug</span></h2>
+<ul><li> Commande</li></ul>
+<pre>zpool create miroir1 mirror da0 twed1
+</pre>
+<ul><li> Réponse</li></ul>
+<pre>invalid vdev specification
+use '-f' to override the following errors:
+</pre>
+<ul><li> Solution </li></ul>
+<p>Les disques sont de tailles différentes (même légèrement); vous devez forcer la main à ZFS (-f).
+</p>
+<pre>zpool create -f miroir1 mirror  da0 twed1
+</pre>
+<ul><li> COmmande </li></ul>
+<pre>zpool add  rpool mirro da6 da7
+</pre>
+<ul><li> Réponse</li></ul>
+<pre>cannot add to 'rpool': root pool can not have multiple vdevs or separate logs
+</pre>
+<p>Une fois fabriqué, le root pool ne peut pas augmenter le nombre de vdev!
+</p><p><b> TRES Important</b>&#160;: Une fois choisi le nombre et le type de vdev pour le root pool, vous ne pouvez plus le changer, ni l'augmenter!!! 
+Impossible par exemple de partir, par exemple sur un agrégat de 3 miroirs de 2 disques (Raid10 3X2disques) pour passer plus tard à  un agrégat de 4 miroirs de 2 disques (Raid10 4X2disques).
+</p><p><br />
+</p>
+<ul><li> Commande</li></ul>
+<pre>zpool create miroir1 mirror da1 twed2
+</pre>
+<ul><li> Réponse</li></ul>
+<pre>/dev/da1 is part of potentially active pool 'datas'
+use '-f' to override the following errors:
+</pre>
+<ul><li> Solution </li></ul>
+<p>Un disque (au moins) appartient déja à une grappe ZFS; vous allez tout casser. Si vous êtes certain de ce que vous faites, vous devez forcer la main à ZFS (-f).
+</p>
+<pre>zpool create -f miroir2 mirror  da1 twed2
+</pre>
+<ul><li>(Spécial ZFSGUru&#160;??)&#160;: Impossible de créer la table de partition GPT sur un disque de plus de 1TB</li></ul>
+<p><a rel="nofollow" class="external autonumber" href="http://blather.michaelwlucas.com/archives/1071">[1]</a>
+</p>
+<pre>  gpart backup da0 &gt; da0.gpt
+</pre>
+<p>où da0 est un disque bien formaté par l'utilitaire ZFSGuru
+</p>
+<pre> gpart restore -F /dev/da1 &lt; da0.gpt
+</pre>
+<p>où da1 est le disque  à problème.Même si da1 est plus grand que da0.
+Ensuite, dans l'interface ZFSGuru vous augmentez dynamiquement la taille de da1.
+</p>
+<h2><span class="mw-headline" id="Un_souci_de_disque_.3F">Un souci de disque&#160;?</span></h2>
+<pre>zpool status
+</pre>
+ <pre>
+ pool: datas
+ state: DEGRADED
+ scrub: scrub completed after 2h26m with 0 errors on Sat May 14 09:58:05 2011
+ config:
+	NAME        STATE     READ WRITE CKSUM
+	datas       DEGRADED     0     0     0
+	  mirror    DEGRADED     0     0     0
+	    da0     REMOVED      0     0     0
+	    twed1   ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da1     ONLINE       0     0     0
+	    twed2   ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da3     ONLINE       0     0     0
+	    twed0   ONLINE       0     0     0
+	logs
+	  da2s1     ONLINE       0     0     0
+	cache
+	  da2s2     ONLINE       0     0     0
+ errors: No known data errors
+</pre>
+<p>Oui..un souci, on peut le dire, le disque da0 est parti en vrille..
+</p><p>On sort le disque du pool
+</p>
+<pre>zpool offline datas da0
+</pre>
+<p>On le remet..En fait j'ai éteint, vérifié les cx sata et redémarré&#160;:
+</p>
+<pre>zpool status
+
+</pre>
+ <pre>
+ pool: datas
+ state: ONLINE
+ status: One or more devices has experienced an unrecoverable error.  An
+	attempt was made to correct the error.  Applications are unaffected.
+ action: Determine if the device needs to be replaced, and clear the errors
+	using 'zpool clear' or replace the device with 'zpool replace'.
+   see: http://www.sun.com/msg/ZFS-8000-9P
+ scrub: resilver in progress for 0h2m, 3.48% done, 1h15m to go
+ config:
+	NAME        STATE     READ WRITE CKSUM
+	datas       ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da0     ONLINE       0     0     2  7.88G resilvered
+	    twed1   ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da1     ONLINE       0     0     0
+	    twed2   ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da3     ONLINE       0     0     0
+	    twed0   ONLINE       0     0     0
+	logs
+	  da2s1     ONLINE       0     0     0
+	cache
+	  da2s2     ONLINE       0     0     0
+ errors: No known data errors
+</pre>
+<p>D'ici 1h et des brouettes, je retrouverai ma redondance!
+</p><p>Il faudra que je vérifie si le disque est récupérable ou pas.
+</p>
+<ul><li> Durant le réargentage (la reconstruction, le resilvering, quoi!), le disque est soumis à rude épreuve&#160;:</li></ul>
+<pre>
+q                        extended device statistics  
+device     r/s   w/s    kr/s    kw/s wait svc_t &#160;%b  
+da0        0.0 424.9     0.0 46803.6    4   4.0  53 
+twed1    199.8   6.4 23796.5    13.3    0  19.1  53 
+twed2     68.8   6.6  7972.8    13.3    0  11.8  27 
+da1       69.2   6.6  8081.6    13.3    0  24.7  60 
+twed0     43.2   6.6  4890.3    13.3    0  10.3  19 
+da3       32.8   6.6  3708.1    13.3    2  20.1  42 
+da2        0.2   1.0     3.2     8.8    0 203.9   6 
+pass1      0.0   0.0     0.0     0.0    0   0.0   0 
+pass2      0.0   0.0     0.0     0.0    0   0.0   0 
+twed3      0.0   0.0     0.0     0.0    0   0.0   0 
+pass3      0.0   0.0     0.0     0.0    0   0.0   0 
+pass0      0.0   0.0     0.0     0.0    0   0.0   0 
+</pre>
+<ul><li> da0 écrit 46803 ko/s</li>
+<li> twed1, l'autre disque du miroir lit 23796 ko/s</li>
+<li> les autres disques de la grappe participent également de l'effort de reconstruction&#160;: 7972+8081+4890+3708 = 24651 ko/s</li></ul>
+<p>Il faut comprendre que l'algo de resilvering est très futé et optimisé au mieux la lecture sur les différents disques pour ne pas en faire un goulet d’étranglement. Pas con ZFS&#160;!
+</p><p>une fois terminé&#160;:
+</p>
+<pre>zpool status -x
+</pre>
+<pre>
+  pool: datas
+ state: ONLINE
+status: One or more devices has experienced an unrecoverable error.  An
+	attempt was made to correct the error.  Applications are unaffected.
+action: Determine if the device needs to be replaced, and clear the errors
+	using 'zpool clear' or replace the device with 'zpool replace'.
+   see: http://www.sun.com/msg/ZFS-8000-9P
+ scrub: resilver completed after 0h48m with 0 errors on Sat May 14 15:00:25 2011
+config:
+
+	NAME        STATE     READ WRITE CKSUM
+	datas       ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da0     ONLINE       0     0     2  139G resilvered
+	    twed1   ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da1     ONLINE       0     0     0
+	    twed2   ONLINE       0     0     0
+	  mirror    ONLINE       0     0     0
+	    da3     ONLINE       0     0     0
+	    twed0   ONLINE       0     0     0
+	logs
+	  da2s1     ONLINE       0     0     0
+	cache
+	  da2s2     ONLINE       0     0     0
+
+errors: No known data errors
+</pre>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Ce_qui_n.27est_pas_possible_avec_ZFS">Ce qui n'est pas possible avec ZFS</span></h2>
+<ul><li> Changer le niveau de raid</li>
+<li> Modifier le pool racine</li>
+<li> Changer le nombre de disques dans un agrégat</li>
+<li> Importer/Exporter le pool root si il est monté (et comme il contient les binaires systèmes, il est indémontable) SOlution&#160;: Un LIveCD</li></ul>
+<h2><span class="mw-headline" id="Commandes_communes">Commandes communes</span></h2>
+<p><a rel="nofollow" class="external text" href="http://lildude.co.uk/zfs-cheatsheet">Un excellent résumé</a> 
+</p>
+<h3><span class="mw-headline" id="Extension_de_taille_de_volume">Extension de taille de volume</span></h3>
+<p>10s secondes chrono&#160;!
+</p>
+<pre>
+#zfs list
+NAME       USED  AVAIL  REFER  MOUNTPOINT
+SAN        251G   284G   655M  /SAN
+SAN/ESX1   250G   528G  5,92G  -
+
+# zfs get volsize SAN/ESX1
+NAME      PROPERTY  VALUE     SOURCE
+SAN/ESX1  volsize   250G      -
+
+# zfs set volsize=300G SAN/ESX1
+
+# zfs get volsize SAN/ESX1
+NAME      PROPERTY  VALUE     SOURCE
+SAN/ESX1  volsize   300G      -
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Extension_d.27un_pool_par_remplacement_de_disque">Extension d'un pool par remplacement de disque</span></h3>
+<p>Il faut lire les docs avant..
+</p>
+<ul><li> Surtout <a rel="nofollow" class="external text" href="http://blather.michaelwlucas.com/archives/1071">celle-là</a>, </li></ul>
+<p><a rel="nofollow" class="external text" href="https://blogs.oracle.com/mmusante/entry/howto_replace_a_bad_disk">celle-ci</a> et <a rel="nofollow" class="external autonumber" href="http://black-chair.livejournal.com/21419.html">[2]</a>
+</p><p>C'est une opération à faire de manière si le disque à changer est encore présent; ça rend l'opération moins stressante ..
+</p>
+<h4><span class="mw-headline" id="Disque_Mort">Disque Mort</span></h4>
+<p>On a un agrégat de miroirs. Un de ces miroirs est 
+</p>
+<pre>mirror-3    ONLINE       0     0     0
+      gpt/Dev6  ONLINE       0     0     0
+      gpt/Dev7  ONLINE       0     0     0
+</pre>
+<p>Et on veut remplacer Dev7 par Dev8 . Dev6 est du même modèle que Dev8.
+</p>
+<ul><li> D'abord un bon scrub pour vérifier que toutes les données sont OK.</li></ul>
+<pre>zpool scrub zroot
+</pre>
+<ul><li> 10h plus tard, on y va&#160;:On retire Dev7, on éteint, on rebranche Dev8, on met à jour sa Gpt (la nouvelle table de partition) et on l'intègre dans le pool:</li></ul>
+<pre>zpool detach zroot gpt/Dev7
+gpart backup /dev/da6 &gt; /root/gpart_da6.gpt
+gpart restore /dev/da8 &lt; /root/gpart_da6.gpt 
+</pre>
+<pre>gpart show /dev/da8
+</pre>
+<pre>=&gt;        34  3906228157  da8  GPT  (1.8T)
+         34         512    1  freebsd-boot  (256k)
+        546        1502       - free -  (751k)
+       2048  3906226143    2  freebsd-zfs  (1.8T)
+</pre>
+<pre>zpool attach  -f zroot gpt/Dev6 gpt/Dev8
+</pre>
+<p><br />
+</p>
+<pre>zpool status
+
+  pool: zroot
+ state: ONLINE
+ status: One or more devices is currently being resilvered.  The pool will
+	continue to function, possibly in a degraded state.
+ action: Wait for the resilver to complete.
+  scan: resilver in progress since Sun May  4 12:02:27 2014
+        196G scanned out of 3.66T at 334M/s, 3h1m to go
+        51.6G resilvered, 5.22% done
+ config:
+
+	NAME          STATE     READ WRITE CKSUM
+	zroot         ONLINE       0     0     0
+	  mirror-0    ONLINE       0     0     0
+	    gpt/Dev0  ONLINE       0     0     0
+	    gpt/Dev1  ONLINE       0     0     0
+	  mirror-1    ONLINE       0     0     0
+	    gpt/Dev2  ONLINE       0     0     0
+	    gpt/Dev3  ONLINE       0     0     0
+	  mirror-2    ONLINE       0     0     0
+	    gpt/Dev4  ONLINE       0     0     0
+	    gpt/Dev5  ONLINE       0     0     0
+	  mirror-3    ONLINE       0     0     0
+	    gpt/Dev6  ONLINE       0     0     0
+	    gpt/Dev8  ONLINE       0     0     0  (resilvering)
+
+ errors: No known data errors
+
+</pre>
+<p>334 Mo/s&#160;! Je n'ai pas de SSD et les disques sont des bons gros SATA 2To....
+</p><p>Vous n'oublierez pas de mettre à jour le gpt avec les infos de boot: 
+Vous cliquez sur la partition du disque intitulée freebsd-boot (Sous ZFSGuru) et vous faites un update du mbr.
+</p>
+<h4><span class="mw-headline" id="Disque_Encore_vivant">Disque Encore vivant</span></h4>
+<p>On a un agrégat de miroirs. Un de ces miroirs est 
+</p>
+<pre>mirror-3    ONLINE       0     0     0
+      gpt/Dev9  ONLINE       0     0     0
+      gpt/Dev5  ONLINE       0     0     0
+</pre>
+<p>Et on veut remplacer Dev5 par Dev10 . Dev10 n'est pas du même modèle que Dev6.
+</p><p>da4 correspond à Dev5
+</p><p>da8 correspond à Dev10
+</p><p><br />
+</p>
+<ul><li> D'abord un bon scrub pour vérifier que toutes les données sont OK.</li></ul>
+<pre>zpool scrub zroot
+</pre>
+<ul><li> 10h plus tard, on y va </li></ul>
+<p>Voilà l'état du pool&#160;:
+</p><p><a href="./index.php%3Ftitle=Fichier:Zroot1.png.html" class="image"><img alt="Zroot1.png" src="images/3/3d/Zroot1.png" width="942" height="39" /></a>
+</p>
+<ul><li> On configure le pool pour bénéficier automatiquement de l'augmentation de taille:</li></ul>
+<pre>zpool set autoexpand=on zroot
+</pre>
+<p>La suite des opérations&#160;:
+</p>
+<ul><li> On ajoute Dev10</li>
+<li> On met à jour la GPT de Dev10</li>
+<li> On remplace Dev5 par Dev10 (Resilvering)</li>
+<li> On enlève Dev5&#160;:</li></ul>
+<p><br />
+</p>
+<pre>gpart backup /dev/da6 &gt; /root/gpart_da6.gpt
+</pre>
+<p>On ne garde que les lignes correspondantes au boot&#160;:
+</p>
+<pre>cat /root/gpart_da6.gpt 
+ GPT 128
+ 1   freebsd-boot         34        512  
+</pre>
+<pre>gpart restore /dev/da10 &lt; /root/gpart_da6.gpt 
+</pre>
+<p>ZfsGuru&#160;:
+</p><p>On update le bootloader du disque
+</p><p>On formate en zfs le reste
+</p><p><br />
+</p>
+<pre>gpart show /dev/da10
+</pre>
+<pre>=&gt;        34  3906228157  da8  GPT  (1.8T)
+         34         512    1  freebsd-boot  (256k)
+        546        1502       - free -  (751k)
+       2048  3906226143    2  freebsd-zfs  (1.8T)
+</pre>
+<pre>/sbin/zpool replace -f zroot gpt/Dev5 gpt/Dev10
+</pre>
+<p><br />
+</p>
+<pre>zpool status
+
+  
+zpool status
+  pool: zroot
+ state: ONLINE
+status: One or more devices is currently being resilvered.  The pool will
+	continue to function, possibly in a degraded state.
+action: Wait for the resilver to complete.
+  scan: resilver in progress since Thu May  8 09:37:49 2014
+        75.8G scanned out of 3.66T at 300M/s, 3h29m to go
+        18.3G resilvered, 2.02% done
+config:
+
+	NAME             STATE     READ WRITE CKSUM
+	zroot            ONLINE       0     0     0
+	  mirror-0       ONLINE       0     0     0
+	    gpt/Dev0     ONLINE       0     0     0
+	    gpt/Dev1     ONLINE       0     0     0
+	  mirror-1       ONLINE       0     0     0
+	    gpt/Dev2     ONLINE       0     0     0
+	    gpt/Dev3     ONLINE       0     0     0
+	  mirror-2       ONLINE       0     0     0
+	    gpt/Dev9     ONLINE       0     0     0
+	    replacing-1  ONLINE       0     0     0
+	      gpt/Dev5   ONLINE       0     0     0
+	      gpt/Dev10  ONLINE       0     0     0  (resilvering)
+	  mirror-3       ONLINE       0     0     0
+	    gpt/Dev6     ONLINE       0     0     0
+	    gpt/Dev8     ONLINE       0     0     0
+
+errors: No known data errors
+
+
+</pre>
+<p>334 Mo/s&#160;! Je n'ai pas de SSD et les disques sont des bons gros SATA 2To....
+</p><p>Vous n'oublierez pas de mettre à jour le gpt avec les infos de boot: 
+Vous cliquez sur la partition du disque intitulée freebsd-boot (Sous ZFSGuru) et vous faites un update du mbr.
+</p><p><br />
+A la fin du <i>réargentage</i> (;-) ) ou resilvering, l'extension du volume du pool sera effective, moyennant, peut-être, un <i>zpool export &amp;&amp; zpool import</i>, ou bien, si vous avez bien configuré le pool pour s'étendre.
+</p><p><a href="./index.php%3Ftitle=Fichier:Zroot2.png.html" class="image"><img alt="Zroot2.png" src="images/9/93/Zroot2.png" width="948" height="41" /></a>
+</p>
+<h3><span class="mw-headline" id="Obtenir_l.27historique">Obtenir l'historique</span></h3>
+<pre>zpool history
+</pre>
+<h3><span class="mw-headline" id="Quel_est_la_config_d.27un_pool_.3F">Quel est la config d'un pool&#160;?</span></h3>
+<pre>zfs get all datas
+</pre>
+<h2><span class="mw-headline" id=".3D_V.C3.A9rifier_le_pool">= Vérifier le pool</span></h2>
+<ul><li> Lancer la vérification</li></ul>
+<pre>zpool scrub  datas
+</pre>
+<ul><li> Stopper la vérification</li></ul>
+<pre>zpool scrub -s datas
+</pre>
+<h2><span class="mw-headline" id="Partage_r.C3.A9seau">Partage réseau</span></h2>
+<h3><span class="mw-headline" id="NFS">NFS</span></h3>
+<pre>zfs set sharenfs=on datas/films
+</pre>
+<p>et c'est tout&#160;! Pas de démon à relancer, c'est immédiatement disponible.
+</p><p>Attention, vos users doivent avoir le même UID entre le client et le serveur pour pouvoir lire/écrire..
+</p>
+<h3><span class="mw-headline" id="Samba">Samba</span></h3>
+<pre>zfs set sharesmb=on datas/films
+</pre>
+<p>et ... rien ne se passe&#160;!
+</p>
+<pre>cd  /usr/ports/net/samba35
+make config install clean
+</pre>
+<p><br />
+</p>
+<pre>echo 'samba_enable="YES"
+winbindd_enable="YES"
+' &gt;&gt; /etc/rc.conf
+</pre>
+<p>Ou bien, plus granulaire&#160;:
+</p>
+<pre>echo 'nmbd_enable="YES"
+smbd_enable="YES"
+winbindd_enable="YES"
+' &gt;&gt; /etc/rc.conf
+</pre>
+<p><br />
+Puis, il faut configurer le fichier de config&#160;: <i>/usr/local/etc/smb.conf</i>
+</p><p>En particulier&#160;:
+</p>
+<pre>  workgroup = MYGROUP
+</pre>
+<p>Attention à ajouter (<i>smbpasswd -a USER</i>) l'utilisateur nécessaire. (USER existe déja dans un référentiel , genre <i>/etc/master.passwd</i>)
+</p><p>Si vous ajoutez un  partage depuis un pool ZFS, jetez un oeil sur la fin du fichier&#160;:
+</p>
+<pre>;[zpool]
+;    path = /tank/zpool
+;    unix extensions = no
+;    vfs objects = zfsacl
+;    nfs4:mode = special
+;    nfs4:acedup = merge
+;    nfs4:chown = yes
+    writable = yes
+    browseable = yes
+    valid users =  polyp
+</pre>
+<p><br />
+Attention, la ligne
+</p>
+<pre>   &#160;;vfs objects = zfsacl
+</pre>
+<p>Fait planter les connexions réseau chez moi; une fois décommentée, aucun souci.
+</p>
+<h2><span class="mw-headline" id="Snapshot_.26_Rollback">Snapshot &amp; Rollback</span></h2>
+<p>Comment faire les modifs, les c..ries qu'on veut sur un FS (même le FS root) et revenir à une situation stable.
+</p>
+<pre> zfs snapshot -r nom-du-pool@nom-du-snapshot
+ zfs list -t snapshot
+ zfs rollback nom-du-pool@nom-du-snapshot
+</pre>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Backup.2Frestore_et_synchro_vers_une_autre_machine">Backup/restore et synchro vers une autre machine</span></h2>
+<p>Il faut utiliser les snapshot et ssh, seul outil supplémentaire nécessaire&#160;!
+</p>
+<ul><li>Serveur 1</li></ul>
+<p>On fait le snapshot du FS
+</p>
+<pre>zfs snapshot  -r zroot/share/iso@iso-Transfert
+</pre>
+<ul><li>Serveur 2</li></ul>
+<p>Ajouter utilisateur au groupe possédant les droits sur le partage
+</p><p>Exemple avec ZFS GUru  user&#160;: ssh, pool&#160;: zroot/Share
+</p>
+<pre>zfs allow ssh receive,create,mount zroot/share
+</pre>
+<ul><li> Serveur 1:</li></ul>
+<pre>zfs send    -R zroot/share/iso@iso-Transfert | ssh ssh@Serveur2 zfs receive  -Fv zroot/share/iso
+</pre>
+<p>Et c'est parti&#160;!
+</p><p>Un souci&#160;?, on reprend de manière incrémentale à la méthode rsync.
+On ajoute "-i" dans le send
+</p>
+<h2><span class="mw-headline" id="Sp.C3.A9cificit.C3.A9s_FreeBSD">Spécificités FreeBSD</span></h2>
+<h3><span class="mw-headline" id="Configuration_et_lancement">Configuration et lancement</span></h3>
+<ul><li> Sous archi i386, il faut ajouter cela </li></ul>
+<pre>echo "vfs.zfs.prefetch_disable=0" &gt;&gt; /boot/loader.conf
+</pre>
+<p><br />
+</p>
+<ul><li> Pour démarrer ZFS au boot&#160;:</li></ul>
+<pre>echo 'zfs_enable="YES"' &gt;&gt; /etc/rc.conf
+</pre>
+<p><br />
+</p>
+<ul><li> Il faut ajuster la config mémoire&#160;:</li></ul>
+<pre>echo 'vm.kmem_size_max="512M"' &gt;&gt; /boot/loader.conf
+echo 'vm.kmem_size="512M"' &gt;&gt; /boot/loader.conf
+echo 'vfs.zfs.arc_max="256M"' &gt;&gt; /boot/loader.conf
+echo 'vfs.zfs.txg.timeout="5"' &gt;&gt; /boot/loader.conf
+</pre>
+<p><br />
+Attention vfs.zfs.arc_max <b>doit </b> être inférieur à vm.kmem_size.
+</p><p>Attention également à ne pas trop faire grossir vm.kmem_size; au dela de 512M, vous devez recompiler le noyo.
+Vous risquez un souci..
+</p><p>Pour les explications&#160;:<a rel="nofollow" class="external autonumber" href="http://wiki.freebsd.org/ZFSTuningGuide#head-dd9ff5ea050f3cb4581c1078817bd35df01b4338">[3]</a>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Sp.C3.A9cificit.C3.A9s_Linux_:_ZFS_on_Linux">Spécificités Linux&#160;: ZFS on Linux</span></h2>
+<p>Installe les outils en userland
+</p>
+<pre>apt-get install zfs-fuse
+</pre>
+<p>...C'est à peu près tout..
+</p>
+<h2><span class="mw-headline" id="Sp.C3.A9cificit.C3.A9s_Solaris">Spécificités  Solaris</span></h2>
+<h2><span class="mw-headline" id="Surveillance">Surveillance</span></h2>
+<p><a href="index.php%3Ftitle=Munin.html#ZFS" title="Munin">Munin#ZFS</a>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Comment_r.C3.A9utiliser_un_disque_ZFS_sous_un_autre_OS">Comment réutiliser un disque ZFS sous un autre OS</span></h2>
+<pre>parted /dev/sdc
+mklabel msdos
+quit
+</pre>
+<h2><span class="mw-headline" id="Sauver_un_pool_ZFS_du_d.C3.A9sastre">Sauver un pool ZFS du désastre</span></h2>
+<p>Vous avez monté un pool ZFS bien redondant et vous avez rencontré un gros souci (du type... serveur qui tombe avec les disques en marche...)
+</p>
+<ul><li> Rebranchez tout et changez les connecteurs SATA explosés.</li>
+<li> Installez un système de version identique voire supérieure (genre FreeBSD 10.2)</li></ul>
+<pre>zpool status
+zpool import -R /mnt zroot
+mount -t zfs zroot /mnt/
+</pre>
+<ul><li> Faites vos backup</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="MOnter_deux_pools_ZFS_de_noms_identiques">MOnter deux pools ZFS de noms identiques</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://docs.oracle.com/cd/E19253-01/819-5461/gazuf/index.html">[4]</a>
+</p>
+<pre>zpool import
+</pre>
+<p>Affiche les pools importables
+</p><p>Récuperez l'iD du pool
+</p>
+<pre>zpool import -f 12770398678035415080 old-datas
+zpool status
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20171019171656
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.390 seconds
+Real time usage: 0.439 seconds
+Preprocessor visited node count: 199/1000000
+Preprocessor generated node count: 304/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:218-0!*!0!!fr!5!* and timestamp 20171019171656 and revision id 3208
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Systeme_de_fichiers_ZFS&amp;oldid=3208">http://www.openbsd-edu.net/index.php?title=Systeme_de_fichiers_ZFS&amp;oldid=3208</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Systeme+de+fichiers+ZFS.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Systeme_de_fichiers_ZFS&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Systeme_de_fichiers_ZFS&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Systeme_de_fichiers_ZFS&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Systeme_de_fichiers_ZFS.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FSysteme_de_fichiers_ZFS.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Systeme_de_fichiers_ZFS" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Systeme_de_fichiers_ZFS&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Systeme_de_fichiers_ZFS&amp;oldid=3208" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Systeme_de_fichiers_ZFS&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 13 décembre 2015 à 17:34.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.390","walltime":"0.439","ppvisitednodes":{"value":199,"limit":1000000},"ppgeneratednodes":{"value":304,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171019171657","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1354});});</script>
+	</body>
+</html>

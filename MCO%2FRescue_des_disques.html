@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>MCO/Rescue des disques — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"MCO/Rescue_des_disques","wgTitle":"MCO/Rescue des disques","wgCurRevisionId":3212,"wgRevisionId":3212,"wgArticleId":348,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"MCO/Rescue_des_disques","wgRelevantArticleId":348,"wgRequestId":"cb23c7bdb89a566735538b33","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-MCO_Rescue_des_disques rootpage-MCO_Rescue_des_disques skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">MCO/Rescue des disques</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html#Conna.C3.AEtre_la_taille_des_blocs_d.27un_disque"><span class="tocnumber">1</span> <span class="toctext">Connaître la taille des blocs d'un disque</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html#V.C3.A9rifier_les_secteurs_.28et_non_le_filesystem.29"><span class="tocnumber">2</span> <span class="toctext">Vérifier les secteurs (et non le filesystem)</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html#Installation"><span class="tocnumber">3</span> <span class="toctext">Installation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html#V.C3.A9rification_non-destructrice...et_lente"><span class="tocnumber">3.1</span> <span class="toctext">Vérification non-destructrice...et lente</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html#V.C3.A9rification_destructrice_et_bien_plus_rapide"><span class="tocnumber">3.2</span> <span class="toctext">Vérification destructrice et bien plus rapide</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html#Benchmarks"><span class="tocnumber">3.3</span> <span class="toctext">Benchmarks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html#R.C3.A9cup.C3.A9rer_une_partition_LVM2"><span class="tocnumber">4</span> <span class="toctext">Récupérer une partition LVM2</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Conna.C3.AEtre_la_taille_des_blocs_d.27un_disque">Connaître la taille des blocs d'un disque</span></h2>
+<pre>lsblk -o NAME,PHY-SeC
+</pre>
+<pre>NAME           PHY-SEC
+sda                512
+├─sda1             512
+├─sda2             512
+├─sda3             512
+│ └─sda3_crypt     512
+├─sda4             512
+└─sda5             512
+  └─sda5_crypt     512
+sdb                512
+sdc                512
+sdd                512
+├─sdd1             512
+└─sdd2             512
+</pre>
+<p>Donc Des blocs de 512 octets tant pour les disques que pour les partitions
+</p>
+<h2><span class="mw-headline" id="V.C3.A9rifier_les_secteurs_.28et_non_le_filesystem.29">Vérifier les secteurs (et non le filesystem)</span></h2>
+<p><a rel="nofollow" class="external autonumber" href="http://superuser.com/questions/528176/using-badblocks-on-modern-disks">[1]</a> Où l'on vous cause de la commande sur des disques modernes
+<a rel="nofollow" class="external autonumber" href="http://superuser.com/questions/240641/how-long-does-badblocks-take-on-a-1tb-drive">[2]</a> Comparaison des modes de badblocks
+</p>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<pre>pkg install e2fsprogs
+</pre>
+<p>sous FreeBSD
+</p>
+<h3><span class="mw-headline" id="V.C3.A9rification_non-destructrice...et_lente">Vérification non-destructrice...et lente</span></h3>
+<pre>badblocks -nsv -b 512 -c 98304 /dev/sdb
+</pre>
+<p>ENviron 4 fois plus lente. Voir le premier pointeur pour les explications.
+</p>
+<h3><span class="mw-headline" id="V.C3.A9rification_destructrice_et_bien_plus_rapide">Vérification destructrice et bien plus rapide</span></h3>
+<pre>badblocks -wsv -b 4096 -c 98304 /dev/sdb
+</pre>
+<h3><span class="mw-headline" id="Benchmarks">Benchmarks</span></h3>
+<p>Disque SATA de 1To.
+</p><p>Temps pour arriver à 1,3% sur la première itération.
+</p>
+<table border="1" cellpadding="5">
+<tr>
+<td><b>USB3 - Destructif - Blocks 512 o</b>
+</td>
+<td><b>107s</b>
+</td></tr>
+
+<tr>
+<td><b>USB3 - Destructif - Blocks 4096 o</b>
+</td>
+<td><b>110s</b>
+</td></tr>
+
+<tr>
+<td><b>USB3 - Non-Destructif - Blocks 512 o</b>
+</td>
+<td><b>450s</b>
+</td></tr>
+
+<tr>
+<td><b>USB2 - Destructif - Blocks 512 o</b>
+</td>
+<td><b>400s</b>
+</td></tr>
+
+</table>
+<h2><span class="mw-headline" id="R.C3.A9cup.C3.A9rer_une_partition_LVM2">Récupérer une partition LVM2</span></h2>
+<p>Suivre aveuglément  <a rel="nofollow" class="external text" href="http://www.linuxtechi.com/fixing-lvm-io-errors/">ça</a>.
+</p><p>Vous essayez de monter une partition LVM2 et ....patatras&#160;:
+</p>
+<pre>/dev/sdf: read failed after 0 of 4096 at 0: Input/output error
+/dev/sdf: read failed after 0 of 4096 at 3298534817792: Input/output error
+/dev/sdf: read failed after 0 of 4096 at 3298534875136: Input/output error
+</pre>
+<p><br />
+Solution&#160;:
+</p>
+<pre>vgscan
+</pre>
+<p>Récupérez le nom du volume logique
+</p>
+<pre>lvchange -an &lt;lv-name&gt;
+</pre>
+<p>Inactivez le volume logique
+</p>
+<pre> vgchange -an &lt;vg-name&gt;
+</pre>
+<p>Inactivez le volume de groupe
+</p>
+<pre>vgscan
+</pre>
+<p>Scannez de nouveau le volume de groupe
+</p>
+<pre> vgchange -ay &lt;vg-name&gt;
+</pre>
+<p>Activez le volume de groupe
+</p>
+<pre>vgchange -ay &lt;volume-group-name&gt;
+lvscan
+</pre>
+<p>Normalement les erreurs n'apparaissent plus
+</p>
+<pre>lvchange -ay &lt;lv-name&gt;
+</pre>
+<p>Activez le volume logique
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020080525
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.060 seconds
+Real time usage: 0.401 seconds
+Preprocessor visited node count: 26/1000000
+Preprocessor generated node count: 32/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:348-0!*!*!!fr!*!* and timestamp 20171020080524 and revision id 3212
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=MCO/Rescue_des_disques&amp;oldid=3212">http://www.openbsd-edu.net/index.php?title=MCO/Rescue_des_disques&amp;oldid=3212</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=MCO%252FRescue+des+disques.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:MCO/Rescue_des_disques&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=MCO/Rescue_des_disques&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=MCO/Rescue_des_disques&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=MCO%252FRescue_des_disques.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FMCO%252FRescue_des_disques.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/MCO/Rescue_des_disques" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=MCO/Rescue_des_disques&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=MCO/Rescue_des_disques&amp;oldid=3212" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=MCO/Rescue_des_disques&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 23 janvier 2016 à 11:37.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.060","walltime":"0.401","ppvisitednodes":{"value":26,"limit":1000000},"ppgeneratednodes":{"value":32,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020080525","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1344});});</script>
+	</body>
+</html>

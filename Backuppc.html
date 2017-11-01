@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Backuppc — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Backuppc","wgTitle":"Backuppc","wgCurRevisionId":2912,"wgRevisionId":2912,"wgArticleId":121,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Backuppc","wgRelevantArticleId":121,"wgRequestId":"af8373ddd6946274a323e589","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Backuppc rootpage-Backuppc skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Backuppc</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Backuppc.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Backuppc.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Backuppc.html#Install"><span class="tocnumber">1</span> <span class="toctext">Install</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Backuppc.html#Debian"><span class="tocnumber">1.1</span> <span class="toctext">Debian</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Backuppc.html#OpenBSD"><span class="tocnumber">1.2</span> <span class="toctext">OpenBSD</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Backuppc.html#FreeBSD"><span class="tocnumber">1.3</span> <span class="toctext">FreeBSD</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="index.php%3Ftitle=Backuppc.html#BackupPC"><span class="tocnumber">1.3.1</span> <span class="toctext">BackupPC</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="index.php%3Ftitle=Backuppc.html#Apache"><span class="tocnumber">1.3.2</span> <span class="toctext">Apache</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Backuppc.html#Serveur"><span class="tocnumber">2</span> <span class="toctext">Serveur</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Backuppc.html#S.C3.A9curisation_des_.C3.A9changes_:_Rsync_over_SSH"><span class="tocnumber">3</span> <span class="toctext">Sécurisation des échanges&#160;: Rsync over SSH</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Backuppc.html#Sur_le_serveur_backuppc"><span class="tocnumber">3.1</span> <span class="toctext">Sur le serveur backuppc</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Backuppc.html#Sur_le_client_.C3.A0_sauvegarder"><span class="tocnumber">3.2</span> <span class="toctext">Sur le client à sauvegarder</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Backuppc.html#Debug"><span class="tocnumber">4</span> <span class="toctext">Debug</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Backuppc.html#Either_these_are_different_file_systems.2C_or_this_file"><span class="tocnumber">4.1</span> <span class="toctext"><b> Either these are different file systems, or this file</b></span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Backuppc.html#Permissions"><span class="tocnumber">4.2</span> <span class="toctext"><b> Permissions</b></span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Backuppc.html#.28auth_failed_on_module_XXX.29"><span class="tocnumber">4.3</span> <span class="toctext"><b>(auth failed on module XXX)</b></span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Backuppc.html#.28auth_required.2C_but_service_XXX_is_open.2Finsecure.29"><span class="tocnumber">4.4</span> <span class="toctext"><i>(auth required, but service XXX is open/insecure)</i></span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Backuppc.html#.27.28unexpected_response_.29"><span class="tocnumber">4.5</span> <span class="toctext">'<i>(unexpected response )</i></span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Backuppc.html#.27.28chgdir_failed.29"><span class="tocnumber">4.6</span> <span class="toctext">'<i>(chgdir failed)</i></span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=Backuppc.html#access_denied_to_XXXX_from_unknown_.28.29"><span class="tocnumber">4.7</span> <span class="toctext"><b> access denied to XXXX from unknown ()</b></span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Backuppc.html#.28inet_connect:_Connection_refused.29"><span class="tocnumber">4.8</span> <span class="toctext"><b>(inet connect: Connection refused)</b></span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=Backuppc.html#unable_to_read_4_bytes"><span class="tocnumber">4.9</span> <span class="toctext"><b>unable to read 4 bytes</b></span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=Backuppc.html#No_files_dumped_for_share_X.24"><span class="tocnumber">4.10</span> <span class="toctext"><b>No files dumped for share X$</b></span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=Backuppc.html#session_setup_failed:_NT_STATUS_LOGON_FAILURE"><span class="tocnumber">4.11</span> <span class="toctext"><b> session setup failed: NT_STATUS_LOGON_FAILURE </b></span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=Backuppc.html#:_NT_STATUS_ACCESS_DENIED_listing_.5C.5C.2A.22."><span class="tocnumber">4.12</span> <span class="toctext"><b>: NT_STATUS_ACCESS_DENIED listing \\*". </b></span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Backuppc.html#Pour_tester"><span class="tocnumber">4.13</span> <span class="toctext">Pour tester</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-25"><a href="index.php%3Ftitle=Backuppc.html#Client"><span class="tocnumber">5</span> <span class="toctext">Client</span></a>
+<ul>
+<li class="toclevel-2 tocsection-26"><a href="index.php%3Ftitle=Backuppc.html#Linux"><span class="tocnumber">5.1</span> <span class="toctext">Linux</span></a>
+<ul>
+<li class="toclevel-3 tocsection-27"><a href="index.php%3Ftitle=Backuppc.html#.2Fetc.2Frsyncd.conf"><span class="tocnumber">5.1.1</span> <span class="toctext">/etc/rsyncd.conf</span></a></li>
+<li class="toclevel-3 tocsection-28"><a href="index.php%3Ftitle=Backuppc.html#.2Fetc.2Frsyncd.secret"><span class="tocnumber">5.1.2</span> <span class="toctext">/etc/rsyncd.secret</span></a></li>
+<li class="toclevel-3 tocsection-29"><a href="index.php%3Ftitle=Backuppc.html#inetd.conf"><span class="tocnumber">5.1.3</span> <span class="toctext">inetd.conf</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-30"><a href="index.php%3Ftitle=Backuppc.html#localhost"><span class="tocnumber">5.2</span> <span class="toctext">localhost</span></a></li>
+<li class="toclevel-2 tocsection-31"><a href="index.php%3Ftitle=Backuppc.html#OpenBSD_2"><span class="tocnumber">5.3</span> <span class="toctext">OpenBSD</span></a>
+<ul>
+<li class="toclevel-3 tocsection-32"><a href="index.php%3Ftitle=Backuppc.html#.2Fetc.2Frsyncd.conf_2"><span class="tocnumber">5.3.1</span> <span class="toctext">/etc/rsyncd.conf</span></a></li>
+<li class="toclevel-3 tocsection-33"><a href="index.php%3Ftitle=Backuppc.html#.2Fetc.2Frsyncd.secret_2"><span class="tocnumber">5.3.2</span> <span class="toctext">/etc/rsyncd.secret</span></a></li>
+<li class="toclevel-3 tocsection-34"><a href="index.php%3Ftitle=Backuppc.html#inetd.conf_2"><span class="tocnumber">5.3.3</span> <span class="toctext">inetd.conf</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-35"><a href="index.php%3Ftitle=Backuppc.html#Solaris_11"><span class="tocnumber">5.4</span> <span class="toctext">Solaris 11</span></a>
+<ul>
+<li class="toclevel-3 tocsection-36"><a href="index.php%3Ftitle=Backuppc.html#.2Fetc.2Frsyncd.conf_3"><span class="tocnumber">5.4.1</span> <span class="toctext">/etc/rsyncd.conf</span></a></li>
+<li class="toclevel-3 tocsection-37"><a href="index.php%3Ftitle=Backuppc.html#.2Fetc.2Frsyncd.secret_3"><span class="tocnumber">5.4.2</span> <span class="toctext">/etc/rsyncd.secret</span></a></li>
+<li class="toclevel-3 tocsection-38"><a href="index.php%3Ftitle=Backuppc.html#.2Fetc.2Fservices"><span class="tocnumber">5.4.3</span> <span class="toctext">/etc/services</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="index.php%3Ftitle=Backuppc.html#inetd.conf_3"><span class="tocnumber">5.4.4</span> <span class="toctext">inetd.conf</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-40"><a href="index.php%3Ftitle=Backuppc.html#Windows"><span class="tocnumber">5.5</span> <span class="toctext">Windows</span></a>
+<ul>
+<li class="toclevel-3 tocsection-41"><a href="index.php%3Ftitle=Backuppc.html#M.C3.A9thode_classique"><span class="tocnumber">5.5.1</span> <span class="toctext">Méthode classique</span></a></li>
+<li class="toclevel-3 tocsection-42"><a href="index.php%3Ftitle=Backuppc.html#M.C3.A9thode_Unixienne_:_CygWin"><span class="tocnumber">5.5.2</span> <span class="toctext">Méthode Unixienne&#160;: CygWin</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Install">Install</span></h2>
+<h3><span class="mw-headline" id="Debian">Debian</span></h3>
+<pre>apt-get install backuppc libio-compress-perl
+mkdir /etc/apache2/ssl
+/usr/sbin/make-ssl-cert /usr/share/ssl-cert/ssleay.cnf /etc/apache2/ssl/apache.pem
+vi /etc/apache2/ports.conf 
+a2enmod ssl
+a2ensite default-ssl
+service  apache2 reload
+htpasswd /etc/backuppc/htpasswd backuppc
+Modifier /etc/apache2/sites-enabled/default-ssl.conf&#160;:  DocumentRoot /usr/share/backuppc/cgi-bin/
+service apache2ctl reload
+
+</pre>
+<h3><span class="mw-headline" id="OpenBSD">OpenBSD</span></h3>
+<pre>pkg_add backuppc
+</pre>
+<h3><span class="mw-headline" id="FreeBSD">FreeBSD</span></h3>
+<h4><span class="mw-headline" id="BackupPC">BackupPC</span></h4>
+<p>Mode packages
+</p>
+<pre>pkg_add -r backuppc rsync samba
+</pre>
+<pre>echo 'backuppc_enable="YES"' &gt;&gt; /etc/rc.conf
+chown backuppc:www /usr/local/etc/backuppc/config.pl
+mkdir /var/log/BackupPC
+chown -R backuppc:backuppc /var/log/BackupPC
+mkdir -p /var/db/BackupPC/{pc,cpool}
+chown -R backuppc:backuppc /var/db/BackupPC
+mkdir /usr/local/etc/backuppc/pc
+chown -R backuppc:backuppc /usr/local/etc/backuppc/pc/
+cpan
+  install Compress::Zlib
+  install Archive::Zip
+  install File::RsyncP
+  quit
+perl config.pl
+</pre>
+<p>Mode ports
+</p>
+<pre>cd /usr/ports/sysutils/backuppc
+make install clean
+cd /usr/ports/net/rsync
+make install clean
+echo 'backuppc_enable="YES"' &gt;&gt; /etc/rc.conf
+
+</pre>
+<pre> echo "host        dhcp    user    moreUsers     # &lt;--- do not edit this line "&gt;&gt; /usr/local/etc/backuppc/hosts
+</pre>
+<h4><span class="mw-headline" id="Apache">Apache</span></h4>
+<p>Modifier /usr/local/etc/apache2/httpd.conf
+</p>
+<pre>User  backuppc
+Group  backuppc
+</pre>
+<p>Partie SSL&#160;:
+</p>
+<pre>mkdir /usr/local/etc/apache22/ssl.crt
+mkdir /usr/local/etc/apache22/ssl.key
+chmod 0700 /usr/local/etc/apache22/ssl.key
+chmod 0700 /usr/local/etc/apache22/ssl.crt
+cd /root
+openssl genrsa -des3 -out server.key 2048
+openssl req -new -key server.key -out server.csr
+openssl x509 -req -days 365 -in /root/server.csr -signkey /root/server.key -out /root/server.crt
+cp /root/server.key /usr/local/etc/apache22/ssl.key/
+cp /root/server.crt /usr/local/etc/apache22/ssl.crt/
+chmod 0400 /usr/local/etc/apache22/ssl.key/server.key
+chmod 0400 /usr/local/etc/apache22/ssl.crt/server.crt
+</pre>
+<p>Décommenter la ligne Include etc/apache22/extra/httpd-ssl.conf
+dans /usr/local/etc/apache22/httpd.conf sur zfsguru
+ou /etc/apache22/httpd.conf 
+</p><p>Ajouter 
+</p><p>SSLCertificateFile "/usr/local/etc/apache22/ssl.crt/server.crt"
+SSLCertificateKeyFile "/usr/local/etc/apache22/ssl.key/server.key"
+à /apache22/extra/httpd-ssl.conf 
+</p><p>ou 
+/usr/local/etc/apache22/extra/httpd-ssl.conf pour zfsguru
+</p>
+<h2><span class="mw-headline" id="Serveur">Serveur</span></h2>
+<ul><li> Le fichier de configuration est config.pl</li></ul>
+<ul><li>Le /var/lib/backuppc qui contient les sauvegardes peut migrer ailleurs, sur une partoche dédiée (chercher TopDir).</li></ul>
+<pre>Sous FreeBSD&#160;: $Conf{TopDir}      = '/var/db/BackupPC';
+</pre>
+<p>En fait, il est déconseillé de faire cela; monter le FS cible sous TopDIr est préférable&#160;:
+</p>
+<pre>mkdir -p /var/db/BackupPC
+</pre>
+<p>Puis montez le FS&#160;: zroot/backup on /var/db/BackupPC&#160;:
+</p>
+<pre> /usr/local/etc/rc.d/backuppc stop
+ mv /var/db/BackupPC/* /zroot/backuppc/
+ rmdir /var/db/BackupPC/
+ ln -s  /zroot/backuppc/ /var/db/BackupPC
+ /usr/local/etc/rc.d/backuppc start
+</pre>
+<pre>echo "Alias /BackupPC/images /usr/local/www/backuppc
+ScriptAlias /BackupPC /usr/local/www/cgi-bin/BackupPC_Admin
+" &gt;&gt; /usr/local/etc/apache22/Includes/backuppc.conf
+</pre>
+<p>Dans /usr/local/etc/apache22/httpd.conf, modifiez la ligne correspondant aux autorisations&#160;:
+</p>
+<pre> &lt;Directory /&gt;
+   AllowOverride None
+   Order deny,allow
+   Deny from all
+ &lt;/Directory&gt;
+</pre>
+<p>devient 
+</p>
+<pre>&lt;Directory /&gt;
+   AllowOverride None
+   Order deny,allow
+   ##Deny from all
+   Allow from all
+&lt;/Directory&gt;
+</pre>
+<p>Enfin, toujours dans httpd.conf, modifiez le docuemtn root&#160;:
+</p>
+<pre>###DocumentRoot "/usr/local/www/apache22/data" 
+ DocumentRoot "/usr/local/www 
+</pre>
+<p>Le fichier spécifique à la machine est&#160;:
+</p>
+<ul><li> FreeBSD&#160;: /usr/local/etc/backuppc/pc/NOMDEMACHINE.pl</li>
+<li> Debian&#160;: root@fermi:/var/lib/backuppc/pc/NOMDEMACHINE/config.pl</li></ul>
+<ul><li>L'interfesse ouebe (<a rel="nofollow" class="external free" href="http://SRV/backupppc">http://SRV/backupppc</a>) a un mdp apache que vous n'avez surement pas noté au départ..</li></ul>
+<pre>htpasswd /etc/backuppc/htpasswd backuppc
+</pre>
+<ul><li> Compression&#160;: $Conf{ArchiveComp} = 'gzip';</li></ul>
+<p>Vous pouvez changer l'algorithme et le niveau de compression.
+</p><p>Comme ZFS inclus ces fonctions au niveau filesystem, j'ai choisi de ne pas compresser deux fois, mais de tout laisser faire à ZFS.
+</p>
+<pre>$Conf{ArchiveComp} = 'none';
+</pre>
+<p><br />
+</p>
+<ul><li> Interfesse en francais</li></ul>
+<pre>$Conf{Language} = 'fr';
+</pre>
+<ul><li> sauvegarde sur un lien WAN avec mauvais débit </li></ul>
+<pre>$Conf{PingMaxMsec} = '60';
+</pre>
+<ul><li> Email admin&#160;:</li></ul>
+<p>$Conf{EMailUserDestDomain} = 'EMAIL@MAIL';
+</p>
+<h2><span class="mw-headline" id="S.C3.A9curisation_des_.C3.A9changes_:_Rsync_over_SSH">Sécurisation des échanges&#160;: Rsync over SSH</span></h2>
+<h3><span class="mw-headline" id="Sur_le_serveur_backuppc">Sur le serveur backuppc</span></h3>
+<ul><li> <b>Debian like</b></li></ul>
+<pre>su backuppc
+ ssh-keygen -t rsa -b 2048
+
+</pre>
+<ul><li> <b>FreeBSD</b></li></ul>
+<pre>su -c backuppc -m backuppc
+ssh-keygen -t rsa -b 2048
+</pre>
+<pre>$Conf{RsyncClientCmd} = '$sshPath -q -x -l USER_DISTANT  $host $rsyncPath $argList+';
+</pre>
+<h3><span class="mw-headline" id="Sur_le_client_.C3.A0_sauvegarder">Sur le client à sauvegarder</span></h3>
+<pre>su root
+ssh-keygen -t rsa 
+</pre>
+<p>Copier, par un biais sécurisé, le <i>/var/lib/backuppc/.ssh/id_rsa.pub</i> du serveur backuppc vers le client de backup dans <i>/root/.ssh/authorized_keys</i>
+</p>
+<pre>sudo chown root.root /root/.ssh/authorized_keys
+</pre>
+<ul><li> Vérifier que la cx se fait bien&#160;:</li></ul>
+<pre>su backuppc
+ssh -v root@client
+</pre>
+<ul><li> Sur l'interface ouebe de backuppc&#160;:
+<ul><li>  Modifier la config</li>
+<li> Xfer</li>
+<li> Méthode <b>rsync</b></li>
+<li> Sauvegarder</li></ul></li></ul>
+<h2><span class="mw-headline" id="Debug">Debug</span></h2>
+<h3><span class="mw-headline" id="Either_these_are_different_file_systems.2C_or_this_file"><b> Either these are different file systems, or this file</b></span></h3>
+<p><b>TRES important</b>, je me suis fait avoir&#160;: backuppc refuse de sauvegarder sur plusieurs systèmes de fichiers différents.
+</p>
+<h3><span class="mw-headline" id="Permissions"><b> Permissions</b></span></h3>
+<p>l'ensemble des sous-répertoires doit avoir backuppc comme proprio et comme groupe proprio
+</p>
+<pre>chown -R backuppc.backuppc /var/lib/backuppc
+</pre>
+<h3><span class="mw-headline" id=".28auth_failed_on_module_XXX.29"><b>(auth failed on module XXX)</b></span></h3>
+<p>Plusieurs possibilités&#160;:
+</p>
+<ul><li> Si vous sauvegardez avec rsyncd et avec l'utilisateur root.root <i>(Dangereux mais utile pour ne rien rater)</i>, alors /etc/rsyncd.* doivent avoir comme</li></ul>
+<p>proprio root.root <i>(Oui, oui, même sous Ubuntu )</i>&#160;:
+</p>
+<pre>sudo chown root.root /etc/rsyncd.*
+</pre>
+<ul><li> Il faut avoir un user autorisé <i> (auth users = XXXXX)</i>, avec XXXX défini dans le secret.</li></ul>
+<ul><li> Voter mot de passe est faux ou contient un caractère interprété..</li></ul>
+<h3><span class="mw-headline" id=".28auth_required.2C_but_service_XXX_is_open.2Finsecure.29"><i>(auth required, but service XXX is open/insecure)</i></span></h3>
+<ul><li> Il faut avoir un user autorisé <i> (auth users = XXXXX)</i>, avec XXXX défini dans le secret.</li></ul>
+<h3><span class="mw-headline" id=".27.28unexpected_response_.29">'<i>(unexpected response )</i></span></h3>
+<ul><li> Vérifiez que rsync est installé et que le lien dans inetd.conf est bon pour le binaire..</li>
+<li> Vérifiez que /etc/rsyncd.{conf,secret} sont installés.</li>
+<li> Vérifiez que root.root sont bien les proprios des rsyncd.*</li>
+<li> Attention, le fichier de config <i>config.p</i>l (global ou particulier) doit avoir <i>backuppc.www-data</i> comme proprio</li></ul>
+<h3><span class="mw-headline" id=".27.28chgdir_failed.29">'<i>(chgdir failed)</i></span></h3>
+<ul><li> Est-ce que tous les répertoires sauvegardés existent&#160;???</li></ul>
+<h3><span class="mw-headline" id="access_denied_to_XXXX_from_unknown_.28.29"><b> access denied to XXXX from unknown ()</b></span></h3>
+<h3><span class="mw-headline" id=".28inet_connect:_Connection_refused.29"><b>(inet connect: Connection refused)</b></span></h3>
+<ul><li> Il manque une ligne dans <i>/etc/inetd.conf</i></li></ul>
+<pre>rsync 		stream 	tcp 	nowait 	root 	/usr/bin/rsync rsyncd --daemon
+</pre>
+<ul><li> OU bien vous n'avez pas relancé le démon&#160;:</li></ul>
+<pre>kill -HUP pid
+</pre>
+<h3><span class="mw-headline" id="unable_to_read_4_bytes"><b>unable to read 4 bytes</b></span></h3>
+<ul><li> Mauvais droits ou souci de clés SSH entre le client et le serveur. Pour valider, tenter la connexion depuis le serveur backuppc&#160;:</li></ul>
+<pre>su backuppc
+ssh -v root@client
+</pre>
+<p>Si vous avez un souci, inutile d'aller plus loin; c'est SSH pas rsync ou backuppc le pb.
+</p>
+<h3><span class="mw-headline" id="No_files_dumped_for_share_X.24"><b>No files dumped for share X$</b></span></h3>
+<ul><li> Plutôt ardu à résoudre celui-là&#160;! Lors de la sauvegarde d'une machine Windows.</li></ul>
+<p>En fait il faut modifier directement le config.pl original, car cela impactera toutes les sauvegardes de windowseries&#160;:
+</p>
+<pre>Conf{SmbClientFullCmd} = '$smbClientPath \\\\$host\\$shareName'
+         . ' $I_option -U $userName -E -N -d 1'
+         . ' -c tarmode\\ full -Tc$X_option - $fileList';
+</pre>
+<p>Devient 
+</p>
+<pre>Conf{SmbClientFullCmd} = '$smbClientPath \\\\$host\\$shareName'
+         . ' $I_option -U $userName -E  -d 1'
+         . ' -c tarmode\\ full -Tc$X_option - $fileList';
+</pre>
+<p>Il faut enlever le <i>-N</i>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="session_setup_failed:_NT_STATUS_LOGON_FAILURE"><b> session setup failed: NT_STATUS_LOGON_FAILURE </b></span></h3>
+<h3><span class="mw-headline" id=":_NT_STATUS_ACCESS_DENIED_listing_.5C.5C.2A.22."><b>: NT_STATUS_ACCESS_DENIED listing \\*". </b></span></h3>
+<p>Vous devez donner explicitement le droit de parcours et de lecture sur les répertoires (avec héritage) à votre user backup.
+</p>
+<h3><span class="mw-headline" id="Pour_tester">Pour tester</span></h3>
+<pre>su backuppc
+/usr/share/backuppc/bin/BackupPC_dump -v -f Client
+</pre>
+<h2><span class="mw-headline" id="Client">Client</span></h2>
+<p>La méthode la plus simple est <b>rsyncd</b>, la plus sûre <b>rsync</b> qui implique over ssh.
+</p>
+<h3><span class="mw-headline" id="Linux">Linux</span></h3>
+<h4><span class="mw-headline" id=".2Fetc.2Frsyncd.conf">/etc/rsyncd.conf</span></h4>
+<pre>
+        uid = root
+        gid = root 
+        use chroot =  no
+        syslog facility = local5
+        pid file = /var/run/rsyncd.pid
+        secrets file = /etc/rsyncd.secret
+        hosts allow = @IP du srv backup
+        auth users = UserBackup
+[etc]
+        path = /etc
+        comment = Conf
+        read only = yes
+[home]
+        path = /home/phil
+        comment = Dossier perso
+       read only = yes
+[script]
+        path = /usr/script/
+        comment = Les scripts
+        read only = yes
+</pre>
+<h4><span class="mw-headline" id=".2Fetc.2Frsyncd.secret">/etc/rsyncd.secret</span></h4>
+<pre>
+UserBackup:MdpUser
+</pre>
+<pre>chmod 700 /etc/rsyncd.secret
+chown root.root /etc/rsyncd.secret 
+</pre>
+<h4><span class="mw-headline" id="inetd.conf">inetd.conf</span></h4>
+<pre>apt-get install openbsd-inetd rsync
+</pre>
+<pre>echo " rsync 		stream 	tcp 	nowait 	root 	/usr/bin/rsync rsyncd --daemon  " &gt;&gt; /etc/inetd.conf
+
+/etc/init.d/openbsd-inetd restart
+</pre>
+<h3><span class="mw-headline" id="localhost">localhost</span></h3>
+<pre>cat /var/lib/backuppc/.ssh/id_rsa.pub  &gt;&gt; /root/.ssh/authorized_keys
+su backuppc
+ssh -v root@localhost
+exit
+</pre>
+<p>et choisir <b>rsync</b> comme méthode de backup et non <b>tar</b>
+</p>
+<h3><span class="mw-headline" id="OpenBSD_2">OpenBSD</span></h3>
+<h4><span class="mw-headline" id=".2Fetc.2Frsyncd.conf_2">/etc/rsyncd.conf</span></h4>
+<pre>
+        uid = root
+        gid = wheel
+        use chroot =  no
+        syslog facility = local5
+        pid file = /var/run/rsyncd.pid
+        secrets file = /etc/rsyncd.secret
+        hosts allow = @IP du srv backup
+        auth users = UserBackup
+[etc]
+        path = /etc
+        comment = Conf
+        read only = yes
+[home]
+        path = /home/phil
+        comment = Dossier perso
+       read only = yes
+[script]
+        path = /usr/script/
+        comment = Les scripts
+        read only = yes
+</pre>
+<h4><span class="mw-headline" id=".2Fetc.2Frsyncd.secret_2">/etc/rsyncd.secret</span></h4>
+<pre>
+UserBackup:MdpUser
+</pre>
+<pre>chmod 700 /etc/rsyncd.secret
+chown root.wheel /etc/rsyncd.secret 
+</pre>
+<h4><span class="mw-headline" id="inetd.conf_2">inetd.conf</span></h4>
+<pre>pkg_add rsync
+</pre>
+<pre>echo "
+rsync 		stream 	tcp 	nowait 	root 	/usr/local/bin/rsync rsyncd --daemon
+" &gt;&gt; /etc/inetd.conf
+</pre>
+<p>Sans espace devant le premier caractère&#160;!
+</p><p>Activer inetd dans /etc/rc.conf&#160;:
+</p>
+<pre>perl -pi -e 's/inetd_flags=NO/inetd_flags=""/' /etc/rc.conf
+</pre>
+<pre>/etc/rc.d/inetd restart
+</pre>
+<h3><span class="mw-headline" id="Solaris_11">Solaris 11</span></h3>
+<p>Tiré D'<a rel="nofollow" class="external text" href="http://www.draconis.com/blog/2006/08/01/backups-in-solaris-using-rsync/">ici.</a>
+</p>
+<h4><span class="mw-headline" id=".2Fetc.2Frsyncd.conf_3">/etc/rsyncd.conf</span></h4>
+<pre>
+        uid = root
+        gid = root 
+        use chroot =  no
+        syslog facility = local5
+        pid file = /var/run/rsyncd.pid
+        secrets file = /etc/rsyncd.secret
+        hosts allow = @IP du srv backup
+        auth users = UserBackup
+[etc]
+        path = /etc
+        comment = Conf
+        read only = yes
+[home]
+        path = /export/home
+        comment = Dossier perso
+       read only = yes
+[script]
+        path = /usr/script/
+        comment = Les scripts
+        read only = yes
+</pre>
+<h4><span class="mw-headline" id=".2Fetc.2Frsyncd.secret_3">/etc/rsyncd.secret</span></h4>
+<pre>
+UserBackup:MdpUser
+</pre>
+<pre>chmod 700 /etc/rsyncd.secret
+chown root /etc/rsyncd.secret 
+</pre>
+<h4><span class="mw-headline" id=".2Fetc.2Fservices">/etc/services</span></h4>
+<pre>echo "rsync 873/tcp" &gt;&gt; /etc/services 
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="inetd.conf_3">inetd.conf</span></h4>
+<pre>
+echo "rsync 		stream 	tcp 	nowait 	root 	/usr/bin/rsync rsyncd --daemon" &gt;&gt; /etc/inetd.conf
+</pre>
+<pre>svcadm restart svc:/network/inetd
+</pre>
+<pre>inetconv 
+  rsync -&gt; /lib/svc/manifest/network/rsync-tcp.xml
+  Importing rsync-tcp.xml ...svccfg: Restarting svc:/system/manifest-import
+  The manifest being imported is from a standard location and should be imported with the  command&#160;: svcadm restart svc:/system/manifest-import
+  Done
+</pre>
+<p><br />
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Windows">Windows</span></h3>
+<h4><span class="mw-headline" id="M.C3.A9thode_classique">Méthode classique</span></h4>
+<ul><li> Choisir méthode <i>smb</i></li>
+<li> Créer un user AD ayant le droit read-only sur chaque partage (clic droit/partage et sécurité/Ajouter lecture+parcours des répertoires)</li></ul>
+<p>Plutôt compliqué à utiliser contrairement aux apparences; toujours des erreurs en cascade.
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="M.C3.A9thode_Unixienne_:_CygWin">Méthode Unixienne&#160;: CygWin</span></h4>
+<ul><li> <a rel="nofollow" class="external text" href="http://ist.uwaterloo.ca/~kscully/CygwinSSHD_W2K3.html">Source1</a></li>
+<li> <a rel="nofollow" class="external text" href="http://majentis.com/2011/01/03/backuppc-with-sshrsyncvss-on-windows-server/">Source2</a></li></ul>
+<ul><li> Sur le serveur Windows, télécharger l'installeur <a rel="nofollow" class="external text" href="http://cygwin.com/">Cygwin</a></li>
+<li> Choisir les paquets Admin,Archive,Base,Doc,Editors,Net</li>
+<li> Lancer l'installation qui va télécharger le nécessaire</li></ul>
+<pre>ssh-host-config -y
+cygrunsrv -S sshd
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20171020133027
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.240 seconds
+Real time usage: 0.243 seconds
+Preprocessor visited node count: 229/1000000
+Preprocessor generated node count: 312/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:121-0!*!*!!fr!*!* and timestamp 20171020133027 and revision id 2912
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Backuppc&amp;oldid=2912">http://www.openbsd-edu.net/index.php?title=Backuppc&amp;oldid=2912</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Backuppc.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Backuppc.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Backuppc&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Backuppc.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Backuppc.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Backuppc&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Backuppc&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Backuppc.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FBackuppc.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Backuppc" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Backuppc&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Backuppc&amp;oldid=2912" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Backuppc&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 3 janvier 2015 à 09:43.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.240","walltime":"0.243","ppvisitednodes":{"value":229,"limit":1000000},"ppgeneratednodes":{"value":312,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020133027","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1720});});</script>
+	</body>
+</html>

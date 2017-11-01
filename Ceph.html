@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Ceph — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Ceph","wgTitle":"Ceph","wgCurRevisionId":3454,"wgRevisionId":3454,"wgArticleId":340,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Ceph","wgRelevantArticleId":340,"wgRequestId":"edf7320da21d1ff3b7d2c63d","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Ceph rootpage-Ceph skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Ceph</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Ceph.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Ceph.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>Vous cherchez un stockage redondant, scalable (parce que échelable ne me plait pas.), d'une capacité colossale, demandant une maintenance réduite,....
+</p><p>Ceph est fait pour vous&#160;!
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Ceph.html#Liens"><span class="tocnumber">1</span> <span class="toctext">Liens</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Ceph.html#Fonctionnalit.C3.A9s"><span class="tocnumber">2</span> <span class="toctext">Fonctionnalités</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Ceph.html#Vocabulaire"><span class="tocnumber">3</span> <span class="toctext">Vocabulaire</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Ceph.html#Limitations"><span class="tocnumber">4</span> <span class="toctext">Limitations</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Ceph.html#A_tous_ces_d.C3.A9tails_tu_pr.C3.AAteras_attention"><span class="tocnumber">5</span> <span class="toctext">A tous ces détails tu prêteras attention</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Ceph.html#Le_r.C3.A9seau"><span class="tocnumber">5.1</span> <span class="toctext">Le réseau</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Ceph.html#Choix_technos"><span class="tocnumber">6</span> <span class="toctext">Choix technos</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Ceph.html#Diff.C3.A9rents_niveaux_de_cache_haute-vitesse"><span class="tocnumber">6.1</span> <span class="toctext">Différents niveaux de cache haute-vitesse</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Ceph.html#Journal"><span class="tocnumber">6.2</span> <span class="toctext">Journal</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Ceph.html#Tiering"><span class="tocnumber">6.3</span> <span class="toctext">Tiering</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Ceph.html#Replication"><span class="tocnumber">6.4</span> <span class="toctext">Replication</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Ceph.html#erasure-coded"><span class="tocnumber">6.5</span> <span class="toctext">erasure-coded</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Ceph.html#D.C3.A9faut"><span class="tocnumber">6.6</span> <span class="toctext">Défaut</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=Ceph.html#Hardware"><span class="tocnumber">7</span> <span class="toctext">Hardware</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="index.php%3Ftitle=Ceph.html#Performances_attendues"><span class="tocnumber">7.1</span> <span class="toctext">Performances attendues</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Ceph.html#Disques_.2C_SSD"><span class="tocnumber">7.2</span> <span class="toctext">Disques , SSD</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Ceph.html#SSD"><span class="tocnumber">7.3</span> <span class="toctext">SSD</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="index.php%3Ftitle=Ceph.html#OSD"><span class="tocnumber">7.4</span> <span class="toctext">OSD</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Ceph.html#CPU"><span class="tocnumber">7.5</span> <span class="toctext">CPU</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="index.php%3Ftitle=Ceph.html#Comment_faire_pour"><span class="tocnumber">8</span> <span class="toctext">Comment faire pour</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=Ceph.html#Vous_avez_perdu_le_SSD_Journal"><span class="tocnumber">8.1</span> <span class="toctext">Vous avez perdu le SSD Journal</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=Ceph.html#Virer_un_OSD_du_cluster_ceph"><span class="tocnumber">8.2</span> <span class="toctext">Virer un OSD du cluster ceph</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=Ceph.html#D.C3.A9truire_la_config_du_cluster_Ceph_tout_en_le_gardant_dans_le_cluster_ProxMoX"><span class="tocnumber">8.3</span> <span class="toctext">Détruire la config du cluster Ceph tout en le gardant dans le cluster ProxMoX</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="index.php%3Ftitle=Ceph.html#Sur_quelle_machine_est_mon_OSD_.3F"><span class="tocnumber">8.4</span> <span class="toctext">Sur quelle machine est mon OSD&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="index.php%3Ftitle=Ceph.html#O.C3.B9_sont_mes_donn.C3.A9es_.3F"><span class="tocnumber">8.5</span> <span class="toctext">Où sont mes données&#160;?</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="index.php%3Ftitle=Ceph.html#Eteindre_tout_mon_cluster_sans_souci_au_red.C3.A9marrage"><span class="tocnumber">8.6</span> <span class="toctext">Eteindre tout mon cluster sans souci au redémarrage</span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="index.php%3Ftitle=Ceph.html#Une_VM_a_crash.C3.A9_durant_une_.C3.A9criture_sur_son_pool"><span class="tocnumber">8.7</span> <span class="toctext">Une VM a crashé durant une écriture sur son pool</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-28"><a href="index.php%3Ftitle=Ceph.html#MCO_r.C3.A9guli.C3.A8re"><span class="tocnumber">9</span> <span class="toctext">MCO régulière</span></a>
+<ul>
+<li class="toclevel-2 tocsection-29"><a href="index.php%3Ftitle=Ceph.html#PGs_inconsistent"><span class="tocnumber">9.1</span> <span class="toctext">PGs inconsistent</span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="index.php%3Ftitle=Ceph.html#Scrub_errors"><span class="tocnumber">9.2</span> <span class="toctext">Scrub errors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-31"><a href="index.php%3Ftitle=Ceph.html#Installation"><span class="tocnumber">10</span> <span class="toctext">Installation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-32"><a href="index.php%3Ftitle=Ceph.html#Sous_Ubuntu_.2FDebian"><span class="tocnumber">10.1</span> <span class="toctext">Sous Ubuntu /Debian</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="index.php%3Ftitle=Ceph.html#Sous_ProxMox"><span class="tocnumber">10.2</span> <span class="toctext">Sous ProxMox</span></a>
+<ul>
+<li class="toclevel-3 tocsection-34"><a href="index.php%3Ftitle=Ceph.html#Install"><span class="tocnumber">10.2.1</span> <span class="toctext">Install</span></a></li>
+<li class="toclevel-3 tocsection-35"><a href="index.php%3Ftitle=Ceph.html#Supprimer_un_pool"><span class="tocnumber">10.2.2</span> <span class="toctext">Supprimer un pool</span></a></li>
+<li class="toclevel-3 tocsection-36"><a href="index.php%3Ftitle=Ceph.html#Cr.C3.A9ation_d.27un_conteneur_LXC_avec_un_backend_Ceph_de_stockage"><span class="tocnumber">10.2.3</span> <span class="toctext">Création d'un conteneur LXC avec un backend Ceph de stockage</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-37"><a href="index.php%3Ftitle=Ceph.html#Debug"><span class="tocnumber">10.3</span> <span class="toctext">Debug</span></a>
+<ul>
+<li class="toclevel-3 tocsection-38"><a href="index.php%3Ftitle=Ceph.html#rbd_error:_rbd:_couldn.27t_connect_to_cluster_.28500.29"><span class="tocnumber">10.3.1</span> <span class="toctext">rbd error: rbd: couldn't connect to cluster (500)</span></a></li>
+<li class="toclevel-3 tocsection-39"><a href="index.php%3Ftitle=Ceph.html#rados_connect_failed_-_No_such_file_or_directory_.28500.29"><span class="tocnumber">10.3.2</span> <span class="toctext">rados_connect failed - No such file or directory (500)</span></a></li>
+<li class="toclevel-3 tocsection-40"><a href="index.php%3Ftitle=Ceph.html#pveceph_configuration_not_initialized_.28500.29"><span class="tocnumber">10.3.3</span> <span class="toctext">pveceph configuration not initialized (500)</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="index.php%3Ftitle=Ceph.html#Errors_while_parsing_config_file"><span class="tocnumber">10.3.4</span> <span class="toctext">Errors while parsing config file</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-42"><a href="index.php%3Ftitle=Ceph.html#A_ne_pas_faire"><span class="tocnumber">11</span> <span class="toctext">A ne pas faire</span></a></li>
+<li class="toclevel-1 tocsection-43"><a href="index.php%3Ftitle=Ceph.html#Alerte_j.27ai_perdu_la_conf_du_cluster"><span class="tocnumber">12</span> <span class="toctext">Alerte j'ai perdu la conf du cluster</span></a>
+<ul>
+<li class="toclevel-2 tocsection-44"><a href="index.php%3Ftitle=Ceph.html#Recr.C3.A9er_le_ceph.conf"><span class="tocnumber">12.1</span> <span class="toctext">Recréer le ceph.conf</span></a></li>
+<li class="toclevel-2 tocsection-45"><a href="index.php%3Ftitle=Ceph.html#Retrouver_les_cl.C3.A9s_d.27authent_de_cephx"><span class="tocnumber">12.2</span> <span class="toctext">Retrouver les clés d'authent de cephx</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Liens">Liens</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/Ceph_Server">Ceph dans ProxMox</a></li>
+<li> Livres:
+<ul><li> <i>Learning Ceph</i>, Dunod Sing</li></ul></li></ul>
+<ul><li> <a rel="nofollow" class="external autonumber" href="http://slides.com/sebastienhan/ceph-performance-and-benchmarking#">[1]</a> Le guide du spécialiste français de Ceph.</li></ul>
+<h2><span class="mw-headline" id="Fonctionnalit.C3.A9s">Fonctionnalités</span></h2>
+<ul><li> répartition (redondance) des données sur plusieurs disques &amp; machines, bref du peer to peer pour vos précieuses données.</li>
+<li> La perte d'un disque est la norme plutôt que l'exception.</li></ul>
+<h2><span class="mw-headline" id="Vocabulaire">Vocabulaire</span></h2>
+<ul><li> OSD&#160;: <i>Object Storage Device</i>&#160;: Un disque dur (ou une partition, mais c'est un mauvais choix en terme de perfs que de mettre plusieurs OSDs par disque)</li>
+<li> EC&#160;: <i>Erasure-coded</i>&#160;: </li>
+<li> Tiering</li>
+<li> MON</li>
+<li> n=k+m&#160;: nombre de découpages et de redondances. Voir <a href="index.php%3Ftitle=Ceph.html#erasure-coded" title="Ceph">Ceph#erasure-coded</a></li>
+<li> pg&#160;: <i>placement group </i>&#160;:</li>
+<li> chunk&#160;:  morceau,quignon. Les morceaux en lesquels sont découpés les objets.</li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Limitations">Limitations</span></h2>
+<ul><li> Une fois le choix k+m d'un ec-pool fait, il n'est plus modifiable.</li></ul>
+<h2><span class="mw-headline" id="A_tous_ces_d.C3.A9tails_tu_pr.C3.AAteras_attention">A tous ces détails tu prêteras attention</span></h2>
+<h3><span class="mw-headline" id="Le_r.C3.A9seau">Le réseau</span></h3>
+<p>Ceph repose sur le réseau (beaucoup même) pour stocker et échanger ses données.
+Il <b>FAUT</b> un réseau fiable et rapide et avec un minimum de latence....
+Bon, on doit pouvoir éviter l'infiniband 40Gbe, mais en dessous du Gb on ne discute même pas et pour la prod, du 10Gbe (Base T voire SFP+ si possible)
+</p><p>Un Netgear XS708 fournit 8 ports 10Gbe-baseT pour 1000€!
+</p>
+<h2><span class="mw-headline" id="Choix_technos">Choix technos</span></h2>
+<ul><li> Ceph fonctionne sur matériel bas de gamme et le choix judicieux peut être d'utiliser des disques SATA, pas chers, lents mais avec de grosses capacités et de coller devant des caches haute-vitesse pour compenser.</li></ul>
+<h3><span class="mw-headline" id="Diff.C3.A9rents_niveaux_de_cache_haute-vitesse">Différents niveaux de cache haute-vitesse</span></h3>
+<p>En supposant que vous utilisez des disques SATA 7200 rpm, soit&#160;:
+</p>
+<ul><li> Bande passante environ 100Mo/s</li>
+<li> 100 IOPS (entrées sorties par seconde)</li></ul>
+<ul><li> Cache disque 64 Mo .</li></ul>
+<p>64/(100*2)  Soit <i>3 dixièmes de seconde</i>..
+On redivise par 2 car le cache est utilisé autant en lecture qu'en écriture..
+</p>
+<ul><li> Cache de la carte raid, 1GB.</li></ul>
+<p>On redivise par 2 car le cache est utilisé autant en lecture qu'en écriture..
+Et ce, bien que sur certains modèles de carte controleur, il soit possible de modifier le ratio read/write d'usage du cache
+</p>
+<ul><li><ul><li> Avec 3 disques, on a 330/2 MB de cache, soit 1,5 secondes de données. Moyen</li>
+<li> Avec 10 disques, on tombe à 0,5 seconde...</li></ul></li></ul>
+<p><b>Attention</b>. Si vous utilisez le même contrôleur pour le journal (ou le tiering) et les OSD, alors le cache du contrôleur sera utilisé pour l'ensemble des flux de données, vous allez donc mettre en cache du contrôleur des données que vous voudriez seulement migrer d'un pool OSD à du tiering (ou le journal)... Ca risque d'être au minimum inutile de monter la quantité de cache contrôleur..
+</p><p>Une intéressante <a rel="nofollow" class="external text" href="http://lists.ceph.com/pipermail/ceph-users-ceph.com/2014-April/038935.html">discussion </a> sur les choix possibles.
+</p><p>Une config spécifique des <a rel="nofollow" class="external text" href="http://lists.ceph.com/pipermail/ceph-users-ceph.com/2014-April/038946.html">cartes Dell PERC H710</a> et de leur monitoring par <a rel="nofollow" class="external text" href="http://lists.ceph.com/pipermail/ceph-users-ceph.com/2014-April/038999.html">smartctl</a>.
+</p>
+<h3><span class="mw-headline" id="Journal">Journal</span></h3>
+<p>En dehors des dernières versions ( intérêt/fiabilité à valider en prod), l'usage d'un journal est nécessaire à Ceph. Le principe est le suivant pour une écriture:
+</p>
+<ul><li><ul><li> Ecriture sur le journal</li>
+<li> Acquittement de l'écriture (Ceph considère la donnée comme écrite et passe à la suite)</li>
+<li> Lecture des données du journal (ou récriture des données précédentes depuis la RAM: A valider)</li>
+<li> Ecriture des données sur  les OSDs;</li></ul></li></ul>
+<p>Bref, la pénalité en écriture est double, vous divisez la bande passante par 2&#160;!
+Il est donc d'uage de mettre le journal sur un SSD.
+</p>
+<h3><span class="mw-headline" id="Tiering">Tiering</span></h3>
+<p>Le Tiering consiste à ajouter "devant" un pool standard (OSD+SSD en journal, un seconde pool de SSD qui servent de cache en lecture comme en écriture pour le pool SSD+OSD. Si la lecture tape dans le cache, rien ne sera lu dans le second pool SSD+OSD. L'écriture, quant à elle tape toujours dans ce cache rapide et est récrite ultérieurement dans le pool normal.
+</p><p><a rel="nofollow" class="external text" href="http://www.spinics.net/lists/ceph-users/msg15050.html">Journal vs Tiering </a>
+</p><p><a rel="nofollow" class="external text" href="http://www.sebastien-han.fr/blog/2014/12/15/ceph-cache-tier-statistics/">Les stats</a>
+</p>
+<h3><span class="mw-headline" id="Replication">Replication</span></h3>
+<p>C'est le système de base pour les pools de données.
+</p><p><br />
+<a rel="nofollow" class="external text" href="http://ceph-users.ceph.narkive.com/8GBGJRsO/why-was-osd-pool-default-size-changed-from-2-to-3">Choix du nombre de réplicats</a>
+Attention, répliquer plus c'est écrire moins vite..
+</p>
+<h3><span class="mw-headline" id="erasure-coded">erasure-coded</span></h3>
+<p>La <a rel="nofollow" class="external text" href="http://ceph.com/docs/master/rados/operations/erasure-code/">doc</a> officielle.
+</p><p>Une <a rel="nofollow" class="external text" href="https://duckduckgo.com/l/?kh=-1&amp;uddg=http%3A%2F%2Foceanstore.cs.berkeley.edu%2Fpublications%2Fpapers%2Fpdf%2Ferasure_iptps.pdf">comparaison</a> quantitative de la réplication et de l'EC.
+</p><p>Un <a rel="nofollow" class="external text" href="http://www.spinics.net/lists/ceph-users/msg15838.html">test</a> de l'usage du CPU entre réplication et EC.
+</p>
+<pre>ceph osd pool create ecpool 12 12 erasure
+</pre>
+<p>Crée un pool erasure-coded avec k=12 et m=12, soit un RAID5 sur 3 hôtes minimum.
+</p>
+<ul><li> <b>n=k+m</b>
+<ul><li> un objet sera découpé en <b>k</b> morceaux</li></ul></li></ul>
+<p>Soit <i>k data chunks</i>
+</p>
+<ul><li><ul><li> <b>m</b> morceaux d'informations redondantes seront ajoutés</li></ul></li></ul>
+<p>soit <i>m coding chunks</i>
+</p>
+<ul><li><ul><li> <b>m</b> est donc le nombre d'OSD qui peuvent être perdus sans pour autant perdre d'information.</li></ul></li>
+<li> <i>ruleset-failure-domain=rack/host</i> indique qu'aucune bribe d'information redondante ne doit être stockée sur le même rack/le même hôte.</li></ul>
+<p>Donc, avec k=3,m=2, on arrive à&#160;:
+</p><p>Pour un objet de 1MB&#160;:
+Il est coupé en m=3 morceaux de données 3,3 MB auxquels on ajoute 2 morceaux d'encodage de 3,3MB.
+On peut perdre m=2 disques , donc comme du RAID6, mais on utilise n.3,3 = (k+m).3,3=5.3,3 = 18,3 MB seulement.
+</p>
+<h3><span class="mw-headline" id="D.C3.A9faut">Défaut</span></h3>
+<ul><li> k=2,m=1 ce qui donne un miroir (Raid1) mais ne nécessite que 50% d'espace disque supplémentaire et non 100% (cas du miroir)</li>
+<li> jerasure code&#160;: <a rel="nofollow" class="external autonumber" href="http://docs.ceph.com/docs/master/rados/operations/erasure-code-jerasure/">[2]</a></li></ul>
+<h2><span class="mw-headline" id="Hardware">Hardware</span></h2>
+<h3><span class="mw-headline" id="Performances_attendues">Performances attendues</span></h3>
+<p>Plus vous répliquez, moins vous débitez, toutes choses égales par ailleurs&#160;!
+</p><p>Bref, le plus souvent ce sont les IOPS qui limiteront, pas la bande passante.
+</p><p>Si ,
+</p>
+<ul><li> vous avez un répliquat de 3 (le minimum si vous tenez un peu à vos données)</li>
+<li> vous avez 3 disques (SATA) par hôte (le minimum)</li>
+<li> vous avez 3 hôtes (le minimum)</li></ul>
+<p>Et malgré le journal et le tiering, vous serez limités au pire, en cas de flux séquentiel à&#160;:
+</p>
+<pre>100 IOPS * 3 HD * 3 hôtes /3 réplicats = 300 IOPS....
+</pre>
+<p>Bref, vous irez plus vite avec un SSD en USB à ce train, là!
+</p>
+<h3><span class="mw-headline" id="Disques_.2C_SSD">Disques , SSD</span></h3>
+<p>Tiré du guide de <a rel="nofollow" class="external text" href="http://slides.com/sebastienhan/ceph-performance-and-benchmarking#/19">Han</a>&#160;: 
+</p>
+<pre>parted -a
+</pre>
+<p>pour aligner les partitions.
+</p>
+<h3><span class="mw-headline" id="SSD">SSD</span></h3>
+<ul><li> Utilisez de l' <b>Intel</b> en SATA/SAS, de l' <b>Intel</b> en PCIe si vous êtes riche , de l' <b>Intel</b> S3500 ou  de l' <b>Intel</b> S3700, bref ...de l' <b>Intel</b>&#160;!</li>
+<li> <b>JAMAIS! </b> du Samsung 840/850 Pro&#160;! <b>JAMAIS&#160;!</b>. Butinez en ligne les ennuis de ceux qui collent des palanquées de SSD Samsung, espèrent du Go/s et trouvent 50 Mo/s.....</li></ul>
+<h3><span class="mw-headline" id="OSD">OSD</span></h3>
+<p>Vous pouvez mettre du SAS partout, mais votre argent sera bien mieux utilisé en collant des SSD en cache/journal/Tiering devant en hot-pool et des boeufs de SATA pour le cold-pool derrière.
+</p>
+<h3><span class="mw-headline" id="CPU">CPU</span></h3>
+<ul><li> La réplication est BEAUCOUP moins gourmande en CPU que l'EC. (pour 30 OSD en 10Gbe, 12 coeurs à 2GHz suffisent à peine...., voir line précédent)</li>
+<li> Si ZFS est limité par la RAM, Ceph l'est surtout par le CPU (et le réseau). Les deux l'étant par les disques durs et leurs pauvres 100 à 200 IOPS..</li></ul>
+<h2><span class="mw-headline" id="Comment_faire_pour">Comment faire pour</span></h2>
+<h3><span class="mw-headline" id="Vous_avez_perdu_le_SSD_Journal">Vous avez perdu le SSD Journal</span></h3>
+<p><a rel="nofollow" class="external autonumber" href="http://www.sebastien-han.fr/blog/2014/11/27/ceph-recover-osds-after-ssd-journal-failure/">[3]</a>
+</p>
+<h3><span class="mw-headline" id="Virer_un_OSD_du_cluster_ceph">Virer un OSD du cluster ceph</span></h3>
+<p>A la mano&#160;:
+</p>
+<pre>ceph osd crush remove osd.5
+ceph auth del osd.5
+ceph osd rm 5
+umount /var/lib/ceph/osd/ceph-5
+</pre>
+<p>Ou bien sous ProxMox
+</p>
+<pre>pveceph destroyosd 5
+</pre>
+<h3><span class="mw-headline" id="D.C3.A9truire_la_config_du_cluster_Ceph_tout_en_le_gardant_dans_le_cluster_ProxMoX">Détruire la config du cluster Ceph tout en le gardant dans le cluster ProxMoX</span></h3>
+<p>Attention, c'est sans retour&#160;!
+</p>
+<pre>pveceph purge
+</pre>
+<center>
+<p><b>WARNING&#160;! Vous détruisez le ceph.conf et l'ensemble de la config&#160;!!!!</b>
+</p><p><b>Ce n'est pas du tout indiqué ainsi dans la doc&#160;!!</b>
+</p>
+</center>
+<h3><span class="mw-headline" id="Sur_quelle_machine_est_mon_OSD_.3F">Sur quelle machine est mon OSD&#160;?</span></h3>
+<ul><li> Pour obtenir l'ensemble des infos (poids relatif, ..), mais l'OSD doit être UP</li></ul>
+<pre>ceph osd tree
+</pre>
+<pre>ID WEIGHT  TYPE NAME         UP/DOWN REWEIGHT PRIMARY-AFFINITY 
+-1 5.65826 root default                                        
+-2 3.17259     host NAME                                        
+ 3 1.35899         osd.3          up  1.00000          1.00000 
+</pre>
+<p><br />
+</p>
+<ul><li> Pour trouver l'IP, le nom du serveur où l'OSD a été vu la dernière fois; il peut donc être down.</li></ul>
+<pre>ceph osd find Numero_OSD
+</pre>
+<pre>{
+   "osd": 3,
+   "ip": "IP:PORT_AB",
+   "crush_location": {
+       "host": "NAME",
+       "root": "default"
+   }
+}
+</pre>
+<pre>* Pour trouver la partition éventuellement relative à l'OSD, vu la dernière fois; il peut donc être down.
+ceph osd dump | grep ^osd.3
+
+osd.3 up   in  weight 1 up_from 304 up_thru 321 down_at 302 last_clean_interval [277,299) IP_SRV:PORT_AB IP_SRV:PORT_AB IP_SRV:PORT_AB IP_SRV:PORT_AB  exists,up d1466996-ddffb-44ddc-9ce7-b685cba39035
+</pre>
+<pre>ssh NAME 
+blkid| grep d1466996-ddffb-44ddc-9ce7-b685cba39035
+
+/dev/sdd1: UUID="1acd1bf5-0555-4f99-8773-053dc6aa7d7b" TYPE="xfs" PARTLABEL="ceph data" PARTUUID="d1466996-ddffb-44ddc-9ce7-b685cba3903"
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="O.C3.B9_sont_mes_donn.C3.A9es_.3F">Où sont mes données&#160;?</span></h3>
+<ul><li> Quel point de montage </li></ul>
+<pre>mount |grep ceph
+</pre>
+<pre>/dev/sdb1 on /var/lib/ceph/osd/ceph-1 type xfs (rw,noatime,attr2,inode64,noquota)
+/dev/sdd1 on /var/lib/ceph/osd/ceph-3 type xfs (rw,noatime,attr2,inode64,noquota)
+</pre>
+<ul><li> OK, lequel des deux contient la dernière carte (CRUSHMAP)&#160;?</li></ul>
+<pre>ls /var/lib/ceph/osd/ceph-*/current/meta |grep osdmap |grep -v "inc"
+</pre>
+<pre>osdmap.1__0_666DF966__none
+osdmap.2__0_666DF966__none
+osdmap.3__0_666DF966__none
+osdmap.4__0_666DF966__none
+osdmap.5__0_666DF966__none
+osdmap.6__0_666DF966__none
+osdmap.7__0_666DF966__none
+osdmap.8__0_666DF966__none
+osdmap.9__0_666DF966__none
+osdmap.1__0_666DF966__none
+osdmap.2__0_666DF966__none
+osdmap.3__0_666DF966__none
+osdmap.4__0_666DF966__none
+osdmap.5__0_666DF966__none
+osdmap.6__0_666DF966__none
+osdmap.7__0_666DF966__none
+osdmap.8__0_666DF966__none
+osdmap.9__0_666DF966__none
+</pre>
+<ul><li> La dernière version contient le numéro d'incrément le plus élevé. Comme j'ai deux points de montage, je dois la retrouver deux fois&#160;:<i> osdmap.9__0_666DF966__none</i>. Trouvons la dernière version&#160;:</li></ul>
+<pre>for MAP in `find  /var/lib/ceph/osd/ -iname osdmap.9__0_666DF966__none`&#160;; do ls -lh $MAP&#160;; done
+</pre>
+<pre>-rw-r--r-- 1 ceph ceph 1.1K May  7 18:46 /var/lib/ceph/osd/ceph-1/current/meta/osdmap.9__0_666DF966__none
+-rw-r--r-- 1 ceph ceph 1.1K Jun 19 21:32 /var/lib/ceph/osd/ceph-3/current/meta/osdmap.9__0_666DF966__none
+</pre>
+<ul><li> OK, c'est celle de ceph-3 du 19 Juin.</li></ul>
+<pre>cd /var/lib/ceph/osd/ceph-3/current/meta/
+</pre>
+<ul><li> Décompilons la crushmap au format binaire</li></ul>
+<pre> osdmaptool osdmap.9__0_666DF966__none --export-crush /tmp/crushmap.bin
+
+osdmaptool: osdmap file 'osdmap.9__0_666DF966__none' 
+osdmaptool: exported crush map to /tmp/crushmap.bin
+</pre>
+<ul><li> Rendons la plus intelligible&#160;: </li></ul>
+<pre>crushtool -d /tmp/crushmap.bin -o /tmp/crushmap.txt
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Eteindre_tout_mon_cluster_sans_souci_au_red.C3.A9marrage">Eteindre tout mon cluster sans souci au redémarrage</span></h3>
+<ul><li> Eteindre le cluster</li></ul>
+<ul><li> Eteindre toutes les VM, tous les LXC</li>
+<li> Mettre le cluster en mode de non-exclusion des OSD éteints </li></ul>
+<pre> ceph osd set noout
+</pre>
+<ul><li> Eteindre tous les MON</li>
+<li> Eteindre tous les OSD</li>
+<li> Au cas où</li></ul>
+<pre>ceph -a stop
+</pre>
+<ul><li> Rallumer le cluster</li></ul>
+<ul><li> Démarrer les OSD</li>
+<li> Démarrer les MON</li></ul>
+<pre>ceph -w 
+</pre>
+<p>pour vérifier et agir au besoin.
+</p>
+<ul><li> Démarrer LXC et VM</li>
+<li> Remettre les OSD sous surveillance</li></ul>
+<pre>ceph osd unset noout
+ceph -a start
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Une_VM_a_crash.C3.A9_durant_une_.C3.A9criture_sur_son_pool">Une VM a crashé durant une écriture sur son pool</span></h3>
+<p>Lorsque vous tentez le pct start du conteneur, ça échoue avec dans les logs&#160;:
+</p>
+<pre>EXT4-fs (rbd3): required journal recovery suppressed and not mounted read-only
+</pre>
+<p>Facile&#160;:
+Testez que les donnés sont présentes (depuis l'hôte )
+</p>
+<pre>mount -o ro,noload /dev/rbd3 /mnt/
+ls /mnt
+umount /mnt
+</pre>
+<p>Puis testez le montage en écriture (qui doit planter) 
+</p>
+<pre>mount -o rw,noload /dev/rbd2 /mnt/
+</pre>
+<p>On voit les dégâts&#160;:
+</p>
+<pre>fsck.ext4 /dev/rbd3 -n
+</pre>
+<p>On répare 
+</p>
+<pre>fsck.ext4 /dev/rbd3
+</pre>
+<h2><span class="mw-headline" id="MCO_r.C3.A9guli.C3.A8re">MCO régulière</span></h2>
+<h3><span class="mw-headline" id="PGs_inconsistent">PGs inconsistent</span></h3>
+<p><a rel="nofollow" class="external text" href="https://www.sebastien-han.fr/blog/2015/04/27/ceph-manually-repair-object/">Source</a>
+</p>
+<pre>ceph health detail
+
+HEALTH_ERR 1 pgs inconsistent; 1 scrub errors
+pg 7.78 is active+clean+inconsistent, acting [5,1,4]
+</pre>
+<p>OK, le pg 7.78 est inconsistent .
+</p>
+<pre>ceph pg repair 7.78
+</pre>
+<p>Ca marche...parfois&#160;!
+</p>
+<h3><span class="mw-headline" id="Scrub_errors">Scrub errors</span></h3>
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<ul><li> Installer une seconde carte réseau pour le réseau de stockage dédié</li>
+<li> Ajouter la config&#160;:</li></ul>
+<pre># from /etc/network/interfaces
+auto eth2
+iface eth2 inet static
+  address  10.10.10.XXX
+  netmask  255.255.255.0
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Sous_Ubuntu_.2FDebian">Sous Ubuntu /Debian</span></h3>
+<p>Pour utiliser sous ProxMox &#160;: <a rel="nofollow" class="external autonumber" href="http://pve.proxmox.com/wiki/Storage:_Ceph">[4]</a>
+</p>
+<h3><span class="mw-headline" id="Sous_ProxMox">Sous ProxMox</span></h3>
+<h4><span class="mw-headline" id="Install">Install</span></h4>
+<p><a rel="nofollow" class="external text" href="http://pve.proxmox.com/wiki/Ceph_Server">Doc</a>
+</p>
+<ul><li> A faire sur chaque noeud du cluster Ceph&#160;:</li></ul>
+<pre>apt-get update &amp;&amp; apt-get -y dist-upgrade
+pveceph install --version luminous
+</pre>
+<p><br />
+</p>
+<ul><li> A faire sur un unique noeud</li></ul>
+<pre> pveceph init --network 10.10.10.0/24
+</pre>
+<p>Il pourrait également être judicieux de choisir ce LAN dédié et privé pour la communication du cluster.
+</p>
+<ul><li> Sur chacun des 3 noeuds de monitoring (qui peuvent porter des OSD, voire des VM ou des LXC, mais, il faut laisser au MON suffisamment d'IO)&#160;:</li></ul>
+<pre>pveceph createmon
+</pre>
+<p>Puis, par l'interface de ProxMox, et dans l'ordre&#160;:
+</p>
+<ul><li> Vous créez vos OSD (sur des disques vierges, pas sur des partitions..) à raison de 1 OSD par disque et avec journal sur SSD si possible (Max environ 6 OSD par journal)</li>
+<li> Vous créez votre pool Ceph&#160;:
+<ul><li> Size: Nombre de host</li>
+<li> Min&#160;: Nombre de host minimum pour tenir la réplication</li>
+<li> Ruleset&#160;: 0 si on souhaite accepter la perte d'OSD, 1 pour la perte d'host</li>
+<li> pg_num&#160;: puissance de 2 immédiatement supérieure à 100*OSD/réplicat, soit 256 pour 6 OSD et 3 réplicats </li></ul></li>
+<li> Vous créez votre storage (onglet Datacenter) s'appuyant sur le pool ceph, type <i>rbd</i></li></ul>
+<p>Enfin, vous devez permettre l'accès (via clés) des machines aux pools&#160;: <a rel="nofollow" class="external autonumber" href="https://pve.proxmox.com/wiki/Ceph_Server#Ceph_Client">[5]</a>
+<b>Sur les moniteurs uniquement&#160;!!!</b>
+</p>
+<pre>mkdir /etc/pve/priv/ceph
+grep "rbd:" /etc/pve/storage.cfg
+</pre>
+<p>Vous obtenez le nom des pools,par exemple&#160;: <i>rbd: TestPool</i>
+</p>
+<pre> cp /etc/ceph/ceph.client.admin.keyring /etc/pve/priv/ceph/<b>testPool</b>.keyring
+</pre>
+<p>Ce qui signifie que vous devez refaire cette opération à chaque création de pool!
+</p>
+<h4><span class="mw-headline" id="Supprimer_un_pool">Supprimer un pool</span></h4>
+<p>Par défaut (et par sécurité), il n'est aps permis de supprimer un pool.
+Il faut ajouter sur le ceph.conf, dans la partie [mon] sur chacun d'entre eux,
+</p>
+<pre> mon_allow_pool_delete = true
+</pre>
+<p>puis un restart du service mon sur chacun.
+</p>
+<pre>service ceph-mon@ID restart
+</pre>
+<p>Sinon
+</p>
+<pre>mon_command failed - pool deletion is disabled; 
+you must first set the mon_allow_pool_delete config option to true before you can destroy a pool (500)
+</pre>
+<p>Je vous conseille fortement de remettre la ligne à false à l'issue..
+</p>
+<h4><span class="mw-headline" id="Cr.C3.A9ation_d.27un_conteneur_LXC_avec_un_backend_Ceph_de_stockage">Création d'un conteneur LXC avec un backend Ceph de stockage</span></h4>
+<ol><li> Créer un pool avec les bonnes caractéristiques&#160;:</li></ol>
+<ul><li> Depuis un membre du cluster&#160;:</li></ul>
+<pre>Ceph/Pools/Create
+</pre>
+<ul><li> Depuis la racine du cluster, ajoutez un stockage&#160;:</li></ul>
+<pre>Add/RBD/ Choisissez un nom pour la passerelle / Pool précédemmnent créé / Les mons 
+</pre>
+<p>N'oubliez pas de cliquer sur Container dans Content et de valider KRBD afin de bénéficier su stockage des LXC
+</p>
+<ul><li> Sur les mon, donnez leur les droits</li></ul>
+<pre>cp /etc/ceph/ceph.client.admin.keyring /etc/pve/priv/ceph/PoolID.keyring
+</pre>
+<p><br />
+C'est terminé pour le stockage distribué.
+</p><p>Maintenant, sur chaque conteneur auquel vous souhaitez associer une part de cet espace&#160;: 
+</p>
+<ol><li>Depuis l'onglet du LXC&#160;: </li></ol>
+<pre>Add Mount Point
+</pre>
+<p>Tout est self-explicite. Le point de montage sur le FS du conteneur sera créé automatiquement.
+</p>
+<h3><span class="mw-headline" id="Debug">Debug</span></h3>
+<h4><span class="mw-headline" id="rbd_error:_rbd:_couldn.27t_connect_to_cluster_.28500.29">rbd error: rbd: couldn't connect to cluster (500)</span></h4>
+<p>Jouez avec les keyrings comme vu au paragraphe précédent.
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="rados_connect_failed_-_No_such_file_or_directory_.28500.29">rados_connect failed - No such file or directory (500)</span></h4>
+<h4><span class="mw-headline" id="pveceph_configuration_not_initialized_.28500.29">pveceph configuration not initialized (500)</span></h4>
+<p>Simple, vous n'avez pas initialisé le cluster Ceph...Ou bien, vous avez bêtement suivi la doc proxmox qui ne précise pas que <i>pveceph purge vire toute la config du cluster et pas juste le noeud...</i>
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="Errors_while_parsing_config_file">Errors while parsing config file</span></h4>
+<pre>parse_file: cannot open /etc/ceph/ceph.conf: (2) No such file or directory
+</pre>
+<p>Le lien vers le fichier réparti (sur /etc/pve) n'est pas fait&#160;:
+</p>
+<pre>ln -s /etc/pve/priv/ceph.client.admin.keyring /etc/ceph/ceph.client.admin.keyring
+</pre>
+<p>ou 
+</p>
+<pre>ln -s /etc/pve/ceph.conf /etc/ceph/ceph.conf
+</pre>
+<p>selon
+</p>
+<h2><span class="mw-headline" id="A_ne_pas_faire">A ne pas faire</span></h2>
+<p>A part <i>pveceph purge</i>, je ne vois pas...
+</p>
+<h2><span class="mw-headline" id="Alerte_j.27ai_perdu_la_conf_du_cluster">Alerte j'ai perdu la conf du cluster</span></h2>
+<p>Ne recréez pas une nouvelle instance via <b>pveceph init</b>, sinon vous êtes cuit&#160;!
+</p>
+<h3><span class="mw-headline" id="Recr.C3.A9er_le_ceph.conf">Recréer le ceph.conf</span></h3>
+<p>Si vous avez encore les osd fonctionnel, on peut encore s'en sortir...
+</p>
+<pre>voila un ceph.conf à coller dans /etc/pve/ceph.conf (il sera donc répliqué)
+</pre>
+<pre>[global]
+auth cluster required = cephx
+auth service required = cephx
+auth client required = cephx
+cluster network = IP_REPL/16
+filestore xattr use omap = true
+fsid = ID_Cluster
+keyring = /etc/pve/priv/$cluster.$name.keyring
+osd journal size = 5120
+osd pool default min size = 1
+public network = IP_PUB/16
+[osd]
+keyring = /var/lib/ceph/osd/ceph-$id/keyring
+[mon.0]
+</pre>
+<p>	host = jaime
+	mon addr = IP1:6789
+</p>
+<pre>[mon.1]
+</pre>
+<p>	host = daenerys
+	mon addr = IP2:6789
+</p>
+<pre>[mon.2]
+</pre>
+<p>	host = jon
+	mon addr = IP3:6789
+</p><p>le plus important, le fsid, peut être retrouvé via vos osd&#160;:
+</p>
+<pre>cat /var/lib/ceph/osd/ceph-0/ceph_fsid
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Retrouver_les_cl.C3.A9s_d.27authent_de_cephx">Retrouver les clés d'authent de cephx</span></h3>
+<pre>cp /etc/pve/priv/ceph/MonPool.keyring /etc/pve/priv/ceph.client.admin.keyring
+ln -s /etc/pve/priv/ceph.client.admin.keyring /etc/ceph/ceph.client.admin.keyring
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20171020052539
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.240 seconds
+Real time usage: 0.241 seconds
+Preprocessor visited node count: 179/1000000
+Preprocessor generated node count: 184/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:340-0!*!0!!fr!*!* and timestamp 20171020052538 and revision id 3454
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Ceph&amp;oldid=3454">http://www.openbsd-edu.net/index.php?title=Ceph&amp;oldid=3454</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Ceph.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Ceph.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Ceph&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Ceph.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Ceph.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Ceph&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Ceph&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Ceph.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FCeph.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Ceph" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Ceph&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Ceph&amp;oldid=3454" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Ceph&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 14 septembre 2017 à 13:29.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.240","walltime":"0.241","ppvisitednodes":{"value":179,"limit":1000000},"ppgeneratednodes":{"value":184,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020052539","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1351});});</script>
+	</body>
+</html>

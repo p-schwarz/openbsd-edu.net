@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Analyseur de logs — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Analyseur_de_logs","wgTitle":"Analyseur de logs","wgCurRevisionId":3416,"wgRevisionId":3416,"wgArticleId":309,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Analyseur_de_logs","wgRelevantArticleId":309,"wgRequestId":"43ee47f105a7291e130acffb","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Analyseur_de_logs rootpage-Analyseur_de_logs skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Analyseur de logs</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Analyseur_de_logs.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Analyseur_de_logs.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>Avec des (dizaines) de serveurs, de switches, d'applis....Il faut centraliser et analyser le tout
+</p><p>Grep, sed, awk ça va deux minutes
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Produits_test.C3.A9s"><span class="tocnumber">1</span> <span class="toctext">Produits testés</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Soucis_l.C3.A9gislatifs"><span class="tocnumber">2</span> <span class="toctext">Soucis législatifs</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Why_Splunk"><span class="tocnumber">3</span> <span class="toctext">Why Splunk</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Why_not_Splunk"><span class="tocnumber">4</span> <span class="toctext">Why not Splunk</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Install"><span class="tocnumber">5</span> <span class="toctext">Install</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Config"><span class="tocnumber">5.1</span> <span class="toctext">Config</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="index.php%3Ftitle=Analyseur_de_logs.html#TLS.2FSSL"><span class="tocnumber">5.1.1</span> <span class="toctext">TLS/SSL</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Modifier_le_forwarder_apr.C3.A8s_l.27install"><span class="tocnumber">5.1.2</span> <span class="toctext">Modifier le forwarder après l'install</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Splunk_Forwarder"><span class="tocnumber">6</span> <span class="toctext">Splunk Forwarder</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Linux"><span class="tocnumber">6.1</span> <span class="toctext">Linux</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Analyseur_de_logs.html#FreeBSD"><span class="tocnumber">6.2</span> <span class="toctext">FreeBSD</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Analyseur_de_logs.html#raspBian.2FRaspberry_pi"><span class="tocnumber">6.3</span> <span class="toctext">raspBian/Raspberry pi</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Lancement"><span class="tocnumber">6.4</span> <span class="toctext">Lancement</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Windows"><span class="tocnumber">6.5</span> <span class="toctext">Windows</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=Analyseur_de_logs.html#En_mode_CLI"><span class="tocnumber">6.5.1</span> <span class="toctext">En mode CLI</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Commandes_utiles"><span class="tocnumber">6.6</span> <span class="toctext">Commandes utiles</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Debug"><span class="tocnumber">6.7</span> <span class="toctext">Debug</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Applications"><span class="tocnumber">7</span> <span class="toctext">Applications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="index.php%3Ftitle=Analyseur_de_logs.html#DB_Connect"><span class="tocnumber">7.1</span> <span class="toctext">DB Connect</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Connecteurs_de_logs"><span class="tocnumber">8</span> <span class="toctext">Connecteurs de logs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Unix"><span class="tocnumber">8.1</span> <span class="toctext">Unix</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Remonter_les_logs_de_son_imprimante"><span class="tocnumber">8.2</span> <span class="toctext">Remonter les logs de son imprimante</span></a>
+<ul>
+<li class="toclevel-3 tocsection-23"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Sur_son_imprimante_Lexmark"><span class="tocnumber">8.2.1</span> <span class="toctext">Sur son imprimante Lexmark</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-24"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Limite_d.27usage"><span class="tocnumber">9</span> <span class="toctext">Limite d'usage</span></a></li>
+<li class="toclevel-1 tocsection-25"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Export_Splunk"><span class="tocnumber">10</span> <span class="toctext">Export Splunk</span></a></li>
+<li class="toclevel-1 tocsection-26"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Requ.C3.AAtes_amusantes"><span class="tocnumber">11</span> <span class="toctext">Requêtes amusantes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-27"><a href="index.php%3Ftitle=Analyseur_de_logs.html#M.C3.A9tadonn.C3.A9es_des_.C3.A9changes"><span class="tocnumber">11.1</span> <span class="toctext">Métadonnées des échanges</span></a>
+<ul>
+<li class="toclevel-3 tocsection-28"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Combien_de_mails_par_heure"><span class="tocnumber">11.1.1</span> <span class="toctext">Combien de mails par heure</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-29"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Usages"><span class="tocnumber">12</span> <span class="toctext">Usages</span></a>
+<ul>
+<li class="toclevel-2 tocsection-30"><a href="index.php%3Ftitle=Analyseur_de_logs.html#G.C3.A9rer_son_compte_en_banque"><span class="tocnumber">12.1</span> <span class="toctext">Gérer son compte en banque</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-31"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Fluentd"><span class="tocnumber">13</span> <span class="toctext">Fluentd</span></a>
+<ul>
+<li class="toclevel-2 tocsection-32"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Installation"><span class="tocnumber">13.1</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-2 tocsection-33"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Rapide_:_TD-agent"><span class="tocnumber">13.2</span> <span class="toctext">Rapide&#160;: TD-agent</span></a></li>
+<li class="toclevel-2 tocsection-34"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Tuned_:_FLuentd"><span class="tocnumber">13.3</span> <span class="toctext">Tuned&#160;: FLuentd</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-35"><a href="index.php%3Ftitle=Analyseur_de_logs.html#ELKS.2C_La_star_:_ElasticSearch_Logsash_Kibana_Stack"><span class="tocnumber">14</span> <span class="toctext">ELKS, La star&#160;: ElasticSearch Logsash Kibana Stack</span></a>
+<ul>
+<li class="toclevel-2 tocsection-36"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Sur_un_serveur_Debian_.C3.A0_monitorer"><span class="tocnumber">14.1</span> <span class="toctext">Sur un serveur Debian à monitorer</span></a></li>
+<li class="toclevel-2 tocsection-37"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Debug_2"><span class="tocnumber">14.2</span> <span class="toctext">Debug</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-38"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Et_pour_tester.2C_il_faut_g.C3.A9n.C3.A9rer_des_logs.2C_beaucoup_de_logs_.21"><span class="tocnumber">15</span> <span class="toctext">Et pour tester, il faut générer des logs, beaucoup de logs&#160;!</span></a>
+<ul>
+<li class="toclevel-2 tocsection-39"><a href="index.php%3Ftitle=Analyseur_de_logs.html#G.C3.A9n.C3.A9rateurs_de_logs"><span class="tocnumber">15.1</span> <span class="toctext">Générateurs de logs</span></a>
+<ul>
+<li class="toclevel-3 tocsection-40"><a href="index.php%3Ftitle=Analyseur_de_logs.html#MUST"><span class="tocnumber">15.1.1</span> <span class="toctext">MUST</span></a></li>
+<li class="toclevel-3 tocsection-41"><a href="index.php%3Ftitle=Analyseur_de_logs.html#SyslogGen"><span class="tocnumber">15.1.2</span> <span class="toctext">SyslogGen</span></a></li>
+<li class="toclevel-3 tocsection-42"><a href="index.php%3Ftitle=Analyseur_de_logs.html#SyslogGen_Un_autre"><span class="tocnumber">15.1.3</span> <span class="toctext">SyslogGen Un autre</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-43"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Anonymisation_des_donn.C3.A9es"><span class="tocnumber">16</span> <span class="toctext">Anonymisation des données</span></a>
+<ul>
+<li class="toclevel-2 tocsection-44"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Depuis_un_serveur_Windows"><span class="tocnumber">16.1</span> <span class="toctext">Depuis un serveur Windows</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-45"><a href="index.php%3Ftitle=Analyseur_de_logs.html#Liens"><span class="tocnumber">17</span> <span class="toctext">Liens</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Produits_test.C3.A9s">Produits testés</span></h2>
+<h2><span class="mw-headline" id="Soucis_l.C3.A9gislatifs">Soucis législatifs</span></h2>
+<h2><span class="mw-headline" id="Why_Splunk">Why Splunk</span></h2>
+<p>Pas libre, mais gratuit jusqu'à 500 Mo de log quotidiens.
+Splunk semble être la rolls des parseurs de logs. Encaisse sans broncher des quantités conséquentes de logs (big data z'avez-dit&#160;?); aucun parser à écrire.
+</p>
+<h2><span class="mw-headline" id="Why_not_Splunk">Why not Splunk</span></h2>
+<p>Mais attention&#160;! 500Mo/j c'est une limite soft. Dépassez 3 fois et vous n'aurez plus accès à grand chose, il faudra passer à la case banque et SPlunk, c'est très bien, mais très cher!!
+Dommage!
+</p>
+<h2><span class="mw-headline" id="Install">Install</span></h2>
+<p>Une fois inscrit, on télécharge selon l'archi et on installe le .deb
+</p>
+<pre> md5sum splunk-6.2.1-245427-linux-2.6-amd64.deb
+ cat splunk-6.2.1-245427-linux-2.6-amd64.deb.md5
+ dpkg -i splunk-6.2.1-245427-linux-2.6-amd64.deb
+ /opt/splunk/bin/splunk help commands
+</pre>
+<p>On accepte la licence et son N°4&#160;:<i>4.  FORCE MAJEURE.  Splunk will not be responsible for any failure or delay </i>
+</p><p>La génération des clés RSA, la config LDAP:
+</p>
+<pre>This appears to be your first time running this version of Splunk.
+Copying '/opt/splunk/etc/openldap/ldap.conf.default' to '/opt/splunk/etc/openldap/ldap.conf'.
+Generating RSA private key, 1024 bit long modulus
+............................++++++
+writing RSA key
+Moving '/opt/splunk/share/splunk/search_mrsparkle/modules.new' to '/opt/splunk/share/splunk/search_mrsparkle/modules'.
+</pre>
+<pre> /opt/splunk/bin/splunk  start
+</pre>
+<ul><li> Puis on va sur  <a rel="nofollow" class="external free" href="http://IP:8000">http://IP:8000</a></li></ul>
+<p>Attention, Splunk Web n'aime pas les navigateurs préhistoriques..
+</p>
+<ul><li> On change le MDP admin (changeme)</li>
+<li> Avant de recevorir ces monceaux de données, il faut, au préalable activer l'écoute sur l'indexeur (serveur ) splunk&#160;: Settings /Forwarding and receiving /New&#160;: TCP 9997</li></ul>
+<h3><span class="mw-headline" id="Config">Config</span></h3>
+<h4><span class="mw-headline" id="TLS.2FSSL">TLS/SSL</span></h4>
+<p>Settings/Server settings/General settings/Enable https
+</p><p>Puis il faut redémarrer ce qui peut être assez long.
+</p><p>Evidemment le certificat est autosigné..
+</p>
+<h4><span class="mw-headline" id="Modifier_le_forwarder_apr.C3.A8s_l.27install">Modifier le forwarder après l'install</span></h4>
+<p><a rel="nofollow" class="external autonumber" href="http://docs.splunk.com/Documentation/Splunk/latest/Data/Monitorwindowsdata#Use_inputs.conf_to_configure_event_log_monitoring">[1]</a>
+</p><p>Le fichier pour les logs est&#160;: c:\Program Files\Splunkforwarder\etc\systemefault\inputs.conf
+</p>
+<h2><span class="mw-headline" id="Splunk_Forwarder">Splunk Forwarder</span></h2>
+<p>Un agent à déployer sur les machines à surveiller. Cet agent parse les logs et les envoie vers le serveur Splunk.
+<a rel="nofollow" class="external autonumber" href="http://download.splunk.com/products/splunk/releases/6.2.1/universalforwarder/">[2]</a>
+</p>
+<h3><span class="mw-headline" id="Linux">Linux</span></h3>
+<p>Inutile sur le serveur splunk; il existe la possibilité de monitorer les logs locaux directement.
+</p><p>Tiré de <a rel="nofollow" class="external autonumber" href="http://frednotes.wordpress.com/2012/09/07/splunking-the-squid/">[3]</a>
+</p><p><br />
+</p>
+<pre>wget <a rel="nofollow" class="external free" href="http://download.splunk.com/products/splunk/releases/6.2.1/universalforwarder/linux/splunkforwarder-6.2.1-245427-linux-2.6-amd64.deb.md5">http://download.splunk.com/products/splunk/releases/6.2.1/universalforwarder/linux/splunkforwarder-6.2.1-245427-linux-2.6-amd64.deb.md5</a>
+wget <a rel="nofollow" class="external free" href="http://download.splunk.com/products/splunk/releases/6.2.1/universalforwarder/linux/splunkforwarder-6.2.1-245427-linux-2.6-amd64.deb">http://download.splunk.com/products/splunk/releases/6.2.1/universalforwarder/linux/splunkforwarder-6.2.1-245427-linux-2.6-amd64.deb</a>
+</pre>
+<p><br />
+</p>
+<pre>md5sum splunkforwarder-6.2.1-245427-linux-2.6-amd64.deb
+cat splunkforwarder-6.2.1-245427-linux-2.6-amd64.deb.md5
+dpkg -i splunkforwarder-6.2.1-245427-linux-2.6-amd64.deb
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="FreeBSD">FreeBSD</span></h3>
+<p><a rel="nofollow" class="external free" href="https://www.splunk.com/en_us/download/universal-forwarder.html#">https://www.splunk.com/en_us/download/universal-forwarder.html#</a>
+</p>
+<pre>pkg add splunkforwarder-6.3.3-f44afce176d0-freebsd-10.1-amd64.txz 
+/opt/splunkforwarder/bin/splunk  add forward-server IPsplunk:9997 --accept-license
+/opt/splunkforwarder/bin/splunk  enable boot-start
+/opt/splunkforwarder/bin/splunk  start
+</pre>
+<p><br />
+that's all
+</p>
+<h3><span class="mw-headline" id="raspBian.2FRaspberry_pi">raspBian/Raspberry pi</span></h3>
+<p><a rel="nofollow" class="external free" href="http://apps.splunk.com/app/1611/">http://apps.splunk.com/app/1611/</a>
+</p>
+<pre>tar zxvf splunkforwarderforunix.tgz
+sudo mv splunkforwarder /opt
+sudo /opt/splunkforwarder/bin/splunk start
+sudo /opt/splunkforwarder/bin/splunk  add forward-server ServeurSplunk:9997
+sudo /opt/splunkforwarder/bin/splunk  enable boot-start
+sudo /opt/splunkforwarder/bin/splunk  start
+</pre>
+<p><br />
+</p>
+<pre>sudo /opt/splunkforwarder/bin/splunk  add monitor /var/log/auth.log
+sudo /opt/splunkforwarder/bin/splunk  add monitor /var/log/auth.log
+sudo /opt/splunkforwarder/bin/splunk  add monitor /var/log/syslog
+sudo /opt/splunkforwarder/bin/splunk  add monitor /var/log/messages
+sudo /opt/splunkforwarder/bin/splunk  add monitor /var/log/dmesg
+</pre>
+<h3><span class="mw-headline" id="Lancement">Lancement</span></h3>
+<p>Les commandes sont self-explicites&#160;:
+</p>
+<pre>/opt/splunkforwarder/bin/splunk  add forward-server ServeurSplunk:9997
+/opt/splunkforwarder/bin/splunk  add monitor /var/log/squid/blocked.log
+/opt/splunkforwarder/bin/splunk  enable boot-start
+/opt/splunkforwarder/bin/splunk  start
+</pre>
+<h3><span class="mw-headline" id="Windows">Windows</span></h3>
+<ul><li> Téléchargez le splunk forwarder adapté</li>
+<li> Choisissez le serveur de de  réception port 9997</li>
+<li> Chiffrement par défaut</li>
+<li> Utilisation locale ou de domaine</li>
+<li> Choix des journaux&#160;! Attention, au dela de 500Mo/j c'est fini du gratuit!</li></ul>
+<p>C'est tout
+</p><p><br />
+Ou bien &#160;: 
+</p>
+<h4><span class="mw-headline" id="En_mode_CLI">En mode CLI</span></h4>
+<p><a rel="nofollow" class="external autonumber" href="http://docs.splunk.com/Documentation/Splunk/6.2.1/Forwarding/DeployaWindowsdfviathecommandline#Examples">[4]</a>
+</p>
+<h3><span class="mw-headline" id="Commandes_utiles">Commandes utiles</span></h3>
+<pre>/opt/splunkforwarder/bin/splunk  list forward-server
+Active forwards:
+None
+Configured but inactive forwards:
+IP:9997
+</pre>
+<p><br />
+</p>
+<pre>/opt/splunkforwarder/bin/splunk  remove  forward-server IP:8000
+</pre>
+<h3><span class="mw-headline" id="Debug">Debug</span></h3>
+<ul><li> Splunk username &amp; Password</li></ul>
+<p>Il faut donner les id du serveur splunk <i>admin/changeme</i> par défaut.
+</p>
+<h2><span class="mw-headline" id="Applications">Applications</span></h2>
+<p>Splunk &gt; Apps &gt; Manage Apps &gt; Install from online sources
+</p>
+<h3><span class="mw-headline" id="DB_Connect">DB Connect</span></h3>
+<ul><li> Ajouter l'app</li>
+<li> Relancer le serveur Splunk</li>
+<li> Configurez Java&#160;: <a rel="nofollow" class="external autonumber" href="http://www.openbsd-edu.net/index.php/Wheezy#Java_from_Sun">[5]</a></li></ul>
+<p>Mais ne rien mettre dans la ligne jre/jdk
+</p>
+<ul><li> Sauver</li></ul>
+<h2><span class="mw-headline" id="Connecteurs_de_logs">Connecteurs de logs</span></h2>
+<h3><span class="mw-headline" id="Unix">Unix</span></h3>
+<p>Modifier /etc/rsyslog.conf&#160;:
+</p>
+<pre>echo "mail.info,auth,daemon,syslog,user.info;authpriv,kern.debug                @IP_LOGserver" &gt;&gt; /etc/rsyslog.conf
+</pre>
+<pre>service rsyslog restart
+</pre>
+<h3><span class="mw-headline" id="Remonter_les_logs_de_son_imprimante">Remonter les logs de son imprimante</span></h3>
+<h4><span class="mw-headline" id="Sur_son_imprimante_Lexmark">Sur son imprimante Lexmark</span></h4>
+<ul><li> Menu Paramètres / Sécurité / Journal Audit sécurité</li>
+<li> Activer Audit &amp; Serveur Syslog distant</li></ul>
+<h2><span class="mw-headline" id="Limite_d.27usage">Limite d'usage</span></h2>
+<p>Les fameux 500 Mo&#160;:  Activity/System activity/licence usage
+</p><p>Avec quelques envois de script sysloggen + un vrai AD, j'arrive à 449 MO/500.... C'est vite atteint..
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Export_Splunk">Export Splunk</span></h2>
+<p>Si vous avez moins de 10.000 lignes à exporter, tapez votre recherche et cliquez sur le symbole de download à droite.
+Sinon
+</p>
+<ul><li> Dans la barre de query&#160;:  </li></ul>
+<pre>* | outputcsv yourcsv.csv
+</pre>
+<p>Et aller ensuite chercher
+</p>
+<h2><span class="mw-headline" id="Requ.C3.AAtes_amusantes">Requêtes amusantes</span></h2>
+<h3><span class="mw-headline" id="M.C3.A9tadonn.C3.A9es_des_.C3.A9changes">Métadonnées des échanges</span></h3>
+<pre>host="IP_du_srv_postfix" postfix ("to=" OR "from=")
+</pre>
+<p>Donne les échanges de mails. Pas le contenu des mails (heureusement), mais les (famous) métadonnées&#160;:Qui cause à qui!
+</p>
+<h4><span class="mw-headline" id="Combien_de_mails_par_heure">Combien de mails par heure</span></h4>
+<pre>host="IP" postfix ("to=" OR "from=") |rex field=_raw "From: (?&lt;from&gt;.*) To: (?&lt;to&gt;.*)" | chart count(from) by date_hour
+</pre>
+<h2><span class="mw-headline" id="Usages">Usages</span></h2>
+<h3><span class="mw-headline" id="G.C3.A9rer_son_compte_en_banque">Gérer son compte en banque</span></h3>
+<p><a rel="nofollow" class="external autonumber" href="http://blogs.splunk.com/2014/11/12/the-bank-of-splunk/">[6]</a>
+</p>
+<ul><li> Sur votre site de banque en ligne télécharger le .dat au format tableur.</li>
+<li> Un coup de perl/sed:Whatever&#160;:</li></ul>
+<pre>perl -pi -e 's/\t/|/g' XXXXXX.dat 
+Ajouter une ligne iinitiale qui contiendra les colonnes&#160;: 
+</pre>
+<p>Date_operation|Numero_operation|Media_operation|Montant_operation|Tiers_operation|Ref_operation
+</p>
+<ul><li> Add data sur Splunk</li></ul>
+<pre>Source type format&#160;: structured/psv
+Break Type&#160;: Every line
+Mode table
+No line number
+UTC +1
+Comma separated field name&#160;: date_operation,montant,import_time,,numero_operation,field5,media,tiers
+</pre>
+<p>Attention, field_names doit être sur Auto
+</p><p>Enregistrez le format d'import et créez un nouvel index sandbox pour tester.
+</p><p>Si l'import vous semble correct, vous pouvez modifier l'index ultérieurement ( <a rel="nofollow" class="external autonumber" href="http://docs.splunk.com/Documentation/Splunk/latest/Data/Modifyinputsettings">[7]</a> ).
+(Settings/Indexes/sandbox;//)
+Mieux, vous pouvez refaire l'opération sur l'index default.
+</p>
+<h2><span class="mw-headline" id="Fluentd">Fluentd</span></h2>
+<p>Semble aussi efficace que Splunk (en ce qui me concerne), mais est libre et gratuit..
+</p>
+<h3><span class="mw-headline" id="Installation">Installation</span></h3>
+<p><a rel="nofollow" class="external autonumber" href="http://docs.fluentd.org/articles/install-by-deb">[8]</a>
+Sur Debian 7 (Mais pas td-agent&#160;: un souci avec libssl sous debian 7)
+Docs&#160;: <a rel="nofollow" class="external autonumber" href="http://docs.fluentd.org/articles/before-install">[9]</a> 
+</p><p>Si ulimit -n donne 1024&#160;:
+</p>
+<pre>echo "root soft nofile 65536 " &gt;&gt; /etc/security/limits.conf
+echo "root hard nofile 65536" &gt;&gt; /etc/security/limits.conf
+echo "* soft nofile 65536" &gt;&gt; /etc/security/limits.conf
+echo "* hard nofile 65536" &gt;&gt; /etc/security/limits.conf
+reboot
+</pre>
+<h3><span class="mw-headline" id="Rapide_:_TD-agent">Rapide&#160;: TD-agent</span></h3>
+<pre>wget <a rel="nofollow" class="external free" href="http://packages.treasure-data.com/debian/RPM-GPG-KEY-td-agent">http://packages.treasure-data.com/debian/RPM-GPG-KEY-td-agent</a>
+apt-key add RPM-GPG-KEY-td-agent  
+wget <a rel="nofollow" class="external free" href="http://packages.treasure-data.com/debian/pool/contrib/t/td-agent/td-agent_1.1.18-1_i386.deb">http://packages.treasure-data.com/debian/pool/contrib/t/td-agent/td-agent_1.1.18-1_i386.deb</a>
+apt-get install -y libxslt1.1 libyaml-0-2 curl
+dpkg -i td-agent_1.1.18-1_i386.deb
+</pre>
+<h3><span class="mw-headline" id="Tuned_:_FLuentd">Tuned&#160;: FLuentd</span></h3>
+<p><a rel="nofollow" class="external autonumber" href="http://docs.fluentd.org/articles/install-by-gem">[10]</a>
+</p>
+<pre>Install ElasticSearch
+</pre>
+<p>[ <a rel="nofollow" class="external free" href="http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html">http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html</a>]
+</p>
+<pre><a rel="nofollow" class="external autonumber" href="http://repeatedly.github.io/2013/04/search-logs-using-fluentd-and-kibana/">[11]</a>
+</pre>
+<pre>wget -O - <a rel="nofollow" class="external free" href="http://packages.elasticsearch.org/GPG-KEY-elasticsearch">http://packages.elasticsearch.org/GPG-KEY-elasticsearch</a> | apt-key add -
+echo "deb <a rel="nofollow" class="external free" href="http://packages.elasticsearch.org/elasticsearch/0.90/debian">http://packages.elasticsearch.org/elasticsearch/0.90/debian</a> stable main" &gt;&gt; /etc/apt/sources.list
+echo " deb <a rel="nofollow" class="external free" href="http://ftp.us.debian.org/debian/">http://ftp.us.debian.org/debian/</a> squeeze main non-free " &gt;&gt; /etc/apt/sources.list
+apt-get update
+apt-get dist-upgrade
+apt-get install  elasticsearch sun-java6-jre   default-jre sun-java6-plugin git rubygems  ruby1.9.1-dev ntp 
+apt-get remove --purge icedtea-6-*  openjdk-6*
+</pre>
+<pre>java --version
+ruby --version
+/usr/share/elasticsearch/bin/elasticsearch -f
+CTRL+C
+git clone <a rel="nofollow" class="external free" href="git://github.com/rashidkpc/Kibana.git">git://github.com/rashidkpc/Kibana.git</a>
+cd Kibana
+gem install bundle
+bundle install --path vendor/bundle
+bundle exec ruby kibana.rb
+gem install fluentd fluent-plugin-elasticsearch
+ echo "# es.conf
+&lt;source&gt;
+ type forward
+&lt;/source&gt;
+&lt;match es.**&gt;
+ type elasticsearch
+ logstash_format true
+ flush_interval 10s # for testing
+&lt;/match&gt;
+" &gt;&gt; /etc/fluentd/es.conf
+perl -pi -e "s/KibanaHost = '127.0.0.1'/KibanaHost = '0.0.0.0'/" KibanaConfig.rb
+</pre>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="ELKS.2C_La_star_:_ElasticSearch_Logsash_Kibana_Stack">ELKS, La star&#160;: ElasticSearch Logsash Kibana Stack</span></h2>
+<p>Sur Debian 7.0 amd64&#160;:<a rel="nofollow" class="external autonumber" href="https://www.digitalocean.com/community/tutorials/how-to-use-logstash-and-kibana-to-centralize-and-visualize-logs-on-ubuntu-14-04">[12]</a>
+</p>
+<pre>apt-get install nginx
+</pre>
+<pre> wget <a rel="nofollow" class="external free" href="https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.2.deb">https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.2.deb</a>
+ wget <a rel="nofollow" class="external free" href="https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.2.deb.sha1.txt">https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.2.deb.sha1.txt</a>
+ sha1sum elasticsearch-1.4.2.deb
+ cat elasticsearch-1.4.2.deb.sha1.txt 
+ dpkg -i elasticsearch-1.4.2.deb 
+
+ wget <a rel="nofollow" class="external free" href="https://download.elasticsearch.org/logstash/logstash/packages/debian/logstash_1.4.2-1-2c0f5a1_all.deb">https://download.elasticsearch.org/logstash/logstash/packages/debian/logstash_1.4.2-1-2c0f5a1_all.deb</a>
+ wget <a rel="nofollow" class="external free" href="https://download.elasticsearch.org/logstash/logstash/packages/debian/logstash_1.4.2-1-2c0f5a1_all.deb.sha1.txt">https://download.elasticsearch.org/logstash/logstash/packages/debian/logstash_1.4.2-1-2c0f5a1_all.deb.sha1.txt</a>
+ sha1sum logstash_1.4.2-1-2c0f5a1_all.deb
+ cat logstash_1.4.2-1-2c0f5a1_all.deb
+ dpkg -i logstash_1.4.2-1-2c0f5a1_all.deb
+</pre>
+<pre> wget <a rel="nofollow" class="external free" href="https://download.elasticsearch.org/logstash/logstash/packages/debian/logstash-contrib_1.4.2-1-efd53ef_all.deb">https://download.elasticsearch.org/logstash/logstash/packages/debian/logstash-contrib_1.4.2-1-efd53ef_all.deb</a>
+ wget <a rel="nofollow" class="external free" href="https://download.elasticsearch.org/logstash/logstash/packages/debian/logstash-contrib_1.4.2-1-efd53ef_all.deb.sha1.txt">https://download.elasticsearch.org/logstash/logstash/packages/debian/logstash-contrib_1.4.2-1-efd53ef_all.deb.sha1.txt</a>
+ sha1sum logstash-contrib_1.4.2-1-efd53ef_all.deb
+ cat logstash-contrib_1.4.2-1-efd53ef_all.deb.sha1.txt 
+ dpkg -i logstash-contrib_1.4.2-1-efd53ef_all.deb  
+
+ wget <a rel="nofollow" class="external free" href="https://download.elasticsearch.org/kibana/kibana/kibana-3.1.2.tar.gz">https://download.elasticsearch.org/kibana/kibana/kibana-3.1.2.tar.gz</a>
+ tar zxvf kibana-3.1.2.tar.gz 
+ cd kibana-3.1.2/
+ mv * /usr/share/nginx/www/
+ service nginx restart
+</pre>
+<p>Modifier config.js
+</p>
+<pre>  service logstash restart
+  service logstash-web restart
+  service elasticsearch restart
+  service nginx restart
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Sur_un_serveur_Debian_.C3.A0_monitorer">Sur un serveur Debian à monitorer</span></h3>
+<p>Recopier le certificat /etc/pki/tls/certs/logstash-forwarder.crt depuis le serveur logstash
+</p>
+<pre>wget -O - <a rel="nofollow" class="external free" href="http://packages.elasticsearch.org/GPG-KEY-elasticsearch">http://packages.elasticsearch.org/GPG-KEY-elasticsearch</a> |  apt-key add -
+echo 'deb <a rel="nofollow" class="external free" href="http://packages.elasticsearch.org/logstashforwarder/debian">http://packages.elasticsearch.org/logstashforwarder/debian</a> stable main' |  tee /etc/apt/sources.list.d/logstashforwarder.list
+apt-get update
+apt-get install logstash-forwarder
+</pre>
+<p>Et cas de souci, voir +bas, rubrique <a href="index.php%3Ftitle=Analyseur_de_logs.html#Debug">#Debug</a>
+</p>
+<pre>cd /etc/init.d/
+wget --no-check-certificate <a rel="nofollow" class="external free" href="https://raw.github.com/elasticsearch/logstash-forwarder/master/logstash-forwarder.init">https://raw.github.com/elasticsearch/logstash-forwarder/master/logstash-forwarder.init</a> -O logstash-forwarder
+chmod +x logstash-forwarder
+update-rc.d logstash-forwarder defaults
+mkdir -p /etc/pki/tls/certs
+cp /tmp/logstash-forwarder.crt /etc/pki/tls/certs/
+vi /etc/logstash-forwarder
+</pre>
+<pre>{
+ "network": {
+   "servers": [ "IP_ELKS:5000" ],
+   "timeout": 15,
+   "ssl ca": "/etc/pki/tls/certs/logstash-forwarder.crt"
+ },
+ "files": [
+   {
+     "paths": [
+       "/var/log/syslog",
+       "/var/log/auth.log"
+      ],
+     "fields": { "type": "syslog" }
+   }
+  ]
+}
+
+service logstash-forwarder restart
+</pre>
+<h3><span class="mw-headline" id="Debug_2">Debug</span></h3>
+<ul><li> Starting Elasticsearch Server:sysctl: permission denied on key 'vm.max_map_count'</li></ul>
+<p>Normal, sous OpenVZ, les invités n'ont pas le droit demodifier le noyau hôte..Puis quoi encore&#160;?
+</p>
+<ul><li> Si vous n'arrivez pas à installer logstash-forwarder par apt <a rel="nofollow" class="external autonumber" href="http://antisp.in/2014/03/logstash-forwarder/">[13]</a>: </li></ul>
+<p>Sur une machine i386 (puis amd64 si besoin) 
+</p>
+<pre> apt-get install rubygems git ruby-dev
+gem install fpm
+wget --no-check-certificate <a rel="nofollow" class="external free" href="https://storage.googleapis.com/golang/go1.3.3.linux-386.tar.gz">https://storage.googleapis.com/golang/go1.3.3.linux-386.tar.gz</a>
+tar zxvf go1.3.3.linux-386.tar.gz 
+export PATH=$PATH:$HOME/go/bin
+export GOROOT=$HOME/go
+git clone <a rel="nofollow" class="external free" href="git://github.com/elasticsearch/logstash-forwarder.git">git://github.com/elasticsearch/logstash-forwarder.git</a>
+cd logstash-forwarder/
+go build
+make deb
+dkpg -i logstash-forwarder_0.3.1_i386.deb 
+</pre>
+<p>Paquet .deb que vous n'avez qu'à recopier ailleurs.
+</p>
+<h2><span class="mw-headline" id="Et_pour_tester.2C_il_faut_g.C3.A9n.C3.A9rer_des_logs.2C_beaucoup_de_logs_.21">Et pour tester, il faut générer des logs, beaucoup de logs&#160;!</span></h2>
+<h3><span class="mw-headline" id="G.C3.A9n.C3.A9rateurs_de_logs">Générateurs de logs</span></h3>
+<h4><span class="mw-headline" id="MUST">MUST</span></h4>
+<p><a rel="nofollow" class="external autonumber" href="http://sourceforge.net/projects/mustsyslog/">[14]</a>
+</p>
+<pre> apt-get install libxml-treebuilder-perl libmoosex-role-timer-perl liblist-allutils-perl libnet-rawip-perl
+ mkdir must
+ cd must/
+ wget <a rel="nofollow" class="external free" href="http://downloads.sourceforge.net/project/mustsyslog/compressed/must_1_0.tar.gz">http://downloads.sourceforge.net/project/mustsyslog/compressed/must_1_0.tar.gz</a>
+ tar zxvf must_1_0.tar.gz 
+ rm must_1_0.tar.gz
+</pre>
+<p><br />
+</p><p><a rel="nofollow" class="external autonumber" href="http://sourceforge.net/p/mustsyslog/wiki/guide%20to%20creating%20templates/">[15]</a>
+</p><p>Sur le serveur rsyslog
+</p>
+<pre> perl -pi -e 's/#$UDPServerRun 514/$UDPServerRun 514/' /etc/rsyslog.conf 
+ perl -pi -e 's/#$ModLoad imudp/$ModLoad imudp/' /etc/rsyslog.conf 
+ service  rsyslog restart
+</pre>
+<h4><span class="mw-headline" id="SyslogGen">SyslogGen</span></h4>
+<p><a rel="nofollow" class="external autonumber" href="http://stackoverflow.com/questions/18232198/syslog-log-event-generator-linux">[16]</a>
+</p>
+<pre>apt-get install subversion tcpdump
+svn co <a rel="nofollow" class="external free" href="https://subversion.assembla.com/svn/logzilla/scripts/contrib/sysloggen">https://subversion.assembla.com/svn/logzilla/scripts/contrib/sysloggen</a>
+cd sysloggen
+./sysloggen
+</pre>
+<p>Si une erreur de GLIBC arrive&#160;:
+</p>
+<pre> echo "deb <a rel="nofollow" class="external free" href="http://ftp.us.debian.org/debian">http://ftp.us.debian.org/debian</a> testing main non-free contrib" &gt;&gt; /etc/apt/sources.list
+ apt-get update
+ apt-get -t testing install libc6-dev --dry-run
+ apt-get -t testing install libc6-dev 
+ ./sysloggen -d ELKS:514 -f ./samples/sample_cisco_ios.syslog -n 1000000 -r 20000 -l &amp;
+ ./sysloggen -d ELKS:514 -f ./samples/sample_juniper_sdp.syslog -n 1000000 -r 20000 -l &amp;
+ ./sysloggen -d ELKS:514 -f ./samples/sample_cisco_wlc.syslog -n 1000000 -r 20000 -l &amp;
+</pre>
+<pre>3 millions de lignes de logs en moins d'une minute...... Ca va piquer..
+</pre>
+<h4><span class="mw-headline" id="SyslogGen_Un_autre">SyslogGen Un autre</span></h4>
+<p><a rel="nofollow" class="external autonumber" href="https://raw.githubusercontent.com/dbough/syslog-generator/master/syslogGen.sh">[17]</a>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Anonymisation_des_donn.C3.A9es">Anonymisation des données</span></h2>
+<ul><li> Splunk&#160;: <a rel="nofollow" class="external autonumber" href="http://docs.splunk.com/Documentation/Splunk/6.2.1/Data/Anonymizedatausingconfigurationfiles">[18]</a></li></ul>
+<h3><span class="mw-headline" id="Depuis_un_serveur_Windows">Depuis un serveur Windows</span></h3>
+<ul><li>  Observateur d'év-nements</li>
+<li> Clic-droit, enregistrer le fichier sous..</li></ul>
+<p>Recopier sous un Linux
+</p>
+<pre>apt-get install grokevt
+</pre>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="Liens">Liens</span></h2>
+<ul><li> Export csv massif&#160;: <a rel="nofollow" class="external autonumber" href="http://blogs.splunk.com/2009/08/07/help-i-cant-export-more-than-10000-events/">[19]</a></li>
+<li> Le forwarder refuse l'indexer&#160;: <a rel="nofollow" class="external autonumber" href="http://answers.splunk.com/answers/49833/splunk-forwarder-connection-refused-from-splunk-indexer.html">[20]</a></li>
+<li> Install Forwarder Windows en CLI <a rel="nofollow" class="external autonumber" href="http://docs.splunk.com/Documentation/Splunk/6.2.1/Forwarding/DeployaWindowsdfviathecommandline#Examples">[21]</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20171019141253
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.250 seconds
+Real time usage: 0.259 seconds
+Preprocessor visited node count: 179/1000000
+Preprocessor generated node count: 184/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:309-0!*!0!!fr!*!* and timestamp 20171019141253 and revision id 3416
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Analyseur_de_logs&amp;oldid=3416">http://www.openbsd-edu.net/index.php?title=Analyseur_de_logs&amp;oldid=3416</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Analyseur+de+logs.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Analyseur_de_logs.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Analyseur_de_logs&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Analyseur_de_logs.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Analyseur_de_logs.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Analyseur_de_logs&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Analyseur_de_logs&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Analyseur_de_logs.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FAnalyseur_de_logs.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Analyseur_de_logs" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Analyseur_de_logs&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Analyseur_de_logs&amp;oldid=3416" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Analyseur_de_logs&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 8 juillet 2017 à 11:26.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.250","walltime":"0.259","ppvisitednodes":{"value":179,"limit":1000000},"ppgeneratednodes":{"value":184,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171019141253","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1354});});</script>
+	</body>
+</html>

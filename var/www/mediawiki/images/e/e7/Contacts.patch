@@ -1,0 +1,21 @@
+--- contacts.php	Sun Mar 31 17:12:44 2013
++++ contacts.php.orig	Sun Mar 31 17:03:22 2013
+@@ -168,15 +168,15 @@
+ 	echo $tt_contacts_presentation.'<br><br>'."\n";
+ 
+ 	echo $tt_contacts_nom.' :<br>'."\n";
+-	echo '<input type="hidden" size="40" maxlength="64" name="nom" value="'.$_SERVER['REMOTE_USER'].'"><B>'.$_SERVER['REMOTE_USER'].'</B></td>'."\n";
++	echo '<input type="text" size="40" maxlength="64" name="nom" value="'.$_SESSION["nom"].'">';
+ 
+-	if ($_POST["envoiquestion"]&&$_SERVER['REMOTE_USER']==""){
++	if ($_POST["envoiquestion"]&&$_SESSION["nom"]==""){
+ 		echo ' <font color="#FF0000">'.$tt_infos_erreur_nom.'</font>';
+ 	}
+ 
+ 	echo '<br><br>'."\n";
+ 	echo $tt_contacts_adressemail.' :<br>'."\n";
+-	echo '<input type="hidden" size="40" maxlength="64" name="adresse_mail" value="'.$_SERVER['REMOTE_USER'].'@mail.maxp.fr'.'"><B>'.$_SERVER['REMOTE_USER'].'@mail.maxp.fr'.'</B></td>'."\n";
++	echo '<input type="text" size="40" maxlength="64" name="adresse_mail" value="'.$_SESSION["adresse_mail"].'">'."\n";
+ 
+ 
+ 	echo '<br><br>';

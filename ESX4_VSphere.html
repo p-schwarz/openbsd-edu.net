@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>ESX4 VSphere — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"ESX4_VSphere","wgTitle":"ESX4 VSphere","wgCurRevisionId":1000,"wgRevisionId":1000,"wgArticleId":86,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"ESX4_VSphere","wgRelevantArticleId":86,"wgRequestId":"964cd76aeddf2995291ed0c2","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-ESX4_VSphere rootpage-ESX4_VSphere skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">ESX4 VSphere</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=ESX4_VSphere.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=ESX4_VSphere.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=ESX4_VSphere.html#Installation"><span class="tocnumber">1</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=ESX4_VSphere.html#Configuration"><span class="tocnumber">2</span> <span class="toctext">Configuration</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=ESX4_VSphere.html#Ajout_du_support_iSCSI"><span class="tocnumber">3</span> <span class="toctext">Ajout du support iSCSI</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=ESX4_VSphere.html#Images_ISO"><span class="tocnumber">4</span> <span class="toctext">Images ISO</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=ESX4_VSphere.html#En_cas_de_souci"><span class="tocnumber">5</span> <span class="toctext">En cas de souci</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=ESX4_VSphere.html#Les_commandes_utiles"><span class="tocnumber">6</span> <span class="toctext">Les commandes utiles</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=ESX4_VSphere.html#Gestion_des_VM"><span class="tocnumber">6.1</span> <span class="toctext">Gestion des VM</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=ESX4_VSphere.html#Gestion_du_r.C3.A9seau"><span class="tocnumber">6.2</span> <span class="toctext">Gestion du réseau</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=ESX4_VSphere.html#Gestion_des_disques"><span class="tocnumber">6.3</span> <span class="toctext">Gestion des disques</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Installation">Installation</span></h2>
+<p><a rel="nofollow" class="external text" href="https://www.vmware.com/tryvmware/index.php">DL</a>
+</p><p><i>Attention ESX est TRES sensible aux CPU (pas de CPU client genre celeron, mais des XEON, ca va) </i>
+<i> Pour les disques&#160;:Pas de SATA, pas de  3WAre sata, mais Dell PE1950 OK</i>
+</p>
+<ul><li> Boot /DVD ESX4</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:ESXINstall1.jpg.html" class="image"><img alt="ESXINstall1.jpg" src="images/e/e3/ESXINstall1.jpg" width="553" height="399" /></a>
+</p><p><br />
+<a href="./index.php%3Ftitle=Fichier:ESXINstall2.jpg.html" class="image"><img alt="ESXINstall2.jpg" src="images/3/38/ESXINstall2.jpg" width="1007" height="400" /></a>
+</p>
+<h2><span class="mw-headline" id="Configuration">Configuration</span></h2>
+<p>Depuis Vsphere client (ex virtual center)
+</p>
+<ul><li> On s'enregistre</li></ul>
+<h2><span class="mw-headline" id="Ajout_du_support_iSCSI">Ajout du support iSCSI</span></h2>
+<ul><li> Configuration / Networking / Add networking / VMKernel /</li></ul>
+<p>On veut installer le pilote iSCSI sur une nouvelle carte physique =&gt;
+</p>
+<ul><li> Create a virtual switch vmnic2</li></ul>
+<ul><li> Port Group properties&#160;: Nom&#160;: <i>VMKernel.san</i> VLAN&#160;: <i>112</i></li>
+<li> IP&#160;: 172.12.0.1/24</li></ul>
+<ul><li> Creation du storage iSCSI</li></ul>
+<ul><li> Ajout du service console sur la carte vmnic1</li></ul>
+<pre>172.12.0.101/24
+</pre>
+<p><br />
+Une fois que tout cela est fait, on passe à la  <a rel="nofollow" class="external text" href="http://www.petri.co.il/connect-vmware-esx-server-iscsi-san-openfiler.htm">suite  </a>.
+</p>
+<ul><li> Ajouter LUN iSCSI <i>TODO</i></li></ul>
+<p><br />
+</p>
+<ul><li> Ajouter stockage
+<ul><li> Onglet Configuration/Storage/Add Storage</li>
+<li> Disk/LUN </li></ul></li></ul>
+<p>Parti&#160;! On va pouvoir commencer à jouer avec nos VM&#160;!
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Images_ISO">Images ISO</span></h2>
+<p>Il ne faut PAS utiliser les CDROM/DVDROM, mais des images ISO&#160;! Non n'insistez pas, <b>saimal</b>
+</p>
+<ol><li> Creer une image iso&#160;: </li></ol>
+<pre>
+dd if=/dev/cdrom of=OS.iso
+</pre>
+<ol><li> La copier sur clé USB</li>
+<li> Sur VSPhere Client&#160;:</li></ol>
+<ul><li> Configuration</li>
+<li> Storage</li>
+<li> Choisir son datastore</li>
+<li> Browse Datastore</li>
+<li> Trouver le bon repertoire</li>
+<li> Upload File / Folder</li></ul>
+<ol><li> VM / Edit Settings</li></ol>
+<ul><li> Le CD/DVD doit être connecté au boot</li>
+<li> Choisir <i>Datastore ISO File</i></li></ul>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="En_cas_de_souci">En cas de souci</span></h2>
+<p>Un onduleur, la foudre ou les 7 plaies d'Egypte plantent votre ESX...
+</p>
+<ul><li> Symptôme&#160;: Plus aucun accès au service console...</li>
+<li> Solution&#160;: Suivre ça à la lettre (ou presque =:) <a rel="nofollow" class="external text" href="http://kb.vmware.com/selfservice/microsites/search.do?language=en_US&amp;cmd=displayKC&amp;externalId=1000266">La Knowledge base de ESX</a></li></ul>
+<ul><li> Symptôme&#160;:  IPMI</li>
+<li> Solution <a rel="nofollow" class="external text" href="http://vm-help.com/esx40i/install_upgrade_issues.php">Editer le bon fichier</a></li></ul>
+<h2><span class="mw-headline" id="Les_commandes_utiles">Les commandes utiles</span></h2>
+<h4><span class="mw-headline" id="Gestion_des_VM">Gestion des VM</span></h4>
+<ul><li> <a rel="nofollow" class="external text" href="http://www.esxguide.com/esx/content/view/2/25/">Page utile </a></li></ul>
+<ul><li> <b>vmware-cmd -l</b>&#160;: <i>Liste les VM disponibles</i></li></ul>
+<pre>
+/vmfs/volumes/UID../SRSS1/SRSS1.vmx
+/vmfs/volumes/UID.../Pericles-W2003R2/Pericles-W2003R2.vmx
+/vmfs/volumes/UID../Faraday-Radius/Faraday-Radius.vmx
+</pre>
+<ul><li> <b>vmware-cmd /vmfs/volumes/UID.../SRSS1/SRSS1.vmx getstate </b>&#160;: <i> Donne l'état de la VM</i></li></ul>
+<pre> getstate() = on
+</pre>
+<ul><li> <b>vmware-cmd /vmfs/volumes/UID.../SRSS1/SRSS1.vmx getuptime </b>&#160;: <i> Donne l'uptime en secondes de  la VM</i></li></ul>
+<ul><li> <a href="index.php%3Ftitle=EtatVM.sh.html" title="EtatVM.sh">Un script qui fait tout cela </a></li></ul>
+<ul><li> '<b> vmware-cmd vmfs/volume/vmfslabel/VMName/VMName.vmx suspend </b>&#160;:Suspend</li></ul>
+<h4><span class="mw-headline" id="Gestion_du_r.C3.A9seau">Gestion du réseau</span></h4>
+<ul><li> <a rel="nofollow" class="external text" href="http://vmware-land.com/esxcfg-help.html">Page utile</a></li></ul>
+<ul><li> Ajouter une entrée dans le parefeu</li></ul>
+<pre>esxcfg-firewall -o Nouveauport,tcp,in,NomNouveauPort
+</pre>
+<h4><span class="mw-headline" id="Gestion_des_disques">Gestion des disques</span></h4>
+<ul><li> <b>vdf</b>, contrairement,  à df, fournit des informations sur le filesystem VMFS</li></ul>
+<pre>
+/bin/df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/sdb5             4.9G  1.6G  3.0G  35% /
+/dev/sda1             1.1G   75M  952M   8% /boot
+/dev/sdb2             2.0G   57M  1.8G   4% /var/log
+
+/usr/sbin/vdf -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/sdb5             4.9G  1.6G  3.0G  35% /
+/dev/sda1             1.1G   75M  952M   8% /boot
+/dev/sdb2             2.0G   57M  1.8G   4% /var/log
+/vmfs/devices         639G     0  639G   0% /vmfs/devices
+/vmfs/volumes/IUHB... 135G  110G   24G  81% /vmfs/volumes/Storage1
+</pre>
+
+<!-- 
+NewPP limit report
+Cached time: 20171020132905
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.300 seconds
+Real time usage: 0.320 seconds
+Preprocessor visited node count: 55/1000000
+Preprocessor generated node count: 100/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:86-0!*!0!!fr!5!* and timestamp 20171020132905 and revision id 1000
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=ESX4_VSphere&amp;oldid=1000">http://www.openbsd-edu.net/index.php?title=ESX4_VSphere&amp;oldid=1000</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=ESX4+VSphere.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=ESX4_VSphere.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:ESX4_VSphere&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=ESX4_VSphere.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=ESX4_VSphere.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=ESX4_VSphere&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=ESX4_VSphere&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=ESX4_VSphere.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FESX4_VSphere.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/ESX4_VSphere" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=ESX4_VSphere&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=ESX4_VSphere&amp;oldid=1000" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=ESX4_VSphere&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 16 juin 2010 à 17:45.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.300","walltime":"0.320","ppvisitednodes":{"value":55,"limit":1000000},"ppgeneratednodes":{"value":100,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132905","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1786});});</script>
+	</body>
+</html>

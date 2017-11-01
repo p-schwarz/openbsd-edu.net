@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Service de messagerie entrante IMAP — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Service_de_messagerie_entrante_IMAP","wgTitle":"Service de messagerie entrante IMAP","wgCurRevisionId":3425,"wgRevisionId":3425,"wgArticleId":357,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Service_de_messagerie_entrante_IMAP","wgRelevantArticleId":357,"wgRequestId":"fc53519edfcdd47fa706fb26","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Service_de_messagerie_entrante_IMAP rootpage-Service_de_messagerie_entrante_IMAP skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Service de messagerie entrante IMAP</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>Cette page résulte du split de la doc <a href="index.php%3Ftitle=Le_mail_sous_OpenBSD.html" title="Le mail sous OpenBSD"> messagerie</a>.
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Dovecot_pour_l.27IMAPS"><span class="tocnumber">1</span> <span class="toctext">Dovecot pour l'IMAPS</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Installation"><span class="tocnumber">1.1</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Tour_de_s.C3.A9cu"><span class="tocnumber">1.2</span> <span class="toctext">Tour de sécu</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#AJouter_un_user"><span class="tocnumber">1.3</span> <span class="toctext">AJouter un user</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Obsol.C3.A8te"><span class="tocnumber">1.4</span> <span class="toctext">Obsolète</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Authentification_LDAP"><span class="tocnumber">1.5</span> <span class="toctext">Authentification LDAP</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Authentification_cliente_par_certificat"><span class="tocnumber">1.6</span> <span class="toctext">Authentification cliente par certificat</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Debug_sp.C3.A9cifique_TLS"><span class="tocnumber">1.6.1</span> <span class="toctext">Debug spécifique TLS</span></a>
+<ul>
+<li class="toclevel-4 tocsection-9"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Disconnected_.28client_sent_an_invalid_cert.29"><span class="tocnumber">1.6.1.1</span> <span class="toctext">Disconnected (client sent an invalid cert)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Debugs"><span class="tocnumber">1.7</span> <span class="toctext">Debugs</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Tests"><span class="tocnumber">1.8</span> <span class="toctext">Tests</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Et_si_on_filtrait_les_mails_directement_sur_le_serveur_:_SIEVE"><span class="tocnumber">2</span> <span class="toctext">Et si on filtrait les mails directement sur le serveur&#160;: SIEVE</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Sur_le_client"><span class="tocnumber">2.1</span> <span class="toctext">Sur le client</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Sur_le_serveur"><span class="tocnumber">2.2</span> <span class="toctext">Sur le serveur</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#D.C3.A9sinstall"><span class="tocnumber">3</span> <span class="toctext">Désinstall</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Debug"><span class="tocnumber">3.1</span> <span class="toctext">Debug</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Le_Fatal_n.27.C3.A9tait_qu.27un_warning..."><span class="tocnumber">3.1.1</span> <span class="toctext">Le <i>Fatal</i> n'était qu'un warning...</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Le_chemin_des_maildir_est_incorrect"><span class="tocnumber">3.1.2</span> <span class="toctext">Le chemin des maildir est incorrect</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Pour_les_logs_:"><span class="tocnumber">3.1.3</span> <span class="toctext">Pour les logs&#160;:</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Vous_avez_oubli.C3.A9_le_chemin_des_boites_:"><span class="tocnumber">3.1.4</span> <span class="toctext">Vous avez oublié le chemin des boites&#160;:</span></a></li>
+<li class="toclevel-3 tocsection-21"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Droits_sur_les_boites_:"><span class="tocnumber">3.1.5</span> <span class="toctext">Droits sur les boites&#160;:</span></a></li>
+<li class="toclevel-3 tocsection-22"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Il_manque_des_attributs_.C3.A0_l.27utilisateur_LDAP."><span class="tocnumber">3.1.6</span> <span class="toctext">Il manque des attributs à l'utilisateur LDAP.</span></a></li>
+<li class="toclevel-3 tocsection-23"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#Dovecot_se_plante_avec_:"><span class="tocnumber">3.1.7</span> <span class="toctext">Dovecot se plante avec&#160;:</span></a></li>
+<li class="toclevel-3 tocsection-24"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#auth-worker:_Fatal:_pool_system_realloc_Out_of_memory"><span class="tocnumber">3.1.8</span> <span class="toctext">auth-worker: Fatal: pool_system_realloc Out of memory</span></a></li>
+<li class="toclevel-3 tocsection-25"><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#.2A_Renaming_not_supported_across_conflicting_directory_permissions_lorsque_vous_tentez_de_modifier_un_dossier_sur_votre_client_Mail"><span class="tocnumber">3.1.9</span> <span class="toctext">* <i>Renaming not supported across conflicting directory permissions</i> lorsque vous tentez de modifier un dossier sur votre client Mail</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Dovecot_pour_l.27IMAPS">Dovecot pour l'IMAPS</span></h3>
+<h4><span class="mw-headline" id="Installation">Installation</span></h4>
+<ul><li> Paquet (celui avec la gestion des filtres Sieve)</li></ul>
+<pre>pkg_add dovecot-pigeonhole
+</pre>
+<ul><li> Adaptez le fichier</li></ul>
+<pre>/etc/ssl/dovecot-openssl.cnf
+</pre>
+<ul><li> Lancez le script</li></ul>
+<pre>/usr/local/sbin/dovecot-mkcert.sh
+</pre>
+<p><br />
+</p>
+<ul><li>Dans tous les cas, les deux fichiers sont&#160;:</li></ul>
+<pre>/etc/ssl/dovecotcert.pem
+/etc/ssl/private/dovecot.pem
+</pre>
+<p>Ou alors
+</p>
+<ul><li> <a href="index.php%3Ftitle=TinyCA.html#OpenBSD_-_Dovecot" title="TinyCA">  Certificats</a></li></ul>
+<ul><li>La config est dans /etc/dovecot/</li></ul>
+<ul><li>/etc/dovecot/dovecot.conf</li></ul>
+<pre>protocols = imap pop3 
+</pre>
+<ul><li>/etc/dovecot/conf.d/10-mail.conf</li></ul>
+<pre>mail_location = maildir:~/Maildir
+</pre>
+<p>ou bien
+</p>
+<pre>mail_location = maildir:/var/mail/%u/Maildir
+</pre>
+<p><br />
+</p>
+<ul><li>/etc/dovecot/conf.d/10-ssl.conf</li></ul>
+<pre>ssl=required
+</pre>
+<ul><li> Ajouter à /etc/login.conf</li></ul>
+<pre>  dovecot:\
+               &#160;:openfiles-cur=512:\
+               &#160;:openfiles-max=2048:\
+               &#160;:tc=daemon: 
+</pre>
+<p>Puis recréer la db (Très important! Le fichier login.conf n'est directement lu):
+</p>
+<pre> [ -f /etc/login.conf.db ]&amp;&amp;  cap_mkdb /etc/login.conf
+ usermod -L dovecot _dovecot
+</pre>
+<h4><span class="mw-headline" id="Tour_de_s.C3.A9cu">Tour de sécu</span></h4>
+<p>On vire les algos de chiffrement faibles
+Dans
+</p>
+<pre>/etc/dovecot/conf.d/10-ssl.conf
+</pre>
+<p>on remplace par
+</p>
+<pre>ssl_protocols =&#160;!SSLv2&#160;!SSLv3
+</pre>
+<p>Attention, il est possible que votre MUA ne supporte pas cette suite crypto
+Pour <a rel="nofollow" class="external text" href="http://kb.mozillazine.org/Security.tls.version.*">| thunderbird</a>
+Ce qui donne dans les logs&#160;:
+</p>
+<pre> TLS handshaking: SSL_accept() failed: error&#160;:SSL routines:SSL3_GET_CLIENT_HELLO:no shared cipher
+</pre>
+<p>Et rien sur le client!
+</p>
+<h4><span class="mw-headline" id="AJouter_un_user">AJouter un user</span></h4>
+<pre>adduser USER
+mkdir -p /var/mail/USER/Maildir
+chown -R UID_LDAP.GID_LDAP /var/mail/USER
+</pre>
+<h4><span class="mw-headline" id="Obsol.C3.A8te">Obsolète</span></h4>
+<ul><li> Chemins et droits</li></ul>
+<pre>mkdir -p /var/mail/USER/Maildir
+chown -R UID_LDAP.GID_LDAP /var/mail/USER
+</pre>
+<p>Avec UID_LDAP et GID_LDAP les uidNumber et gidNumber LDAP de l'utilisateur
+</p><p>et dans <i>/etc/dovecot.conf</i>&#160;:
+</p>
+<pre>mail_location = maildir:/var/mail/%u/Maildir
+</pre>
+<p>Dans un premier temps (Avant LDAP)
+</p>
+<pre>mkdir -p /var/mail/USER
+chown -R USER.USER /var/mail/USER/
+</pre>
+<p>pour chaque user du système
+</p><p>Il est très fortement conseillé  de modifier le système comme suit (par ex):
+</p>
+<pre>ulimit -n 1024
+</pre>
+<p>Sinon&#160;:
+</p>
+<h4><span class="mw-headline" id="Authentification_LDAP">Authentification LDAP</span></h4>
+<p>Changer les deux modes suivants dans <i>/etc/dovecot.conf</i>
+</p>
+<pre> userdb ldap {
+   args = /etc/dovecot/dovecot-ldap.conf
+              }
+</pre>
+<pre> passdb ldap {
+   args = /etc/dovecot/dovecot-ldap.conf
+      }
+</pre>
+<p><br />
+</p>
+<pre>mkdir /etc/dovecot
+</pre>
+<ul><li>  Créer /etc/dovecot/dovecot-ldap.conf</li></ul>
+<pre>echo "
+hosts = 127.0.0.1
+auth_bind = yes
+ldap_version = 3
+auth_bind_userdn = cn=%u,ou=people,dc=openbsd,dc=net
+base = ou=people,dc=openbsd,dc=net
+base= cn=%u,ou=people,dc=openbsd,dc=net
+user_filter = (&amp;(objectClass=posixAccount)(cn=%u)) 
+pass_attrs = cn=user
+pass_filter = (&amp;(objectClass=posixAccount)(cn=%u)
+" &gt; /etc/dovecot/dovecot-ldap.conf
+</pre>
+<ul><li> Autoriser les protocoles non-chiffrés (IMAP et POP3)&#160;:</li></ul>
+<p>Modifier la ligne dans <i>/etc/dovecot.conf</i>: (<i>yes</i> en <i>no</i>):
+</p>
+<pre>disable_plaintext_auth = no
+</pre>
+<h4><span class="mw-headline" id="Authentification_cliente_par_certificat">Authentification cliente par certificat</span></h4>
+<p><b>Fichier&#160;: conf.d/10-ssl.conf</b>
+</p>
+<pre>ssl = required
+
+ssl_cert = &lt;/etc/ssl/certs/imap.openbsd-edu.net.crt
+ssl_key = &lt;/etc/ssl/private/imap.openbsd-edu.net.key
+</pre>
+<pre>ssl_ca = &lt;/etc/ssl/certs/ca.crt
+ssl_require_crl = yes # La non-vérification de la CRL échoue même avec "no". De toutes façons, c'est une mauvaise pratique que de ne pas checker les CRL..
+</pre>
+<p>Attention, c'est assez mal documenté; la crl doit être incluse de la manière suivante<a rel="nofollow" class="external autonumber" href="http://ubuntu.hu/node/35419">[1]</a>&#160;:
+</p>
+<pre>cat cacert.pem ./crl/crl.pem &gt; cacrl.pem
+</pre>
+<p>et la ligne de la CA doit donc devenir&#160;:
+</p>
+<pre> ssl_ca = &lt;/etc/ssl/certs/cacrl.crt
+</pre>
+<p>au lieu de   ssl_ca = &lt;/etc/ssl/certs/ca.crt
+</p><p>On exige un certificat client&#160;:
+</p>
+<pre>ssl_verify_client_cert = yes
+</pre>
+<p>On durcit les suites crypto&#160;:
+</p>
+<pre>#ssl_protocols =&#160;!SSLv2
+#ssl_cipher_list = ALL:!LOW:!SSLv2:!EXP:!aNULL
+</pre>
+<p>devient:
+</p>
+<pre>ssl_protocols =&#160;!SSLv2&#160;!SSLv3&#160;!TLSv1  
+ssl_cipher_list = ALL:HIGH:!SSLv2:!MEDIUM:!LOW:!EXP:!RC4:!MD5:!aNULL:@STRENGTH
+</pre>
+<p>Oui, votre oeil averti remarque que TLS 1.1 est autorisé...Dovecot ne permet as encore son exclusion..
+</p><p>Enfin on se prémunit contre les attaques type CRIME&#160;:
+</p>
+<pre>ssl_options = no_compression
+</pre>
+<p><br />
+<b>Fichier&#160;: conf.d/10-auth.conf</b>
+</p>
+<pre>auth_ssl_username_from_cert=yes
+ssl_cert_username_field = commonName
+</pre>
+<p>et choisissez la méthode 'Certificat TLS' au lieu de mot de passe comme méthode d'authentification. Plus de base d'utilisateur à gérer en local&#160;!!!
+</p><p><br />
+</p>
+<h5><span class="mw-headline" id="Debug_sp.C3.A9cifique_TLS">Debug spécifique TLS</span></h5>
+<h6><span class="mw-headline" id="Disconnected_.28client_sent_an_invalid_cert.29">Disconnected (client sent an invalid cert)</span></h6>
+<p>En activant les logs verbeux, vous voyez que le problème est lié à l'absence de CRL.
+</p>
+<pre>imap-login: Invalid certificate: unable to get certificate CRL:
+</pre>
+<h4><span class="mw-headline" id="Debugs">Debugs</span></h4>
+<pre>doveadm log find
+</pre>
+<pre>Looking for log files from /var/log
+Debug: Not found
+Info: /var/log/maillog
+Warning: /var/log/maillog
+Error: /var/log/maillog
+Fatal: /var/log/maillog
+</pre>
+<h4><span class="mw-headline" id="Tests">Tests</span></h4>
+<p><a rel="nofollow" class="external text" href="http://wiki.dovecot.org/TestInstallation">Ici</a>
+</p>
+<ul><li> On commence en local en clair</li></ul>
+<pre>telnet  localhost 143
+</pre>
+<pre>Trying @IP...
+Connected to @IP
+Escape character is '^]'.
+* OK  Dovecot ready.
+a login USER  PASS
+* BAD [ALERT] Plaintext authentication not allowed without SSL/TLS, but your client did it anyway. If anyone was listening, the password was exposed.
+a NO [CLIENTBUG] Plaintext authentication disallowed on non-secure (SSL/TLS) connections.
+</pre>
+<p>Et oui, pas possible de taper son mdp sur un canal en clair,; bien bien..
+</p>
+<ul><li> A distance en chiffré</li></ul>
+<pre>openssl s_client -connect @IP:993
+</pre>
+<p>sans AC
+</p>
+<pre>openssl s_client -CAfile /home/phil/Cert_AC.pem -connect @IP:993
+</pre>
+<p>Avec son AC
+</p><p>Dans le second cas, le client openssl râle beaucoup moins..
+</p>
+<pre>....
+a login toto titi
+a NO [AUTHENTICATIONFAILED] Authentication failed.
+</pre>
+<p>et la communication avec l'annuaire LDAP fonctionne.
+</p>
+<pre>b select INBOX
+</pre>
+<ul><li> Avec un client et son certificat</li></ul>
+<pre>openssl s_client -cert Mon.crt  -key Mon.key  -connect mail.serveur:imaps
+</pre>
+<pre>OK [CAPABILITY IMAP4rev1 LITERAL+ SASL-IR LOGIN-REFERRALS ID ENABLE IDLE AUTH=PLAIN AUTH=LOGIN AUTH=EXTERNAL] Dovecot ready.
+</pre>
+<h3><span class="mw-headline" id="Et_si_on_filtrait_les_mails_directement_sur_le_serveur_:_SIEVE">Et si on filtrait les mails directement sur le serveur&#160;: SIEVE</span></h3>
+<p><a rel="nofollow" class="external text" href="http://fr.wikipedia.org/wiki/Sieve">Doc</a> et <a rel="nofollow" class="external text" href="http://wiki.dovecot.org/LDA/Sieve">Redoc</a>
+</p>
+<pre>pkg_add dovecot-pigeonhole
+</pre>
+<h4><span class="mw-headline" id="Sur_le_client">Sur le client</span></h4>
+<ul><li> Sur le client, avec Thunderbird, télécharger le xpi à jour, celui des dépôts TBird (version 0.22) ne fonctionne pas&#160;:<a rel="nofollow" class="external autonumber" href="https://github.com/thsmi/sieve/tree/master/nightly/0.2.3">[2]</a></li>
+<li> Cliquez sur <i>Filtres Sieve</i></li>
+<li> Cliquez sur <i>Avancé</i></li></ul>
+<p>Serveur&#160;: Imap, Compte et mot de passe du serveur, port TCP/4190, connection sécurisée.
+</p>
+<ul><li> Eventuellement, vous aurez une alerte sur l'AC du certificat</li></ul>
+<h4><span class="mw-headline" id="Sur_le_serveur">Sur le serveur</span></h4>
+<p>Dès la connexion faite, vous aurez apparition d'un dossier <i>sieve</i> dans le répertoire perso de l'utilisateur, avec recopie des filtres Sieve qui auront été sauvegardés sur le client.
+</p><p>Bon, maintenant il faut que ce soit le  MDA (dovecot) et non le MTA (OpenSMTPd) qui délivre les mails.
+Il faut donc transformer la ligne de smtpd.conf&#160;:
+</p>
+<pre>accept from any for domain "openbsd-edu.net" alias &lt;aliases&gt; deliver to maildir "/var/mail/%{user.username}/Maildir"
+</pre>
+<p>en
+</p>
+<pre>accept from any for domain "openbsd-edu.net" deliver to mda "/usr/lib/dovecot/deliver -f&#160;%{sender} -d&#160;%{dest}"
+</pre>
+<p>A tester&#160;!
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="D.C3.A9sinstall">Désinstall</span></h2>
+<pre>
+pkg_delete dovecot
+/usr/sbin/userdel _dovecot
+/usr/sbin/groupdel _dovecot
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Debug">Debug</span></h3>
+<p><a rel="nofollow" class="external autonumber" href="http://wiki2.dovecot.org/Logging#Logging_verbosity">[3]</a>
+</p><p>Ajouter à dovecot.conf
+</p>
+<pre>##DEBUG
+auth_verbose=yes
+auth_debug=yes
+auth_debug_passwords=yes
+mail_debug=yes 
+verbose_ssl=yes
+auth_verbose_passwords=plain ####WARNING =sha1 est mieux, car plain vous fournit le mdp en clair, tandis que sha1 vous fournit le condensat...Pour des logs c'est mieux..
+</pre>
+<h5><span class="mw-headline" id="Le_Fatal_n.27.C3.A9tait_qu.27un_warning...">Le <i>Fatal</i> n'était qu'un warning...</span></h5>
+<pre>dovecot: deliver(USER): Fatal: postmaster_address setting not given
+</pre>
+<p>Il faut ajouter à <i>/etc/dovecot.conf</i> 
+</p>
+<pre>postmaster_address = Une vraie adresse
+</pre>
+<p><br />
+</p>
+<h5><span class="mw-headline" id="Le_chemin_des_maildir_est_incorrect">Le chemin des maildir est incorrect</span></h5>
+<p>Il faut ajouter à <i>/etc/dovecot.conf</i> 
+</p>
+<pre>mail_location = maildir:/var/mail/%u/Maildir
+</pre>
+<p><br />
+</p>
+<h5><span class="mw-headline" id="Pour_les_logs_:">Pour les logs&#160;:</span></h5>
+<pre> perl -pi -e 's/#log_path =/log_path = \/var\/log\/dovecot.log/' /etc/dovecot.conf 
+ perl -pi -e 's/#auth_verbose = no/auth_verbose = yes/' /etc/dovecot.conf 
+Voire, pour le debug (donc temporaire) 
+perl -pi -e 's/#auth_debug = no/auth_debug = yes/' /etc/dovecot.conf
+</pre>
+<p>Attention, il faut bien que les démons aient le droit d'écrire dans ce fichier&#160;!!
+Un kill HUP plus tard, vous aurez les logs
+</p><p><br />
+</p>
+<h5><span class="mw-headline" id="Vous_avez_oubli.C3.A9_le_chemin_des_boites_:">Vous avez oublié le chemin des boites&#160;:</span></h5>
+<pre>dovecot: IMAP(USER): mail_location not set and autodetection failed: Mail storage autodetection failed with home=/home/USER
+dovecot: IMAP(USER): Fatal: Namespace initialization failed
+</pre>
+<p>Avec <a rel="nofollow" class="external text" href="http://wiki.dovecot.org/MailLocation">un peu de lecture</a>, on apprend qu'il faut dire explicitement à Dovecot où sont les boites. Normalement il les découvre seul, mais là, on a affaire à un utilisateur LDAP qui n'a pas de compte local, donc pas de /home/USER...
+</p><p><br />
+</p><p>Et dans les logs, cette fois&#160;:
+</p>
+<pre>dovecot: imap-login: Login: user=&lt;USER&gt;, method=PLAIN, rip=IP_client, lip=IP_Serveur, TLS
+</pre>
+<p><br />
+</p><p>Depuis le client, on se reconnecte et après cette fois on pose des questions&#160;:
+</p>
+<pre>b select inbox
+* FLAGS (\Answered \Flagged \Deleted \Seen \Draft)
+* OK [PERMANENTFLAGS (\Answered \Flagged \Deleted \Seen \Draft \*)] Flags permitted.
+* 0 EXISTS
+* 0 RECENT
+* OK [UIDVALIDITY 1293058568] UIDs valid
+* OK [UIDNEXT 1] Predicted next UID
+* OK [HIGHESTMODSEQ 1] Highest
+b OK [READ-WRITE] Select completed.
+</pre>
+<h5><span class="mw-headline" id="Droits_sur_les_boites_:">Droits sur les boites&#160;:</span></h5>
+<pre>IMAP(USER): mkdir(/var/mail/USER/Maildir/cur) failed: Permission denied (euid=UID(&lt;unknown&gt;) egid=GID(&lt;unknown&gt;) missing +w perm: /var/mail)
+</pre>
+<p>Il faut corriger&#160;:
+</p>
+<ul><li> Droits sur les boites&#160;:</li></ul>
+<pre>deliver(USER): mkdir(/var/mail/USER/Maildir/cur) failed: Permission denied (euid=UID(USER) egid=GID(USER) missing +w perm: /var/mail)
+</pre>
+<p>Il faut corriger&#160;:
+</p>
+<pre> mkdir -p /var/mail/USER
+ chown -R USER.USER /var/mail/USER/
+</pre>
+<p>avec un USER créé dans le système.
+</p><p><br />
+</p><p><br />
+</p>
+<h5><span class="mw-headline" id="Il_manque_des_attributs_.C3.A0_l.27utilisateur_LDAP.">Il manque des attributs à l'utilisateur LDAP.</span></h5>
+<pre>Internal login failure (auth failed, 1 attempts): ... User XXXXX is missing UID (see mail_uid setting)
+</pre>
+<p>Ajoutez les attributs suivants pour chaque user&#160;:
+</p><p>mail_uid: 666
+</p><p>gidNumber: 666
+</p><p>uidNumber: 666
+</p><p><br />
+</p>
+<h5><span class="mw-headline" id="Dovecot_se_plante_avec_:">Dovecot se plante avec&#160;:</span></h5>
+<pre>dovecot: dovecot: pipe() failed: Too many open files
+dovecot: dovecot: pipe() failed: Too many open files
+</pre>
+<p>Et pourtant, il vous avait bien prévenu à chaque lancement...&#160;:
+</p>
+<pre>dovecot
+Warning: fd limit 128 is lower than what Dovecot can use under full load (more than 768). Either grow the limit or change login_max_processes_count    and max_mail_processes settings
+</pre>
+<p><br />
+Solution&#160;:
+</p>
+<pre>ulimit -n 1024
+</pre>
+<p>Avez-vous lu le paragraphe relatif à <i>cap_mkdb</i> au dessus&#160;???
+</p>
+<h5><span class="mw-headline" id="auth-worker:_Fatal:_pool_system_realloc_Out_of_memory">auth-worker: Fatal: pool_system_realloc Out of memory</span></h5>
+<pre> auth: Error: auth worker: Aborted request: Worker process died unexpectedly
+Fatal: master: service(auth-worker): child  returned error 83 (Out of memory (service auth-worker { vsz_limit=512 MB }, you may need to increase it) - set CORE_OUTOFMEM=1 environment to get core dump)
+</pre>
+<p>En fait, ce n'est pas un souci. Ca ne fait que remplir les logs lorsque q'un compte mal configuré (mail ou password) tente une connection. Pas très explicites les logs...
+<a rel="nofollow" class="external autonumber" href="http://permalink.gmane.org/gmane.os.openbsd.misc/213858">[4]</a>
+</p><p><br />
+</p>
+<h5><span class="mw-headline" id=".2A_Renaming_not_supported_across_conflicting_directory_permissions_lorsque_vous_tentez_de_modifier_un_dossier_sur_votre_client_Mail">* <i>Renaming not supported across conflicting directory permissions</i> lorsque vous tentez de modifier un dossier sur votre client Mail</span></h5>
+<p>En fait les permissions dudit <i>Dossier</i> sur le serveur Dovecot sont à modifier&#160;:
+</p>
+<pre>chmod 755 .Dossier
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20171020093922
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.320 seconds
+Real time usage: 0.408 seconds
+Preprocessor visited node count: 108/1000000
+Preprocessor generated node count: 124/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:357-0!*!0!!fr!*!* and timestamp 20171020093921 and revision id 3425
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_entrante_IMAP&amp;oldid=3425">http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_entrante_IMAP&amp;oldid=3425</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Service+de+messagerie+entrante+IMAP.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Service_de_messagerie_entrante_IMAP&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_entrante_IMAP&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_entrante_IMAP&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Service_de_messagerie_entrante_IMAP.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FService_de_messagerie_entrante_IMAP.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Service_de_messagerie_entrante_IMAP" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_entrante_IMAP&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_entrante_IMAP&amp;oldid=3425" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Service_de_messagerie_entrante_IMAP&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 23 juillet 2017 à 15:56.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.320","walltime":"0.408","ppvisitednodes":{"value":108,"limit":1000000},"ppgeneratednodes":{"value":124,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020093922","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1343});});</script>
+	</body>
+</html>

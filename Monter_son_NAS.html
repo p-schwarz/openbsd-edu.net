@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Monter son NAS — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Monter_son_NAS","wgTitle":"Monter son NAS","wgCurRevisionId":1479,"wgRevisionId":1479,"wgArticleId":216,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Monter_son_NAS","wgRelevantArticleId":216,"wgRequestId":"b9849ed6d0708c67e3bb2753","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Monter_son_NAS rootpage-Monter_son_NAS skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Monter son NAS</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Monter_son_NAS.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Monter_son_NAS.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Monter_son_NAS.html#Historique"><span class="tocnumber">1</span> <span class="toctext">Historique</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Monter_son_NAS.html#Le_challenge"><span class="tocnumber">2</span> <span class="toctext">Le challenge</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Monter_son_NAS.html#La.3F.28Ma.29_solution"><span class="tocnumber">3</span> <span class="toctext">La?(Ma) solution</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Monter_son_NAS.html#Hardware"><span class="tocnumber">4</span> <span class="toctext">Hardware</span></a></li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Historique">Historique</span></h3>
+<p>Plus de place&#160;!
+Voila ce que je me dis pour la n_ième fois sur mon NAS home-made. NAS= Network Attached Storage; bref, un gros disque dur réseau 
+accessible par les protocoles de tranfert de ficheiers classiques (ou pas..)
+</p><p>Une première version avec 3 disques 250 Go IDE en RAID5 matériel (=500Go utiles). La migration en SATA plus l'augmentation de volume sur la carte 3Ware semblait bien complexe face à une recopie temporaire des données.
+</p><p>Rebelote avec 4 disques SATA en RAID10 (=1To utile) sur une 3Ware 9500S. Impec,mais la maj du filesystem n'est pas des plus triviales.
+</p><p><br />
+Bref, faire et refaire c'est toujours travailler, mais on doit pouvoir faire mieux..
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Le_challenge">Le challenge</span></h3>
+<ul><li> Avoir de la redondance sur le(s) disque(s) de boot et du système.</li>
+<li> Avoir une capacité importante avec une redondance pour les données</li>
+<li> Permettre une évolution <b>facile</b> de la taille dévolue aux données</li>
+<li> Tourner sous un Unix</li></ul>
+<p>Si possible&#160;:
+</p>
+<ul><li> Permettre une granularité des options&#160;: Les divx ou jpeg ne doivent pas être compressés, mais les jpeg sont importants ici et là, mais pas là; tandis que les divx, on s'en fiche, mais mon CV lui, pas possible de le perdre (bon OK , mauvais exemple le dernier..)...</li></ul>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="La.3F.28Ma.29_solution">La?(Ma) solution</span></h3>
+<ul><li> Le FS sera <b>ZFS</b> . Pour m'en servir au boulot comme SAN du pauvre, ça marche impec, c'est bourré d'options auxquelles on pense que lorsque l'on en a besoin. "J'aimerais bien pouvoir faire ça..Ah, ZFS le prévoit..". Génial.</li></ul>
+<ul><li> L'OS a été plus difficile à choisir. FreeBSD, Solaris 10 ou OpenSolaris&#160;??
+<ul><li> J'utilise Solaris au boulot pour le SAN que j'y ai monté. Habitué à OpenBSD, Linux, ça change un peu; pas facile d'y retrouver ses petits..Mais ZFS y est né..</li>
+<li> OpenSolaris aurait été le choix vainqueur des deux premiers candidats; plus évolué (= plsu récent) que Solaris10.</li>
+<li> FreeBSD me tente depuis fort longtemps, la doc est pléthorique, ZFS y existe depuis la 7.3, et...c'est un BSD&#160;!</li></ul></li></ul>
+<p>C'est Mr Larry Ellison, patron d'Oracle qui m'a aidé à faire le choix. En bouffant Sun, Oracle laisse planer quelques doutes sur la pérennité des xSolaris. J'espère sincèrement me tromper, mais je ne suis pas certain que ces deux OS en sortent gagnants sur le long terme..
+</p><p><br />
+Ce sera donc FreeBSD 8.2 stable avec ZFS pour les données et UFS2 en raid-1 logiciel pour le reste.
+</p><p><a href="http://www.openbsd-edu.net/index.php?title=Syst%C3%A8me_de_fichiers_ZFS&amp;action=edit&amp;redlink=1" class="new" title="Système de fichiers ZFS (page inexistante)"> Ici</a>
+</p>
+<h3><span class="mw-headline" id="Hardware">Hardware</span></h3>
+<ul><li> Deux cartes CF de 8Go sur adaptateur CF-IDE branchées sur un pauvre faux contrôleur RAID à 10€ présentant les deux CF en JBOD (Just a Bunch Of Disk),</li></ul>
+<p>un gros paquet de disques. On n'utilise pas son raid hardware.
+</p>
+<ul><li> Un disque 2,5' de 20 Go trainait; on ne sait jamais, le montage CF-IDE-Raid peut avoir un gros bug.</li>
+<li> Deux cartes 3Ware9500S permettront en PCI-X de monter jusqu'à 8 disques SATA de capacités différentes pour les données.</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20171020133140
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.060 seconds
+Real time usage: 0.077 seconds
+Preprocessor visited node count: 14/1000000
+Preprocessor generated node count: 20/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:216-0!*!0!!fr!*!* and timestamp 20171020133140 and revision id 1479
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Monter_son_NAS&amp;oldid=1479">http://www.openbsd-edu.net/index.php?title=Monter_son_NAS&amp;oldid=1479</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Monter+son+NAS.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Monter_son_NAS.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Monter_son_NAS&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Monter_son_NAS.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Monter_son_NAS.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Monter_son_NAS&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Monter_son_NAS&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Monter_son_NAS.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FMonter_son_NAS.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Monter_son_NAS" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Monter_son_NAS&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Monter_son_NAS&amp;oldid=1479" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Monter_son_NAS&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 11 mai 2011 à 13:11.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.060","walltime":"0.077","ppvisitednodes":{"value":14,"limit":1000000},"ppgeneratednodes":{"value":20,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020133140","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1534});});</script>
+	</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Disques sous FreeBSD — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Disques_sous_FreeBSD","wgTitle":"Disques sous FreeBSD","wgCurRevisionId":3193,"wgRevisionId":3193,"wgArticleId":219,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Disques_sous_FreeBSD","wgRelevantArticleId":219,"wgRequestId":"41f9a46e420ae365626f8433","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Disques_sous_FreeBSD rootpage-Disques_sous_FreeBSD skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Disques sous FreeBSD</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Disques_sous_FreeBSD.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Disques_sous_FreeBSD.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Disques_sous_FreeBSD.html#Monter_un_disque_FreeBSD_sous_Linux"><span class="tocnumber">1</span> <span class="toctext">Monter un disque FreeBSD sous Linux</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Disques_sous_FreeBSD.html#Monter_un_disque_linux_sous_FreeBSD"><span class="tocnumber">2</span> <span class="toctext">Monter un disque linux sous FreeBSD</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Disques_sous_FreeBSD.html#Performances"><span class="tocnumber">3</span> <span class="toctext">Performances</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="index.php%3Ftitle=Disques_sous_FreeBSD.html#ZFS"><span class="tocnumber">4</span> <span class="toctext">ZFS</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="index.php%3Ftitle=Disques_sous_FreeBSD.html#Formater_un_disque"><span class="tocnumber">5</span> <span class="toctext">Formater un disque</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Disques_sous_FreeBSD.html#Cr.C3.A9er_une_partition"><span class="tocnumber">6</span> <span class="toctext">Créer une partition</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Disques_sous_FreeBSD.html#Debug"><span class="tocnumber">7</span> <span class="toctext">Debug</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="index.php%3Ftitle=Disques_sous_FreeBSD.html#Identifier_un_disque"><span class="tocnumber">8</span> <span class="toctext">Identifier un disque</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Monter_un_disque_FreeBSD_sous_Linux">Monter un disque FreeBSD sous Linux</span></h2>
+<pre>sudo mount -r -o ufstype=ufs2   -t ufs /dev/sdd1 /mnt/ufs/
+</pre>
+<p>un petit
+</p>
+<pre>apt-get install ufsutils au préalable..
+</pre>
+<h2><span class="mw-headline" id="Monter_un_disque_linux_sous_FreeBSD">Monter un disque linux sous FreeBSD</span></h2>
+<pre>pkg install e2fsprogs
+</pre>
+<p>puis
+</p>
+<pre>mount -t ext2fs /dev/da4s3 /mnt
+</pre>
+<p>Si le montage ne se fait pas et qu'un dmesg donne
+</p>
+<pre>WARNING: mount of da4s1 denied due to unsupported optional features
+</pre>
+<p>C'est juste que seules les partitions ext2 &amp; ext3 sont utilisables,pas ext4...
+</p>
+<h2><span class="mw-headline" id="Performances">Performances</span></h2>
+<p>Votre <i>hdparm</i> vous manque&#160;?
+On le remplace&#160;: 
+</p>
+<ul><li> diskinfo</li></ul>
+<ul><li> fio </li></ul>
+<pre>cd /usr/ports/benchmarks/fio
+make config install clean
+</pre>
+<ul><li> bonnie++</li></ul>
+<pre>cd /usr/ports/benchmarks/bonnie++
+make config install clean
+</pre>
+<h2><span class="mw-headline" id="ZFS"><a href="index.php%3Ftitle=ZFS.html" class="mw-redirect" title="ZFS">ZFS</a></span></h2>
+<h2><span class="mw-headline" id="Formater_un_disque">Formater un disque</span></h2>
+<ul><li> Créer le schéma de partition</li></ul>
+<pre>gpart create -s gpt ada4
+</pre>
+<ul><li> Voir le schéma de partition </li></ul>
+<pre>gpart show ada3
+=&gt;       63  156301425  ada3  MBR  (75G)
+        63       1985        - free -  (993K)
+      2048  156297216     1  ntfs  (75G)
+ 156299264       2224        - free -  (1.1M)
+</pre>
+<ul><li> Supprimer une partition</li></ul>
+<pre>gpart delete -i 1 ada3
+ada3s1 deleted
+</pre>
+<p>La partition NTFS précédente est ..vanished..
+</p>
+<ul><li>Détruire une table de paritition</li></ul>
+<pre>gpart destroy ada3
+ada3 destroyed
+</pre>
+<h2><span class="mw-headline" id="Cr.C3.A9er_une_partition">Créer une partition</span></h2>
+<pre>gpart add -t freebsd-zfs -l zil -s 40G ada3
+ada3p1 added
+</pre>
+<h2><span class="mw-headline" id="Debug">Debug</span></h2>
+<pre>zpool add datas log ada3s1
+ cannot open 'ada3s1': no such GEOM provider
+ must be a full path or shorthand device name
+</pre>
+<pre>zpool add datas log /dev/ada3p1
+</pre>
+<h2><span class="mw-headline" id="Identifier_un_disque">Identifier un disque</span></h2>
+<p>A part le 
+</p>
+<pre>dmesg |grep ada
+</pre>
+<p>On a 
+</p>
+<pre>camcontrol identify ada3
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20171020132809
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.080 seconds
+Real time usage: 0.081 seconds
+Preprocessor visited node count: 30/1000000
+Preprocessor generated node count: 36/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:219-0!*!0!!fr!*!* and timestamp 20171020132809 and revision id 3193
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Disques_sous_FreeBSD&amp;oldid=3193">http://www.openbsd-edu.net/index.php?title=Disques_sous_FreeBSD&amp;oldid=3193</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Disques+sous+FreeBSD.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Disques_sous_FreeBSD.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Disques_sous_FreeBSD&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Disques_sous_FreeBSD.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Disques_sous_FreeBSD.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Disques_sous_FreeBSD&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Disques_sous_FreeBSD&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Disques_sous_FreeBSD.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FDisques_sous_FreeBSD.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Disques_sous_FreeBSD" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Disques_sous_FreeBSD&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Disques_sous_FreeBSD&amp;oldid=3193" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Disques_sous_FreeBSD&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 24 octobre 2015 à 06:59.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.080","walltime":"0.081","ppvisitednodes":{"value":30,"limit":1000000},"ppgeneratednodes":{"value":36,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132809","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1548});});</script>
+	</body>
+</html>

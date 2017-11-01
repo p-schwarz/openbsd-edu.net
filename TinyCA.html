@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>TinyCA — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"TinyCA","wgTitle":"TinyCA","wgCurRevisionId":1870,"wgRevisionId":1870,"wgArticleId":9,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"TinyCA","wgRelevantArticleId":9,"wgRequestId":"0f64a55f2b01504df8baae2a","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-TinyCA rootpage-TinyCA skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">TinyCA</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=TinyCA.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=TinyCA.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=TinyCA.html#Installation_sous_Debian_Sarge_ou_Etch"><span class="tocnumber">1</span> <span class="toctext">Installation sous Debian Sarge ou Etch</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=TinyCA.html#Usage"><span class="tocnumber">2</span> <span class="toctext">Usage</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=TinyCA.html#Cr.C3.A9ation_du_certificat_racine_.28_de_l.27AC.29"><span class="tocnumber">2.1</span> <span class="toctext">Création du certificat racine ( de l'AC)</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=TinyCA.html#Cr.C3.A9ation_d.27un_certificat_serveur"><span class="tocnumber">2.2</span> <span class="toctext">Création d'un certificat serveur</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="index.php%3Ftitle=TinyCA.html#Export_de_cl.C3.A9"><span class="tocnumber">2.2.1</span> <span class="toctext">Export de clé</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="index.php%3Ftitle=TinyCA.html#O.C3.B9_on_les_place_ces_fichiers_.3F.3F"><span class="tocnumber">2.2.2</span> <span class="toctext">Où on les place ces fichiers&#160;??</span></a>
+<ul>
+<li class="toclevel-4 tocsection-7"><a href="index.php%3Ftitle=TinyCA.html#Debian_-_Apache"><span class="tocnumber">2.2.2.1</span> <span class="toctext">Debian - Apache</span></a></li>
+<li class="toclevel-4 tocsection-8"><a href="index.php%3Ftitle=TinyCA.html#Debian.2FUbuntu_-_Munin"><span class="tocnumber">2.2.2.2</span> <span class="toctext">Debian/Ubuntu - Munin</span></a></li>
+<li class="toclevel-4 tocsection-9"><a href="index.php%3Ftitle=TinyCA.html#OpenBSD_-_Apache"><span class="tocnumber">2.2.2.3</span> <span class="toctext">OpenBSD - Apache</span></a></li>
+<li class="toclevel-4 tocsection-10"><a href="index.php%3Ftitle=TinyCA.html#OpenBSD_-_Dovecot"><span class="tocnumber">2.2.2.4</span> <span class="toctext">OpenBSD - Dovecot</span></a></li>
+<li class="toclevel-4 tocsection-11"><a href="index.php%3Ftitle=TinyCA.html#OpenBSD_-_OpenVPN_serveur"><span class="tocnumber">2.2.2.5</span> <span class="toctext">OpenBSD - OpenVPN serveur</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=TinyCA.html#Cr.C3.A9ation_d.27un_certificat_client"><span class="tocnumber">2.3</span> <span class="toctext">Création d'un certificat client</span></a>
+<ul>
+<li class="toclevel-3 tocsection-13"><a href="index.php%3Ftitle=TinyCA.html#Pour_OpenVPN"><span class="tocnumber">2.3.1</span> <span class="toctext">Pour OpenVPN</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-14"><a href="index.php%3Ftitle=TinyCA.html#R.C3.A9vocation_d.27un_certificat_de_serveur"><span class="tocnumber">2.4</span> <span class="toctext">Révocation d'un certificat de serveur</span></a>
+<ul>
+<li class="toclevel-3 tocsection-15"><a href="index.php%3Ftitle=TinyCA.html#CRL"><span class="tocnumber">2.4.1</span> <span class="toctext">CRL</span></a></li>
+<li class="toclevel-3 tocsection-16"><a href="index.php%3Ftitle=TinyCA.html#OCSP"><span class="tocnumber">2.4.2</span> <span class="toctext">OCSP</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=TinyCA.html#Publication_de_la_liste_de_r.C3.A9vocation_d.27un_certificat_de_serveur"><span class="tocnumber">2.5</span> <span class="toctext">Publication de la liste de révocation d'un certificat de serveur</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="index.php%3Ftitle=TinyCA.html#Debug"><span class="tocnumber">3</span> <span class="toctext">Debug</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="index.php%3Ftitle=TinyCA.html#Deploiement_automatique_du_certificat_de_l.27AC_sur_votre_parc_de_clients_windows"><span class="tocnumber">4</span> <span class="toctext">Deploiement automatique du certificat de l'AC sur votre parc de clients windows</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=TinyCA.html#Pour_IE"><span class="tocnumber">4.1</span> <span class="toctext">Pour IE</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=TinyCA.html#Pour_Outlook_Express"><span class="tocnumber">4.2</span> <span class="toctext">Pour Outlook Express</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="index.php%3Ftitle=TinyCA.html#Pour_Firefox"><span class="tocnumber">4.3</span> <span class="toctext">Pour Firefox</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="index.php%3Ftitle=TinyCA.html#Pour_ThunderBird"><span class="tocnumber">4.4</span> <span class="toctext">Pour ThunderBird</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Installation_sous_Debian_Sarge_ou_Etch">Installation sous Debian Sarge ou Etch</span></h2>
+<p>Pas trop difficile, c'est un paquet officiel&#160;: 
+</p><p><b>apt-get install tinyca</b>
+</p><p>Le binaire se nomme <i>/usr/bin/tinyca2</i>.
+</p>
+<h2><span class="mw-headline" id="Usage">Usage</span></h2>
+<h3><span class="mw-headline" id="Cr.C3.A9ation_du_certificat_racine_.28_de_l.27AC.29">Création du certificat racine ( de l'AC)</span></h3>
+<p>On commence par créer le certificat racine de la pki&#160;: celui de l'AC (autorité de certification)
+</p><p><a href="./index.php%3Ftitle=Fichier:CAcreation.jpg.html" class="image"><img alt="CAcreation.jpg" src="images/9/96/CAcreation.jpg" width="450" height="409" /></a>
+</p><p><b>faites très attention aux points suivants&#160;:</b>
+</p>
+<ul><li> <i>C'est probablement le seul certificat que vous ne pourrez pas changer,révoquer.. Par conséquent, sa durée de validité <b>doit</b> être assez longue pour vous. Ici j'ai pris 10 ans</i></li></ul>
+<ul><li> MD5 n'est plus considéré comme un algorithme de hashage fiable. Utilisez SHA-1 plutôt.</li></ul>
+<ul><li> <i>Le mot de passe de l'AC est un des points les plus sensibles de votre chaîne de certification; donc en dehors phases de test, pas de mot de passe de 4 lettres commençant par 'to' et finissant par 'to'&#160;;-) </i></li></ul>
+<p>Vous vérifiez que les usages de ce certificat vous conviennent; personnellement je n'ai pas modifieéles valeurs par défaut, à l'exception de l'URL de la CRL (liste de révocation de certificats)
+</p><p><a href="./index.php%3Ftitle=Fichier:CAconf.jpg.html" class="image"><img alt="CAconf.jpg" src="images/3/3b/CAconf.jpg" width="400" height="486" /></a>
+</p><p><br />
+Après avoir validé, le CPU se met à chauffer lors de la génération de la biclé&#160;:
+</p><p><a href="./index.php%3Ftitle=Fichier:RSAkey.jpg.html" class="image"><img alt="RSAkey.jpg" src="images/5/56/RSAkey.jpg" width="200" height="120" /></a>
+</p><p>Votre certificat est créé&#160;:
+</p><p><a href="./index.php%3Ftitle=Fichier:CAcree.jpg.html" class="image"><img alt="CAcree.jpg" src="images/4/41/CAcree.jpg" width="200" height="76" /></a>
+</p><p>En voici tous les détails&#160;:
+</p><p><a href="./index.php%3Ftitle=Fichier:CAdetails.jpg.html" class="image"><img alt="CAdetails.jpg" src="images/9/9d/CAdetails.jpg" width="800" height="570" /></a>
+</p><p>Une fois ce certificat racine créé, il faut le publier pour que les clients l'incorporent à leur magasin de certificats d'autorités racines de confiance.
+</p><p>Sous apache 1.3 il faut décommenter la ligne&#160;: 
+</p>
+<ol><li> AddType application/x-x509-ca-cert</li></ol>
+<p>et ajouter comme extension le type pem, ce qui donne&#160;:
+</p>
+<pre>
+AddType application/x-x509-ca-cert .pem 
+</pre>
+<p><i>apachectl stop &amp;&amp; apachectl start(ssl)</i>
+</p><p>Et, en cliquant sur le bon lien, vos navigateurs ou courielleurs vont faira apparaitre ce genre de boite de dialogue&#160;:
+</p><p><a href="./index.php%3Ftitle=Fichier:DL_AC.png.html" class="image"><img alt="DL AC.png" src="images/5/53/DL_AC.png" width="614" height="305" /></a>
+</p><p>En français ça marche aussi&#160;;-)
+</p><p>A partir de maintenant, plus jamais de message abscons qui inquiète l'utilisateur..
+</p>
+<h3><span class="mw-headline" id="Cr.C3.A9ation_d.27un_certificat_serveur">Création d'un certificat serveur</span></h3>
+<p>Il faut créer une CSR (requête de signature de certificat).
+</p><p>Ca se fait sur le serveur lui-même (c'est plus simple amha) ou par l'interface. dans les deux cas il y aura un fichier (csr ou crt) à recopier en scp.
+</p><p><a href="./index.php%3Ftitle=Fichier:Csr.jpg.html" class="image"><img alt="Csr.jpg" src="images/f/f5/Csr.jpg" width="300" height="253" /></a>
+</p><p><i>Le plus important est le <b>Common Name</b> du serveur, son FQDN (son nom complet qualifié) . Vous <b>devez</b> avoir le même résultat dans ce champ et dans une requête http(s) sinon vos navigateurs vont hurler</i>.
+</p><p>Remarquez que j'ai diminué la longueur de clé. Il s'agira d'un compromis sécurité du protocole/surcharge (CPU&amp;bande passante). En tout état de cause, il est inutile de spécifier une longueur de clé supérieure à celle de l'AC,amha.
+</p><p><br />
+Vous devez maintenant signer cette requête avec le certificat de l'AC (bouton <i>sign</i> ou clic droit sur le certificat de serveur):
+</p><p><a href="./index.php%3Ftitle=Fichier:CSRsignature.jpg.html" class="image"><img alt="CSRsignature.jpg" src="images/9/9d/CSRsignature.jpg" width="500" height="164" /></a>
+</p><p>On donne le mot de passe de l'AC ainsi que le nombre de jours de validité du certificat du serveur. (<i>celui-là pourra être modifié relativement facilement</i>).
+</p><p><a href="./index.php%3Ftitle=Fichier:CSRsigne.jpg.html" class="image"><img alt="CSRsigne.jpg" src="images/7/71/CSRsigne.jpg" width="300" height="162" /></a>
+</p><p>Le certificat au format .pem est stocké dans <i>$user/.TinyCA/Nom_de_l_AC/newcerts/compteur.pem</i> où compteur est le numéro incrémental du certificat créé.
+</p>
+<h4><span class="mw-headline" id="Export_de_cl.C3.A9">Export de clé</span></h4>
+<p>Pour installer le certificat , vous devez commencer par <i>exporter la clé</i> (clic-droit) puis choisir d'exporter&#160;:
+</p><p><b>* Au format </b>pem
+</p>
+<ul><li> Sans passphrase</li>
+<li> En incluant le certificat</li></ul>
+<p>
+C'est vraiment important&#160;! <b>without passphrase</b> et <b>include certificate</b> ..
+</p><p>Pour OpenBSD il faudra exporter la clé ET le certificat (au format PEM en incluant la clé et l'empreinte)
+</p><p>Vous avez droit un joli message d'avertissement&#160;:
+<a href="./index.php%3Ftitle=Fichier:Capture17.png.html" class="image"><img alt="Capture17.png" src="images/c/c0/Capture17.png" width="450" height="151" /></a>
+</p>
+<h4><span class="mw-headline" id="O.C3.B9_on_les_place_ces_fichiers_.3F.3F">Où on les place ces fichiers&#160;??</span></h4>
+<p>Le résultat doit être copié sur le serveur web/SSL au bon endroit.
+</p>
+<h5><span class="mw-headline" id="Debian_-_Apache">Debian - Apache</span></h5>
+<p>Voir&#160;: <a href="index.php%3Ftitle=Apache.html#Debian_Lenny" title="Apache"> là</a>
+</p><p><br />
+</p>
+<h5><span class="mw-headline" id="Debian.2FUbuntu_-_Munin">Debian/Ubuntu - Munin</span></h5>
+<ul><li> La clé de serveur au format .pem, sans passphrase, avec le certificat dans <i>/etc/munin/SRV.key.pem</i>.</li>
+<li> Le certificat de serveur au format .pem, avec la clé, avec l'empreinte dans <i>/etc/munin/SRV.crt.pem</i>.</li>
+<li> Le certificat au format .pem de l'AC dans <i>/etc/munin/ca.crt.pem</i>.</li></ul>
+<h5><span class="mw-headline" id="OpenBSD_-_Apache">OpenBSD - Apache</span></h5>
+<pre>le fichier XXX-key.pem dans /etc/ssl/private et le fichier XXX-cert.pem dans /etc/ssl
+</pre>
+<p>Vérification&#160;: 
+</p>
+<pre># grep SSLCertificateKeyFile  /etc/apache-ssl/httpd.conf 
+SSLCertificateKeyFile /etc/apache-ssl/apache.pem
+</pre>
+<h5><span class="mw-headline" id="OpenBSD_-_Dovecot">OpenBSD - Dovecot</span></h5>
+<p>Le certificat dans <i>/etc/ssl/dovecotcert.pem</i>
+</p>
+<ul><li> With Key</li>
+<li> With Fingerprint</li></ul>
+<p>La clé associée dans <i>/etc/ssl/private/dovecot.pem </i>
+</p>
+<ul><li> Without password</li>
+<li> With certificate</li></ul>
+<h5><span class="mw-headline" id="OpenBSD_-_OpenVPN_serveur">OpenBSD - OpenVPN serveur</span></h5>
+<p>Le certificat dans <i>/etc/openvpn/vpn.pem</i>
+</p>
+<ul><li> With Key</li>
+<li> With Fingerprint</li></ul>
+<p>La clé associée dans  <i>/etc/openvpn/vpn.pem</i>
+</p>
+<ul><li> Without password</li>
+<li> With certificate</li></ul>
+<h3><span class="mw-headline" id="Cr.C3.A9ation_d.27un_certificat_client">Création d'un certificat client</span></h3>
+<h4><span class="mw-headline" id="Pour_OpenVPN">Pour OpenVPN</span></h4>
+<ul><li> apt-get install openvpn</li>
+<li> Créer une CSR (Onglet Request) avec (facultatif, mais pratique) un CN(Commmon Name) égal au nom FQDN du client.</li>
+<li> Signer la rquête (Clic droit/Sign Request/Sign Client) en fournissant le mdp de l'AC.</li>
+<li> Onglet Certificates&#160;: Export Certificates =&gt; <i>Format PEM,</i> <i>Include Key (PEM)</i>&#160;: <b>YES</b>, <i>Include Fingerprint</i>&#160;: <b>YES</b></li>
+<li> Copier la clé sur le client dans /etc/openvpn/client.pem</li></ul>
+<h3><span class="mw-headline" id="R.C3.A9vocation_d.27un_certificat_de_serveur">Révocation d'un certificat de serveur</span></h3>
+<p>Plusieurs raisons pourraient entrainer la révocation du certificat de serveur web,ie &#160;: la rupture de la chaîne de confiance entre l'AC et le serveur&#160;:
+</p><p>- compromission de la clé du serveur 
+</p><p>- compromission de la clé de l'AC (là vous êtes assez mal..)
+</p><p>- Changement d'affectation du serveur
+</p><p>- Remplacement du serveur
+</p><p>- Fin des opérations du serveur
+</p><p>- Certificat annulé
+</p><p>....Il s'agit là de la traduction de la boite de dialogue, mais personnellement je confond plusieurs de ces items.
+</p><p>Evidemment il vous faut le mot de passe de l'AC:
+</p><p>Ici j'ai choisi de déclarer le serveur web <i>vieuxweb</i> comme bon pour la casse.
+</p><p><a href="./index.php%3Ftitle=Fichier:Revocation.jpg.html" class="image"><img alt="Revocation.jpg" src="images/2/2a/Revocation.jpg" width="300" height="164" /></a>
+</p><p>C'est fait le serveur web <i>vieuxweb</i> n'est plus de confiance.
+</p><p><a href="./index.php%3Ftitle=Fichier:Revoque.jpg.html" class="image"><img alt="Revoque.jpg" src="images/d/da/Revoque.jpg" width="600" height="67" /></a>
+</p><p>Ne reste plus qu'à publier les bans (pardon la liste de révocation).
+</p><p><br />
+</p>
+<h4><span class="mw-headline" id="CRL">CRL</span></h4>
+<h4><span class="mw-headline" id="OCSP">OCSP</span></h4>
+<p><a rel="nofollow" class="external text" href="http://fr.wikipedia.org/wiki/OCSP">| Biblio</a> 
+La source d'info du repondeur OCSP est la crl prédéemment générée.
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Publication_de_la_liste_de_r.C3.A9vocation_d.27un_certificat_de_serveur">Publication de la liste de révocation d'un certificat de serveur</span></h3>
+<p>Vous devez, depuis l'onglet CA, générer la liste de révocation, en donnant le mot de passe de l'AC et en choisissant un des 3 formats d'export:
+</p><p>- PEM:
+</p><p>- DER:
+</p><p>-TXT:
+</p><p><a href="./index.php%3Ftitle=Fichier:CRL.jpg.html" class="image"><img alt="CRL.jpg" src="images/7/7b/CRL.jpg" width="300" height="218" /></a>
+</p>
+<h2><span class="mw-headline" id="Debug">Debug</span></h2>
+<ul><li> Si vous rencontrez des soucis de connexion, tels que&#160;:
+<ul><li> Pour Munin en TLS </li></ul></li></ul>
+<pre>[ERROR] Could not verify CA: Subject Name: undefined
+Issuer  Name: undefined
+</pre>
+<p>ou bien
+</p>
+<ul><li><ul><li></li></ul></li></ul>
+<p>Vérifiez bien votre chaîne de certification: (Depuis l'AC racine jusqu'à client/serveur terminal en passant par les AC intermédiaires éventuelles)
+</p><p>Exemple de chaine brisée&#160;:
+openssl verify -CAfile cacert.pem -verbose dirac.crt.pem 
+</p>
+<pre>dirac.crt.pem: C = FR, ST = IdF, L = RP, O = Ma_pomme_Corp, CN = Schwarz_PKI
+error 2 at 1 depth lookup:unable to get issuer certificate
+</pre>
+<p>Exemple de chaine correcte&#160;:
+</p>
+<pre>openssl verify -CAfile /root/AC_Schwarz-cachain.pem -verbose dirac.crt.pem 
+dirac.crt.pem: OK
+</pre>
+<h2><span class="mw-headline" id="Deploiement_automatique_du_certificat_de_l.27AC_sur_votre_parc_de_clients_windows">Deploiement automatique du certificat de l'AC sur votre parc de clients windows</span></h2>
+<h3><span class="mw-headline" id="Pour_IE">Pour IE</span></h3>
+<p>J'ai trouvé l'info <a rel="nofollow" class="external text" href="https://edge.arubanetworks.com/article/automatic-802-1x-client-configuration-captive-portal">| ici</a>, mais comme je suis un peu flemmard, j'ai simplifié et 'clickidromisé le tout'&#160;;-)
+</p>
+<ul><li> Commencez par télécharger le certificat de l'AC sur la machine locale. Attention, il faudra être admin local.</li></ul>
+<ul><li>Dans une console cmd&#160;:<b>certmgr.msc</b></li></ul>
+<ul><li>Cliquez sur <i>Autorités de certification Racine</i>, onglet <i>Certificats</i></li></ul>
+<ul><li> Sélectionnez <i>Toutes les taches</i>, puis <i>Importer</i></li></ul>
+<ul><li>Parcourez l'arborescence et choisissez le <b>.pem</b> que vous venez de télécharger. Par défaut les .pem ne sont pas acceptés, mais ça marche très bien quand même.</li></ul>
+<ul><li> Je laisse le choix par défaut&#160;: <i>Tous les certificats dans le magasin suivant&#160;:</i>, et <i>Autorités de certification racine de confiance</i>.<b>MAIS</b> vous devez choisir le <i>magasin physique</i> afin de déployer ce certificat pour l'ordinateur local (HKLM) et non dans dans le magasin du l'utilisateur (HKCU).</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Magasin.png.html" class="image"><img alt="Magasin.png" src="images/7/72/Magasin.png" width="500" height="404" /></a>
+</p>
+<ul><li> Une boite de dialogue vous informe des implications du prochain clic de souris&#160;:</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:Ac_Windows.png.html" class="image"><img alt="Ac Windows.png" src="images/7/7a/Ac_Windows.png" width="700" height="237" /></a>
+</p>
+<ul><li> Voila, votre certificat d'AC est dans la machine; reste à l'exporter pour le déployer. Cliquez sur <i>Détails</i> du certificat de votre AC et descndez jusqu'à <i>empreinte numérique.</i> le <i>fingerprint</i> de la clé que vous voyez est le nom sous lequel sera manipulé votre certificat par le magasin Windows. Copiez le dans le pressepapier.</li></ul>
+<ul><li> En ligne de commande&#160;: <b>reg export HKCU\Software\Microsoft\SystemCertificates\Root\Certificates\Votre_Empreinte_de_Certificat Mon_AC.reg</b></li></ul>
+<p>Le tout sans espace dans l'empreinte. (ça doit pouvoir se faire sans les effacer à la main..)
+</p><p>Où il vous est répondu que l'opération s'est bien déroulée.
+</p>
+<ul><li> <i>Autre possibilité</i>: Exporter le bout de ruche avec les outils qui vont bien&#160;:</li></ul>
+<p><a href="./index.php%3Ftitle=Fichier:RegAC.png.html" class="image"><img alt="RegAC.png" src="images/3/3d/RegAC.png" width="548" height="93" /></a>
+</p>
+<ul><li> Ca se termine. Ne reste plus qu'à déployer sur les clients (par GPO, par descente de clés de registre...) le .reg crée.</li></ul>
+<p>A la main, ça donne&#160;: <b>reg import Mon_AC.reg</b>
+</p><p>J'ai trouvé <a rel="nofollow" class="external text" href="http://www.ycom.ch/run/node/82">| certimport</a> qui permet d'automatiser la seconde partie de la manip. Mais comme je ne souhaite pas faire reposer des fonctions cruciales de sécurité sur un soft inconnu, et comme cette seconde partie est aussi rapide par la méthode proposée, je m'en tiendrai là.
+</p>
+<h3><span class="mw-headline" id="Pour_Outlook_Express">Pour Outlook Express</span></h3>
+<p>Au moins ça m'aura donné une occasion de l'installer&#160;;-)
+</p><p>Ben, une fois fait pour IE, c'est déja fait.
+</p>
+<h3><span class="mw-headline" id="Pour_Firefox">Pour Firefox</span></h3>
+<p>Encore plus facile:
+</p>
+<ul><li> Vous installez à la main le certificat sur une machine.</li></ul>
+<ul><li> Vous recopiez maintenant le fichier c:\Documents and settings\User\Application Data\Mozilla\Firefox\Profiles\XXXXXYYYY.default\<b>cert8</b> sur le profil de chacun des utilisateurs de votre réseau.</li></ul>
+<ul><li> On note donc les soucis suivants&#160;:</li></ul>
+<ul><li><ul><li> C'est une méthode bourrin qui écrase la liste sans ajout une AC de manière incrémentale.</li>
+<li> Surtout, c'est lié à l'utilisateur et non à la machine...</li></ul></li></ul>
+<h3><span class="mw-headline" id="Pour_ThunderBird">Pour ThunderBird</span></h3>
+<p>Il faut le refaire, les stockages de Ffox et Tbird sont différents.
+</p><p><br />
+Même manipulation que pour Ffox, on change juste le chemin.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020133014
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.600 seconds
+Real time usage: 0.747 seconds
+Preprocessor visited node count: 99/1000000
+Preprocessor generated node count: 116/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:9-0!*!0!!fr!5!* and timestamp 20171020133013 and revision id 1870
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=TinyCA&amp;oldid=1870">http://www.openbsd-edu.net/index.php?title=TinyCA&amp;oldid=1870</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=TinyCA.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=TinyCA.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:TinyCA&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=TinyCA.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=TinyCA.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=TinyCA&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=TinyCA&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=TinyCA.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FTinyCA.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/TinyCA" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=TinyCA&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=TinyCA&amp;oldid=1870" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=TinyCA&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 16 novembre 2011 à 14:58.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.600","walltime":"0.747","ppvisitednodes":{"value":99,"limit":1000000},"ppgeneratednodes":{"value":116,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020133014","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":2213});});</script>
+	</body>
+</html>

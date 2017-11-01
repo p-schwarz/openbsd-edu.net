@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>OpenBSD en Raid soft — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"OpenBSD_en_Raid_soft","wgTitle":"OpenBSD en Raid soft","wgCurRevisionId":3172,"wgRevisionId":3172,"wgArticleId":326,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"OpenBSD_en_Raid_soft","wgRelevantArticleId":326,"wgRequestId":"c143b2911797fb8c2a47fa29","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-OpenBSD_en_Raid_soft rootpage-OpenBSD_en_Raid_soft skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">OpenBSD en Raid soft</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=OpenBSD_en_Raid_soft.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=OpenBSD_en_Raid_soft.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><p>Afin de garder la sécurité des données sur un serveur low-end ou sur un serveur dédié chez un hébergeur..
+</p><p><a rel="nofollow" class="external text" href="http://spiritedblowfish.wordpress.com/2012/07/19/installing-openbsd-5-1-amd64-using-softraid/">source</a>
+</p><p>Contrairement au <i>mdadm</i> de Debian, le Softraid de OpenBSD permet de mettre plusieurs partitions dans un seul volume softraid.
+</p><p>Par conséquent, il vaut mieux mettre l'ensemble du disque.
+</p>
+<h2><span class="mw-headline" id="R.C3.A9sum.C3.A9_des_op.C3.A9rations">Résumé des opérations</span></h2>
+<p>Par rapport au site de référence, j'ai eu les changements suivants:
+Les disques sont en sd0 et sd1, la clé USB en sd2 et il faut donc créer le mirroir RAID1 en sd3.
+</p><p>Préparation de la clé uSB&#160;:
+</p>
+<pre>dd if=./install57.fs of=/dev/sdb bs=1M
+</pre>
+<p>Au prompot d'install OpenBSD&#160;:
+</p>
+<pre>(I)nstall, (U)pgrade or (S)hell? s
+cd /dev
+sh /dev/MAKEDEV sd0 sd1
+fdisk -iy sd0
+fdisk -iy sd1
+</pre>
+<pre>disklabel -E sd0
+a a
+offset: [64] [ENTER]
+size: [976768001] [ENTER]
+FS type: [4.2 BSD] RAID
+w
+q
+</pre>
+<pre>cd /tmp
+disklabel sd0 &gt; protofile
+disklabel -R sd1 protofile
+bioctl -c 1 -l /dev/sd0a,/dev/sd1a softraid0
+</pre>
+<p>Attention si vous gardez rsd2c, vous écrasez la clé USB...
+</p>
+<pre>dd if=/dev/zero of=/dev/rsd3c bs=1m count=1
+exit
+</pre>
+<p>Vous reprenez l'install normale en bossant sur sd3 comme disque dur d'install
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="R.C3.A9cup.C3.A9ration_d.27un_miroir_d.C3.A9grad.C3.A9">Récupération d'un miroir dégradé</span></h2>
+<p>Vous avez monté un miroir de démarrage et depuis vous avez perdu un disque.
+</p><p>sd0 est fonctionnel, pas sd1 que vous devez remplacer. Une fois ceci fait.
+</p>
+<pre>dmesg | grep sd
+
+sd0: 476940MB, 512 bytes/sector, 976773168 sectors
+sd1: 476940MB, 512 bytes/sector, 976773168 sectors
+softraid0: trying to bring up sd3 degraded
+sd2 at scsibus2 targ 1 lun 0: &lt;OPENBSD, SR RAID 1, 005&gt; SCSI2 0/direct fixed
+sd2: 476937MB, 512 bytes/sector, 976767473 sectors
+softraid0: volume sd2 is roaming, it used to be sd3, updating metadata
+root on sd2a (ea5f22f48f1982da.a) swap on sd2b dump on sd2b
+</pre>
+<p>J'ai donc deux disques sd0 et sd1 formant un miroir nommé sd2.
+</p>
+<pre>bioctl -ih sd2
+
+Volume      Status               Size Device  
+softraid0 0 Degraded             466G sd2     RAID1 
+         0 Online               466G 0:0.0   noencl &lt;sd0a&gt;
+         1 Offline                0B 0:1.0   noencl &lt;&gt;
+</pre>
+<p>On vérifie&#160;:
+</p>
+<pre>disklabel sd0
+</pre>
+<pre>#                size           offset  fstype [fsize bsize  cpg]
+ a:        976768001               64    RAID                   
+ c:        976773168                0  unused          
+</pre>
+<pre>disklabel sd1
+</pre>
+<pre>#                size           offset  fstype [fsize bsize  cpg]
+ a:        976768001                0  unused                   
+ c:        976773168                0  unused          
+</pre>
+<p><br />
+OK, sd0 est bien configuré, pas l'autre.
+</p><p>On va partitionner sd1 comme sd0 (votre nouveau disque est bien identique à l'ancien, hein&#160;??)
+</p>
+<pre>fdisk /dev/rsd0c
+
+Disk: /dev/rsd0c        geometry: 60801/255/63 [976773168 Sectors]
+Offset: 0       Signature: 0xAA55
+           Starting         Ending         LBA Info:
+#: id      C   H   S -      C   H   S [       start:        size ]
+-------------------------------------------------------------------------------
+0: 00      0   0   0 -      0   0   0 [           0:           0 ] unused      
+1: 00      0   0   0 -      0   0   0 [           0:           0 ] unused      
+2: 00      0   0   0 -      0   0   0 [           0:           0 ] unused      
+*3: A6      0   1   2 -  60800 254  63 [          64:   976768001 ] OpenBSD 
+</pre>
+<p>On prépare la table de partitions puis on écrit le nouveau label sur le disque en reprenant celui du disque sain.
+</p>
+<pre>fdisk -iy sd1
+disklabel sd0 &gt; /root/disklabel.sd0
+disklabel -R sd1 /root/disklabel.sd0
+
+</pre>
+<p>Ne reste plus qu'à reconstruire le miroir avec le nouveau disque:
+</p>
+<pre>bioctl -R /dev/sd1a sd2
+</pre>
+<p>Puis vérifier que tout se déroule (lentement):
+</p>
+<pre>bioctl  sd2
+</pre>
+<pre>Volume      Status               Size Device  
+softraid0 0 Rebuild      500104946176 sd2     RAID1 0% done 
+         0 Online       500104946176 0:0.0   noencl &lt;sd0a&gt;
+         1 Rebuild      500104946176 0:1.0   noencl &lt;sd1a&gt;
+</pre>
+<p>Jusqu'à&#160;:
+</p>
+<pre>bioctl  sd2
+</pre>
+<pre>Volume      Status               Size Device  
+softraid0 0 Online       500104946176 sd2     RAID1 
+         0 Online       500104946176 0:0.0   noencl &lt;sd0a&gt;
+         1 Online       500104946176 0:1.0   noencl &lt;sd1a&gt;
+</pre>
+<h2><span class="mw-headline" id="D.C3.A9placement_de_disques">Déplacement de disques</span></h2>
+<p>Vous avez modifié l'ordre des disques (en intercalant un adaptateur USB , for instance) . 
+Aucun souci, c'est géré&#160;:
+</p>
+<pre>softraid0: volume sd3 is roaming, it used to be sd2, updating metadata
+</pre>
+<p>Traduction&#160;: La grappe raid était en sd2, maintenant en sd3; on met à jour les données.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020132725
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.070 seconds
+Real time usage: 0.076 seconds
+Preprocessor visited node count: 11/1000000
+Preprocessor generated node count: 16/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:326-0!*!*!!*!*!* and timestamp 20171020132725 and revision id 3172
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=OpenBSD_en_Raid_soft&amp;oldid=3172">http://www.openbsd-edu.net/index.php?title=OpenBSD_en_Raid_soft&amp;oldid=3172</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=OpenBSD+en+Raid+soft.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=OpenBSD_en_Raid_soft.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:OpenBSD_en_Raid_soft&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=OpenBSD_en_Raid_soft.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=OpenBSD_en_Raid_soft.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=OpenBSD_en_Raid_soft&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=OpenBSD_en_Raid_soft&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=OpenBSD_en_Raid_soft.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FOpenBSD_en_Raid_soft.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/OpenBSD_en_Raid_soft" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=OpenBSD_en_Raid_soft&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=OpenBSD_en_Raid_soft&amp;oldid=3172" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=OpenBSD_en_Raid_soft&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 30 août 2015 à 15:12.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.070","walltime":"0.076","ppvisitednodes":{"value":11,"limit":1000000},"ppgeneratednodes":{"value":16,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132725","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1552});});</script>
+	</body>
+</html>

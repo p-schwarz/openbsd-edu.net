@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>VPN — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"VPN","wgTitle":"VPN","wgCurRevisionId":2910,"wgRevisionId":2910,"wgArticleId":68,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"VPN","wgRelevantArticleId":68,"wgRequestId":"2fa4d791a5d5fbf11e81b4fd","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-VPN rootpage-VPN skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">VPN</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=VPN.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=VPN.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=VPN.html#IPSec"><span class="tocnumber">1</span> <span class="toctext">IPSec</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="index.php%3Ftitle=VPN.html#Usage_de_IPSec_pour_relier_deux_r.C3.A9seaux_:_IpSec_en_mode_Tunnel"><span class="tocnumber">1.1</span> <span class="toctext">Usage de IPSec pour relier deux réseaux&#160;: IpSec en mode Tunnel</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="index.php%3Ftitle=VPN.html#cl.C3.A9s"><span class="tocnumber">1.1.1</span> <span class="toctext">clés</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="index.php%3Ftitle=VPN.html#X509"><span class="tocnumber">1.1.2</span> <span class="toctext">X509</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="index.php%3Ftitle=VPN.html#PassPhrase"><span class="tocnumber">1.1.3</span> <span class="toctext">PassPhrase</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-6"><a href="index.php%3Ftitle=VPN.html#et_.C3.A7a_marche"><span class="tocnumber">1.2</span> <span class="toctext">et ça marche</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=VPN.html#OpenVPN"><span class="tocnumber">2</span> <span class="toctext">OpenVPN</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=VPN.html#Install"><span class="tocnumber">2.1</span> <span class="toctext">Install</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=VPN.html#Sur_le_serveur"><span class="tocnumber">2.1.1</span> <span class="toctext">Sur le serveur</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="index.php%3Ftitle=VPN.html#Sur_le_client"><span class="tocnumber">2.1.2</span> <span class="toctext">Sur le client</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="index.php%3Ftitle=VPN.html#Utilisation_en_pont.2Fbridge.2C_bref_en_niveau_2"><span class="tocnumber">2.1.3</span> <span class="toctext">Utilisation en pont/bridge, bref en niveau 2</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="index.php%3Ftitle=VPN.html#G.C3.A9n.C3.A9ration_des_cl.C3.A9s_et_certificats"><span class="tocnumber">2.1.4</span> <span class="toctext">Génération des clés et certificats</span></a>
+<ul>
+<li class="toclevel-4 tocsection-13"><a href="index.php%3Ftitle=VPN.html#Quelques_mots_sur_les_extensions"><span class="tocnumber">2.1.4.1</span> <span class="toctext">Quelques mots sur les extensions</span></a></li>
+<li class="toclevel-4 tocsection-14"><a href="index.php%3Ftitle=VPN.html#Version_TinyCA"><span class="tocnumber">2.1.4.2</span> <span class="toctext">Version TinyCA</span></a></li>
+<li class="toclevel-4 tocsection-15"><a href="index.php%3Ftitle=VPN.html#Version_Easy-Rsa"><span class="tocnumber">2.1.4.3</span> <span class="toctext">Version Easy-Rsa</span></a></li>
+<li class="toclevel-4 tocsection-16"><a href="index.php%3Ftitle=VPN.html#V.C3.A9rifications"><span class="tocnumber">2.1.4.4</span> <span class="toctext">Vérifications</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-17"><a href="index.php%3Ftitle=VPN.html#Au_final"><span class="tocnumber">2.2</span> <span class="toctext">Au final</span></a>
+<ul>
+<li class="toclevel-3 tocsection-18"><a href="index.php%3Ftitle=VPN.html#Client"><span class="tocnumber">2.2.1</span> <span class="toctext">Client</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="index.php%3Ftitle=VPN.html#Serveur"><span class="tocnumber">2.2.2</span> <span class="toctext">Serveur</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-20"><a href="index.php%3Ftitle=VPN.html#Config_r.C3.A9seau"><span class="tocnumber">2.3</span> <span class="toctext">Config réseau</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="index.php%3Ftitle=VPN.html#Remarques"><span class="tocnumber">2.4</span> <span class="toctext">Remarques</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="IPSec">IPSec</span></h2>
+<h3><span class="mw-headline" id="Usage_de_IPSec_pour_relier_deux_r.C3.A9seaux_:_IpSec_en_mode_Tunnel">Usage de IPSec pour relier deux réseaux&#160;: IpSec en mode Tunnel</span></h3>
+<p><a rel="nofollow" class="external text" href="http://www.securityfocus.com/infocus/1859">Tiré de </a>
+</p>
+<ul><li>LAN A&#160;:
+<ul><li> @IP Externe&#160;: Fixe: A.A.A.A/32 </li>
+<li> Plage Interne&#160;: 172.16.0.0/16</li></ul></li></ul>
+<ul><li>LAN B depuis le Soekris
+<ul><li> @IP Externe&#160;: DHCP par ma XXXXBox&#160;: B.B.B.B/32 </li>
+<li> Plage Interne&#160;: 172.31.0.0/16</li></ul></li></ul>
+<ul><li> Sur chaque passerelle&#160;:</li></ul>
+<ul><li><ul><li>permettre le routage IP&#160;: <i>/etc/sysctl.conf</i></li></ul></li></ul>
+<pre>
+net.inet.ip.forwarding=1        # 1=Permit forwarding (routing) of IPv4 packets
+</pre>
+<ul><li><ul><li> Permettre le NAT et le passage dans le firewall&#160;: <i>/etc/pf.conf</i></li></ul></li></ul>
+<pre>
+ext_if="vic0"
+int_if="vic1"
+set skip on { lo $int_if }
+nat on $ext_if from&#160;!($ext_if) -&gt; ($ext_if:0)
+block in
+pass out keep state
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="cl.C3.A9s">clés</span></h4>
+<h4><span class="mw-headline" id="X509">X509</span></h4>
+<h4><span class="mw-headline" id="PassPhrase">PassPhrase</span></h4>
+<p>Le moins sécurisé, mais suffisant pour les tests.
+</p><p>Le fichier ipsec.conf devient&#160;:
+</p><p>ike ...etc.... main auth hmac-sha1 enc 3des group modp1024 quick auth hmac-sha1 enc 3des group none  psk MAPASSPHRASE
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="et_.C3.A7a_marche">et ça marche</span></h3>
+<pre>
+
+lynx @IP_SE3:909
+
+
+
+                                                                                                                            Authentification SE3
+
+                                                                                                                                                  Bonjour
+   
+  Authentification...
+
+   Afin de pouvoir rentrer dans l'interface SambaEdu, vous devez indiquer votre identifiant et votre mot de passe sur le r�seau.
+
+   Identifiant&#160;:  ____________________
+   Mot de passe&#160;: ____________________
+                               Valider
+
+   Cryptage du mot de passe actif&#160;! 
+
+
+
+</pre>
+<p><br />
+</p>
+<h2><span class="mw-headline" id="OpenVPN">OpenVPN</span></h2>
+<p>Tiré de <a rel="nofollow" class="external text" href="http://johnchapin.boostrot.net/blog/2013/12/11/secure-comms-with-openbsd-and-openvpn-part-1">cette excellente doc</a> .
+</p>
+<h3><span class="mw-headline" id="Install">Install</span></h3>
+<h4><span class="mw-headline" id="Sur_le_serveur">Sur le serveur</span></h4>
+<p>Bien entendu, vous avez, au préalable généré votre nécessaire cryptographique&#160;: <a href="index.php%3Ftitle=VPN.html#Version_Easy-Rsa" title="VPN">VPN#Version_Easy-Rsa</a>
+</p>
+<pre>pkg_add -iv openvpn
+mkdir -p /etc/openvpn/private
+cd /etc/openvpn
+cp SSSS.key /etc/openvpn/private
+cp dh1024.pem /etc/openvpn
+cp ca.crt /etc/openvpn
+cp SSSS.crt /etc/openvpn
+chmod 500 /etc/openvpn/private/
+chmod 400 /etc/openvpn/private/CCC.key 
+cp  /usr/local/share/examples/openvpn/sample-config-files/server.conf /etc/openvpn/
+
+perl -pi -e 's/;local a.b.c.d/local IP-SRV-Publique/' server.conf 
+perl -pi -e 's/server.key/private\/SSSS.key/' server.conf 
+perl -pi -e 's/server.crt/SSSS.crt/' server.conf 
+perl -pi -e 's/;push "route 192.168.20.0 255.255.255.0"/push "route MON_Reseau Netmask"/' server.conf 
+</pre>
+<p><br />
+A la fin il faudra donc avoir cet état&#160;:
+</p>
+<pre>ls -lh /etc/openvpn/
+</pre>
+<pre>-rw-r--r--  1 root  wheel   ca.crt
+-r--r--r--  1 root  wheel   server.conf
+-rw-r--r--  1 root  wheel   dh1024.pem
+-rw-r--r--  1 root  wheel   SSSS.crt
+dr-x------  2 root  wheel   private
+</pre>
+<pre>ls -lh /etc/openvpn/private/
+ 
+-r--------  1 root  wheel   SSSS.key
+</pre>
+<h4><span class="mw-headline" id="Sur_le_client">Sur le client</span></h4>
+<p>Bien entendu, vous avez, au préalable généré votre nécessaire cryptographique&#160;: <a href="index.php%3Ftitle=VPN.html#Version_Easy-Rsa" title="VPN">VPN#Version_Easy-Rsa</a>
+</p>
+<pre>pkg_add -iv openvpn
+mkdir -p /etc/openvpn/private
+cd /etc/openvpn
+cp CCC.key /etc/openvpn/private
+cp dh1024.pem /etc/openvpn
+cp ca.crt /etc/openvpn
+cp CCC.crt /etc/openvpn
+chmod 500 /etc/openvpn/private/
+chmod 400 /etc/openvpn/private/CCC.key 
+cp  /usr/local/share/examples/openvpn/sample-config-files/client.conf /etc/openvpn/
+
+perl -pi -e 's/my-server-1/IP-SRV/' client.conf 
+perl -pi -e 's/client.key/private\/CCCCC.key/' client.conf 
+perl -pi -e 's/client.crt/CCCC.crt/' client.conf 
+</pre>
+<p><br />
+A la fin il faudra donc avoir cet état&#160;:
+</p>
+<pre>ls -lh /etc/openvpn/
+</pre>
+<pre>-rw-r--r--  1 root  wheel   ca.crt
+-r--r--r--  1 root  wheel   client.conf
+-rw-r--r--  1 root  wheel   dh1024.pem
+-rw-r--r--  1 root  wheel   CCCC.crt
+dr-x------  2 root  wheel   private
+</pre>
+<pre>ls -lh /etc/openvpn/private/
+ 
+-r--------  1 root  wheel   CCCC.key
+</pre>
+<p><br />
+</p><p><br />
+</p>
+<ul><li> Configuration de la carte virtuelle</li></ul>
+<pre>echo "/etc/hostname.tun0
+up
+/usr/local/sbin/openvpn --daemon --config /etc/openvpn/server.conf
+" &gt; /etc/hostname.tun0
+</pre>
+<p><br />
+</p><p><br />
+</p><p>ifconfig-pool-persist ipp.txt
+push "route 172.16.0.0 255.255.0.0"
+push "dhcp-option DNS 172.16.0.XX"
+push "dhcp-option DOMAIN maxp.local"
+</p>
+<ol><li>push "dhcp-option WINS 172.16.0.2"</li></ol>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="Utilisation_en_pont.2Fbridge.2C_bref_en_niveau_2">Utilisation en pont/bridge, bref en niveau 2</span></h4>
+<p><a rel="nofollow" class="external autonumber" href="http://www.chrisk.de/blog/2010/03/how-to-openvpn-on-openbsd-as-layer2-vpn">[1]</a>
+</p>
+<h4><span class="mw-headline" id="G.C3.A9n.C3.A9ration_des_cl.C3.A9s_et_certificats">Génération des clés et certificats</span></h4>
+<p>A faire sur une machine tierce.
+</p>
+<h5><span class="mw-headline" id="Quelques_mots_sur_les_extensions">Quelques mots sur les extensions</span></h5>
+<pre> ca.crt     -&gt; root certificate (--ca)
+ ca.key     -&gt; root key, keep secure (not directly used by OpenVPN)
+ .crt files -&gt; client/server certificates (--cert)
+ .key files -&gt; private keys, keep secure (--key)
+ .csr files -&gt; certificate signing request (not directly used by OpenVPN)
+ dh1024.pem or dh2048.pem -&gt; Diffie Hellman parameters (--dh)
+</pre>
+<h5><span class="mw-headline" id="Version_TinyCA">Version TinyCA</span></h5>
+<p><a href="index.php%3Ftitle=TinyCA.html#Export_de_cl.C3.A9" title="TinyCA"> Export de certificat serveur</a>
+</p><p>et 
+</p><p><a href="index.php%3Ftitle=TinyCA.html#Pour_OpenVPN" title="TinyCA"> Export de certificat client</a>
+</p>
+<h5><span class="mw-headline" id="Version_Easy-Rsa">Version Easy-Rsa</span></h5>
+<pre>pkg_add easy-rsa
+cd /usr/local/share/easy-rsa
+</pre>
+<p>Modifiez <b>vars</b> comme bon vous semble 
+</p>
+<pre>export KEY_SIZE=1024
+export CA_EXPIRE=3650
+export KEY_EXPIRE=3650
+# These are the default values for fields
+# which will be placed in the certificate.
+# Don't leave any of these fields blank.
+export KEY_COUNTRY="FR"
+export KEY_PROVINCE="DEPT"
+export KEY_CITY="VILLE"
+export KEY_ORG="ORG"
+export KEY_EMAIL="@email"
+export KEY_EMAIL=@email
+export KEY_CN=changeme
+export KEY_NAME=changeme
+export KEY_OU=changeme
+</pre>
+<p>Ces deux là sont inutiles sauf à utiliser une smartcard
+</p>
+<pre>export PKCS11_MODULE_PATH=changeme
+export PKCS11_PIN=1234
+</pre>
+<p>On nettoie toute trace de CA précédente (Donc on efface tout!!! attention)
+</p>
+<pre>. ./vars
+./clean-all
+</pre>
+<p>On génére les primites cryptographiques pour la suite des opérations:
+</p>
+<pre>./build-dh 
+</pre>
+<p>On crée une AC avec mot de passe (c'est un peu mieux...)
+</p>
+<pre>./pkitool --init-ca --pass
+</pre>
+<p><br />
+Tout est prêt pour accueillir les nouveaux certificats
+</p>
+<ul><li> Je crée une demande de certificat pour le serveur VPN nommé SSSSS</li></ul>
+<pre>KEY_CN=SSSS ./pkitool --server SSSS
+</pre>
+<p>On me demandera le mdp de l'AC,normal!
+</p>
+<ul><li> Je crée une demande de certificat pour le client VPN nommé CCCCCC</li></ul>
+<pre>KEY_CN=CCCC ./pkitool CCCCC
+</pre>
+<p>On me demandera le mdp de l'AC,normal!
+</p><p><b>Le KEY_CN= devant est indispensable pour éviter l'erreur classique de easy-rsa&#160;: "TXT-DB error number 2" </b>
+</p><p>Vous n'avez plus qu'à copier les bons fichiers aux bons endroits&#160;:
+</p>
+<ul><li>Serveur VPN&#160;:</li></ul>
+<p>ca.crt, SSS.crt,dh1024.pem dans /etc/openvpn
+</p>
+<ul><li>Client VPN&#160;:</li></ul>
+<p>ca.crt, CCC.crt,dh1024.pem dans /etc/openvpn
+</p><p><b>Important</b>&#160;: Tout repose désormais sur votre répertoire keys&#160;!!! Une bonne sauvegarde est de mise (sans compter le bon mot de passe l'AC protégée par HSM pour ne pas se faire trouer comme DIginotar ou Comodo...) Mais c'est une autre histoire.
+</p>
+<ul><li>Debug</li></ul>
+<pre>failed to update database
+TXT_DB error number 2
+</pre>
+<p>La <a rel="nofollow" class="external text" href="http://blog.kenyap.com.au/2012/07/txtdb-error-number-2-when-generating.html">solution</a>
+</p>
+<h5><span class="mw-headline" id="V.C3.A9rifications">Vérifications</span></h5>
+<ul><li> Vous pouvez vérifier le certicat serveur&#160;:</li></ul>
+<pre>openssl verify -CAfile /etc/openvpn/ssl/ca.crt -purpose sslserver /etc/openvpn/ssl/ca.crt 
+/etc/openvpn/ssl/ca.crt: OK
+</pre>
+<p><br />
+En cas de doute, n'hésitez pas à vérifier la chaîne de signature&#160;:
+</p><p><br />
+Mauvaise chaîne&#160;:
+</p>
+<pre>openssl verify -CAfile /etc/openvpn/ssl/ca.crt -purpose sslclient /etc/openvpn/clients/client3.crt 
+unable to load certificate
+18725:error:0906D06C:PEM routines:PEM_read_bio:no start line:/usr/src/lib/libssl/src/crypto/pem/pem_lib.c:650:Expecting: TRUSTED CERTIFICATE
+
+</pre>
+<p>Mauvais usage du certificat client
+</p>
+<pre>openssl verify -CAfile /etc/openvpn/diracCA.crt -purpose sslclient /etc/openvpn/phil.crt 
+/etc/openvpn/phil.crt: /le/chemin/de/certification
+error 26 at 0 depth lookup:unsupported certificate purpose
+OK
+</pre>
+<p>Logs du serveur
+</p><p>Bonne chaîne
+</p>
+<pre>openssl verify -CAfile /etc/openvpn/ssl/ca.crt -purpose sslclient /etc/openvpn/clients/client4.crt 
+/etc/openvpn/clients/client4.crt: OK
+</pre>
+<h3><span class="mw-headline" id="Au_final">Au final</span></h3>
+<h4><span class="mw-headline" id="Client">Client</span></h4>
+<p>Sur un client OpenBSD, il faut donc&#160;:
+</p>
+<ul><li> Un certificat client dans /etc/openvpn/CLT.crt</li>
+<li> Une clé cliente dans /etc/openvpn/private/CLT.key</li>
+<li> Le certificat de l'AC dans /etc/openvpn/ca.crt</li>
+<li> Un fichier de conf /etc/openvpn/client.conf</li></ul>
+<pre>client
+dev tun
+proto udp
+remote SERVEUR 1194
+resolv-retry infinite
+nobind
+user _openvpn
+group _openvpn
+persist-key
+persist-tun
+ca /etc/openvpn/ca.crt
+cert /etc/openvpn/CLT.crt
+key /etc/openvpn/private/CLT.key
+ns-cert-type server
+comp-lzo
+verb 3
+</pre>
+<ul><li> Un fichier de lancement /etc/rc.local</li></ul>
+<pre> /usr/local/sbin/openvpn --daemon --config /etc/openvpn/client.conf
+</pre>
+<p><br />
+</p>
+<h4><span class="mw-headline" id="Serveur">Serveur</span></h4>
+<p>Sur un serveur OpenBSD, il faut donc&#160;:
+</p>
+<ul><li> Un certificat serveur dans /etc/openvpn/SRV.crt</li>
+<li> Une clé serveur dans /etc/openvpn/private/SRV.key</li>
+<li> Le certificat de l'AC dans /etc/openvpn/ca.crt</li>
+<li> Un fichier de conf /etc/openvpn/server.conf</li></ul>
+<pre>local IPSRV
+port 1194
+proto udp
+dev tun
+ca /etc/openvpn/ca.crt
+cert /etc/openvpn/SRV.crt
+dh dh1024.pem
+server IPSRV 255.255.255.0
+ifconfig-pool-persist ipp.txt
+push "route VPN_RSX 255.255.255.0"
+keepalive 10 120
+comp-lzo
+user _openvpn
+group _openvpn
+persist-key
+persist-tun
+status openvpn-status.log
+</pre>
+<p>Plus les options spécifiques éventuellement nécessaires (routes, dhcp,...)
+</p>
+<ul><li> Un fichier de lancement /etc/rc.local</li></ul>
+<pre> /usr/local/sbin/openvpn --daemon --config /etc/openvpn/server.conf
+</pre>
+<h3><span class="mw-headline" id="Config_r.C3.A9seau">Config réseau</span></h3>
+<p><b>Côté serveur</b>
+</p>
+<ul><li> La création de l'interface a déjà été faite.</li></ul>
+<pre>sh /etc/netstart
+</pre>
+<p>Il va râler sur les permissions, mais les corriger aussitôt.
+</p><p><br />
+</p>
+<ul><li> Firewall</li></ul>
+<pre>
+echo "
+# OpenVPN
+pass in log quick on $WAN_IF proto udp from any to $WAN_IP  port 1194
+" &gt;&gt; /etc/pf.conf
+</pre>
+<p>Ne pas oublier de faire la même chose côté pare-feu du client....
+</p><p><br />
+</p>
+<ul><li><b>Côté client</b></li></ul>
+<p>Sur Ubuntu, j'ai eu un petit souci de résolution de nom sur le LAN, et donc&#160;:
+</p>
+<pre>#!/bin/bash
+sudo perl -pi -e 's/# Generated by NetworkManager/nameserver @IP_DNS_Interne/'  /etc/resolv.conf
+</pre>
+<p>et j'accède <b>en local</b> aux imprimantes, serveurs, routeurs etc...
+</p><p><br />
+</p>
+<ul><li> <b>Attention à la route de retour!</b></li></ul>
+<p>Si vous passez d'une machine en adressage privé d'un LAN à une autre également NATée d'un autre LAN, il faudra donner aux machines les routes de retour hors du tunnel VPN..
+</p><p>Exemple avec un client sur un réseau en 10.0.0.0 24 qui cause, par le tunnel VPN à une autre machine sur un autre LAN en 10.10.10.9 en VPN.
+La passerelle VPN est en 10.10.10.5.
+/sbin/route add -net 10.0.0.0/24  10.10.10.5
+</p>
+<h3><span class="mw-headline" id="Remarques">Remarques</span></h3>
+<ul><li> Il s'agit du portage rapide de l'appli depuis LInux. Exemple&#160;:  /usr/local/share/examples/openvpn/sample-scripts/openvpn.init </li></ul>
+<p>contient 
+</p><p><i>/sbin/modprobe</i> pour lancer le module tun...
+</p><p>Essayez cette commande linux sous un BSD, ça marche moyen moyen...
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020132935
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.190 seconds
+Real time usage: 0.192 seconds
+Preprocessor visited node count: 118/1000000
+Preprocessor generated node count: 168/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:68-0!*!0!!fr!*!* and timestamp 20171020132934 and revision id 2910
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=VPN&amp;oldid=2910">http://www.openbsd-edu.net/index.php?title=VPN&amp;oldid=2910</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=VPN.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=VPN.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:VPN&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=VPN.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=VPN.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=VPN&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=VPN&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=VPN.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FVPN.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/VPN" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=VPN&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=VPN&amp;oldid=2910" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=VPN&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 3 janvier 2015 à 09:26.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.190","walltime":"0.192","ppvisitednodes":{"value":118,"limit":1000000},"ppgeneratednodes":{"value":168,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132935","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1659});});</script>
+	</body>
+</html>

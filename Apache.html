@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Apache — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Apache","wgTitle":"Apache","wgCurRevisionId":3112,"wgRevisionId":3112,"wgArticleId":67,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Apache","wgRelevantArticleId":67,"wgRequestId":"681350b28ae1c27317d90aed","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Apache rootpage-Apache skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Apache</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Apache.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Apache.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Apache.html#Debian"><span class="tocnumber">1</span> <span class="toctext">Debian</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Apache.html#Installation_de_base.2FOpenBSD"><span class="tocnumber">2</span> <span class="toctext">Installation de base/OpenBSD</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="index.php%3Ftitle=Apache.html#Gestion_des_fichiers_.htaccess"><span class="tocnumber">2.1</span> <span class="toctext">Gestion des fichiers .htaccess</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Apache.html#Authentification_LDAP_sur_Apache"><span class="tocnumber">2.2</span> <span class="toctext">Authentification LDAP sur Apache</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="index.php%3Ftitle=Apache.html#Avec_OpenLDAP"><span class="tocnumber">2.2.1</span> <span class="toctext">Avec OpenLDAP</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="index.php%3Ftitle=Apache.html#Avec_Active_Directory"><span class="tocnumber">2.2.2</span> <span class="toctext">Avec Active Directory</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="index.php%3Ftitle=Apache.html#httpS"><span class="tocnumber">3</span> <span class="toctext">httpS</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Apache.html#Apache_SSL_sous_un_autre_OS"><span class="tocnumber">3.1</span> <span class="toctext">Apache SSL sous un autre OS</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="index.php%3Ftitle=Apache.html#Debian_2"><span class="tocnumber">3.1.1</span> <span class="toctext">Debian</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Apache.html#Versions_de_algo_de_chiffrement"><span class="tocnumber">3.2</span> <span class="toctext">Versions de algo de chiffrement</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Apache.html#Authentification_du_client"><span class="tocnumber">4</span> <span class="toctext">Authentification du client</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="index.php%3Ftitle=Apache.html#IPv6"><span class="tocnumber">5</span> <span class="toctext">IPv6</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="index.php%3Ftitle=Apache.html#Remarques_sur_la_s.C3.A9curit.C3.A9_:"><span class="tocnumber">6</span> <span class="toctext">Remarques sur la sécurité&#160;:</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="index.php%3Ftitle=Apache.html#Webalizer"><span class="tocnumber">7</span> <span class="toctext">Webalizer</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="index.php%3Ftitle=Apache.html#Debug_Apache"><span class="tocnumber">8</span> <span class="toctext">Debug Apache</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Debian">Debian</span></h2>
+<p>En fait c'est apache2 en l'occurence.
+</p>
+<ul><li> Activation de SSL&#160;:</li></ul>
+<pre>
+a2enmod ssl &amp;&amp; /etc/init.d/apache2 restart
+cp /nagios.pem /etc/ssl/certs
+chmod 444 /etc/ssl/certs/nagios.pem 
+
+vi /etc/apache2/sites-avalaible/default-ssl
+
+
+
+
+</pre>
+<p><br />
+</p>
+<ul><li> a2enmod Nom_du_Module_à_activer</li></ul>
+<p>COntenu dans /etc/apache2/
+</p>
+<ul><li> a2ensite Nom_du_site_à_activer</li></ul>
+<p>Contenu dans /etc/apache2/sites-avalaible
+</p>
+<h2><span class="mw-headline" id="Installation_de_base.2FOpenBSD">Installation de base/OpenBSD</span></h2>
+<p>Installé, mais pas activé par défaut dans l'installation de base.
+</p><p><b>User www group www </b> Identité sous laquelle tourne Apache dès que le serveur s'est "accroché" (bind to) aux ports privilégiés (&lt; 1024) standards 80 (http) et 443 (https) pour lesquels un privilège superutilisateur est nécessaire.
+</p><p>Depuis la 3.2 httpd, le démon Apache est chrooté (mis en prison) dans /var/www. Ceci augmente drastiquement la sécurité de la mchine en cas de compromission du service web, l'attaquant se retrouve avec l'identité www.www dans une prison dont la racine virtuelle est /var/www.
+</p><p>Cela implique quelques menues acrobaties pour faire communiquer apache avec, au hasard, MySQL...
+</p><p><b>httpd.conf</b>
+</p><p>Section 1:Global Environment
+</p>
+<ul><li>  ServerAdmin Mon_email </li></ul>
+<p>Section 2&#160;: Main server configuration
+</p>
+<ul><li> DirectoryIndex index.html <b>index.php</b> Si vous voulez éviter qu'en l'absence d'index.html dans un répertoire de script php, vous vous retrouviez avec la liste des fichiers présents..</li></ul>
+<ul><li> ServerSignature On <b>Off </b> Email </li></ul>
+<p>Qu'est ce qui apparait en cas d'erreur 404&#160;? le nom et la version d'apache / Rien / L'email de l'administrateur
+</p><p>Gestion des hôtes virtuels basés sur le nom
+</p><p>Apache répond, évidemment , aux normes http 1.1; il est capable d'héberger et de répondre à plusieurs noms de machines, de domaines avec un nombre réduit d'adresses IP&#160;:
+</p><p>Vous n'avez qu'une seule adresse IP fixe publique (Ce n'est deja pas mal!) et vous voulez heberger deux (ou plus) serveurs répondant à des noms radicalement différents. Pour cela vous devez utiliser la notion d'hôte virtuel. Attention les vieux clients http 1.0 ne sauront pas résoudre ce nom.
+</p><p>Dans la section 3: Virtual Hosts, ajoutez les lignes suivantes&#160;:
+</p>
+<ol><li><i>Évidemment vous rangerez cela comme vous voulez chez vous..</i></li></ol>
+<p>#&lt;VirtualHost _default_:*&gt;
+</p>
+<pre>
+&lt;/VirtualHost&gt;
+######Config de mon premier serveur virtuel
+
+&lt;VirtualHost Mon_IP_Publique &gt; Définition du bloc d'instructions relatives au premier hote virtuel
+
+ ServerAdmin email-1 Adresse admin de cet hôte virtuel
+
+ ServerName [http://www.openbsd-edu.net  www.mon_domaine-1 ] Son nom DNS
+
+ ServerAlias *[http://www.openbsd-edu.net .mon_domaine-1] Intercepte toute connexion vers n"importe_quoi.openbsd-edu.net
+
+ DocumentRoot /var/www/[http://www.openbsd-edu.net mon_domaine-1]/ Les documents publiés par cet hôte
+
+ ScriptAlias /cgi-bin/ /var/www/[http://www.openbsd-edu.net mon_domaine-1]/cgi-bin/ Les scripts CGI qui li sont particuliers.
+
+ TransferLog /var/www/[http://www.openbsd-edu.net mon_domaine-1]/logs/access_log Ses logs d'accès
+
+ ErrorLog /var/www/[http://www.openbsd-edu.net mon_domaine-1]/logs/error_log Ses logs d'erreur
+
+&lt;/VirtualHost&gt;
+
+######Config de mon second serveur virtuel
+
+
+
+&lt;VirtualHost Mon_IP_Publique &gt; 
+
+ ServerAdmin email-2 
+
+ ServerName [http://www.openbsd-edu.net www.mon_domaine-2 ]
+
+ ServerAlias *[http://www.openbsd-edu.net .mon_domaine-2]
+
+ DocumentRoot /var/www/[http://www.openbsd-edu.net mon_domaine-2]/ 
+
+ ScriptAlias /cgi-bin/ /var/www/[http://www.openbsd-edu.net mon_domaine-2]/cgi-bin/ 
+
+ TransferLog /var/www/[http://www.openbsd-edu.net mon_domaine-2]/logs/access_log 
+
+ ErrorLog /var/www/[http://www.openbsd-edu.net mon_domaine-2]/logs/error_log 
+
+&lt;/VirtualHost&gt; 
+
+######Config de mon troisième serveur virtuel '''''en HTTPS'''''
+
+
+
+&lt;VirtualHost Mon_IP_Publique:443 &gt; 
+
+ ServerAdmin email-3 
+
+ ServerName [http://www.openbsd-edu.net www.mon_domaine-3]
+
+ ServerAlias *[http://www.openbsd-edu.net .mon_domaine-3]
+
+ DocumentRoot /var/www/[http://www.openbsd-edu.net mon_domaine-3]/ 
+
+ ScriptAlias /cgi-bin/ /var/www/[http://www.openbsd-edu.net mon_domaine-3]/cgi-bin/ 
+
+ TransferLog /var/www/[http://www.openbsd-edu.net mon_domaine-3]/logs/access_log 
+
+ ErrorLog /var/www/[http://www.openbsd-edu.net mon_domaine-3]/logs/error_log 
+
+ SSLCertificateFile /etc/ssl/MonSRV-cert.pem
+
+ SSLCertificateKeyFile /etc/ssl/private/MonSRV-key.pem
+
+
+ &lt;/VirtualHost&gt;
+</pre>
+<ol><li><ol><li>Les hotes virtuels en ssl doivent inclure dans leur définition la partie de fichier (plus loin) gérant ces définitions.</li></ol></li></ol>
+<p><br />
+Vérification de la configuration&#160;:
+</p><p><i> apachectl configtest</i>
+</p><p>Pour relancer apache&#160;:
+</p><p><i> apachectl restart</i> 
+</p><p>Pour relancer apache le plus doucement possible&#160;:
+</p><p><i> apachectl graceful</i>
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Gestion_des_fichiers_.htaccess">Gestion des fichiers .htaccess</span></h3>
+<p>Par défaut, ils ne sont pas pris en compte.
+</p><p>Pour cela, il faut le dire à Apache&#160;:
+</p><p>Changer
+</p>
+<pre>
+    AllowOverride None
+</pre>
+<p>en
+</p>
+<pre>
+    AllowOverride Authconfig
+</pre>
+<p>dans la partie qui vous intéresse.
+Exemple&#160;:
+</p><p><br />
+Et relancer le biniou&#160;:
+</p>
+<pre> apachectl stop
+apachectl startssl
+</pre>
+<p><br />
+Mettons que vous mettiez cela dans votre .htaccess
+</p>
+<pre>
+AuthType Basic require valid-user 
+</pre>
+<p>Dans, httpd.conf, il faudra donner le chemin complet <b>en partant de la racine du chroot</b>&#160;!
+</p>
+<pre>
+/htpasswd.users
+</pre>
+<p>Pour un fichier /var/www/htpasswd.users
+</p><p>Mais, bon, depuis qques temps, j'utilise une autre méthode plus souple dès qu'on dépasse une dizaine d'utilisateurs&#160;:
+</p>
+<h3><span class="mw-headline" id="Authentification_LDAP_sur_Apache">Authentification LDAP sur Apache</span></h3>
+<p>On installe mod_auth_ldap
+</p>
+<pre>
+pkg_add ftp://ftp.irisa.fr/pub/OpenBSD/$(uname -r)/packages/$(uname -m)/mod_auth_ldap
+</pre>
+<p>Puis on ajoute dans httpd.conf les authentifications
+</p>
+<pre>
+Include /var/www/conf/Auth_ssl_Documents
+</pre>
+<p>Et on lit la bible aussi&#160;: <a rel="nofollow" class="external autonumber" href="https://httpd.apache.org/docs/2.0/mod/mod_auth_ldap.html">[1]</a>
+bien que ce soit apache 2.0, pas mal de docs marchent en 1.3
+</p>
+<h4><span class="mw-headline" id="Avec_OpenLDAP">Avec OpenLDAP</span></h4>
+<p>Avec Auth_ssl_Documents qui contient&#160;:
+</p>
+<pre>
+&lt;Directory "/var/www/htdocs/ssl/Documents"&gt;
+AuthType Basic
+AuthName "Authentification Ldap"
+#AuthLDAPGroupAttribute memberUid
+#AuthLDAPGroupAttributeIsDN off
+#Require group ou=People,....mon basedn du se3
+Require valid-user
+AuthLDAPURL ldap://@IPduse3:389/ou=People,....mon basedn du se3
+</pre>
+<p>qui autorisera tout utilisateur appartenant à l'ou=People.
+</p><p><br />
+Si vous voulez limiter à un groupe précis, le fichier devient:
+</p>
+<pre>
+&lt;Directory "/var/www/htdocs/ssl/Profs"&gt;
+AllowOverride AuthConfig
+
+AuthType Basic
+AuthName "Authentification Ldap"
+AuthLDAPGroupAttribute memberUid
+AuthLDAPGroupAttributeIsDN off
+Require group cn=profs,ou=Groups,....mon basedn du se3
+Require group cn=cpe,ou=Groups,....mon basedn du se3
+Require group cn=persdir,ou=Groups,....mon basedn du se3
+AuthLDAPURL ldap://@IPduse3:389/ou=People,....mon basedn du se3
+&lt;/Directory&gt;
+</pre>
+<p>qui autorisera les cpe, persdir et profs à accéder à la ressource.
+</p>
+<h4><span class="mw-headline" id="Avec_Active_Directory">Avec Active Directory</span></h4>
+<p>Attention, si vous utilisez <i>userPrincipalName</i> comme identifaint, vous devrez avoir un login en USER@DOMAINE, sinon, utilisez <i>sAMAccountName:</i>
+</p><p>Si vous voulez parcourir une OU et autoriser tout utilisateur authentifié: 
+</p>
+<pre>
+&lt;Directory "/var/www/htdocs/ssl/URL"&gt;
+AllowOverride AuthConfig
+AuthType Basic
+AuthName "Authentification Ldap"
+AuthLDAPURL ldap://IP:389/BASEDN?userPrincipalName
+AuthLDAPBindDN "USER"
+AuthLDAPBindPassword "PASS"
+require valid-user
+require dn DNPROF
+&lt;/Directory&gt;
+</pre>
+<p>Si vous voulez parcourir toutes les sous-OU et autoriser tout utilisateur authentifié:
+</p>
+ <pre>
+&lt;Directory "/var/www/htdocs/URL1"&gt;
+AllowOverride AuthConfig
+AuthType Basic
+AuthName "Authentification sur l' annuaire"
+AuthLDAPURL ldap://@IP:389/OU=UTILISATEURS,BASEDN?userPrincipalName?sub?(objectClass=*)
+AuthLDAPBindDN "USER"
+AuthLDAPBindPassword "PASS"
+require valid-user  
+&lt;/Directory&gt;
+
+</pre>
+<p>Si vous voulez parcourir toutes les sous-OU et autoriser seulement certains utilisateurs authentifiés:
+</p>
+<pre>
+&lt;Directory "/var/www/htdocs/URL2"&gt;
+AllowOverride AuthConfig
+AuthType Basic
+AuthName "Authentification sur l' annuaire"
+AuthLDAPURL ldap://@IP:389/OU=UTILISATEURS,BASEDN?userPrincipalName?sub?(objectClass=*)
+AuthLDAPBindDN "USER"
+AuthLDAPBindPassword "PASS"
+require user USER1 USER2
+&lt;/Directory&gt;
+</pre>
+<h2><span class="mw-headline" id="httpS">httpS</span></h2>
+<p>Un serveur https en 3 lignes et 10 minutes&#160;!
+</p><p>Apache sait délivrer des flux cryptésTLS simultanément à des flux non cryptés. Les uns sur le port 443, les autres sur le classique port 80.
+</p><p>NB&#160;: TLS (Transport Layer Security, Sécurité de la couche transport) est la version de l'IETF du protocole SSL (Secure Socket Layer) inventé par Netscape.
+</p><p>Tout se fait dans /etc/ssl/private.
+</p>
+<ul><li> On crée la clé RSA 1024 bits du serveur&#160;: </li></ul>
+<pre>openssl genrsa -out /etc/ssl/private/server.key 1024
+</pre>
+<p><b>Si on préfère un clé chiffrée par une passphrase(mais alors il faut être devant le serveur au démarrage..),&#160;:</b>
+</p>
+<pre>openssl genrsa -des3 -out /etc/ssl/private/server.key 1024
+</pre>
+<p>Il faut maintenant créer la requête signée de certification utilisée pour la demande de certification auprès d'une autorité de certification. Préparez votre portefeuille ou votre <a href="index.php%3Ftitle=TinyCA.html" title="TinyCA">  pki privée</a>...
+</p>
+<pre>openssl req -new -key /etc/ssl/private/server.key -out /etc/ssl/private/server.csr
+</pre>
+<p>Il vous sera demandé successivement&#160;:
+</p>
+<pre>
+Country Name (2 letter code) []:
+State or Province Name (full name) []:
+Locality Name (eg, city) []:
+Organization Name (eg, company) []:
+Organizational Unit Name (eg, section) []:
+Common Name (eg, fully qualified host name) []:''Le nom DNS du serveur '''Indispensable'''''
+Email Address []:''L'adresse du hostmaster de votre serveur'' '''''Indispensable'''''
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:''Entrée''
+An optional company name []:''Entrée''
+</pre>
+<p><br />
+</p>
+<ul><li> Puis vous envoyez le fichier server.csr à Thawte ou autre autorité de certification.Si vous n'avez pas les moyens de sortir la centaine de dollars annuels, vous pouvez utiliser des certificats auto-signés ou alors utilisez une bonne <a href="index.php%3Ftitle=TinyCA.html" title="TinyCA"> PKI</a>. Le seul inconvénient est que vous n'êtes pas une autorité de certification, les navigateurs émettront un message d'alerte (désactivable pour partie) lors de la consultation de votre site. </li></ul>
+<pre>Pour auto-signer&#160;:
+</pre>
+<pre>openssl x509 -req -days 365 -in /etc/ssl/private/server.csr -signkey /etc/ssl/private/server.key -out /etc/ssl/server.crt
+</pre>
+<p><br />
+</p>
+<ul><li> Puis modifiez <i>/etc/rc.conf</i> en <i>httpd="-DSSL"</i></li></ul>
+<pre>Si vous voulez profitez du https sans avoir à redémarrer,&#160;: <i><b>/usr/sbin/apachectl startssl</b></i>. (un simple apachectl restart n'est pas suffisant!!).
+</pre>
+<pre>Votre machine est maintenant accessible par <a rel="nofollow" class="external free" href="https://votre_machine">https://votre_machine</a> sur le port 443.
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Apache_SSL_sous_un_autre_OS">Apache SSL sous un autre OS</span></h3>
+<h4><span class="mw-headline" id="Debian_2">Debian</span></h4>
+<pre>apt-get install apache2 openssl
+a2enmod ssl
+vi /etc/apache2/ports.conf
+</pre>
+<p>Commenter les deux lignes  pour virer l'accès http en clair.
+</p>
+<pre>#NameVirtualHost *:80
+#Listen 80
+</pre>
+<p><br />
+Copier le certificat .pem créé par <a href="index.php%3Ftitle=TinyCA.html" title="TinyCA">TinyCA</a> dans /etc/ssl/certs/Fichier.pem
+</p><p>Gérer les droits
+chmod 744 /etc/ssl/certs/nagios.pem
+</p><p>Puis ajouter dans /etc/apache2/sites-enabled/000-default
+</p>
+<pre>&lt;VirtualHost *:443&gt;
+       ServerName nagios.lyceenobel.org
+       DocumentRoot /var/www/
+       ErrorLog /var/log/apache2/error.log
+       CustomLog /var/log/apache2/access.log combined
+       SSLEngine on
+       SSLCertificateFile /etc/ssl/certs/nagios.pem
+&lt;/VirtualHost&gt;
+</pre>
+<p>Ou bien suivre <a rel="nofollow" class="external text" href="http://technique.arscenic.org/lamp-linux-apache-mysql-php/apache/modules-complementaires/article/installer-et-configurer-ssl-pour">ca</a>&#160;:
+</p>
+<pre>apt-get install openssl
+mkdir /etc/apache2/ssl
+/usr/sbin/make-ssl-cert  /usr/share/ssl-cert/ssleay.cnf  /etc/apache2/ssl/apache.pem
+vi /etc/apache2/sites-available/default-ssl 
+</pre>
+<p>Pour Nagios, par ex.
+</p>
+<pre>a2ensite default-ssl
+service apache2 reload
+</pre>
+<h3><span class="mw-headline" id="Versions_de_algo_de_chiffrement">Versions de algo de chiffrement</span></h3>
+<p>Il est largement temps d'interdire autre chose que TLS&#160;!
+Ajouter
+</p>
+<pre>SSLProtocol All -SSLv3 -SSLv2
+</pre>
+<p>dans 
+</p>
+<pre>/etc/apache2/sites-available/default-ssl
+</pre>
+<p>ou
+</p>
+<pre>/var/www/conf/httpd.conf
+</pre>
+<p>et reloader la config d'Apache
+</p>
+<h2><span class="mw-headline" id="Authentification_du_client">Authentification du client</span></h2>
+<p>Il est facile de n'autoriser l'accès à un serveur https qu'à un nombre restreint de clients; ceux disposant d'un certificat client émis par une AC autorisée.
+</p>
+<ul><li> Dans <a href="index.php%3Ftitle=TinyCA.html#Cr.C3.A9ation_d.27un_certificat_client" title="TinyCA">TinyCA#Cr.C3.A9ation_d.27un_certificat_client</a>, choisissez de signer la requête <b>cliente</b>.</li>
+<li> Sur le serveur web, dans <i>httpd.conf</i>, décommentez les deux lignes </li></ul>
+<pre>SSLVerifyClient require
+SSLVerifyDepth  5
+</pre>
+<p>Signifiant qu'il faut un certificat émis par la même AC que citée précédemment (ligne <i>SSLCACertificateFile</i>) et dont le nombre d'AC intermédiaires est de 3 (5-1-1) maximum.
+</p><p><br />
+Un client sans certificat donnera dans les logs d'Apache:
+</p>
+<pre>[error] SSL handshake failed (server www.openbsd-edu.net:443, client @IP) (OpenSSL library error follows)
+[error] OpenSSL: error:140890C7:SSL routines:SSL3_GET_CLIENT_CERTIFICATE:peer did not return a certificate [Hint: No CAs known 
+to server for verification? ]
+</pre>
+<h2><span class="mw-headline" id="IPv6">IPv6</span></h2>
+<p>Contrairement aux versions des autres OS, la version 1.3 sous OpenBSD est fonctionnelle en <a href="index.php%3Ftitle=IPv6.html" title="IPv6">IPv6</a>&#160;! Inutile de passer en apache 2; en tout cas, pas pour cette raison.
+</p>
+<pre>httpd -6
+</pre>
+<h2><span class="mw-headline" id="Remarques_sur_la_s.C3.A9curit.C3.A9_:">Remarques sur la sécurité&#160;:</span></h2>
+<p>1. Attention aux dénis de service (DoS)&#160;! 
+</p><p>Le dialogue entre le serveur et le client étant chiffré, Toutes les données (pas les en-têtes) doivent être chiffrées/déchiffrées par chacune des parties. Ceci induit une forte surcharge CPU (D'un facteur 10, voire plus entre un apache https et un apache http). Or, si, normalement, un client ne gère qu'un seul flux https simultané, il n'en est pas de même du serveur. Il peut s'effondrer avec seulement une vingtaine de requêtes simultanées. (Attention, il peut s'agir de simples paquets identiques envoyés de manière répétitive; le serveur essaiera systématiquement de la déchiffrer.) 
+</p><p>Une solution pourrait être d'investir dans un de ces coûteux accélérateurs cryptographiques qu'OpenBSD sait gérer nativement, mais ce n'est qu'une protection d'échelle, il faudrait peut-être aller jusqu'à 200 connexions SSL simultanées pour écrouler votre serveur.<a rel="nofollow" class="external text" href="http://seifried.org/security/network/20000202-future-dos-attacks.html">| Le document d'origine</a>. 
+</p><p><br />
+</p>
+<ul><li> Attention au passage que vous faites dans votre beau coupe-feu&#160;!</li></ul>
+<p>Le flux étant chiffré, il peut contenir n'importe quoi, en particulier des troyens, des tentatives de hack, des scans de port......bref que des cochonneries que votre beau FireWall, ou votre bel IDS ne verront pas passer. Ceci, à moins de déchiffrer le flux avant de le faire arriver à la zone protégée.
+</p><p><br />
+</p><p>En conclusion, n'utilisez pas https parce que c'est à la mode, mais parce qu'il répond à un réel besoin.
+</p>
+<h2><span class="mw-headline" id="Webalizer">Webalizer</span></h2>
+<p>Webalizer est un analyseur de logs, très orienté logs de serveur Web, Apache au hasard...
+</p>
+<pre>Ca s'installe tout seul
+</pre>
+<ul><li> cd /usr/ports/www/webalizer &amp;&amp; make &amp;&amp; make install &amp;&amp;&amp; make clean</li></ul>
+<p>et ça se configure aussi facilement.
+</p>
+<ul><li> cp /usr/local/share/examples/webalizer/sample.conf /etc/webalizer.conf</li></ul>
+<p><br />
+</p>
+<pre>Pour lancer l'activation des requêtes inverses, afin de connaitre vos clients&#160;: <i><b>webazolver -D DNSCache</b></i>. Ca peut être relativement long à 1 requete inverse par secone en moyenne.
+</pre>
+<pre>Il est déconseillé de faire tourner webalizer sur des fichiers de logs en cours. Usez de la crontab pour faire tourner les logs et appliquer webalizer dessus.
+</pre>
+<pre>10 */2 * * *'<i><b> </b></i>/usr/local/bin/'''''<i><b>webalizer -D DNSCache -M 0 -g 1 -R 1 </b></i> Lance l'analyse toutes les 2 heures[Fichiers/StatistiquesWeb-Last12Months.htm 
+</pre>
+<p><i><b>]10 2 */7 * *'</b></i> <i><b>/usr/local/bin/webazolver -D DNSCache </b></i>Recrée le fichier DNS inverse une fois par semaine<i><b>[Fichiers/StatistiquesWeb-Last12Months.htm | Le résultat] </b></i>
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Debug_Apache">Debug Apache</span></h2>
+<p>Votre apache se ramasse un segfault dès qu'il démarre ou à la moindre requête&#160;?
+Il faut débugger&#160;: <a rel="nofollow" class="external autonumber" href="http://serverfault.com/questions/470407/how-to-get-a-core-dump-from-apache-when-segfaulting">[2]</a>
+</p><p>Dans /etc/apache2/apache2.conf ajouter&#160;: 
+</p>
+<pre>CoreDumpDirectory /tmp/mycoredump
+</pre>
+<p>Puis
+</p>
+<pre>mkdir -p /tmp/mycoredump
+chown -R www-data:www-data /tmp/mycoredump
+chmod 777 /tmp/mycoredump
+service apache2 restart
+
+</pre>
+<p>Attendre le segfault, puis 
+</p>
+<pre>gdb apache2  -core /tmp/mycoredump/core
+..
+</pre>
+<p>..
+</p>
+<pre>Program terminated with signal 11, Segmentation fault.
+#0  0xb5c639b0 in&#160;?? () from /usr/lib/apache2/modules/libphp5.so
+</pre>
+<p>C'est la libphp5 qui est fautive&#160;!
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020132747
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.220 seconds
+Real time usage: 0.225 seconds
+Preprocessor visited node count: 202/1000000
+Preprocessor generated node count: 384/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:67-0!*!0!!fr!*!* and timestamp 20171020132747 and revision id 3112
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Apache&amp;oldid=3112">http://www.openbsd-edu.net/index.php?title=Apache&amp;oldid=3112</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Apache.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Apache.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Apache&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Apache.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Apache.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Apache&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Apache&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Apache.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FApache.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Apache" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Apache&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Apache&amp;oldid=3112" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Apache&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 30 avril 2015 à 08:01.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.220","walltime":"0.225","ppvisitednodes":{"value":202,"limit":1000000},"ppgeneratednodes":{"value":384,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020132747","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1694});});</script>
+	</body>
+</html>

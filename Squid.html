@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Squid — OpenWikiBSD</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Squid","wgTitle":"Squid","wgCurRevisionId":3249,"wgRevisionId":3249,"wgArticleId":109,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"fr","wgPageContentModel":"wikitext","wgSeparatorTransformTable":[",\t."," \t,"],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"],"wgMonthNamesShort":["","jan","fév","mar","avr","mai","juin","juil","août","sep","oct","nov","déc"],"wgRelevantPageName":"Squid","wgRelevantArticleId":109,"wgRequestId":"2e8e29fc0d53e49f515b6d4b","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@1x2qlv5",function($,jQuery,require,module){mw.user.options.set({"variant":"fr"});});mw.loader.implement("user.tokens@1iezen7",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="load.php%3Fdebug=false&amp;lang=fr&amp;modules=mediawiki.legacy.commonPrint%252Cshared%257Cmediawiki.sectionAnchor%257Cmediawiki.skinning.interface%257Cskins.vector.styles&amp;only=styles&amp;skin=vector.css"/>
+<script async="" src="load.php%3Fdebug=false&amp;lang=fr&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<meta name="generator" content="MediaWiki 1.29.0"/>
+<link rel="shortcut icon" href="http://www.openbsd-edu.net/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="opensearch_desc.php" title="OpenWikiBSD (fr)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.openbsd-edu.net/api.php?action=rsd"/>
+<link rel="copyright" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"/>
+<link rel="alternate" type="application/atom+xml" title="Flux Atom de OpenWikiBSD" href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Squid rootpage-Squid skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="fr">Squid</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">De OpenWikiBSD</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Aller à :					<a href="index.php%3Ftitle=Squid.html#mw-head">navigation</a>, 					<a href="index.php%3Ftitle=Squid.html#p-search">rechercher</a>
+				</div>
+				<div id="mw-content-text" lang="fr" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Sommaire</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="index.php%3Ftitle=Squid.html#Sous_FreeBSD"><span class="tocnumber">1</span> <span class="toctext">Sous FreeBSD</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="index.php%3Ftitle=Squid.html#Sous_OpenBSD"><span class="tocnumber">2</span> <span class="toctext">Sous OpenBSD</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="index.php%3Ftitle=Squid.html#Analyse_des_logs"><span class="tocnumber">3</span> <span class="toctext">Analyse des logs</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="index.php%3Ftitle=Squid.html#Les_acc.C3.A8s_au_travers_de_squid"><span class="tocnumber">3.1</span> <span class="toctext">Les accès au travers de squid</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="index.php%3Ftitle=Squid.html#Lors_d.27un_blocage_squidGuard"><span class="tocnumber">3.2</span> <span class="toctext">Lors d'un blocage squidGuard</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="index.php%3Ftitle=Squid.html#SquidGuard"><span class="tocnumber">4</span> <span class="toctext">SquidGuard</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="index.php%3Ftitle=Squid.html#FreeBSD"><span class="tocnumber">4.1</span> <span class="toctext">FreeBSD</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="index.php%3Ftitle=Squid.html#Debug"><span class="tocnumber">4.2</span> <span class="toctext">Debug</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="index.php%3Ftitle=Squid.html#Filtrage_Horaire"><span class="tocnumber">4.3</span> <span class="toctext">Filtrage Horaire</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="index.php%3Ftitle=Squid.html#Whitelisting"><span class="tocnumber">4.4</span> <span class="toctext">Whitelisting</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="index.php%3Ftitle=Squid.html#Page_d.27interdiction"><span class="tocnumber">5</span> <span class="toctext">Page d'interdiction</span></a>
+<ul>
+<li class="toclevel-2 tocsection-12"><a href="index.php%3Ftitle=Squid.html#OpenBSD"><span class="tocnumber">5.1</span> <span class="toctext">OpenBSD</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h3><span class="mw-headline" id="Sous_FreeBSD">Sous FreeBSD</span></h3>
+<p>Ceinture et bretelles, un snapshot ne mange pas de pain.
+</p>
+<pre> zfs snapshot -r zroot@PreInstallSquid
+</pre>
+<p>Maj système
+</p>
+<pre> pkg update
+ pkg upgrade
+</pre>
+<p>install paquet (on verra les modules plus tard)
+</p>
+<pre> pkg install  squid
+echo "squid_enable=YES" &gt;&gt; /etc/rc.conf
+</pre>
+<p>Mon pool ZFS tourne à 400Mo/s, ça devrait suffire pour un cache pour une poignée de machines..
+</p>
+<pre>zfs create /path/squid
+mv /var/squid/cache /path/squid
+</pre>
+<p>Ajout  et modifs dans <i>/usr/local/etc/squid/squid.conf</i>
+cache_dir ufs /path/squid/cache 100 16 256 
+coredump_dir /path/squid/cache
+visible_hostname squid
+</p><p>On crée la structure du cache
+</p>
+<pre>squid -z
+</pre>
+<p>On vérifie la config
+</p>
+<pre>squid -f /usr/local/etc/squid/squid.conf -k parse
+</pre>
+<p>On démarre squid
+</p>
+<pre>/usr/local/etc/rc.d/squid start
+</pre>
+<p>On surveille le tout avec Splunk
+</p>
+<pre> /opt/splunkforwarder/bin/splunk  add monitor /var/log/squid/access.log 
+</pre>
+<p><br />
+</p>
+<h3><span class="mw-headline" id="Sous_OpenBSD">Sous OpenBSD</span></h3>
+<pre>
+pkg_add squid-2.7.STABLE9
+</pre>
+<pre>
+ NOTES ON OpenBSD POST-INSTALLATION OF SQUID 2.7
+
+The local (OpenBSD) differences are:
+configuration files are in		/etc/squid
+sample configuration files are in	/usr/local/share/examples/squid
+error message files are in		/usr/local/share/squid/errors
+sample error message files are in	/usr/local/share/examples/squid/errors
+icons are in 				/usr/local/share/squid/icons
+sample icons are in			/usr/local/share/examples/squid/icons
+the cache is in 			/var/squid/cache
+logs are stored in 			/var/squid/logs
+the ugid squid runs as is		_squid:_squid
+</pre>
+<p><br />
+</p>
+<pre>
+ echo "
+    if [ -x /usr/local/sbin/squid ]; then
+	echo -n ' squid';	/usr/local/sbin/squid
+    fi
+ " &gt;&gt; /etc/rc.local
+</pre>
+<pre>squid -z
+</pre>
+<p>/usr/local/sbin/squid
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Analyse_des_logs">Analyse des logs</span></h2>
+<h3><span class="mw-headline" id="Les_acc.C3.A8s_au_travers_de_squid">Les accès au travers de squid</span></h3>
+<p><i>/var/log/squid/access.log</i>
+</p>
+<ul><li> TCP_MEM_HIT&#160;: le fichier était en cache.</li>
+<li> TCP_TUNNEL&#160;: Le fichier était transmis dans une connection TLS, donc pas d'analyse (voir Interception SSL)</li>
+<li> TCP_MISS &#160;: &#160;: le fichier n'était pas en cache, il a été téléchargé</li></ul>
+<p><br />
+<a rel="nofollow" class="external text" href="http://docstore.mik.ua/squid/tutorial-9.html">| L'ensemble des tags</a>
+</p>
+<h3><span class="mw-headline" id="Lors_d.27un_blocage_squidGuard">Lors d'un blocage squidGuard</span></h3>
+<p>Ajoutez le mot clé <i>log</i> suivi du fichier dans le répertoire qui va bien.
+En cas d'absence squidGuard le créera tout seul
+</p><p>dest porn {
+</p>
+<pre>       domainlist porn/domains
+       urllist porn/urls
+       log pornaccesses
+</pre>
+<p>}
+</p><p>Le fichier peut être le même pour toute les catégories
+</p>
+<h2><span class="mw-headline" id="SquidGuard">SquidGuard</span></h2>
+<p>Parce que cacher c'est bien, filtrer, c'est mieux..
+</p>
+<h3><span class="mw-headline" id="FreeBSD">FreeBSD</span></h3>
+<pre>pkg install squidGuard
+</pre>
+<p>Ajouter 
+</p>
+<pre>redirect_children 5
+redirect_program /usr/local/bin/squidGuard -c /usr/local/etc/squid/squidGuard.conf
+url_rewrite_program /usr/local/bin/squidGuard
+url_rewrite_access  allow localhost
+</pre>
+<p>à /usr/local/etc/squid/squid.conf
+</p>
+<pre>pkg install wget
+wget <a rel="nofollow" class="external free" href="http://dsi.ut-capitole.fr/blacklists/download/blacklists.tar.gz">http://dsi.ut-capitole.fr/blacklists/download/blacklists.tar.gz</a>
+tar -xzf blacklists.tar.gz
+mkdir /var/db/squidGuard
+cp -R blacklists/* /var/db/squidGuard/
+</pre>
+<p>Modifier /usr/local/etc/squid/squidGuard.conf
+</p>
+<pre>dbhome /var/db/squidGuard/
+logdir /var/log/squidGuard    
+ 
+chmod g+w /var/log/squidGuard/squidGuard.log
+chmod g+x /var/log/squid*
+chmod -R g+wx /var/db/squidGuard/*
+chown -R squid.squid /var/db/squidGuard/
+chown  squid.squid /var/db/squidGuard/
+chown -R  squid:squid /var/db/squidGuard/
+chown -R  squid:squid /var/log/squid*
+chown -R  squid:squid /usr/local/etc/squid/squidGuard.conf
+</pre>
+<p><s> chmod 644 /usr/local/etc/squid/squidGuard.conf
+</p>
+<pre>chmod -R 640 /var/db/squidGuard/
+chmod -R g+w /var/db/squidGuard 
+chmod -R 644 /var/log/squid*
+chmod 755 /var/log/squid
+</pre>
+<p></s>
+</p><p><br />
+</p><p><br />
+</p>
+<pre>squidGuard -d -b -P -c /usr/local/etc/squid/squidGuard.conf -C all
+</pre>
+<p>-d Debug
+-b Progress Bar
+-P No Emergency mode
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Debug">Debug</span></h3>
+<p>SquidGuard est un p'tit gars sensible; à la moindre contrariété&#160;:
+</p>
+<pre>Going into emergency mode
+</pre>
+<p>et là, c'est le drame, il laisse tout passer...
+</p>
+<ul><li> squidGuard: ACL destination agressive is not defined in configfile /usr/local/etc/squid/squidGuard.conf</li></ul>
+<p>Vous avez (au mieux ) une typo sur la catégorie aggressive
+</p>
+<ul><li> /var/db/squidGuard/adult/domains: Permission denied</li></ul>
+<p>Il faut que squidGuard puisse lire, écrire le fichier/répertoire
+</p>
+<ul><li> WARNING: All 5/5 redirector processes are busy.</li></ul>
+<pre> 5 pending requests queued
+Consider increasing the number of redirector processes in your config file.
+</pre>
+<p>C'est assez explicite, la valeur par défaut dans squid.conf
+</p>
+<h3><span class="mw-headline" id="Filtrage_Horaire">Filtrage Horaire</span></h3>
+<p><a rel="nofollow" class="external autonumber" href="http://www.blanche-de-peuterey.com/Le-fichier-squidGuard-conf">[1]</a>
+[www.squidguard.org/Doc/examples.html]
+</p>
+<h3><span class="mw-headline" id="Whitelisting">Whitelisting</span></h3>
+<p>Ajouter à squidGuard.conf&#160;:
+</p>
+<pre>dest whitelist {
+   domainlist    whitelist/domains
+   urllist       whitelist/urls
+}    
+</pre>
+<p>Puis dans l'ACL, ajoutez le mot clé <i>whitelist</i> en premier&#160;:
+</p>
+<pre>Client {
+               rewrite search_engine
+               pass whitelist cleaning&#160;!malware sexual_education&#160;!adult&#160;!....}
+</pre>
+<p>Ensuite&#160;:
+</p>
+<pre>mkdir /var/db/squidGuard/whitelist
+touch /var/db/squidGuard/whitelist/domains
+touch /var/db/squidGuard/whitelist/urls
+chown -R squid:squid /var/db/squidGuard/whitelist/
+chmod -R 770 /var/db/squidGuard/whitelist/
+</pre>
+<p>Et ajouter les sites à autoriser.
+</p>
+<pre>echo "deezer.fr" &gt;&gt; /var/db/squidGuard/whitelist/domains 
+</pre>
+<p>Puis relancer la recompil des bases squidGuard
+</p>
+<pre>chown -R squid:squid /var/db/squidGuard/whitelist/
+chmod 770 /var/db/squidGuard/whitelist/*
+</pre>
+<p>L'avantage sur la modif du fichier équivalent (audio-video/domains), c'est que cette manip résiste à une maj des bases.
+</p><p>Puis reconstruisez seuelment la base whitelist&#160;:
+</p>
+<pre>/usr/local/bin/squidGuard -d -b -P  -c /usr/local/etc/squid/squidGuard.conf  -C whitelist/domains
+/usr/local/etc/rc.d/squid restart
+</pre>
+<h2><span class="mw-headline" id="Page_d.27interdiction">Page d'interdiction</span></h2>
+<h3><span class="mw-headline" id="OpenBSD">OpenBSD</span></h3>
+<pre>pkg_add squidGuard
+mkdir -p /var/squidguard
+chown -R _squid._squid /var/squidguard
+chmod -R 775 /var/squidguard
+
+/usr/local/bin/squidGuard -C all &amp;
+</pre>
+<pre>tail -f /var/squidguard/squidGuard.log
+</pre>
+<p>est très utile &#160;:
+</p>
+<pre>
+2010-02-04 23:46:45 [3080] New setting: dbhome: /var/squidguard/db
+2010-02-04 23:46:45 [3080] New setting: logdir: /var/squidguard/log
+2010-02-04 23:46:45 [3080] init domainlist /var/squidguard/db/adult/domains
+2010-02-04 23:46:56 [18850] New setting: dbhome: /var/squidguard/db
+2010-02-04 23:46:56 [18850] New setting: logdir: /var/squidguard/log
+2010-02-04 23:46:56 [18850] init domainlist /var/squidguard/db/adult/domains
+
+2010-02-04 23:56:57 [18850] init urllist /var/squidguard/db/adult/urls
+2010-02-04 23:56:58 [18850] init expressionlist /var/squidguard/db/adult/expressions
+.
+.
+2010-02-04 23:57:04 [18850] init urllist /var/squidguard/db/malware/urls
+2010-02-04 23:57:04 [18850] init domainlist /var/squidguard/db/malware/domains
+2010-02-04 23:57:15 [18850] init domainlist /var/squidguard/db/press/domains
+2010-02-04 23:57:15 [18850] syntax error in configfile /etc/squidguard/squidguard.conf line 271
+2010-02-04 23:57:15 [18850] going into emergency mode
+</pre>
+<p><br />
+La compilation des bases est TRES longue la première fois. De plus cette compilation est effectuée par tous les processus squidguard lancés.. Il est donc nécessaire de ne lancer, pour la première fois qu'un seul redirect_children 1 dasn squid.conf.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20171020072738
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.110 seconds
+Real time usage: 0.121 seconds
+Preprocessor visited node count: 76/1000000
+Preprocessor generated node count: 132/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key WikiBSD:pcache:idhash:109-0!*!*!!fr!*!* and timestamp 20171020072738 and revision id 3249
+ -->
+</div>					<div class="printfooter">
+						Récupérée de «&#160;<a dir="ltr" href="http://www.openbsd-edu.net/index.php?title=Squid&amp;oldid=3249">http://www.openbsd-edu.net/index.php?title=Squid&amp;oldid=3249</a>&#160;»					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Menu de navigation</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Outils personnels</h3>
+						<ul>
+							<li id="pt-login"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Connexion&amp;returnto=Squid.html" title="Il est recommandé de vous identifier ; ce n'est cependant pas obligatoire. [o]" accesskey="o">Se connecter</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Espaces de noms</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="index.php%3Ftitle=Squid.html"  title="Voir la page de contenu [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="http://www.openbsd-edu.net/index.php?title=Discussion:Squid&amp;action=edit&amp;redlink=1"  title="Discussion au sujet de cette page de contenu [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variantes</span><a href="index.php%3Ftitle=Squid.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Affichages</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="index.php%3Ftitle=Squid.html" >Lire</a></span></li>
+															<li id="ca-viewsource"><span><a href="http://www.openbsd-edu.net/index.php?title=Squid&amp;action=edit"  title="Cette page est protégée.&#10;Vous pouvez toutefois en visualiser la source. [e]" accesskey="e">Voir le texte source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="http://www.openbsd-edu.net/index.php?title=Squid&amp;action=history"  title="Les versions passées de cette page (avec leurs contributeurs) [h]" accesskey="h">Historique</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>Plus</span><a href="index.php%3Ftitle=Squid.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Rechercher</label>
+						</h3>
+
+						<form action="http://www.openbsd-edu.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Rechercher sur OpenWikiBSD" title="Rechercher dans OpenWikiBSD [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Spécial:Recherche" name="title"/><input type="submit" name="fulltext" value="Rechercher" title="Rechercher les pages comportant ce texte." id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Lire" title="Aller vers une page portant exactement ce nom si elle existe." id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="index.php%3Ftitle=Accueil.html"  title="Page principale"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="index.php%3Ftitle=Accueil.html" title="Aller à l'accueil [z]" accesskey="z">Accueil</a></li><li id="n-recentchanges"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Modifications_r%25C3%25A9centes.html" title="Liste des modifications récentes sur le wiki [r]" accesskey="r">Modifications récentes</a></li><li id="n-randompage"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Page_au_hasard.html" title="Afficher une page au hasard [x]" accesskey="x">Page au hasard</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="Aide">Aide</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Outils</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_li%25C3%25A9es%252FSquid.html" title="Liste des pages liées qui pointent sur celle-ci [j]" accesskey="j">Pages liées</a></li><li id="t-recentchangeslinked"><a href="http://www.openbsd-edu.net/index.php?title=Sp%C3%A9cial:Suivi_des_liens/Squid" rel="nofollow" title="Liste des modifications récentes des pages appelées par celle-ci [k]" accesskey="k">Suivi des pages liées</a></li><li id="t-specialpages"><a href="./index.php%3Ftitle=Sp%25C3%25A9cial:Pages_sp%25C3%25A9ciales.html" title="Liste de toutes les pages spéciales [q]" accesskey="q">Pages spéciales</a></li><li id="t-print"><a href="http://www.openbsd-edu.net/index.php?title=Squid&amp;printable=yes" rel="alternate" title="Version imprimable de cette page [p]" accesskey="p">Version imprimable</a></li><li id="t-permalink"><a href="http://www.openbsd-edu.net/index.php?title=Squid&amp;oldid=3249" title="Adresse permanente de cette version de la page">Adresse permanente</a></li><li id="t-info"><a href="http://www.openbsd-edu.net/index.php?title=Squid&amp;action=info" title="Plus d’information sur cette page">Information sur la page</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> Cette page a été modifiée pour la dernière fois le 10 avril 2016 à 07:58.</li>
+											<li id="footer-info-copyright">Le contenu est disponible sous licence <a class="external" rel="nofollow" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons paternité – non commercial – partage à l’identique</a> sauf mention contraire.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Confidentialit%C3%A9" title="OpenWikiBSD:Confidentialité">Politique de confidentialité</a></li>
+											<li id="footer-places-about"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:%C3%80_propos" title="OpenWikiBSD:À propos">À propos de OpenWikiBSD</a></li>
+											<li id="footer-places-disclaimer"><a href="http://www.openbsd-edu.net/index.php?title=OpenWikiBSD:Avertissements_g%C3%A9n%C3%A9raux" title="OpenWikiBSD:Avertissements généraux">Avertissements</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="resources/assets/licenses/cc-by-nc-sa.png" alt="Creative Commons paternité – non commercial – partage à l’identique" width="88" height="31"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="http://www.mediawiki.org/"><img src="resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="resources/assets/poweredby_mediawiki_132x47.png 1.5x, resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.110","walltime":"0.121","ppvisitednodes":{"value":76,"limit":1000000},"ppgeneratednodes":{"value":132,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20171020072738","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":1342});});</script>
+	</body>
+</html>
